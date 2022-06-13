@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "value": "Asian"
+  },
+  {
+    "id": 2,
+    "value": "Caucasian"
+  },
+  {
+    "id": 3,
+    "value": "Black"
+  },
+  {
+    "id": 4,
+    "value": "Latino"
+  },
+  {
+    "id": 5,
+    "value": "Middle Eastern"
+  },
+  {
+    "id": 6,
+    "value": "Mediterranean"
+  },
+  {
+    "id": 7,
+    "value": "South East Asian"
+  },
+  {
+    "id": 8,
+    "value": "Native American"
+  },
+  {
+    "id": 9,
+    "value": "Other"
+  }
+]
+

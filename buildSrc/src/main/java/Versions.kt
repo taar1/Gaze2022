@@ -46,6 +46,8 @@ object Versions {
         const val navCompose = "2.4.2"
         const val coordinatorlayout = "1.2.0"
         const val viewpager2 = "1.0.0"
+        const val composeMaterial = "1.2.0-beta03"
+
 
         /* test */
         const val junit = "4.13.2"

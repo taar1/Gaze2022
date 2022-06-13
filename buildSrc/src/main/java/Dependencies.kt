@@ -8,6 +8,7 @@ object Dependencies {
         const val kotlinGradlePlugin =
             "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Android.kotlin}"
         const val hilt = "com.google.dagger:hilt-android-gradle-plugin:${Versions.Android.hilt}"
+        const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.Android.hilt}"
         const val crashlyticsGradle =
             "com.google.firebase:firebase-crashlytics-gradle:${Versions.Android.crashlyticsGradle}"
         const val jsonSerialization =
@@ -66,7 +67,8 @@ object Dependencies {
         const val coordinatorlayout =
             "androidx.coordinatorlayout:coordinatorlayout:${Versions.Android.coordinatorlayout}"
         const val viewpager2 = "androidx.viewpager2:viewpager2:${Versions.Android.viewpager2}"
-
+        const val composeMaterial =
+            "androidx.compose.material:material:${Versions.Android.composeMaterial}"
 
     }
 

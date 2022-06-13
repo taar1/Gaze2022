@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "value": "Asiatisch"
+  },
+  {
+    "id": 2,
+    "value": "Weiss"
+  },
+  {
+    "id": 3,
+    "value": "Schwarz"
+  },
+  {
+    "id": 4,
+    "value": "Latino"
+  },
+  {
+    "id": 5,
+    "value": "Orientalisch"
+  },
+  {
+    "id": 6,
+    "value": "Südländisch"
+  },
+  {
+    "id": 7,
+    "value": "Südost asiatisch"
+  },
+  {
+    "id": 8,
+    "value": "Indianer"
+  },
+  {
+    "id": 9,
+    "value": "Andere"
+  }
+]
+

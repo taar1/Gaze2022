@@ -3,7 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/activity_main.xml" value="0.55" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_business.xml" value="0.164" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_gender.xml" value="0.164" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_me.xml" value="0.132" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/launch_screen.xml" value="0.132" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/text_on_black_rounded_corners.xml" value="0.164" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/activity_main.xml" value="0.3676222596964587" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_child_snippet.xml" value="0.4015625" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_club_snippet.xml" value="0.4015625" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_email_snippet.xml" value="0.39479166666666665" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_website_snippet.xml" value="0.39479166666666665" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_work_snippet.xml" value="0.4015625" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_encounter_snippet_item.xml" value="0.26135310472659873" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_no_contacts_yet.xml" value="0.4015625" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_work_snippet_item.xml" value="0.39479166666666665" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/menu/bottom_nav_menu.xml" value="0.30833333333333335" />
       </map>
     </option>
   </component>

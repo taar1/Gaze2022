@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "value": "Atheist"
+  },
+  {
+    "id": 2,
+    "value": "Agnostic"
+  },
+  {
+    "id": 3,
+    "value": "Apple User"
+  },
+  {
+    "id": 4,
+    "value": "Buddhist"
+  },
+  {
+    "id": 5,
+    "value": "Christian"
+  },
+  {
+    "id": 6,
+    "value": "Evangelist"
+  },
+  {
+    "id": 7,
+    "value": "Indigene"
+  },
+  {
+    "id": 8,
+    "value": "Jew"
+  },
+  {
+    "id": 9,
+    "value": "Hindu"
+  },
+  {
+    "id": 10,
+    "value": "Lutheran"
+  },
+  {
+    "id": 11,
+    "value": "Muslim"
+  },
+  {
+    "id": 12,
+    "value": "Protestant"
+  },
+  {
+    "id": 13,
+    "value": "Scientologist"
+  },
+  {
+    "id": 14,
+    "value": "Sikhist"
+  },
+  {
+    "id": 15,
+    "value": "Taoist"
+  }
+]

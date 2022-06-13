@@ -1,35 +1,38 @@
 package net.gazeapp
 
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import net.gazeapp.databinding.ActivityMainBinding
+import androidx.compose.material.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.navigation.compose.rememberNavController
+import net.gazeapp.ui.navigation.BottomNavigation
+import net.gazeapp.ui.navigation.NavigationGraph
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+    companion object {
+        private const val TAG = "MainActivity"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContent {
+            MainScreenView()
+        }
+    }
 
-        val navView: BottomNavigationView = binding.navView
+    @Composable
+    fun MainScreenView() {
+        val navController = rememberNavController()
+        Scaffold(
+            bottomBar = { BottomNavigation(navController = navController) }
+        ) {
+            NavigationGraph(navController = navController)
+        }
+    }
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+    private fun testCrash() {
+        throw RuntimeException("This is a crash")
     }
 }

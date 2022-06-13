@@ -1,0 +1,48 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/pref_unit_system_list_titles"
+        android:entryValues="@array/pref_unit_system_list_values"
+        android:key="@string/pref_unit_system_key"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:summary="@string/pref_description_metric_system"
+        android:title="@string/pref_header_unit_system" />
+
+    <!--<Preference-->
+    <!--android:key="@string/pref_private_gallery_key"-->
+    <!--android:summary="@string/pref_description_private_gallery"-->
+    <!--android:title="@string/pref_header_private_gallery" />-->
+
+    <SwitchPreferenceCompat
+        android:key="@string/pref_enable_ads_key"
+        android:summary="@string/pref_description_ads_enabled_free_user"
+        android:title="@string/pref_header_ads" />
+
+    <SwitchPreferenceCompat
+        android:key="@string/finger_key"
+        android:summary="@string/pref_fingerprint_text"
+        android:title="@string/pref_fingerprint_title" />
+
+    <Preference
+        android:key="@string/pref_clear_search_history_key"
+        android:summary="@string/pref_clear_search_history_text"
+        android:title="@string/pref_clear_search_history_title" />
+
+    <Preference
+        android:key="@string/pref_eggplants_key"
+        android:summary="@string/no_eggplants"
+        android:title="@string/eggplants" />
+
+    <Preference
+        android:key="@string/pref_pro_user_key"
+        android:summary="@string/pref_pro_free_user"
+        android:title="@string/pref_header_pro_version" />
+
+    <Preference
+        android:key="@string/pref_send_feedback_key"
+        android:summary="@string/pref_send_feedback_text"
+        android:title="@string/pref_send_feedback_title" />
+
+</androidx.preference.PreferenceScreen>

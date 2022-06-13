@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -68,6 +69,27 @@ android {
             }
         }
     }
+
+
+    // TODO FIXME hier weitermachen.
+    // Specifies a flavor dimension.
+    flavorDimensions.add("myDimension")
+
+    productFlavors {
+        create("googlePlayFlavor") {
+            dimension = "myDimension"
+            versionNameSuffix = "-googlePlay"
+        }
+        create("amazonFlavor") {
+            dimension = "myDimension"
+            versionNameSuffix = "-amazon"
+        }
+        create("gRatedFlavor") {
+            dimension = "myDimension"
+            versionNameSuffix = "-gRated"
+        }
+    }
+
 }
 
 dependencies {
@@ -102,11 +124,16 @@ dependencies {
     implementation(Dependencies.Android.roomRuntime)
     implementation(Dependencies.Android.room)
 
+    // HILT
+    implementation(Dependencies.Android.hilt)
+    implementation(Dependencies.Android.hiltAndroid)
+
     // Navigation component
     implementation(Dependencies.Android.activityCompose)
     implementation(Dependencies.Android.composeUiTooling)
     implementation(Dependencies.Android.navRuntime)
     implementation(Dependencies.Android.composeUi)
+    implementation(Dependencies.Android.composeMaterial)
 
     // maybe the other navigation components can be removed because of compose
     // Compose Stuff

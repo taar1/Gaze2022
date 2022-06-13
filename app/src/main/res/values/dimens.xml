@@ -2,4 +2,83 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_margin_large">72dp</dimen>
+
+    <dimen name="parallax_image_height">180dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+
+    <dimen name="add_contact_form_main_padding_top">24dp</dimen>
+    <!--<dimen name="add_contact_form_main_padding_left">10dp</dimen>-->
+    <dimen name="add_contact_form_main_padding_right">16dp</dimen>
+    <dimen name="add_contact_form_padding_field_icon_right">32dp</dimen>
+
+    <dimen name="divider_horizontal_line_height">1dp</dimen>
+    <dimen name="divider_horizontal_margin_top">50dp</dimen>
+    <dimen name="divider_horizontal_margin_bottom">25dp</dimen>
+    <dimen name="divider_horizontal_margin_left">50dp</dimen>
+    <dimen name="divider_horizontal_margin_right">
+        <!-- divider_horizontal_margin_left MINUS add_contact_form_main_padding_right-->
+        35dp
+    </dimen>
+
+    <dimen name="add_contact_layout_padding">8dp</dimen>
+    <dimen name="add_contact_layout_padding_large">32dp</dimen>
+
+    <dimen name="add_contact_padding_left_input_field_with_plus">62dp</dimen>
+    <dimen name="add_contact_padding_left_input_field">58dp</dimen>
+
+    <dimen name="inner_layout_minimum_height">60dp</dimen>
+
+    <dimen name="inner_layout_padding">10dp</dimen>
+    <dimen name="add_contact_additional_field_layout_height">8dp</dimen>
+
+    <dimen name="itemlist_multiselect_outer_padding">10dp</dimen>
+    <dimen name="itemlist_multiselect_outer_padding_small">5dp</dimen>
+
+    <dimen name="expandable_layout_group_header_left_padding">16dp</dimen>
+    <dimen name="expandable_layout_group_header_height">48dp</dimen>
+    <dimen name="expandable_layout_group_header_margin_right">8dp</dimen>
+    <dimen name="expandable_layout_body_top_padding">8dp</dimen>
+
+    <!--https://www.google.com/design/spec/components/buttons.html#buttons-flat-buttons-->
+    <dimen name="outer_padding_flat_buttons">8dp</dimen>
+    <dimen name="outer_padding_flat_buttons_sides_and_bottom">8dp</dimen>
+
+    <dimen name="cardview_recent_contacts_inner_padding">24dp</dimen>
+
+    <dimen name="recent_contacts_cardview_vertical_padding">8dp</dimen>
+    <dimen name="cardview_card_radius">2dp</dimen>
+
+
+    <dimen name="all_contacts_image_size">50dp</dimen>
+    <dimen name="all_contacts_inner_text_padding">16dp</dimen>
+    <dimen name="all_contacts_outer_text_padding">16dp</dimen>
+
+    <!--ContactViewWithViewPagerTabActivity-->
+    <dimen name="flexible_space_image_height">240dp</dimen>
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="margin_standard_half">8dp</dimen>
+    <dimen name="margin_standard_thin">11dp</dimen>
+
+    <!--Layout surrounding the left icon in the detail contact view in the cards-->
+    <dimen name="contact_view_card_left_icon_layout">24dp</dimen>
+    <!--The left margin of the information that is shown to the right side of the icon in the detail contact card view-->
+    <dimen name="contact_view_card_left_margin_after_icon_social_media_tab">24dp</dimen>
+
+    <dimen name="contact_view_card_inner_padding">24dp</dimen>
+    <dimen name="contact_view_card_outer_margin">10dp</dimen>
+    <dimen name="contact_view_card_special_margin_bottom">62dp</dimen>
+    <dimen name="contact_view_horizontal_item_minimum_height">32dp</dimen>
+    <dimen name="contact_view_card_empty_tab_top_margin">45dp</dimen>
+
+    <dimen name="lower_padding_gray_view_for_contact_view_card">70dp</dimen>
+
+    <dimen name="search_results_circle_image_size">40dp</dimen>
+
+    <dimen name="lower_ad_banner_height">51dp</dimen>
+    <dimen name="notification_icon_width_height">64dp</dimen>
+
+    <dimen name="bottom_padding">240dp</dimen>
 </resources>

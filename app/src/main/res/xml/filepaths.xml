@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path
+        name="myMediaOne"
+        path="myMedia/1" />
+    <files-path
+        name="myMediaTwo"
+        path="myMedia/2" />
+    <files-path
+        name="tempSharingFolder"
+        path="temp_sharing/" />
+    <files-path
+        name="contactMediaPublic"
+        path="public/" />
+    <files-path
+        name="contactMediaPrivate"
+        path="private/" />
+</paths>

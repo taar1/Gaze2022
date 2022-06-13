@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "value": "Normal"
+  },
+  {
+    "id": 2,
+    "value": "Twink"
+  },
+  {
+    "id": 3,
+    "value": "Bär"
+  },
+  {
+    "id": 4,
+    "value": "Muskelbär"
+  },
+  {
+    "id": 5,
+    "value": "Cub"
+  },
+  {
+    "id": 6,
+    "value": "Wolf"
+  },
+  {
+    "id": 7,
+    "value": "Bodybuilder"
+  },
+  {
+    "id": 8,
+    "value": "Athletisch"
+  },
+  {
+    "id": 9,
+    "value": "Sportlich"
+  },
+  {
+    "id": 10,
+    "value": "Androgyn"
+  },
+  {
+    "id": 11,
+    "value": "Daddy"
+  },
+  {
+    "id": 12,
+    "value": "Transmann"
+  },
+  {
+    "id": 13,
+    "value": "Transfrau"
+  },
+  {
+    "id": 14,
+    "value": "Silberfuchs"
+  },
+  {
+    "id": 15,
+    "value": "Schlank"
+  },
+  {
+    "id": 16,
+    "value": "Mollig"
+  },
+  {
+    "id": 17,
+    "value": "Puppy"
+  }
+]
+

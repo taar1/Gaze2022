@@ -1,0 +1,102 @@
+[
+  {
+    "mm": 0,
+    "inch": "0",
+    "value": "none"
+  },
+  {
+    "mm": 9999,
+    "inch": "9999",
+    "value": "unknown"
+  },
+  {
+    "mm": 80,
+    "inch": "3.1",
+    "value": "8 cm / 3.1 inch"
+  },
+  {
+    "mm": 90,
+    "inch": "3.5",
+    "value": "9 cm / 3.5 inch"
+  },
+  {
+    "mm": 100,
+    "inch": "3.9",
+    "value": "10 cm / 3.9 inch"
+  },
+  {
+    "mm": 110,
+    "inch": "4.3",
+    "value": "11 cm / 4.3 inch"
+  },
+  {
+    "mm": 120,
+    "inch": "4.7",
+    "value": "12 cm / 4.7 inch"
+  },
+  {
+    "mm": 130,
+    "inch": "5.1",
+    "value": "13 cm / 5.1 inch"
+  },
+  {
+    "mm": 140,
+    "inch": "5.5",
+    "value": "14 cm / 5.5 inch"
+  },
+  {
+    "mm": 150,
+    "inch": "5.9",
+    "value": "15 cm / 5.9 inch"
+  },
+  {
+    "mm": 160,
+    "inch": "6.3",
+    "value": "16 cm / 6.3 inch"
+  },
+  {
+    "mm": 170,
+    "inch": "6.7",
+    "value": "17 cm / 6.7 inch"
+  },
+  {
+    "mm": 180,
+    "inch": "7.1",
+    "value": "18 cm / 7.1 inch"
+  },
+  {
+    "mm": 190,
+    "inch": "7.5",
+    "value": "19 cm / 7.5 inch"
+  },
+  {
+    "mm": 200,
+    "inch": "7.9",
+    "value": "20 cm / 7.9 inch"
+  },
+  {
+    "mm": 210,
+    "inch": "8.3",
+    "value": "21 cm / 8.3 inch"
+  },
+  {
+    "mm": 220,
+    "inch": "8.7",
+    "value": "22 cm / 8.7 inch"
+  },
+  {
+    "mm": 230,
+    "inch": "9.1",
+    "value": "23 cm / 9.1 inch"
+  },
+  {
+    "mm": 240,
+    "inch": "9.4",
+    "value": "24 cm / 9.4 inch"
+  },
+  {
+    "mm": 250,
+    "inch": "9.8",
+    "value": "25 cm / 9.8 inch"
+  }
+]

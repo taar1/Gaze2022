@@ -1,6 +1,839 @@
 <resources>
-    <string name="app_name">Gaze</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name" translatable="false">Gaze</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_new_contact_title">Add a New Contact</string>
+    <string name="add_new_contact_question">Add new contact?</string>
+    <string name="add">Add</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_name_long">Please enter a name for the new contact.</string>
+    <string name="address_book_empty">Your Address Book is currently empty.</string>
+    <string name="recent">Recent</string>
+    <string name="recently_viewed">Recently viewed contacts</string>
+    <string name="all">All</string>
+    <string name="my_media">My Media</string>
+    <string name="me">Me</string>
+    <string name="settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="save">Save</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="close">Close</string>
+    <string name="later">Later</string>
+    <string name="yes_delete">Yes, delete contact</string>
+    <string name="discard">Discard</string>
+    <string name="discard_changes">Discard Changes</string>
+    <string name="set">Set</string>
+    <string name="continue_adding">Continue adding</string>
+    <string name="continue_editing">Continue editing</string>
+    <string name="create">Create</string>
+    <string name="click">Click</string>
+    <string name="hint">Hint</string>
+    <string name="infoAbout">Info %s</string>
+    <string name="contact">Contact</string>
+    <string name="contact_info">Contact Information</string>
+    <string name="contact_infos">Address, Email, Phone etc.</string>
+    <string name="contact_name">Contact name</string>
+    <string name="please_wait">Please wait</string>
+    <string name="personal">Personal Information</string>
+    <string name="name">Name</string>
+    <string name="nickname">Nickname</string>
+    <string name="nickname_with_hint">Nickname (leave blank to delete)</string>
+    <string name="add_name">+ Add nickname</string>
+    <string name="new_contact_title">New Contact: %s</string>
+    <string name="clear_search_history">Clear Search History</string>
+    <string name="birthdate">Birthdate</string>
+    <string name="age">Age</string>
+    <string name="know_personally">Know personally</string>
+    <string name="met_in_person">Met in person</string>
+    <string name="met_in_person_text">You\'ve met %s in person.</string>
+    <string name="created">Created</string>
+    <string name="last_modified">Last modified</string>
+    <string name="address">Address</string>
+    <plurals name="address">
+        <item quantity="one">Address</item>
+        <item quantity="other">Addresses</item>
+    </plurals>
+    <string name="address_type">Address type</string>
+    <string name="address_home">Home</string>
+    <string name="address_office">Office</string>
+    <string name="add_addresse">+ Add address</string>
+    <string name="other">Other</string>
+    <string name="body_features">Body Features</string>
+    <string name="bodytype">Body type</string>
+    <string name="body_hair">Body hair</string>
+    <string name="select_bodytypes">Select Body Types</string>
+    <string name="main_pic">Main picture</string>
+    <string name="email">Email</string>
+    <string name="email_type">Email type</string>
+    <string name="email_private">Private</string>
+    <string name="email_business">Business</string>
+    <string name="email_other">Other</string>
+    <string name="add_email">+ Add Email</string>
+    <string name="add_website">+ Add Website</string>
+    <string name="add_work">+ Add Work</string>
+    <string name="add_new_work">Add new job</string>
+    <string name="edit_work">Edit work</string>
+    <string name="add_encounter">+ Add Encounter</string>
+    <string name="add_new_encounter">Add new encounter</string>
+    <string name="edit_encounter">Edit encounter</string>
+    <string name="encounter">Encounter</string>
+    <string name="add_images">Add images</string>
+    <string name="edit_images">Edit images</string>
+    <string name="n_files">%s files</string>
+    <string name="file">file</string>
+    <string name="files">files</string>
+    <string name="add_media">Add media</string>
+    <string name="add_videos">Add videos</string>
+    <string name="email_with_hint">Email (leave blank to delete)</string>
+    <string name="endowment">Endowment</string>
+    <string name="endowment_length">Endowment Length</string>
+    <string name="endowment_girth">Endowment Girth</string>
+    <string name="endowment_diameter">Endowment Diameter</string>
+    <string name="length">Length</string>
+    <string name="diameter">Diameter</string>
+    <string name="girth">Girth</string>
+    <string name="cut_or_uncut">Cut or uncut</string>
+    <string name="is_cut">Is cut?</string>
+    <string name="uncut">Uncut</string>
+    <string name="cut">Cut</string>
+    <string name="feels_like">Feels like</string>
+    <string name="unit_system">Unit System</string>
+    <string name="metric_system">Metric System</string>
+    <string name="imperial_system">Imperial System</string>
+    <plurals name="inch">
+        <item quantity="one">inch</item>
+        <item quantity="other">inches</item>
+    </plurals>
+    <string name="inches">inches</string>
+    <string name="inches_short">\"</string>
+    <string name="inches_abbr">in</string>
+    <plurals name="feet">
+        <item quantity="one">foot</item>
+        <item quantity="other">feet</item>
+    </plurals>
+    <plurals name="millimeter">
+        <item quantity="one">millimeter</item>
+        <item quantity="other">millimeters</item>
+    </plurals>
+    <plurals name="millimeter_short">
+        <item quantity="one">mm</item>
+        <item quantity="other">mms</item>
+    </plurals>
+    <string name="cm">cm</string>
+    <plurals name="centimeter">
+        <item quantity="one">centimeter</item>
+        <item quantity="other">centimeters</item>
+    </plurals>
+    <plurals name="centimeter_short">
+        <item quantity="one">cm</item>
+        <item quantity="other">cms</item>
+    </plurals>
+    <plurals name="meter">
+        <item quantity="one">meter</item>
+        <item quantity="other">meters</item>
+    </plurals>
+    <plurals name="kilometer">
+        <item quantity="one">kilometer</item>
+        <item quantity="other">kilometers</item>
+    </plurals>
+    <string name="cm_numbered">%dcm</string>
+    <string name="feet_inches_numbered" translatable="false">%1$d\'%2$d\"</string>
+    <string name="feet_inches_full">%1$d feet %2$d inches</string>
+    <string name="feet_inches_short" translatable="false">%1$dft %2$din</string>
+    <plurals name="remarks">
+        <item quantity="one">remark</item>
+        <item quantity="other">remarks</item>
+    </plurals>
+    <string name="notes">Notes</string>
+    <string name="my_notes">My notes</string>
+    <string name="notes_sexy_time_log">Notes, Encounters log</string>
+    <string name="sexy_time_log">Sexy Time Log</string>
+    <string name="ethnicity">Ethnicity</string>
+    <string name="select_ethnicities">Select Ethnicity</string>
+    <string name="fetish">Fetish</string>
+    <string name="fetishes">Fetishes</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="hair_color">Hair color</string>
+    <string name="hair_style">Hair style</string>
+    <string name="eye_color">Eye color</string>
+    <string name="orientation">Orientation</string>
+    <string name="health">Health</string>
+    <string name="health_status">Health Status</string>
+    <string name="hiv">HIV</string>
+    <string name="hpv">HPV</string>
+    <string name="hcv">Hepatitis C</string>
+    <string name="sex_role">Sex role</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="versatile">Versatile</string>
+    <string name="out">Out</string>
+    <string name="is_out">Is out?</string>
+    <string name="closeted">Closeted</string>
+    <string name="bareback">Bareback</string>
+    <string name="safe_sex">Safe sex</string>
+    <string name="girly">Girly</string>
+    <string name="effeminate">Effeminate</string>
+    <string name="feminine">Feminine</string>
+    <string name="masculine">Masculine</string>
+    <string name="swallows_loads">Swallows loads</string>
+    <string name="takes_loads_up_the_bum">Takes loads up the bum</string>
+    <string name="sexperience">Sexperience</string>
+    <string name="smoking">Smoking</string>
+    <string name="smoker">Smoker</string>
+    <string name="drinking">Drinking</string>
+    <string name="drinker">Drinker</string>
+    <string name="alcohol">Alcohol</string>
+    <string name="drugs">Drugs</string>
+    <string name="heavy">Heavy</string>
+    <string name="moderate">Moderate</string>
+    <string name="sober">Sober</string>
+    <string name="abstinent">Celibate</string>
+    <string name="social">Social</string>
+    <string name="socially">Socially</string>
+    <string name="sexy_time">Sexy Time</string>
+    <plurals name="children">
+        <item quantity="one">child</item>
+        <item quantity="other">children</item>
+    </plurals>
+    <string name="has_children">Has children?</string>
+    <string name="married">Married</string>
+    <string name="relationship_status">Relationship status</string>
+    <string name="appearance">Appearance</string>
+    <string name="single">Single</string>
+    <string name="divorced">Divorced</string>
+    <string name="widow">Widow</string>
+    <string name="widowed">Widowed</string>
+    <string name="separated">Separated</string>
+    <string name="sexual_orientation">Sexual orientation</string>
+    <string name="work">Work</string>
+    <string name="delete_job">Delete job</string>
+    <string name="profession">Profession</string>
+    <string name="professional_information">Professional Information</string>
+    <string name="started">Started</string>
+    <string name="ended">Ended</string>
+    <string name="employer">Employer</string>
+    <string name="job">Job</string>
+    <string name="current_job">Current Job</string>
+    <string name="until_current">Current</string>
+    <string name="until">until</string>
+    <string name="duration">Duration</string>
+    <string name="salary">Salary</string>
+    <string name="frequency">Frequency</string>
+    <string name="phone">Telephone</string>
+    <string name="add_phone">+ Add Number</string>
+    <string name="phone_with_hint">Phone (leave blank to delete)</string>
+    <string name="phone_type">Type</string>
+    <string name="mobile">Mobile</string>
+    <string name="main_number">Main number</string>
+    <string name="security_question">Security question</string>
+    <string name="question">Question</string>
+    <string name="answer">Answer</string>
+    <string name="incorrect_answer">The answer is incorrect.</string>
+    <string name="correct_answer">The answer is correct.</string>
+    <string name="try_again">Try again</string>
+    <string name="website">Website</string>
+    <string name="description">Description</string>
+    <string name="unknown">(Unknown)</string>
+    <string name="unknown_plain">Unknown</string>
+    <string name="kilo_numbered">%d kilo</string>
+    <string name="kilo_unknown">\? kilo</string>
+    <string name="kg">kg</string>
+    <string name="pounds_numbered">%d pounds</string>
+    <string name="pounds_numbered_short">%dlbs</string>
+    <string name="pounds_unknown">\? pounds</string>
+    <string name="undefined">undefined</string>
+    <string name="gallery">Gallery</string>
+    <string name="view_profile">View Profile</string>
+    <string name="view_my_profile">View my Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="edit_my_profile">Edit my Profile</string>
+    <string name="create_my_profile">Create my Profile</string>
+    <string name="additional_info">Additional info</string>
+    <string name="no_contacts_in_database">There are no contacts in the database to display.</string>
+    <string name="not_available">n/a</string>
+    <string name="basic_info">Basic Info</string>
+    <string name="xxx">XXX</string>
+    <string name="xxx_info">XXX Info</string>
+    <string name="x_years_old">%d years old</string>
+    <string name="x_years">%d years</string>
+    <string name="years_short">%dyo</string>
+    <string name="gallery_here">Here comes the Gallery</string>
+    <string name="no_info_present">Nothing has been entered here yet. Add more information by editing this contact.</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="send_email">Send email</string>
+    <string name="send_email_with">Send email with...</string>
+    <string name="month">month</string>
+    <string name="year">year</string>
+    <plurals name="files_deleted">
+        <item quantity="one">The selected file has successfully been deleted.</item>
+        <item quantity="other">The selected files have successfully been deleted.</item>
+    </plurals>
+    <string name="refresh">Refresh</string>
+    <string name="set_main_pic">Set as Main Pic</string>
+    <string name="main_pic_changed">The main pic has been set successfully.</string>
+    <string name="long_tap_to_select">Long tap to select images</string>
+    <string name="selected_media_counter">selected</string>
+    <string name="edit_media">Edit Media</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="delete_contact">Delete Contact</string>
+    <string name="deleting_contact">Deleting contact %s</string>
+    <string name="delete_contact_string">Delete %s</string>
+    <string name="edit_placeholder">Edit %s</string>
+    <string name="no_media_in_gallery">No media available for this contact. Add images by clicking the icon below.</string>
+    <string name="messengers">Messengers</string>
+    <string name="social_media">Social Media</string>
+    <string name="social_networks">Social Networks</string>
+    <string name="dating">Dating</string>
+    <string name="gaming">Gaming</string>
+    <string name="username">Username</string>
+    <string name="account">Account</string>
+    <string name="copied_to_clipboard">%s copied to the clipboard.</string>
+    <string name="copied_to_clipboard_generic">Value copied to the clipboard.</string>
+    <string name="meet_date">Meet Date</string>
+    <string name="my_role">My Role</string>
+    <string name="his_role">His Role</string>
+    <string name="my_load_went_to">My Load went to...</string>
+    <string name="his_load_went_to">His Load went to...</string>
+    <string name="location">Location</string>
+    <string name="meeting_place">Meeting place</string>
+    <string name="rating">Rating</string>
+    <string name="remarks">Remarks</string>
+    <string name="google_maps">Google Maps Link</string>
+    <string name="stay_tuned">Stay tuned!</string>
+    <string name="under_development">This feature is currently still under development.</string>
+    <string name="no_contacts_title">No contacts added yet</string>
+    <string name="no_contacts_text2">Create contact profiles of guys you\'ve met (or want to meet) and save their pictures and videos you received. No more digging through different apps to find pictures or info you don\'t want to forget! You can see his photos even after he mysteriously disappears or blocks you. Your pictures are here to stay with Gaze!\n\nGaze is very easy to use. You can save his body features, addresses, contact info, social media, personal- &amp; professional info and much more that is important to you. Simply click this yellow Plus button down here to start.</string>
+    <string name="no_contacts_text_shorter">Create contact profiles of guys you\'ve met (or want to meet) and save their pictures you received.\n\nSave body features, addresses, contact info, social media, personal- &amp; professional info and much more that is important to you. Simply click this yellow Plus button down here to start.</string>
+    <string name="search_hint">Search Gaze</string>
+    <string name="search_results_for">Results for: %s</string>
+    <string name="no_contacts_found">No contacts found with your search query</string>
+    <string name="show_second_gallery">Show second gallery</string>
+    <string name="gallery_one_edit_media">Edit Gallery One</string>
+    <string name="gallery_two_edit_media">Edit Gallery Two</string>
+    <string name="hide_second_gallery">Hide second gallery</string>
+    <string name="no_photos_added">No photos have been added yet.</string>
+    <string name="first">first</string>
+    <string name="second">second</string>
+    <string name="third">third</string>
+    <string name="one">one</string>
+    <string name="two">two</string>
+    <string name="three">three</string>
+    <string name="share">Share</string>
+    <string name="suggestion_for_improvement">Suggestion for improvement</string>
+
+
+    <!--TAB TITLES-->
+    <string name="tab_overview">Overview</string>
+    <string name="tab_gallery">Gallery</string>
+    <string name="tab_contact">Contact</string>
+    <string name="tab_personal">Personal</string>
+    <string name="tab_professional">Professional</string>
+    <string name="tab_sex">XXX</string>
+    <string name="tab_body">Body</string>
+    <string name="tab_encounters">Encounters</string>
+    <string name="tab_social_media">Social Media</string>
+    <string name="tab_more">More…</string>
+
+    <!--QUESTIONS-->
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="add_contact_do_you_want_to_cancel">Do you want to cancel adding a new contact?  If you cancel now, the information you entered will not be saved.</string>
+    <string name="edit_contact_do_you_want_to_cancel">Are you sure to discard your changes?</string>
+    <string name="delete_selected_files">Do you really want to delete the selected %s? This action can not be undone.</string>
+    <string name="delete_contact_confirmation_dialog_text">Are you sure to delete this contact? All the entered information and added images/videos will be deleted and can NOT be recovered anymore.</string>
+
+    <!--SOCIAL MEDIA-->
+    <string name="facebook" translatable="false">Facebook</string>
+    <string name="twitter" translatable="false">Twitter</string>
+    <string name="googleplus" translatable="false">Google Plus</string>
+    <string name="instagram" translatable="false">Instagram</string>
+    <string name="linkedin" translatable="false">LinkedIn</string>
+    <string name="xing" translatable="false">Xing</string>
+    <string name="pinterest" translatable="false">Pinterest</string>
+    <string name="tumblr" translatable="false">Tumblr</string>
+    <string name="tiktok" translatable="false">TikTok</string>
+    <string name="whatsapp" translatable="false">Whatsapp</string>
+    <string name="line_messenger" translatable="false">Line Messenger</string>
+    <string name="miitomo" translatable="false">Miitomo</string>
+    <string name="viber" translatable="false">Viber</string>
+    <string name="wechat" translatable="false">WeChat</string>
+    <string name="snapchat" translatable="false">Snapchat</string>
+    <string name="signal" translatable="false">Signal</string>
+    <string name="threema" translatable="false">Threema</string>
+    <string name="telegram" translatable="false">Telegram</string>
+    <string name="grindr" translatable="false">Grindr</string>
+    <string name="scruff" translatable="false">Scruff</string>
+    <string name="hornet" translatable="false">Hornet</string>
+    <string name="planetromeo" translatable="false">Planet Romeo</string>
+    <string name="adam4adam" translatable="false">Adam4Adam</string>
+    <string name="manhunt" translatable="false">Manhunt</string>
+    <string name="gaydar" translatable="false">Gaydar</string>
+    <string name="recon" translatable="false">Recon</string>
+    <string name="bbrt" translatable="false">BarebackRT</string>
+    <string name="jackd" translatable="false">Jack\'d</string>
+    <string name="growlr" translatable="false">GROWLr</string>
+    <string name="boyahoy" translatable="false">BoyAhoy</string>
+    <string name="gaycom" translatable="false">Gay.com</string>
+    <string name="tinder" translatable="false">Tinder</string>
+    <string name="skype" translatable="false">Skype</string>
+    <string name="dudesnude" translatable="false">Dudes Nude</string>
+    <string name="youtube" translatable="false">YouTube</string>
+    <string name="redtube" translatable="false">RedTube</string>
+    <string name="xtube" translatable="false">XTube</string>
+    <string name="xhamster" translatable="false">xHamster</string>
+    <string name="vimeo" translatable="false">Vimeo</string>
+    <string name="pornhub" translatable="false">Pornhub</string>
+    <string name="miiverse" translatable="false">Miiverse</string>
+    <string name="flickr" translatable="false">Flickr</string>
+    <string name="spotify" translatable="false">Spotify</string>
+    <string name="appleid" translatable="false">Apple ID</string>
+    <string name="nintendonetwork" translatable="false">Nintendo Network</string>
+    <string name="playstationnetwork" translatable="false">PlayStation Network</string>
+    <string name="xboxgamertag" translatable="false">Xbox Gamer Tag</string>
+
+    <!--DIALOGS-->
+    <string name="over_twenty_contacts_dialog_title">Thanks for using Gaze!</string>
+    <string name="over_twenty_contacts_dialog_text">Seems like you\'re enjoying Gaze and its cool features! It would be really nice of you if you left us a good rating on Google Play so other people can find and try out Gaze, too. What do you think? Thank you so much in advance for your great rating, it really means a lot to us.</string>
+
+    <string name="free_version_limits_reached_title">You\'ve been busy!</string>
+    <string name="free_version_limits_reached_text">Wow, you\'ve been hard at work it seems! :-) Thanks for using Gaze so actively! Unfortunately you\'ve reached the limit of the free version now. If you would like to add more contacts, remove the %d images per contact limit and disable all ads at the same time you can upgrade to our Pro version now. This costs you less than a soda per month! We would really appreciate your support. With your subscription you acknowledge all the hours of work we\'ve put into Gaze.</string>
+
+    <string name="free_version_max_images_per_contact_limit_reached_title">Free version limit reached</string>
+    <string name="free_version_max_images_per_contact_limit_reached_text">You\'ve reached the limit of saving a maximum of %d images per contact. For just a bit of pocket change you can upgrade to the Pro version and save unlimited number of images along with other bonus features. Thanks so much for your continuing support of Gaze.</string>
+
+    <string name="free_version_max_image_saves_limit_my_media_reached_text">You\'ve reached the limit of image saves in the free version of this app. If you would like to save more images and get rid of ads, please upgrade to Pro version. Thanks so much for your continuing support of Gaze.</string>
+
+    <string name="me_tab_explanation_dialog_title">The \"Me\" Tab</string>
+    <string name="me_tab_explanation_dialog_text_pre">In this tab you can save all your own images for easy managing and sharing. There are two galleries: one that is visible by default and another one that is hidden. Click on the button below the first gallery to toggle its visibility.</string>
+    <string name="me_tab_explanation_dialog_text">In this tab you can create your Gaze contact card which you can share with any guys you like. No one needs to online stalk you anymore. Just send them your contact card and their thirst will be satisfied.\n\nAlso in this tab you can add your own photos and media for easy sharing with your friends. </string>
+
+    <string name="feedback_desired">We hope you\'ll find this app helpful and will be using it often to manage your contacts and dates!\nIf you have any suggestion on features you\'d like to be added to Gaze let us know! Send us an email and tell us your idea and we will try to add it to Gaze in a future version.</string>
+
+    <string name="got_it">Got it</string>
+    <string name="upgrade_to_pro">Upgrade to Pro Version</string>
+    <string name="remind_me_later">Remind me later</string>
+    <string name="keep_free_version">Keep free version</string>
+    <string name="no_thanks">No thanks</string>
+    <string name="rate_gaze">Rate Gaze</string>
+
+    <!--SUCCESS MESSAGES-->
+    <string name="success_contact_saved">%s has been saved to the database.</string>
+    <string name="success_contact_edited">The changes for %s have been saved to the database.</string>
+    <string name="success_copied_files_to_my_media_gallery">Successfully copied %1$d files to your gallery %2$s.</string>
+
+    <!--ERROR MESSAGES-->
+    <string name="error_name_too_short">Please enter at least 2 characters.</string>
+    <string name="error_contact_name_too_short">You must fill in a contact name.</string>
+    <string name="error_delete_contact_failed">There was an error. Could not delete the contact.</string>
+    <string name="error_creating_contact_object">There was a problem creating the Contact records. Please go back and try again.</string>
+    <string name="error_setting_birthdate">Error setting the birthdate. Please try again or set it later when editing this contact.</string>
+    <string name="error_no_permission_for_email">Gaze has no permission to make a phone call. Copy and paste the number manually to make a phone call or grant permission.</string>
+    <string name="error_loading_images">Could not load the images.</string>
+    <string name="error_placeholder">Error Placeholder</string>
+    <plurals name="error_copying_failed">
+        <item quantity="one">Copying the selected file to the app has failed.</item>
+        <item quantity="other">Copying the selected files to the app has failed.</item>
+    </plurals>
+    <string name="error_multiple_selected_not_valid">You cannot set multiple images as the main contact picture. Select only one.</string>
+    <plurals name="error_delete_failed">
+        <item quantity="one">There was a problem deleting the selected file.</item>
+        <item quantity="other">There was a problem deleting the selected files.</item>
+    </plurals>
+    <string name="error_set_mainpic">There was a problem updating the main pic of this contact. Try again in the editing mode.</string>
+    <string name="error_get_contact_from_database">Could not get the Contact from the database. Please close and open the app and try again.</string>
+    <string name="error_updating_contact">There was an error saving your changes to the database.</string>
+    <string name="error_database_error">Database Error. Close the app and try again.</string>
+    <string name="error_creating_me_contact_in_database">There was a problem with the database. Close and open the app to try again.</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_main2" translatable="false">Main2Activity</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="placeholder_another">Another Placeholder</string>
+
+    <!-- Strings related to Settings -->
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_unit_system_key" translatable="false">unitSystem</string>
+    <string name="pref_header_unit_system">Unit System</string>
+    <string name="pref_description_metric_system">Currently using: %s</string>
+    <string-array name="pref_unit_system_list_titles">
+        <item>Metric System</item>
+        <item>Imperial System</item>
+    </string-array>
+    <string-array name="pref_unit_system_list_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string name="pref_pro_user_key" translatable="false">isProUser</string>
+    <string name="pref_header_pro_version" translatable="false">PRO Version</string>
+    <string name="pref_pro_free_user">You are currently using the FREE version.</string>
+    <string name="pref_pro_user">Congratulations. You are PRO user!</string>
+
+    <string name="pref_eggplants_key" translatable="false">eggplants</string>
+
+    <string name="pref_private_gallery_key" translatable="false">privateGallery</string>
+    <string name="pref_header_private_gallery">Private Gallery</string>
+    <string name="pref_description_private_gallery">Feature coming later.</string>
+
+    <string name="pref_lock_app_key" translatable="false">lockApp</string>
+    <string name="pref_header_lock_app">Lock App with fingerprint/password</string>
+    <string name="pref_description_lock_app">Feature coming later.</string>
+
+    <string name="pref_enable_ads_key" translatable="false">isAdsEnabled</string>
+    <string name="pref_header_ads">Ads</string>
+    <string name="pref_description_ads_disabled">Ads are disabled</string>
+    <string name="pref_description_ads_enabled">Ads are enabled</string>
+    <string name="pref_description_ads_enabled_free_user">Upgrade to Pro version to disable the ads.</string>
+
+    <string name="pref_clear_search_history_key" translatable="false">clearSearchHistory</string>
+    <string name="pref_clear_search_history_title">Clear Search History</string>
+    <string name="pref_clear_search_history_text">Click here to clear the search history.</string>
+    <string name="pref_clear_search_history_success">The search history has been cleared.</string>
+
+    <string name="pref_send_feedback_key" translatable="false">sendFeedback</string>
+    <string name="pref_send_feedback_title">Send us your feedback</string>
+    <string name="pref_send_feedback_text">Have ideas or suggestions? Send your feedback now to feedback@gazeapp.net</string>
+
+    <!--BILLING SCREEN-->
+    <string name="wait">Wait</string>
+    <string name="gaze_pro" translatable="false">Gaze PRO</string>
+    <string name="gaze_pro_paid_monthly">Gaze Pro (monthly) ~0.99$</string>
+    <string name="gaze_pro_paid_yearly">Gaze Pro (yearly) ~9.99$</string>
+    <string name="subscription_period_monthly">Monthly</string>
+    <string name="subscription_period_yearly">Yearly</string>
+    <string name="subscription_period_prompt">Select your subscription period</string>
+    <string name="subscription_resignup_prompt">To reactivate your subscription, select your subscription period</string>
+    <string name="subscription_update_prompt">To change your subscription, select your new subscription period</string>
+    <string name="subscription_prompt_continue">Continue</string>
+    <string name="subscription_prompt_cancel">Cancel</string>
+    <string name="upgrade_to_pro_text_first">Upgrade now to Pro version to enjoy the following benefits:</string>
+    <string name="upgrade_to_pro_bulletpoint_1">&#8226; unlimited number of contacts</string>
+    <string name="upgrade_to_pro_bulletpoint_2">&#8226; save unlimited images</string>
+    <string name="upgrade_to_pro_bulletpoint_3">&#8226; completely ads-free</string>
+    <string name="upgrade_to_pro_text_last">And more cool features will be added in the near future.</string>
+    <string name="upgrade_to_pro_already_have_pro">You already have Pro version and can enjoy the following benefits:</string>
+    <string name="you_are_pro_user">Congratulations, you are Pro user!</string>
+    <string name="thank_you">Thank you so much!</string>
+    <string name="thanks_for_upgrading">Upgrading successful. You can now enjoy all the benefits of Pro version. You may have to close and open Gaze for the upgrade to become active. To manage/terminate your subscription do so directly in Google Play. Thanks for upgrading!</string>
+    <string name="change_subscription">Change subscription</string>
+    <string name="error_verifying_subscription">There was a problem verifying your subscription. Will try again later.</string>
+    <string name="title_activity_searchable" translatable="false">SearchableActivity</string>
+
+    <string name="success_encounter_added">Added the encounter you had on %s</string>
+    <string name="error_encounter_added_updated">You need to fill in at least a location.</string>
+    <string name="success_encounter_updated">Encounter updated. Click \'Save\' to confirm the changes.</string>
+    <string name="success_encounter_deleted">Successfully deleted the encounter on %s.</string>
+    <string name="success_encounter_deleted_confirm_again">Encounter on %s deleted. Click \'Save\' to confirm the changes.</string>
+
+    <string name="success_work_added">Successfully added the employment \'%s\'.</string>
+    <string name="success_work_updated">Updated the employment info for \'%s\'. Click \'Save\' to confirm the changes.</string>
+    <string name="error_work_added_updated">You need to fill in at least an employer or a profession.</string>
+    <string name="success_work_deleted">Successfully deleted the employment for \'%s\'.</string>
+
+    <string name="existing">Existing</string>
+    <string name="new_contact">New contact</string>
+    <plurals name="import_images">
+        <item quantity="one">Import file</item>
+        <item quantity="other">Import files</item>
+    </plurals>
+    <string name="dialog_add_to_new_or_existing_multiple">Add the %s selected files to an existing contact or create a new one?</string>
+    <string name="dialog_add_to_new_or_existing_single">Add the selected file to an existing contact or create a new one?</string>
+
+    <string name="unreadable_files_title">Unreadable files</string>
+    <string name="unreadable_files_text">No permission to read the selected files. Download them to your phone first or choose other files.</string>
+
+    <string name="title_activity_all_contacts_for_file_import">Select Contact</string>
+    <string name="files_import_successful">Successfully added your selected file(s) to %s.</string>
+    <string name="error_could_not_delete_files">There was a problem deleting the files from the contact.</string>
+
+    <string name="whats_this">What\'s this?</string>
+    <string name="eggplant_earned_title">%s earned</string>
+    <string name="rewarded_video_explanation_1">Want to be able to save more images or contacts? Click on the %s button in the \"Me\" tab to play a video ad. For each video you watch you will be rewarded with an eggplant. For every 10 eggplants you can unlock an additional image or contact save.</string>
+    <string name="rewarded_video_explanation_2">But be aware: You can only watch one rewarded video ad per day. Don\'t forget to come back regularly to unlock all the additional extras.</string>
+    <string name="rewarded_video_ready">A new rewarded video ad is ready for you to watch! Click the %s in the \"Me\" tab to watch it.</string>
+    <string name="rewarded_video_not_ready_yet">Currently no rewarded video ad available. Check back later.</string>
+    <string name="eggplant_earned">Congratulations, you\'ve earned an eggplant! You have a total of %1$d x %2$s now.</string>
+    <string name="image_save_earned_title">Image save earned</string>
+    <string name="image_save_earned">You have unlocked an additional image save! You can save a maximum of %1$d images per contact now. You can see your total %2$s in the settings screen.</string>
+    <string name="contact_save_earned_title">Contact save earned</string>
+    <string name="contact_save_earned">You have unlocked an additional contact save! You can save a maximum of %1$d contacts now. You can see your %2$s total in the settings screen.</string>
+    <string name="maximum_eggplants_reached">You already have the maximum amount of %s. If you need more saves, please upgrade to the Pro version.</string>
+    <string name="eggplant">Eggplant</string>
+    <string name="eggplants">Eggplants</string>
+    <string name="eggplants_earned">%1$s / %2$s %3$s earned.</string>
+    <string name="no_eggplants">No %s earned yet.</string>
+    <string name="reward_list">Reward list</string>
+    <string name="unlock_extras">Unlock extras</string>
+    <string name="additional_image_save">Additional image save</string>
+    <string name="additional_contact_save">Additional contact save</string>
+    <string name="touch_to_unlock">Touch fingerprint sensor to unlock</string>
+    <string name="eggplants_numbered">%dx Eggplants</string>
+
+    <string name="pref_fingerprint_key" translatable="false">fingerprintAuth</string>
+    <string name="pref_fingerprint_title">Fingerprint Authentication</string>
+    <string name="pref_fingerprint_text_disabled_enabled">Locking app usage with with fingerprint authentication: %s</string>
+    <string name="pref_fingerprint_text">Lock Gaze with your fingerprint. This way only you can open and use the app.</string>
+    <string name="pref_fingerprint_text_incompatible">Fingerprint authentication is only available for devices with a fingerprint sensor running Android Marshmallow (6.0) or newer. You are using Android version %s.</string>
+    <string name="pref_fingerprint_not_active">Fingerprint authentication is not activated on your phone. Activate it in the Android settings first.</string>
+    <string name="finger_key" translatable="false">fingerKey</string>
+
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="close_app">Close App</string>
+    <string name="auth_success">Authentication successful. Unlocking Gaze.</string>
+    <string name="auth_fail">Authentication failed. Wrong finger?</string>
+    <string name="auth_abort">Authentication aborted.</string>
+    <string name="important_to_know">Important to know</string>
+    <string name="fingerprint_auth_activation_notice">You will only be prompted for fingerprint authentication on the first start of Gaze for each session. After authentication, the app is unlocked until you fully close it by tapping the menu button on your phone then swiping Gaze away. The next time you open Gaze you will be prompted for fingerprint authentication again. The authentication dialog will not reappear if you just minimize Gaze by tapping the home button on your phone and open the app later again.</string>
+
+    <string name="first_gaze_contact">Hi, I\'m your first Gaze contact! Nice to meet you.</string>
+    <string name="first_gaze_contact_note">Hi, I\'m Josh! Click on the profile link to see my contact details. In there you will find links to edit or delete my contact or add photos. Click the floating plus button at the bottom right side to add a new contact.</string>
+    <string name="in_relationship">In a relationship</string>
+
+    <string name="january">January</string>
+    <string name="february">February</string>
+    <string name="march">March</string>
+    <string name="april">April</string>
+    <string name="may">May</string>
+    <string name="june">June</string>
+    <string name="july">July</string>
+    <string name="august">August</string>
+    <string name="september">September</string>
+    <string name="october">October</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
+    <string name="black">Black</string>
+    <string name="blue">Blue</string>
+    <string name="brown">Brown</string>
+    <string name="gray">Gray</string>
+    <string name="green">Green</string>
+    <string name="bald">Bald</string>
+    <string name="blonde">Blonde</string>
+    <string name="ginger">Ginger</string>
+    <string name="light_brown">Light Brown</string>
+    <string name="dark_brown">Dark Brown</string>
+    <string name="salt_and_pepper">Salt and Pepper</string>
+    <string name="silver_blonde">Silver Blonde</string>
+    <string name="white">White</string>
+    <string name="very_hairy">Very hairy</string>
+    <string name="hairy">Hairy</string>
+    <string name="slightly_hairy">Slightly hairy</string>
+    <string name="shaved">Shaved</string>
+    <string name="smooth">Smooth</string>
+    <string name="very_short">Very short</string>
+    <string name="short_str">Short</string>
+    <string name="long_str">Long</string>
+    <string name="very_long">Very long</string>
+    <string name="afro">Afro</string>
+    <string name="rasta">Rasta</string>
+    <string name="relationship_with_guy">Relationship with guy</string>
+    <string name="relationship_with_woman">Relationship with woman</string>
+    <string name="polyamorous">Polyamorous</string>
+    <string name="engaged">Engaged</string>
+    <string name="married_to_guy">Married to guy</string>
+    <string name="married_to_woman">Married to woman</string>
+    <string name="none">None</string>
+    <string name="poz_undetectable">Poz, undetectable</string>
+    <string name="poz_detectable">Poz, detectable</string>
+    <string name="unsure">Unsure</string>
+    <string name="poz">Poz</string>
+    <string name="negative">Negative</string>
+    <string name="cured">Cured</string>
+    <string name="gay">Gay</string>
+    <string name="bisexual">Bisexual</string>
+    <string name="straight">Straight</string>
+    <string name="asexual">Asexual</string>
+    <string name="vers_top">Versatile top</string>
+    <string name="vers_bottom">Versatile bottom</string>
+    <string name="no_anal">No anal</string>
+    <string name="safe_only">Safe only</string>
+    <string name="bb_only_top">BB only when top</string>
+    <string name="bb_only_bottom">BB only when bottom</string>
+    <string name="bb_friendly">BB friendly</string>
+    <string name="top_and_bottom">Top &amp; bottom</string>
+    <string name="nothing">Nothing</string>
+    <string name="cant_remember">Unsure / Can\'t remember</string>
+
+    <string name="average">Average</string>
+    <string name="twink">Twink</string>
+    <string name="bear">Bear</string>
+    <string name="muscle_bear">Muscle Bear</string>
+    <string name="cub">Cub</string>
+    <string name="wolf">Wolf</string>
+    <string name="bodybuilder">Bodybuilder</string>
+    <string name="athletic">Athletic</string>
+    <string name="sporty">Sporty</string>
+    <string name="androgynous">Androgynous</string>
+    <string name="daddy">Daddy</string>
+    <string name="trans_man">Trans Man</string>
+    <string name="trans_woman">Trans Woman</string>
+    <string name="silver_fox">Silver Fox</string>
+    <string name="slim">Slim</string>
+    <string name="chub">Chub</string>
+    <string name="pup">Pup</string>
+
+
+    <string name="cannabis">Cannabis</string>
+    <string name="heroin">Heroin</string>
+    <string name="cocaine">Cocaine</string>
+    <string name="amphetamine">Amphetamine</string>
+    <string name="meth">Crystal Meth</string>
+    <string name="mdma">MDMA (Ecstasy)</string>
+    <string name="ghb">GHB</string>
+    <string name="ketamine">Ketamine</string>
+    <string name="pcp">PCP</string>
+    <string name="salvia">Salvia</string>
+    <string name="dxm">DXM</string>
+    <string name="lsd">LSD</string>
+    <string name="mescaline">Mescaline (Peyote)</string>
+    <string name="magic_mushrooms">Magic Mushrooms</string>
+    <string name="steroids">Steroids</string>
+    <string name="khat">Khat</string>
+    <string name="mephedrone">Mephedrone</string>
+    <string name="solvents">Solvents</string>
+    <string name="benzodiazepines">Benzodiazepines</string>
+    <string name="ritalin">Ritalin</string>
+    <string name="dmt">DMT</string>
+    <string name="bath_salts">Bath Salts</string>
+    <string name="antidepressants">Antidepressants</string>
+
+    <string name="asian">Asian</string>
+    <string name="caucasian">Caucasian</string>
+    <string name="Latino">Latino</string>
+    <string name="middle_eastern">Middle Eastern</string>
+    <string name="mediterranean">Mediterranean</string>
+    <string name="south_east_asian">South East Asian</string>
+    <string name="native_american">Native American</string>
+
+    <string name="watersports">Watersports</string>
+    <string name="sm">S&amp;M</string>
+    <string name="cum">Cum</string>
+    <string name="scat">Scat</string>
+    <string name="gunge">Gunge</string>
+    <string name="role_play">Role Play</string>
+    <string name="feet">Feet</string>
+    <string name="socks">Socks</string>
+    <string name="shoes">Shoes</string>
+    <string name="uniform">Uniform</string>
+    <string name="public_sex">Public Sex</string>
+    <string name="slave">Slave</string>
+    <string name="latex">Latex</string>
+    <string name="spanking">Spanking</string>
+    <string name="fisting">Fisting</string>
+    <string name="leather">Leather</string>
+    <string name="spandex">Spandex</string>
+    <string name="daddies">Daddies</string>
+    <string name="blood">Blood</string>
+    <string name="torture">Torture</string>
+    <string name="underwear">Underwear</string>
+    <string name="groups">Groups</string>
+    <string name="pnp">PNP</string>
+    <string name="nipple_play">Nipple Play</string>
+    <string name="humiliation">Humiliation</string>
+    <string name="bukakke">Bukakke</string>
+    <string name="double_penetration">Double Penetration</string>
+    <string name="dildos">Dildos</string>
+    <string name="suits">Suits</string>
+    <string name="speedos">Speedos</string>
+    <string name="armpits">Armpits</string>
+    <string name="glory_holes">Glory Holes</string>
+    <string name="tight_jeans">Tight Jeans</string>
+    <string name="emos">Emos</string>
+    <string name="bondage">Bondage</string>
+    <string name="medical_examination">Medical Examination</string>
+    <string name="farts">Farts</string>
+    <string name="spitting">Spitting</string>
+    <string name="rimming">Rimming</string>
+    <string name="wrestling">Wrestling</string>
+    <string name="legs">Legs</string>
+    <string name="muscle_worship">Muscle Worship</string>
+    <string name="diapers">Diapers</string>
+    <string name="Infantilism">Infantilism</string>
+    <string name="big_dicks">Big Dicks</string>
+    <string name="small_dicks">Small Dicks</string>
+    <string name="electrostimulation">Electrostimulation</string>
+
+    <string name="atheist">Atheist</string>
+    <string name="agnostic">Agnostic</string>
+    <string name="apple_user">Apple User</string>
+    <string name="buddhist">Buddhist</string>
+    <string name="christian">Christian</string>
+    <string name="evangelist">Evangelist</string>
+    <string name="indigene">Indigene</string>
+    <string name="jew">Jew</string>
+    <string name="hindu">Hindu</string>
+    <string name="lutheran">Lutheran</string>
+    <string name="muslim">Muslim</string>
+    <string name="protestant">Protestant</string>
+    <string name="scientologist">Scientologist</string>
+    <string name="sikhist">Sikhist</string>
+    <string name="taoist">Taoist</string>
+
+    <string name="per_month">Per month</string>
+    <string name="per_year">Per year</string>
+    <string name="my_place">My place</string>
+
+    <string name="edit_caption">Edit caption</string>
+    <string name="write_something">Write something about the image</string>
+    <string name="error_saving_input">Error saving your input. Try again later.</string>
+    <string name="caption">Caption</string>
+    <string name="labels">Labels</string>
+    <string name="manage_label_list">Manage labels</string>
+    <string name="enter_new_label">Enter new label name</string>
+    <string name="are_you_sure_delete_label">Are you sure to delete the label \'%1$s\'?</string>
+    <string name="error_adding_label">Error saving this label. Try later.</string>
+    <string name="error_deleting_label">Error deleting the selected label. Try again later.</string>
+    <string name="error_renaming_label">Error renaming the label. Try again later.</string>
+    <string name="value_too_short">Value too short.</string>
+    <string name="value_too_short_or_too_long">Value too short or too long.</string>
+    <string name="edit_label">Edit label</string>
+    <string name="label_already_exists">Label already exists in database.</string>
+
+    <string name="error_loading_labels">Could not load the labels.</string>
+    <string name="label_filters">Label Filters:</string>
+    <string name="no_label_selected">No label has been selected.</string>
+    <string name="contacts_with_labels">Contacts with Labels</string>
+    <string name="eggplants_x20">20 x 🍆:</string>
+    <string name="eggplants_x30">30 x 🍆:</string>
+    <string name="eggplants_x40">40 x 🍆:</string>
+    <string name="eggplants_x10">10 x 🍆:</string>
+    <string name="eggplants_x60">60 x 🍆:</string>
+    <string name="eggplants_x70">70 x 🍆:</string>
+    <string name="eggplants_x80">80 x 🍆:</string>
+    <string name="eggplants_x50">50 x 🍆:</string>
+    <string name="holidays">Holidays</string>
+    <string name="mykonos">Mykonos</string>
+    <string name="from_grindr">From Grindr</string>
+    <string name="face">Face</string>
+    <string name="body">Body</string>
+    <string name="dick">Dick</string>
+    <string name="athlete">Athlete</string>
+    <string name="hunky">Hunky</string>
+    <string name="details">Details</string>
+    <string name="photo_of_the_person">Photo of the person</string>
+    <string name="work_icon">Work Icon</string>
+    <string name="splash_icon">Splash Icon</string>
+    <string name="covid_19">COVID-19</string>
+    <string name="covid_19_vaccinated">COVID-19 vaccinated</string>
+    <string name="covid_19_vaccination_date">Vaccination date: %s</string>
+    <string name="covid_19_positive">COVID-19 positive/immunity</string>
+
+    <string name="nothing_to_show_here">Nothing to show here.</string>
+    <string name="media_gallery_navigation">%1$d/%2$d</string>
+    <string name="expanding_icon">Expanding icon</string>
+
+    <string name="add_children">+ Add child</string>
+    <string name="gender">Gender</string>
+    <string name="pronoun">Pronoun</string>
+    <string name="add_club">+ Add club</string>
+    <string name="club_name">Club Name</string>
+
+    <string name="grant_permissions">Grant permissions</string>
 </resources>

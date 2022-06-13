@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
+    <color name="primary">#2a3d46</color>
+    <color name="primary_dark">#1d2a31</color>
+    <color name="primary_light">#CFD8DC</color>
+    <color name="primary_pastel">#e2e7ea</color>
+    <color name="accent">#D9A441</color>
+    <color name="gold">#cead00</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="error_text">#d40000</color>
+    <color name="divider_color">#B6B6B6</color>
+    <color name="hint_color">#B6B6B6</color>
+    <color name="background_color">#FFFFFF</color>
+    <color name="flat_button_text_color">#1E88E5</color>
+
+    <color name="light_gray_dark">#BBB</color>
+    <color name="light_gray">#CCC</color>
+    <color name="light_gray_light">#EEE</color>
+
+    <color name="reg_light">#FF4444</color>
+
+
+    <!--    TO BE REMOVED-->
+    <!--    TO BE REMOVED-->
+    <!--    TO BE REMOVED-->
+    <!--    TO BE REMOVED-->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +34,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!--    TO BE REMOVED-->
+    <!--    TO BE REMOVED-->
+    <!--    TO BE REMOVED-->
+    <!--    TO BE REMOVED-->
 </resources>
