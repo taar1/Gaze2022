@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="address_types">
+        <item>@string/address_home</item>
+        <item>@string/address_office</item>
+        <item>@string/other</item>
+    </string-array>
+
+    <string-array name="email_types">
+        <item>@string/email_private</item>
+        <item>@string/email_business</item>
+        <item>@string/other</item>
+    </string-array>
+
+    <string-array name="phone_types">
+        <item>@string/email_private</item>
+        <item>@string/email_business</item>
+        <item>@string/mobile</item>
+        <item>@string/other</item>
+    </string-array>
+
+    <string-array name="months">
+        <item>@string/january</item>
+        <item>@string/february</item>
+        <item>@string/march</item>
+        <item>@string/april</item>
+        <item>@string/may</item>
+        <item>@string/june</item>
+        <item>@string/july</item>
+        <item>@string/august</item>
+        <item>@string/separated</item>
+        <item>@string/october</item>
+        <item>@string/november</item>
+        <item>@string/december</item>
+    </string-array>
+
+    <string-array name="eye_color">
+        <item>@string/unknown</item>
+        <item>@string/black</item>
+        <item>@string/blue</item>
+        <item>@string/brown</item>
+        <item>@string/gray</item>
+        <item>@string/green</item>
+    </string-array>
+
+    <string-array name="hair_color">
+        <item>@string/unknown</item>
+        <item>@string/bald</item>
+        <item>@string/black</item>
+        <item>@string/blonde</item>
+        <item>@string/brown</item>
+        <item>@string/ginger</item>
+        <item>@string/gray</item>
+        <item>@string/light_brown</item>
+        <item>@string/dark_brown</item>
+        <item>@string/salt_and_pepper</item>
+        <item>@string/silver_blonde</item>
+        <item>@string/white</item>
+    </string-array>
+
+    <string-array name="body_hair">
+        <item>@string/unknown</item>
+        <item>@string/very_hairy</item>
+        <item>@string/hairy</item>
+        <item>@string/slightly_hairy</item>
+        <item>@string/shaved</item>
+        <item>@string/smooth</item>
+    </string-array>
+
+    <string-array name="hair_style">
+        <item>@string/unknown</item>
+        <item>@string/bald</item>
+        <item>@string/shaved</item>
+        <item>@string/very_short</item>
+        <item>@string/short_str</item>
+        <item>@string/long_str</item>
+        <item>@string/very_long</item>
+        <item>@string/afro</item>
+        <item>@string/rasta</item>
+    </string-array>
+
+    <string-array name="relationship">
+        <item>@string/unknown</item>
+        <item>@string/single</item>
+        <item>@string/relationship_with_guy</item>
+        <item>@string/relationship_with_woman</item>
+        <item>@string/polyamorous</item>
+        <item>@string/engaged</item>
+        <item>@string/married_to_guy</item>
+        <item>@string/married_to_woman</item>
+        <item>@string/divorced</item>
+        <item>@string/widowed</item>
+    </string-array>
+
+    <string-array name="children">
+        <item>@string/unknown</item>
+        <item>@string/none</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5+</item>
+    </string-array>
+
+    <string-array name="hiv">
+        <item>@string/negative</item>
+        <item>@string/poz_undetectable</item>
+        <item>@string/poz_detectable</item>
+        <item>@string/unsure</item>
+    </string-array>
+
+    <string-array name="hcv">
+        <item>@string/negative</item>
+        <item>@string/poz</item>
+        <item>@string/cured</item>
+        <item>@string/unsure</item>
+    </string-array>
+
+    <string-array name="sexual_orientation">
+        <item>@string/gay</item>
+        <item>@string/bisexual</item>
+        <item>@string/straight</item>
+        <item>@string/asexual</item>
+        <item>@string/other</item>
+        <item>@string/unsure</item>
+    </string-array>
+
+    <string-array name="sex_role">
+        <item>@string/top</item>
+        <item>@string/vers_top</item>
+        <item>@string/versatile</item>
+        <item>@string/bottom</item>
+        <item>@string/vers_bottom</item>
+        <item>@string/no_anal</item>
+        <item>@string/other</item>
+        <item>@string/unsure</item>
+    </string-array>
+
+    <string-array name="safe_sex">
+        <item>@string/safe_only</item>
+        <item>@string/bb_only_top</item>
+        <item>@string/bb_only_bottom</item>
+        <item>@string/bb_friendly</item>
+        <item>@string/unsure</item>
+    </string-array>
+
+    <string-array name="yes_no_unknown">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/unknown_plain</item>
+    </string-array>
+
+    <string-array name="encounter_role">
+        <item>@string/top</item>
+        <item>@string/top_and_bottom</item>
+        <item>@string/bottom</item>
+        <item>@string/nothing</item>
+        <item>@string/no_anal</item>
+        <item>@string/other</item>
+        <item>@string/cant_remember</item>
+    </string-array>
+</resources>
