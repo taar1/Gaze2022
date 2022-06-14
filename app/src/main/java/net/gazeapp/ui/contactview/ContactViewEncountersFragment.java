@@ -39,7 +39,7 @@ import net.gazeapp.data.dao.EncounterDao;
 import net.gazeapp.data.model.Contact;
 import net.gazeapp.data.model.Encounter;
 import net.gazeapp.event.EncounterAddedEditedEvent;
-import net.gazeapp.utilities.BuildSpecificValues;
+import net.gazeapp.utilities.SpecificValues;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -149,7 +149,7 @@ public class ContactViewEncountersFragment extends Fragment {
                     TextView remarksHint = v.findViewById(R.id.remarks_hint);
                     TextView remarks = v.findViewById(R.id.remarks);
 
-                    if (!BuildSpecificValues.SHOW_XRATED) {
+                    if (!SpecificValues.SHOW_XRATED) {
                         myRoleHint.setVisibility(View.GONE);
                         myRole.setVisibility(View.GONE);
                         hisRoleHint.setVisibility(View.GONE);

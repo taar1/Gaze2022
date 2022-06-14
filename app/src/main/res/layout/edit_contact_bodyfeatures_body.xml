@@ -1,0 +1,333 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--RELATIVE LAYOUT NEEDED BECAUSE OF EXPANDABLE-LAYOUT BUG-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/add_contact_layout_padding_large">
+
+        <!--EYE COLOR-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/eyeTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/eye_color"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteEyecolor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/eyeColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_eye"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/eye_color"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/deleteEyecolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/eyeTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/eyeTextInput"
+            tools:visibility="visible" />
+
+        <!--HAIR COLOR-->
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hairTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hair_color"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteHaircolor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eyeTextInput">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hairColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_hair"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/hair_color"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/deleteHaircolor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/hairTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/hairTextInput"
+            tools:visibility="visible" />
+
+        <!--HAIR STYLE-->
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hairStyleTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hair_style"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteHairstyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hairTextInput">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hairStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_hair"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/hair_style"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteHairstyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/hairStyleTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/hairStyleTextInput"
+            tools:visibility="visible" />
+
+        <!--WEIGHT-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/weightTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/weight"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteWeight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hairStyleTextInput">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_weight"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/weight"
+                android:minWidth="200dp"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/weightTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/weightTextInput"
+            tools:visibility="visible" />
+
+        <!--HEIGHT-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/heightTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/height"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteHeight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weightTextInput">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_height"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/height"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/deleteHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/heightTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/heightTextInput"
+            tools:visibility="visible" />
+
+        <!--BODYTYPES-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/bodyTypeTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/height"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteBodytype"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/heightTextInput">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/bodytype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_man"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/bodytype"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/deleteBodytype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/bodyTypeTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bodyTypeTextInput"
+            tools:visibility="visible" />
+
+        <!--BODY HAIR-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/bodyTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/body_hair"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteBodyhair"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bodyTypeTextInput">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/bodyHair"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_bodyhair"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/body_hair"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteBodyhair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/bodyTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bodyTextInput"
+            tools:visibility="visible" />
+
+        <!--ETHNICITY-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ethnicityTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/body_hair"
+            app:errorEnabled="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bodyTextInput">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ethnicity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_man"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/ethnicity"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/deleteEthnicity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ethnicityTextInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ethnicityTextInput"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

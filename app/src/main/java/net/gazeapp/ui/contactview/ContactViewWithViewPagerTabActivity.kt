@@ -54,10 +54,10 @@ import net.gazeapp.dialog.AddEditWorkDialog
 import net.gazeapp.helpers.Const
 import net.gazeapp.helpers.Preferences
 import net.gazeapp.helpers.SnackBarType
-import net.gazeapp.utilities.BuildSpecificValues
 import net.gazeapp.utilities.FreeVersionDialogs
 import net.gazeapp.utilities.GazeTools
 import net.gazeapp.utilities.MediaTools
+import net.gazeapp.utilities.SpecificValues
 import java.io.File
 import java.util.*
 import javax.inject.Inject
@@ -329,7 +329,7 @@ class ContactViewWithViewPagerTabActivity : AppCompatActivity() {
                 applicationContext.resources.getString(R.string.tab_body)
                     .uppercase(Locale.getDefault())
             )
-            if (BuildSpecificValues.SHOW_XRATED) {
+            if (SpecificValues.SHOW_XRATED) {
                 tabTitles.add(
                     applicationContext.resources.getString(R.string.tab_sex)
                         .uppercase(Locale.getDefault())
@@ -678,7 +678,7 @@ class ContactViewWithViewPagerTabActivity : AppCompatActivity() {
 //                    f = ContactViewBodyFragment()
 //                }
 //            }
-//            if (BuildSpecificValues.SHOW_XRATED) {
+//            if (SpecificValues.SHOW_XRATED) {
 //                when (position) {
 //                    6 -> {
 //                        // XXX

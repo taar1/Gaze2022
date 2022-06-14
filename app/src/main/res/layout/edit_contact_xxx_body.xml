@@ -1,0 +1,258 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--RELATIVE LAYOUT NEEDED BECAUSE OF EXPANDABLE-LAYOUT BUG-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/add_contact_layout_padding_large">
+
+        <!--SEXUAL ORIENTATION-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/orientation_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/sexual_orientation"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteSexualOrientation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sexualOrientation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/male_female_24dp"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/sexual_orientation"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteSexualOrientation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/orientation_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/orientation_layout"
+            tools:visibility="visible" />
+
+        <!--SEX ROLE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/role_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/sex_role"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteSexRole"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orientation_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sexRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_top_or_bottom"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/sex_role"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/deleteSexRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/role_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/role_layout"
+            tools:visibility="visible" />
+
+        <!--SAFE ONLY-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/safe_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/safe_sex"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteSafeSex"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/role_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/safeSex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_condom"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/safe_sex"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/deleteSafeSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/safe_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/safe_layout"
+            tools:visibility="visible" />
+
+        <!--SWALLOWS-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/swallows_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/swallows_loads"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteSwallowsLoads"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/safe_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/swallowsLoads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_sperms"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/swallows_loads"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/deleteSwallowsLoads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/swallows_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/swallows_layout"
+            tools:visibility="visible" />
+
+        <!--LOADS IN BUM-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loads_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/takes_loads_up_the_bum"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteUpTheBum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/swallows_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/takesLoadsUpTheBum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_sperms"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/takes_loads_up_the_bum"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/deleteUpTheBum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/loads_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/loads_layout"
+            tools:visibility="visible" />
+
+
+        <!--FETISHES-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fetishes_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/fetishes"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteFetishes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loads_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fetishes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_high_heel"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/fetishes"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteFetishes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/fetishes_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fetishes_layout"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

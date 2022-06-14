@@ -17,8 +17,8 @@ import net.gazeapp.R
 import net.gazeapp.data.model.Encounter
 import net.gazeapp.databinding.CardIncludeEncounterKtBinding
 import net.gazeapp.databinding.ContactviewTabEncountersKtBinding
-import net.gazeapp.utilities.BuildSpecificValues
 import net.gazeapp.utilities.GazeTools
+import net.gazeapp.utilities.SpecificValues
 import java.text.SimpleDateFormat
 import javax.inject.Inject
 
@@ -213,7 +213,7 @@ class TabEncountersFragmentKt : Fragment(R.layout.contactview_tab_encounters_kt)
                     ratingBar.rating = rating
                 }
 
-                if (!BuildSpecificValues.SHOW_XRATED) {
+                if (!SpecificValues.SHOW_XRATED) {
                     safeSexHint.visibility = View.GONE
                     safeSex.visibility = View.GONE
                     myRoleHint.visibility = View.GONE

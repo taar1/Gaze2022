@@ -21,8 +21,8 @@ import net.gazeapp.R
 import net.gazeapp.data.model.*
 import net.gazeapp.databinding.ContactviewTabOverviewBinding
 import net.gazeapp.helpers.SnackBarType
-import net.gazeapp.utilities.BuildSpecificValues
 import net.gazeapp.utilities.GazeTools
+import net.gazeapp.utilities.SpecificValues
 import java.util.*
 import javax.inject.Inject
 
@@ -324,7 +324,7 @@ class TabOverviewFragmentKt : Fragment(R.layout.contactview_tab_overview) {
             endowmentGroup.visibility = View.GONE
             endowmentHint.visibility = View.GONE
         }
-        if (!BuildSpecificValues.SHOW_XRATED) {
+        if (!SpecificValues.SHOW_XRATED) {
             endowmentGroup.visibility = View.GONE
         }
 

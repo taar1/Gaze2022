@@ -25,10 +25,10 @@ import net.gazeapp.data.model.ContactWithDetails
 import net.gazeapp.databinding.ContactDetailViewPagerLayoutBinding
 import net.gazeapp.helpers.Const
 import net.gazeapp.helpers.Preferences
-import net.gazeapp.utilities.BuildSpecificValues
 import net.gazeapp.utilities.FreeVersionDialogs
 import net.gazeapp.utilities.GazeTools
 import net.gazeapp.utilities.MediaTools
+import net.gazeapp.utilities.SpecificValues
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -191,7 +191,7 @@ class ViewPagerFragment : Fragment(R.layout.contact_detail_view_pager_layout) {
                 requireContext().resources.getString(R.string.tab_professional).uppercase()
             )
             tabTitles.add(requireContext().resources.getString(R.string.tab_body).uppercase())
-            if (BuildSpecificValues.SHOW_XRATED) {
+            if (SpecificValues.SHOW_XRATED) {
                 tabTitles.add(
                     requireContext().resources.getString(R.string.tab_sex).uppercase()
                 )

@@ -20,17 +20,17 @@ import dagger.hilt.android.AndroidEntryPoint
 import net.gazeapp.R
 import net.gazeapp.data.dto.BodyTypeDto
 import net.gazeapp.data.model.ContactWithDetails
-import net.gazeapp.databinding.FragmentAddOrEditContactKtBinding
+import net.gazeapp.databinding.FragmentAddOrEditContactBinding
 import net.gazeapp.helpers.Const
-import net.gazeapp.utilities.BuildSpecificValues
 import net.gazeapp.utilities.GazeTools
 import net.gazeapp.utilities.MediaTools
+import net.gazeapp.utilities.SpecificValues
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class AddOrEditContactFragment : Fragment(R.layout.fragment_add_or_edit_contact_kt) {
+class AddOrEditContactFragment : Fragment(R.layout.fragment_add_or_edit_contact) {
 
     private var isEditMode: Boolean = false
 
@@ -247,7 +247,7 @@ class AddOrEditContactFragment : Fragment(R.layout.fragment_add_or_edit_contact_
 
     var bodyTypesArrayList: List<BodyTypeDto>? = null
 
-    lateinit var viewBinding: FragmentAddOrEditContactKtBinding
+    lateinit var viewBinding: FragmentAddOrEditContactBinding
     lateinit var viewModel: AddOrEditContactViewModel
     val inputMethodManager: InputMethodManager =
         requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -281,7 +281,7 @@ class AddOrEditContactFragment : Fragment(R.layout.fragment_add_or_edit_contact_
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewBinding = FragmentAddOrEditContactKtBinding.inflate(inflater)
+        viewBinding = FragmentAddOrEditContactBinding.inflate(inflater)
         return viewBinding.root
     }
 
@@ -604,74 +604,74 @@ class AddOrEditContactFragment : Fragment(R.layout.fragment_add_or_edit_contact_
         contactLayout.headerLayout.setOnClickListener {
             if (contactLayout.isOpened) {
                 contactLayout.hide()
-                contactRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp)
+                contactRightIcon.setImageResource(R.drawable.ic_expand_more)
             } else {
                 contactLayout.show()
-                contactRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp)
+                contactRightIcon.setImageResource(R.drawable.ic_expand_less)
             }
         }
         personalInfoLayout.headerLayout.setOnClickListener {
             if (personalInfoLayout.isOpened) {
                 personalInfoLayout.hide()
-                personalRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp)
+                personalRightIcon.setImageResource(R.drawable.ic_expand_more)
             } else {
                 personalInfoLayout.show()
-                personalRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp)
+                personalRightIcon.setImageResource(R.drawable.ic_expand_less)
             }
         }
         professionalInfoLayout.headerLayout.setOnClickListener {
             if (professionalInfoLayout.isOpened) {
                 professionalInfoLayout.hide()
-                professionalRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp)
+                professionalRightIcon.setImageResource(R.drawable.ic_expand_more)
             } else {
                 professionalInfoLayout.show()
-                professionalRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp)
+                professionalRightIcon.setImageResource(R.drawable.ic_expand_less)
             }
         }
         socialmediaLayout.headerLayout.setOnClickListener {
             if (socialmediaLayout.isOpened) {
                 socialmediaLayout.hide()
-                socialMediaRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp)
+                socialMediaRightIcon.setImageResource(R.drawable.ic_expand_more)
             } else {
                 socialmediaLayout.show()
-                socialMediaRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp)
+                socialMediaRightIcon.setImageResource(R.drawable.ic_expand_less)
             }
         }
         bodyFeaturesLayout.headerLayout.setOnClickListener {
             if (bodyFeaturesLayout.isOpened) {
                 bodyFeaturesLayout.hide()
-                bodyFeaturesRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp)
+                bodyFeaturesRightIcon.setImageResource(R.drawable.ic_expand_more)
             } else {
                 bodyFeaturesLayout.show()
-                bodyFeaturesRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp)
+                bodyFeaturesRightIcon.setImageResource(R.drawable.ic_expand_less)
             }
         }
-        if (BuildSpecificValues.SHOW_XRATED) {
+        if (SpecificValues.SHOW_XRATED) {
             endowmentLayout.headerLayout.setOnClickListener {
                 if (endowmentLayout.isOpened) {
                     endowmentLayout.hide()
-                    endowmentRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp)
+                    endowmentRightIcon.setImageResource(R.drawable.ic_expand_more)
                 } else {
                     endowmentLayout.show()
-                    endowmentRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp)
+                    endowmentRightIcon.setImageResource(R.drawable.ic_expand_less)
                 }
             }
             xxxLayout.headerLayout.setOnClickListener {
                 if (xxxLayout.isOpened) {
                     xxxLayout.hide()
-                    xxxRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp)
+                    xxxRightIcon.setImageResource(R.drawable.ic_expand_more)
                 } else {
                     xxxLayout.show()
-                    xxxRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp)
+                    xxxRightIcon.setImageResource(R.drawable.ic_expand_less)
                 }
             }
             healthLayout.headerLayout.setOnClickListener {
                 if (healthLayout.isOpened) {
                     healthLayout.hide()
-                    healthRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp)
+                    healthRightIcon.setImageResource(R.drawable.ic_expand_more)
                 } else {
                     healthLayout.show()
-                    healthRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp)
+                    healthRightIcon.setImageResource(R.drawable.ic_expand_less)
                 }
             }
         } else {
@@ -684,19 +684,19 @@ class AddOrEditContactFragment : Fragment(R.layout.fragment_add_or_edit_contact_
         encountersLayout.headerLayout.setOnClickListener { v: View? ->
             if (encountersLayout.isOpened) {
                 encountersLayout.hide()
-                encountersRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp)
+                encountersRightIcon.setImageResource(R.drawable.ic_expand_more)
             } else {
                 encountersLayout.show()
-                encountersRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp)
+                encountersRightIcon.setImageResource(R.drawable.ic_expand_less)
             }
         }
         notesLayout.headerLayout.setOnClickListener { v: View? ->
             if (notesLayout.isOpened) {
                 notesLayout.hide()
-                notesRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp)
+                notesRightIcon.setImageResource(R.drawable.ic_expand_more)
             } else {
                 notesLayout.show()
-                notesRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp)
+                notesRightIcon.setImageResource(R.drawable.ic_expand_less)
             }
         }
 
@@ -705,10 +705,10 @@ class AddOrEditContactFragment : Fragment(R.layout.fragment_add_or_edit_contact_
 //            public void onClick(View v) {
 //                if (labelsLayout.isOpened()) {
 //                    labelsLayout.hide();
-//                    labelsRightIcon.setImageResource(R.drawable.ic_expand_more_black_36dp);
+//                    labelsRightIcon.setImageResource(R.drawable.ic_expand_more);
 //                } else {
 //                    labelsLayout.show();
-//                    labelsRightIcon.setImageResource(R.drawable.ic_expand_less_black_36dp);
+//                    labelsRightIcon.setImageResource(R.drawable.ic_expand_less);
 //                }
 //            }
 //        });

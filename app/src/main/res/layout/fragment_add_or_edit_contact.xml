@@ -1,0 +1,269 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:theme="@style/MyEditTextTheme">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray"
+        android:paddingBottom="@dimen/bottom_padding">
+
+        <ImageView
+            android:id="@+id/contactPicture"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/silhouette"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/editImages"
+            style="@style/AddImagesFloatingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_standard"
+            android:text="@string/edit_images"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="@id/contactPicture"
+            app:layout_constraintStart_toStartOf="@+id/contactPicture" />
+
+        <TextView
+            android:id="@+id/addImages"
+            style="@style/AddImagesFloatingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_standard"
+            android:text="@string/add_images"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="@id/contactPicture"
+            app:layout_constraintEnd_toEndOf="@+id/contactPicture" />
+
+
+        <!--REAL NAME-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contactName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/ic_account"
+            android:ems="8"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"
+            app:layout_constraintEnd_toStartOf="@+id/deleteContactName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactPicture"
+            app:met_baseColor="@color/primary_text"
+            app:met_errorColor="@color/error_text"
+            app:met_minCharacters="1"
+            app:met_textColorHint="@color/secondary_text" />
+
+        <ImageView
+            android:id="@+id/deleteContactName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="@id/contactName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/contactName" />
+
+        <!--ADDITIONAL NICKNAMES-->
+        <LinearLayout
+            android:id="@+id/nicknameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactName" />
+
+        <TextView
+            android:id="@+id/addNickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:paddingTop="6dp"
+            android:text="@string/add_name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nicknameLayout" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/additionalInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="10"
+            android:drawableStart="@drawable/ic_attachment"
+            android:ems="8"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"
+            app:layout_constraintEnd_toStartOf="@+id/deleteAdditionalInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addNickname"
+            app:maxCharacters="50" />
+
+
+        <ImageView
+            android:id="@+id/deleteAdditionalInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="100"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="@id/additionalInfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/additionalInfo" />
+
+
+        <!--CONTACT INFORMATION-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/contactLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_contact_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_contact_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/additionalInfo" />
+
+        <!--PERSONAL INFORMATION-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/personalInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_personal_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_personal_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contactLayout" />
+
+        <!--PROFESSIONAL INFORMATION-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/professionalInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_professional_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_professional_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/personalInfoLayout" />
+
+        <!--BODY FEATURES-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/bodyFeaturesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_bodyfeatures_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_bodyfeatures_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/professionalInfoLayout" />
+
+        <!--ENDOWMENT-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/endowmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_endowment_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_endowment_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bodyFeaturesLayout" />
+
+        <!--XXX-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/xxxLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_xxx_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_xxx_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/endowmentLayout" />
+
+        <!--HEALTH-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/healthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_health_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_health_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/xxxLayout" />
+
+        <!--ENCOUNTERS-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/encountersLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_encounters_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_encounters_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/healthLayout" />
+
+        <!--SOCIAL MEDIA-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/socialmediaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_socialmedia_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_socialmedia_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/encountersLayout" />
+
+        <!--NOTES-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/notesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_notes_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_notes_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/socialmediaLayout" />
+
+        <!--LABELS-->
+        <com.andexert.expandablelayout.library.ExpandableLayout
+            android:id="@+id/labelsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_contentLayout="@layout/edit_contact_labels_body"
+            app:el_duration="400"
+            app:el_headerLayout="@layout/edit_contact_labels_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notesLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

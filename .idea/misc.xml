@@ -4,11 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_business.xml" value="0.164" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_contacts.xml" value="0.164" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_couple.xml" value="0.164" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_expand_more.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_gender.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_me.xml" value="0.132" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/launch_screen.xml" value="0.132" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/text_on_black_rounded_corners.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/activity_main.xml" value="0.3676222596964587" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/edit_contact_bodyfeatures_body.xml" value="0.32083333333333336" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/edit_contact_personal_body.xml" value="0.32083333333333336" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/edit_contact_socialmedia_body.xml" value="0.15602836879432624" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/edit_contact_xxx_body.xml" value="0.32083333333333336" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/fragment_add_or_edit_contactt.xml" value="0.3067708333333333" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_child_snippet.xml" value="0.4015625" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_club_snippet.xml" value="0.4015625" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_email_snippet.xml" value="0.39479166666666665" />

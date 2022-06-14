@@ -37,7 +37,7 @@ import net.gazeapp.data.dao.PersonalDao;
 import net.gazeapp.data.model.Contact;
 import net.gazeapp.data.model.Drug;
 import net.gazeapp.data.model.Personal;
-import net.gazeapp.utilities.BuildSpecificValues;
+import net.gazeapp.utilities.SpecificValues;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -200,7 +200,7 @@ public class ContactViewPersonalFragment extends Fragment {
             } catch (Exception e) {
                 deleteAppearanceLayout = true;
             }
-            if (!BuildSpecificValues.SHOW_XRATED) {
+            if (!SpecificValues.SHOW_XRATED) {
                 deleteAppearanceLayout = true;
             }
             if (deleteAppearanceLayout) {

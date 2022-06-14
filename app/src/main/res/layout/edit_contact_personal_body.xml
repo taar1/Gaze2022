@@ -1,0 +1,261 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--RELATIVE LAYOUT NEEDED BECAUSE OF EXPANDABLE-LAYOUT BUG-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/add_contact_layout_padding_large">
+
+        <!--BIRTHDATE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/birthdateInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/email"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteBirthdate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/birthdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_email"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/email"
+                android:inputType="textWebEmailAddress"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteBirthdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/birthdateInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/birthdateInputLayout"
+            tools:visibility="visible" />
+
+
+        <!--AGE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ageInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/age"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteAge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/birthdateInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_cake"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/age"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ImageView
+            android:id="@+id/deleteAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ageInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ageInputLayout"
+            tools:visibility="visible" />
+
+        <!--RELATIONSHIP STATUS-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/relationshipInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/relationship_status"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/deleteRelationshipStatus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ageInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/relationshipStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_couple"
+                android:ems="8"
+                android:focusable="false"
+                android:hint="@string/relationship_status"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteRelationshipStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/relationshipInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/relationshipInputLayout"
+            tools:visibility="visible" />
+
+        <!--KNOW PERSONALLY-->
+        <ImageView
+            android:id="@+id/iconKnowPersonally"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:alpha="0.6"
+            android:src="@drawable/ic_met_in_person"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relationshipInputLayout" />
+
+        <TextView
+            android:id="@+id/metInPersonText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/met_in_person"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iconKnowPersonally"
+            app:layout_constraintStart_toEndOf="@+id/iconKnowPersonally"
+            app:layout_constraintTop_toTopOf="@+id/iconKnowPersonally" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/metInPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/metInPersonText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/metInPersonText" />
+
+
+        <!--EFFEMINATE-->
+        <ImageView
+            android:id="@+id/effeminateIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:alpha="0.6"
+            android:src="@drawable/ic_emoji"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iconKnowPersonally" />
+
+        <SeekBar
+            android:id="@+id/effeminateSlider"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/effeminateIcon"
+            app:layout_constraintEnd_toStartOf="@+id/effeminateUnknown"
+            app:layout_constraintStart_toEndOf="@+id/effeminateIcon"
+            app:layout_constraintTop_toTopOf="@+id/effeminateIcon" />
+
+        <TextView
+            android:id="@+id/masculine"
+            style="@style/StandardText.Dark.Extra.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/masculine"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/effeminateSlider" />
+
+        <TextView
+            android:id="@+id/feminine"
+            style="@style/StandardText.Dark.Extra.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feminine"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/effeminateSlider" />
+
+        <CheckBox
+            android:id="@+id/effeminateUnknown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:checked="true"
+            app:layout_constraintBottom_toBottomOf="@+id/effeminateIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/effeminateIcon" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/StandardText.Dark.Extra.Small"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="@string/unknown_plain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/effeminateUnknown" />
+
+
+        <!--CLUBS-->
+        <LinearLayout
+            android:id="@+id/clubsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/addClubs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/add_club"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/masculine" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

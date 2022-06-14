@@ -1,0 +1,1570 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--RELATIVE LAYOUT NEEDED BECAUSE OF EXPANDABLE-LAYOUT BUG-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/add_contact_layout_padding_large">
+
+        <TextView
+            android:id="@+id/title_socialmedia"
+            style="@style/Title.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/social_media"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--FACEBOOK-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/facebook_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/facebook"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteFacebook"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_socialmedia">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/facebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_facebook_24dp"
+                android:ems="8"
+                android:hint="@string/facebook"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteFacebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/facebook_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/facebook_layout"
+            tools:visibility="visible" />
+
+        <!--FLICKR-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/flickr_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/flickr"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteFlickr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/facebook_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/flickr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_flickr_24dp"
+                android:ems="8"
+                android:hint="@string/flickr"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteFlickr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/flickr_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/flickr_layout"
+            tools:visibility="visible" />
+
+        <!--INSTAGRAM-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/instagram_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/instagram"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteInstagram"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flickr_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/instagram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_instagram_24dp"
+                android:ems="8"
+                android:hint="@string/instagram"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteInstagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/instagram_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/instagram_layout"
+            tools:visibility="visible" />
+
+
+        <!--LINKEDIN-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/linkedin_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/linkedin"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteLinkedin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/instagram_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/linkedin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_linkedin_24dp"
+                android:ems="8"
+                android:hint="@string/linkedin"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteLinkedin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/linkedin_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linkedin_layout"
+            tools:visibility="visible" />
+
+        <!--PINTEREST-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pinterest_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/pinterest"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deletePinterest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linkedin_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pinterest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_pinterest_24dp"
+                android:ems="8"
+                android:hint="@string/pinterest"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deletePinterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/pinterest_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/pinterest_layout"
+            tools:visibility="visible" />
+
+        <!--PORNHUB-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pornhub_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/pornhub"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deletePornhub"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pinterest_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pornhub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_pornhub_24dp"
+                android:ems="8"
+                android:hint="@string/pornhub"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deletePornhub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/pornhub_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/pornhub_layout"
+            tools:visibility="visible" />
+
+        <!--REDTUBE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/redtube_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/redtube"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteRedtube"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pornhub_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/redtube"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_redtube_24dp"
+                android:ems="8"
+                android:hint="@string/redtube"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteRedtube"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/redtube_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/redtube_layout"
+            tools:visibility="visible" />
+
+
+        <!--SPOTIFY-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/spotify_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/spotify"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteSpotify"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/redtube_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/spotify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_spotify_24dp"
+                android:ems="8"
+                android:hint="@string/spotify"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteSpotify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/spotify_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spotify_layout"
+            tools:visibility="visible" />
+
+        <!--TUMBLR-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tumblr_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/tumblr"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteTumblr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spotify_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tumblr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_tumblr_24dp"
+                android:ems="8"
+                android:hint="@string/tumblr"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteTumblr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tumblr_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tumblr_layout"
+            tools:visibility="visible" />
+
+        <!--TWITTER-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/twitter_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/twitter"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteTwitter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tumblr_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/twitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_twitter_24dp"
+                android:ems="8"
+                android:hint="@string/twitter"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteTwitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/twitter_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/twitter_layout"
+            tools:visibility="visible" />
+
+        <!--VIMEO-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/vimeo_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/vimeo"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteVimeo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/twitter_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/vimeo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_vimeo_24dp"
+                android:ems="8"
+                android:hint="@string/vimeo"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteVimeo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/vimeo_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/vimeo_layout"
+            tools:visibility="visible" />
+
+        <!--XING-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/xing_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/xing"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteXing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vimeo_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/xing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_xing_24dp"
+                android:ems="8"
+                android:hint="@string/xing"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteXing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/xing_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/xing_layout"
+            tools:visibility="visible" />
+
+        <!--XTUBE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/xtube_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/xtube"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteXtube"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/xing_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/xtube"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_xtube_24dp"
+                android:ems="8"
+                android:hint="@string/xtube"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteXtube"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/xtube_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/xtube_layout"
+            tools:visibility="visible" />
+
+        <!--YOUTUBE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/youtube_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/youtube"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteYoutube"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/xtube_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/youtube"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_youtube_24dp"
+                android:ems="8"
+                android:hint="@string/youtube"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteYoutube"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/youtube_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/youtube_layout"
+            tools:visibility="visible" />
+
+        <!--MESSENGER-->
+        <!--MESSENGER-->
+        <!--MESSENGER-->
+        <!--MESSENGER-->
+        <!--MESSENGER-->
+        <TextView
+            android:id="@+id/title_messengers"
+            style="@style/Title.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/messengers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/youtube_layout" />
+
+        <!--LINE MESSENGER-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/line_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/line_messenger"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteLineMessenger"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_messengers">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lineMessenger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_line_24dp"
+                android:ems="8"
+                android:hint="@string/line_messenger"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteLineMessenger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/line_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/line_layout"
+            tools:visibility="visible" />
+
+        <!--SKYPE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/skype_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/skype"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteSkype"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/skype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_skype_24dp"
+                android:ems="8"
+                android:hint="@string/skype"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteSkype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/skype_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/skype_layout"
+            tools:visibility="visible" />
+
+        <!--SNAPCHAT-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/snapchat_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/snapchat"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteSnapchat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/skype_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/snapchat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_snapchat_24dp"
+                android:ems="8"
+                android:hint="@string/snapchat"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteSnapchat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/snapchat_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/snapchat_layout"
+            tools:visibility="visible" />
+
+        <!--VIBER-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/viber_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/viber"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteViber"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/snapchat_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/viber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_viber_24dp"
+                android:ems="8"
+                android:hint="@string/viber"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteViber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/viber_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viber_layout"
+            tools:visibility="visible" />
+
+        <!--WE CHAT-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wechat_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/wechat"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteWeChat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viber_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/weChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_wechat_24dp"
+                android:ems="8"
+                android:hint="@string/wechat"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteWeChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/wechat_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/wechat_layout"
+            tools:visibility="visible" />
+
+
+        <!--WHATSAPP-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/whatsapp_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/whatsapp"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteWhatsapp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wechat_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/whatsapp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_whatsapp_24dp"
+                android:ems="8"
+                android:hint="@string/whatsapp"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteWhatsapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/whatsapp_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/whatsapp_layout"
+            tools:visibility="visible" />
+
+        <!--DATING APPS-->
+        <!--DATING APPS-->
+        <!--DATING APPS-->
+        <!--DATING APPS-->
+        <!--DATING APPS-->
+        <!--DATING APPS-->
+        <!--DATING APPS-->
+        <!--DATING APPS-->
+        <TextView
+            android:id="@+id/title_dating"
+            style="@style/Title.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/dating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/whatsapp_layout" />
+
+
+        <!--ADAM4ADAM-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adam4adam_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/adam4adam"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteAdam4adam"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_dating">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adam4adam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_adam4adam_24dp"
+                android:ems="8"
+                android:hint="@string/adam4adam"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteAdam4adam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/adam4adam_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/adam4adam_layout"
+            tools:visibility="visible" />
+
+
+        <!--BBRT-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/bbrt_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/bbrt"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteBbrt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adam4adam_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/bbrt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_bbrt_24dp"
+                android:ems="8"
+                android:hint="@string/bbrt"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteBbrt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/bbrt_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bbrt_layout"
+            tools:visibility="visible" />
+
+        <!--DUDES NUDE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dudesnude_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/dudesnude"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteDudesnude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bbrt_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dudesnude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_dudesnude_24dp"
+                android:ems="8"
+                android:hint="@string/dudesnude"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteDudesnude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/dudesnude_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dudesnude_layout"
+            tools:visibility="visible" />
+
+        <!--GAY.COM-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/gaycom_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/gaycom"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteGaycom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dudesnude_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/gaycom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_gaycom_24dp"
+                android:ems="8"
+                android:hint="@string/gaycom"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteGaycom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/gaycom_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gaycom_layout"
+            tools:visibility="visible" />
+
+        <!--GAYDAR-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/gaydar_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/gaydar"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteGaydar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gaycom_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/gaydar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_gaydar_24dp"
+                android:ems="8"
+                android:hint="@string/gaydar"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteGaydar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/gaydar_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gaydar_layout"
+            tools:visibility="visible" />
+
+        <!--GRINDR-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/grindr_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/grindr"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteGrindr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gaydar_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/grindr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_grindr_24dp"
+                android:ems="8"
+                android:hint="@string/grindr"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteGrindr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/grindr_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/grindr_layout"
+            tools:visibility="visible" />
+
+        <!--GROWLR-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/growlr_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/growlr"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteGrowlr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/grindr_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/growlr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_growlr_24dp"
+                android:ems="8"
+                android:hint="@string/growlr"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteGrowlr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/growlr_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/growlr_layout"
+            tools:visibility="visible" />
+
+        <!--HORNET-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hornet_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/hornet"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteHornet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/growlr_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hornet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_hornet_24dp"
+                android:ems="8"
+                android:hint="@string/hornet"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteHornet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/hornet_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/hornet_layout"
+            tools:visibility="visible" />
+
+        <!--JACKD-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/jackd_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/jackd"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteJackd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hornet_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/jackd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_jackd_24dp"
+                android:ems="8"
+                android:hint="@string/jackd"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteJackd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/jackd_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/jackd_layout"
+            tools:visibility="visible" />
+
+        <!--MANHUNT-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/manhunt_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/manhunt"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteManhunt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/jackd_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/manhunt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_manhunt_24dp"
+                android:ems="8"
+                android:hint="@string/manhunt"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteManhunt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/manhunt_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/manhunt_layout"
+            tools:visibility="visible" />
+
+        <!--PLANET ROMEO-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/planetromeo_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/planetromeo"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deletePlanetRomeo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/manhunt_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/planetRomeo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_planetromeo_24dp"
+                android:ems="8"
+                android:hint="@string/planetromeo"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deletePlanetRomeo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/planetromeo_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/planetromeo_layout"
+            tools:visibility="visible" />
+
+
+        <!--RECON-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/recon_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/recon"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteRecon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/planetromeo_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/recon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_recon_24dp"
+                android:ems="8"
+                android:hint="@string/recon"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteRecon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/recon_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recon_layout"
+            tools:visibility="visible" />
+
+        <!--SCRUFF-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/scruff_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/scruff"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteScruff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recon_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/scruff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_scruff_24dp"
+                android:ems="8"
+                android:hint="@string/scruff"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteScruff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/scruff_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/scruff_layout"
+            tools:visibility="visible" />
+
+        <!--TINDER-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tinder_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/tinder"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteTinder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scruff_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tinder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_tinder_24dp"
+                android:ems="8"
+                android:hint="@string/tinder"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteTinder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tinder_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tinder_layout"
+            tools:visibility="visible" />
+
+        <!--GAMING-->
+        <!--GAMING-->
+        <!--GAMING-->
+        <!--GAMING-->
+        <!--GAMING-->
+        <!--GAMING-->
+        <!--GAMING-->
+        <TextView
+            android:id="@+id/title_gaming"
+            style="@style/Title.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/gaming"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tinder_layout" />
+
+
+        <!--MIIVERSE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/miiverse_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/miiverse"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteMiiverse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_gaming">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/miiverse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_miiverse_24dp"
+                android:ems="8"
+                android:hint="@string/miiverse"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteMiiverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/miiverse_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/miiverse_layout"
+            tools:visibility="visible" />
+
+        <!--NINTENDO NETWORK-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nintendonetwork_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/nintendonetwork"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteNintendonetwork"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/miiverse_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nintendonetwork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_nintendonetwork_24dp"
+                android:ems="8"
+                android:hint="@string/nintendonetwork"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteNintendonetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/nintendonetwork_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/nintendonetwork_layout"
+            tools:visibility="visible" />
+
+        <!--PLAYSTATION NETWORK-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/playstationnetwork_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/playstationnetwork"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deletePlaystationnetwork"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nintendonetwork_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/playstationnetwork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_playstation_24dp"
+                android:ems="8"
+                android:hint="@string/playstationnetwork"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deletePlaystationnetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/playstationnetwork_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/playstationnetwork_layout"
+            tools:visibility="visible" />
+
+        <!--XBOX GAMER TAG-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/xboxgamertag_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/xboxgamertag"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@id/deleteXboxgamertag"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playstationnetwork_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/xboxgamertag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/brand_xbox_24dp"
+                android:ems="8"
+                android:hint="@string/xboxgamertag"
+                android:paddingEnd="@dimen/add_contact_form_main_padding_right"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/deleteXboxgamertag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.2"
+            android:src="@drawable/ic_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/xboxgamertag_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/xboxgamertag_layout"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

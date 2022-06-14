@@ -20,8 +20,8 @@ import net.gazeapp.R
 import net.gazeapp.data.model.Drug
 import net.gazeapp.data.model.Personal
 import net.gazeapp.databinding.ContactviewTabPersonalKtBinding
-import net.gazeapp.utilities.BuildSpecificValues
 import net.gazeapp.utilities.GazeTools
+import net.gazeapp.utilities.SpecificValues
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -177,7 +177,7 @@ class TabPersonalFragmentKt : Fragment(R.layout.contactview_tab_personal_kt) {
             )
             barFeminine.layoutParams = paramBarInactive
         }
-        if (!BuildSpecificValues.SHOW_XRATED) {
+        if (!SpecificValues.SHOW_XRATED) {
             deleteAppearanceLayout = true
         }
         if (deleteAppearanceLayout) {

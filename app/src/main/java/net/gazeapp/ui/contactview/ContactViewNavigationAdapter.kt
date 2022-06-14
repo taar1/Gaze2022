@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import net.gazeapp.utilities.BuildSpecificValues
+import net.gazeapp.utilities.SpecificValues
 
 class ContactViewNavigationAdapter(
     fragmentActivity: FragmentActivity,
@@ -45,7 +45,7 @@ class ContactViewNavigationAdapter(
                 fragment = ContactViewBodyFragment()
             }
         }
-        if (BuildSpecificValues.SHOW_XRATED) {
+        if (SpecificValues.SHOW_XRATED) {
             when (position) {
                 6 -> {
                     // XXX

@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import net.gazeapp.utilities.BuildSpecificValues
+import net.gazeapp.utilities.SpecificValues
 
 class ViewPagerAdapter(fa: FragmentActivity, val contactId: Int) :
     FragmentStateAdapter(fa) {
@@ -19,7 +19,7 @@ class ViewPagerAdapter(fa: FragmentActivity, val contactId: Int) :
         // val customFragmentFactory = ContactDetailFragmentFactory(contactId)
 
         Log.d(TAG, "YYYYY createFragment: $position")
-        if (BuildSpecificValues.SHOW_XRATED) {
+        if (SpecificValues.SHOW_XRATED) {
             return when (position) {
                 0 -> TabOverviewFragmentKt.newInstance(contactId)
                 1 -> TabGalleryFragmentKt.newInstance(contactId)

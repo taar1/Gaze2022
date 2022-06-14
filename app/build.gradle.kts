@@ -93,56 +93,69 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.Android.androidxCore)
-    implementation(Dependencies.Android.androidxAppCompat)
-    implementation(Dependencies.Android.material)
-    implementation(Dependencies.Android.constraintLayout)
-    implementation(Dependencies.Android.lifecycleLivedata)
-    implementation(Dependencies.Android.lifecycleViewModel)
-    implementation(Dependencies.Android.okHttp)
-    implementation(Dependencies.NavController.navigationFragment)
-    implementation(Dependencies.NavController.navigationUi)
+    with(Dependencies.Android) {
+        implementation(androidxCore)
+        implementation(androidxAppCompat)
+        implementation(material)
+        implementation(constraintLayout)
+        implementation(lifecycleLivedata)
+        implementation(lifecycleViewModel)
+        implementation(okHttp)
+        implementation(androidxAppCompat)
+        implementation(recyclerView)
+        implementation(preference)
+        implementation(vectordrawable)
+        implementation(vcard)
+        implementation(annotation)
+        implementation(androidxBiometrics)
+        implementation(gmsPlayServicesAnalytics)
+        implementation(gmsPlayServicesAdsIdentifier)
 
-    // Import the BoM for the Firebase platform
-    implementation(platform(Dependencies.Firebase.firebaseBom))
-    // Declare the dependencies for the Crashlytics and Analytics libraries
-    // When using the BoM, you don"t specify versions in Firebase library dependencies
-    implementation(Dependencies.Firebase.firebaseAnalytics)
-    implementation(Dependencies.Firebase.firebaseCrashlytics)
+        // ROOM
+        implementation(roomRuntime)
+        implementation(room)
 
-    implementation(Dependencies.Android.androidxAppCompat)
-    implementation(Dependencies.Android.recyclerView)
-    implementation(Dependencies.Android.preference)
-    implementation(Dependencies.Android.vectordrawable)
-    implementation(Dependencies.Android.vcard)
-    implementation(Dependencies.Android.annotation)
-    implementation(Dependencies.Android.androidxBiometrics)
-    implementation(Dependencies.Android.gmsPlayServicesAnalytics)
-    implementation(Dependencies.Android.gmsPlayServicesAdsIdentifier)
+        // HILT
+        implementation(hilt)
+        implementation(hiltAndroid)
 
-    // ROOM
-    implementation(Dependencies.Android.roomRuntime)
-    implementation(Dependencies.Android.room)
+        // Navigation component
+        implementation(activityCompose)
+        implementation(composeUiTooling)
+        implementation(navRuntime)
+        implementation(composeUi)
+        implementation(composeMaterial)
 
-    // HILT
-    implementation(Dependencies.Android.hilt)
-    implementation(Dependencies.Android.hiltAndroid)
+        // maybe the other navigation components can be removed because of compose
+        // Compose Stuff
+        implementation(navCompose)
+        implementation(coordinatorlayout)
+        implementation(viewpager2)
+    }
 
-    // Navigation component
-    implementation(Dependencies.Android.activityCompose)
-    implementation(Dependencies.Android.composeUiTooling)
-    implementation(Dependencies.Android.navRuntime)
-    implementation(Dependencies.Android.composeUi)
-    implementation(Dependencies.Android.composeMaterial)
+    with(Dependencies.NavController) {
+        implementation(navigationFragment)
+        implementation(navigationUi)
+    }
 
-    // maybe the other navigation components can be removed because of compose
-    // Compose Stuff
-    implementation(Dependencies.Android.navCompose)
-    implementation(Dependencies.Android.coordinatorlayout)
-    implementation(Dependencies.Android.viewpager2)
+    with(Dependencies.Firebase) {
+        // Import the BoM for the Firebase platform
+        implementation(platform(firebaseBom))
+        // Declare the dependencies for the Crashlytics and Analytics libraries
+        // When using the BoM, you don"t specify versions in Firebase library dependencies
+        implementation(firebaseAnalytics)
+        implementation(firebaseCrashlytics)
+    }
 
-    // Testing
-    testImplementation(Dependencies.TestLibs.junit)
-    androidTestImplementation(Dependencies.TestLibs.junitExt)
-    androidTestImplementation(Dependencies.TestLibs.espressoCore)
+    with(Dependencies.TestLibs) {
+        testImplementation(junit)
+        androidTestImplementation(junitExt)
+        androidTestImplementation(espressoCore)
+    }
+
+    // TODO Libraries to get rid of eventually:
+    // for "ExpandableLayout"
+    implementation("com.github.traex.expandablelayout:library:1.3")
+    implementation("com.h6ah4i.android.widget.verticalseekbar:verticalseekbar:1.0.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }

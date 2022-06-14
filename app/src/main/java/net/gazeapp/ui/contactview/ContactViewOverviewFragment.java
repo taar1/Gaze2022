@@ -54,7 +54,7 @@ import net.gazeapp.data.model.Xxx;
 import net.gazeapp.search.ListLabelledContactsActivity;
 import net.gazeapp.ui.widget.FlowLayout;
 import net.gazeapp.ui.widget.StylizedLabel;
-import net.gazeapp.utilities.BuildSpecificValues;
+import net.gazeapp.utilities.SpecificValues;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -411,7 +411,7 @@ public class ContactViewOverviewFragment extends Fragment {
 //                endowmentlInfoLayout.setVisibility(View.GONE);
                 endowmentHint.setVisibility(View.GONE);
             }
-            if (!BuildSpecificValues.SHOW_XRATED) {
+            if (!SpecificValues.SHOW_XRATED) {
 //                endowmentlInfoLayout.setVisibility(View.GONE);
             }
 
