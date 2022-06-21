@@ -1,0 +1,309 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!--MEET DATE-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/meet_date_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:ems="8"
+        android:hint="@string/meet_date"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/meet_date_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/add_contact_form_main_padding_right"
+            android:drawableStart="@drawable/ic_calendar"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="date"
+            android:textCursorDrawable="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/delete_meet_date"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.2"
+        android:src="@drawable/ic_delete"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/meet_date_text_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/meet_date_text_input_layout"
+        tools:visibility="visible" />
+
+    <!--LOCATION-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/location_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:ems="8"
+        android:hint="@string/location"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/meet_date_text_input_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/location_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/add_contact_form_main_padding_right"
+            android:drawableStart="@drawable/ic_location"
+            android:ems="8"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"
+            app:minCharacters="2" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/delete_location"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.2"
+        android:src="@drawable/ic_delete"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/location_text_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/location_text_input_layout"
+        tools:visibility="visible" />
+
+
+    <!--MY ROLE-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/myrole_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/my_role"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/location_text_input_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/my_role_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/add_contact_form_main_padding_right"
+            android:drawableStart="@drawable/transparent"
+            android:ems="8"
+            android:focusable="false"
+            android:singleLine="true"
+            android:textCursorDrawable="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/delete_my_role"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:alpha="0.2"
+        android:src="@drawable/ic_delete"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/myrole_text_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/myrole_text_input_layout"
+        tools:visibility="visible" />
+
+    <!--HIS ROLE-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/hisrole_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/his_role"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/myrole_text_input_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/his_role_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/add_contact_form_main_padding_right"
+            android:drawableStart="@drawable/transparent"
+            android:ems="8"
+            android:focusable="false"
+            android:singleLine="true"
+            android:textCursorDrawable="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/delete_his_role"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:alpha="0.2"
+        android:src="@drawable/ic_delete"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/hisrole_text_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hisrole_text_input_layout"
+        tools:visibility="visible" />
+
+    <!--SAFE SEX-->
+    <TextView
+        android:id="@+id/safe_sex_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/add_contact_form_padding_field_icon_right"
+        android:gravity="center_vertical"
+        android:text="@string/safe_sex"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/hisrole_text_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/hisrole_text_input_layout" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/safe_sex_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:background="#1E88E5"
+        app:layout_constraintBottom_toBottomOf="@+id/safe_sex_textview"
+        app:layout_constraintStart_toEndOf="@+id/safe_sex_textview"
+        app:layout_constraintTop_toTopOf="@+id/safe_sex_textview" />
+
+
+    <!--MY LOAD-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/myload_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/my_load_went_to"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/safe_sex_textview">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/my_load_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/add_contact_form_main_padding_right"
+            android:drawableStart="@drawable/transparent"
+            android:ems="8"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textCursorDrawable="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/delete_my_load"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:alpha="0.2"
+        android:src="@drawable/ic_delete"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/myload_text_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/myload_text_input_layout"
+        tools:visibility="visible" />
+
+    <!--HIS LOAD-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/hisload_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/his_load_went_to"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/myload_text_input_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/his_load_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/add_contact_form_main_padding_right"
+            android:drawableStart="@drawable/transparent"
+            android:ems="8"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textCursorDrawable="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/delete_his_load"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:alpha="0.2"
+        android:src="@drawable/ic_delete"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/hisload_text_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hisload_text_input_layout"
+        tools:visibility="visible" />
+
+    <!--RATING-->
+    <TextView
+        android:id="@+id/rating_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/add_contact_form_padding_field_icon_right"
+        android:layout_marginEnd="@dimen/add_contact_form_padding_field_icon_right"
+        android:gravity="center_vertical"
+        android:src="@drawable/transparent"
+        android:text="@string/rating"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/hisload_text_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/hisload_text_input_layout" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:numStars="5"
+        android:stepSize="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rating_text_view"
+        app:layout_constraintTop_toTopOf="@+id/rating_text_view" />
+
+
+    <!--NOTES-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/notes_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/remarks"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/rating_text_view">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/notes_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/add_contact_form_main_padding_right"
+            android:drawableStart="@drawable/ic_attachment"
+            android:ems="8"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textCursorDrawable="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/delete_notes"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:alpha="0.2"
+        android:src="@drawable/ic_delete"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/notes_text_input_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/notes_text_input_layout"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

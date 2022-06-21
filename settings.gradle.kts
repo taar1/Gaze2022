@@ -10,6 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
+        maven { setUrl("https://jitpack.io") }
     }
 }
 rootProject.name = "Gaze"

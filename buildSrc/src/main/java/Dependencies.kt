@@ -54,8 +54,6 @@ object Dependencies {
             "com.google.android.gms:play-services-analytics:${Versions.Android.gmsPlayServices}"
         const val gmsPlayServicesAdsIdentifier =
             "com.google.android.gms:play-services-ads-identifier:${Versions.Android.gmsPlayServices}"
-
-
         const val activityCompose =
             "androidx.activity:activity-compose:${Versions.Android.activityCompose}"
         const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.Android.composeUi}"
@@ -69,6 +67,8 @@ object Dependencies {
         const val viewpager2 = "androidx.viewpager2:viewpager2:${Versions.Android.viewpager2}"
         const val composeMaterial =
             "androidx.compose.material:material:${Versions.Android.composeMaterial}"
+        const val billing =
+            "com.android.billingclient:billing-ktx:${Versions.Android.billing_version}"
 
     }
 
@@ -92,6 +92,7 @@ object Dependencies {
 
     object Libs {
         const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.Android.kotlin}"
+        const val glide = "com.github.bumptech.glide:glide:${Versions.Android.glide}"
     }
 
     object TestLibs {

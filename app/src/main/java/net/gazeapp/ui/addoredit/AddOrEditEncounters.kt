@@ -38,7 +38,7 @@ class AddOrEditEncounters(
 
                 if (enc.meetLocation.isNullOrEmpty()) {
                     binding.encounterMeetLocation.visibility = View.GONE
-                    binding.encounterMeetDate.setTextAppearance(R.style.Text.Regular)
+                    binding.encounterMeetDate.setTextAppearance(R.style.Regular)
                 } else {
                     binding.encounterMeetLocation.text = enc.meetLocation
                 }

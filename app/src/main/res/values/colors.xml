@@ -7,7 +7,6 @@
     <color name="primary_light">#CFD8DC</color>
     <color name="primary_pastel">#e2e7ea</color>
     <color name="accent">#D9A441</color>
-    <color name="gold">#cead00</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
     <color name="error_text">#d40000</color>
@@ -20,22 +19,41 @@
     <color name="light_gray">#CCC</color>
     <color name="light_gray_light">#EEE</color>
 
+    <color name="white_transparent_20">#AAffffff</color>
+    <color name="white_transparent_40">#88ffffff</color>
+    <color name="white_transparent_60">#44ffffff</color>
+    <color name="black_transparent_60">#88000000</color>
     <color name="reg_light">#FF4444</color>
 
+    <color name="cardview_below_image_background_color">#771b1b1b</color>
 
-    <!--    TO BE REMOVED-->
-    <!--    TO BE REMOVED-->
-    <!--    TO BE REMOVED-->
-    <!--    TO BE REMOVED-->
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <!--    TO BE REMOVED-->
-    <!--    TO BE REMOVED-->
-    <!--    TO BE REMOVED-->
-    <!--    TO BE REMOVED-->
+    <color name="accentAndHighlightedText">#ffcc66</color>
+    <color name="textColorSecondaryAndTaskManagerAppColor">#55762b</color>
+
+    <color name="tabTitle">#EEEEEE</color>
+    <color name="tabTitleHighlighted">@color/accentAndHighlightedText</color>
+
+    <color name="icons">#FFFFFF</color>
+
+    <!-- Default color for selected list items, used in Recycler views -->
+    <drawable name="selected_list_item">#DDD</drawable>
+
+    <!-- Specific colors -->
+    <color name="defaultBackground">@android:color/white</color>
+
+    <color name="divider">#bcb1a3</color>
+    <color name="statusBar">#000</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="blue">#3300AA</color>
+    <color name="gold">#cead00</color>
+    <color name="gold_dark">#C8B866</color>
+    <color name="gold_light">#F5EECC</color>
+    <color name="green">#11DD11</color>
+
+
 </resources>

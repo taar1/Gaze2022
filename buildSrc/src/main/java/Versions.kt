@@ -47,7 +47,8 @@ object Versions {
         const val coordinatorlayout = "1.2.0"
         const val viewpager2 = "1.0.0"
         const val composeMaterial = "1.2.0-beta03"
-
+        const val glide = "4.13.2"
+        const val billing_version = "5.0.0"
 
         /* test */
         const val junit = "4.13.2"

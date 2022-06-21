@@ -1,0 +1,441 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/outer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/bottom_padding">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/no_info_card"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:cardCornerRadius="@dimen/cardview_card_radius"
+        tools:visibility="visible">
+
+        <TextView
+            style="@style/Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_info_present" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/orientation_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.3"
+                android:src="@drawable/ic_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sexual_orientation_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/sexual_orientation"
+                app:layout_constraintStart_toEndOf="@id/orientation_icon"
+                app:layout_constraintTop_toTopOf="@id/orientation_icon" />
+
+            <TextView
+                android:id="@+id/sexual_orientation"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/sexual_orientation"
+                app:layout_constraintStart_toStartOf="@+id/sexual_orientation_hint"
+                app:layout_constraintTop_toBottomOf="@id/sexual_orientation_hint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/endowment_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_card"
+        card_view:cardCornerRadius="@dimen/cardview_card_radius"
+        tools:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/endowment_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.3"
+                android:src="@drawable/ic_eggplant"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/length_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/length"
+                app:layout_constraintStart_toEndOf="@id/endowment_icon"
+                app:layout_constraintTop_toTopOf="@id/endowment_icon" />
+
+            <TextView
+                android:id="@+id/length"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/length"
+                app:layout_constraintStart_toStartOf="@+id/length_hint"
+                app:layout_constraintTop_toBottomOf="@id/length_hint" />
+
+            <TextView
+                android:id="@+id/diameter_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/diameter"
+                app:layout_constraintStart_toStartOf="@+id/length"
+                app:layout_constraintTop_toBottomOf="@id/length" />
+
+            <TextView
+                android:id="@+id/diameter"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/diameter"
+                app:layout_constraintStart_toStartOf="@+id/diameter_hint"
+                app:layout_constraintTop_toBottomOf="@id/diameter_hint" />
+
+            <TextView
+                android:id="@+id/girth_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/girth"
+                app:layout_constraintStart_toStartOf="@+id/diameter"
+                app:layout_constraintTop_toBottomOf="@id/diameter" />
+
+            <TextView
+                android:id="@+id/girth"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/girth"
+                app:layout_constraintStart_toStartOf="@+id/girth_hint"
+                app:layout_constraintTop_toBottomOf="@id/girth_hint" />
+
+            <TextView
+                android:id="@+id/cut_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cut_or_uncut"
+                app:layout_constraintStart_toStartOf="@+id/girth"
+                app:layout_constraintTop_toBottomOf="@id/girth" />
+
+            <TextView
+                android:id="@+id/cut"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cut_or_uncut"
+                app:layout_constraintStart_toStartOf="@+id/cut_hint"
+                app:layout_constraintTop_toBottomOf="@id/cut_hint" />
+
+            <TextView
+                android:id="@+id/feels_like_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/feels_like"
+                app:layout_constraintStart_toStartOf="@+id/cut"
+                app:layout_constraintTop_toBottomOf="@id/cut" />
+
+            <TextView
+                android:id="@+id/feels_like"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/feels_like"
+                app:layout_constraintStart_toStartOf="@+id/feels_like_hint"
+                app:layout_constraintTop_toBottomOf="@id/feels_like_hint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/behavior_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endowment_card"
+        card_view:cardCornerRadius="@dimen/cardview_card_radius"
+        tools:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/sex_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.3"
+                android:src="@drawable/ic_sperms"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/safe_sex_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/safe_sex"
+                app:layout_constraintStart_toEndOf="@+id/sex_icon"
+                app:layout_constraintTop_toTopOf="@id/sex_icon" />
+
+            <TextView
+                android:id="@+id/safe_sex"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/safe_sex"
+                app:layout_constraintStart_toStartOf="@+id/safe_sex_hint"
+                app:layout_constraintTop_toBottomOf="@id/safe_sex_hint" />
+
+            <TextView
+                android:id="@+id/sex_role_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/sex_role"
+                app:layout_constraintStart_toStartOf="@+id/safe_sex"
+                app:layout_constraintTop_toBottomOf="@id/safe_sex" />
+
+            <TextView
+                android:id="@+id/sex_role"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/sex_role"
+                app:layout_constraintStart_toStartOf="@+id/sex_role_hint"
+                app:layout_constraintTop_toBottomOf="@id/sex_role_hint" />
+
+            <TextView
+                android:id="@+id/swallows_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/swallows_loads"
+                app:layout_constraintStart_toStartOf="@+id/sex_role"
+                app:layout_constraintTop_toBottomOf="@id/sex_role" />
+
+            <TextView
+                android:id="@+id/swallows"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/swallows_loads"
+                app:layout_constraintStart_toStartOf="@+id/swallows_hint"
+                app:layout_constraintTop_toBottomOf="@id/swallows_hint" />
+
+            <TextView
+                android:id="@+id/takes_up_bum_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/takes_loads_up_the_bum"
+                app:layout_constraintStart_toStartOf="@+id/swallows"
+                app:layout_constraintTop_toBottomOf="@id/swallows" />
+
+            <TextView
+                android:id="@+id/takes_up_bum"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/takes_loads_up_the_bum"
+                app:layout_constraintStart_toStartOf="@+id/takes_up_bum_hint"
+                app:layout_constraintTop_toBottomOf="@id/takes_up_bum_hint" />
+
+            <TextView
+                android:id="@+id/fetishes_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/fetishes"
+                app:layout_constraintStart_toStartOf="@+id/takes_up_bum"
+                app:layout_constraintTop_toBottomOf="@id/takes_up_bum" />
+
+            <TextView
+                android:id="@+id/fetishes"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/fetishes"
+                app:layout_constraintStart_toStartOf="@+id/fetishes_hint"
+                app:layout_constraintTop_toBottomOf="@id/fetishes_hint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/health_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/behavior_card"
+        card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/virus_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.3"
+                android:src="@drawable/ic_virus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hiv_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/hiv"
+                app:layout_constraintStart_toEndOf="@+id/virus_icon"
+                app:layout_constraintTop_toTopOf="@id/virus_icon" />
+
+            <TextView
+                android:id="@+id/hiv"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="@string/hiv"
+                app:layout_constraintStart_toStartOf="@+id/hiv_hint"
+                app:layout_constraintTop_toBottomOf="@id/hiv_hint" />
+
+            <TextView
+                android:id="@+id/hcv_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/hcv"
+                app:layout_constraintStart_toStartOf="@+id/hiv"
+                app:layout_constraintTop_toBottomOf="@id/hiv" />
+
+            <TextView
+                android:id="@+id/hcv"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/hcv"
+                app:layout_constraintStart_toStartOf="@+id/hcv_hint"
+                app:layout_constraintTop_toBottomOf="@id/hcv_hint" />
+
+            <TextView
+                android:id="@+id/covid_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/covid_19"
+                app:layout_constraintStart_toStartOf="@+id/hcv"
+                app:layout_constraintTop_toBottomOf="@id/hcv" />
+
+            <TextView
+                android:id="@+id/covid"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/covid_19_vaccinated"
+                app:layout_constraintStart_toStartOf="@+id/covid_hint"
+                app:layout_constraintTop_toBottomOf="@id/covid_hint" />
+
+            <TextView
+                android:id="@+id/covid_vaccine_date"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/covid_19_vaccination_date"
+                app:layout_constraintStart_toStartOf="@+id/covid"
+                app:layout_constraintTop_toBottomOf="@id/covid" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

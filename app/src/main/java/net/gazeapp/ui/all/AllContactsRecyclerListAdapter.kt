@@ -15,7 +15,9 @@ class AllContactsRecyclerListAdapterKt(
     private val activity: Activity
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val TAG = "AllContactsRecyclerListAdapterKt"
+    companion object {
+        private const val TAG = "AllContactsRecyclerList"
+    }
 
     var contactList: List<ContactWithDetails> = mutableListOf()
 
@@ -30,7 +32,7 @@ class AllContactsRecyclerListAdapterKt(
         val contact = contactList[position]
         val contactCardObjectViewHolder = viewHolder as AllContactsCardViewItemHolderKt
 
-        contactCardObjectViewHolder.contact = contact
+        contactCardObjectViewHolder.contactWithDetails = contact
         contactCardObjectViewHolder.mediaTools = MediaTools()
 
         contactCardObjectViewHolder.itemView.setOnClickListener {

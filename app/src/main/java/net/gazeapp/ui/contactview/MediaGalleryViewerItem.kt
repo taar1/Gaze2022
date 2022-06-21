@@ -8,8 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
+import coil.load
 import com.ortiz.touchview.TouchImageView
 import net.gazeapp.R
 import net.gazeapp.databinding.MediaGalleryViewerItemBinding
@@ -81,11 +80,9 @@ class MediaGalleryViewerItem : Fragment(R.layout.media_gallery_viewer_item) {
             result
         }
 
-        Glide.with(requireContext())
-            .load(mediaUrl)
-            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-            .placeholder(R.drawable.ic_image_24px)
-            .into(touchImage)
+        touchImage.load(mediaUrl) {
+            placeholder(R.drawable.placeholder_mountain)
+        }
     }
 
 }

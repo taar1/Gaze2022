@@ -15,7 +15,6 @@
  */
 package net.gazeapp.ui.contactview
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
@@ -29,14 +28,13 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide
+import coil.load
 import com.facebook.ads.AdSize
 import com.facebook.ads.AdView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayoutMediator
 import needle.Needle
 import needle.UiRelatedTask
-import net.gazeapp.EditContactActivity
 import net.gazeapp.R
 import net.gazeapp.callbacks.MediaListLoadCallback
 import net.gazeapp.data.GazeDatabase.Companion.getDatabase
@@ -51,10 +49,10 @@ import net.gazeapp.data.model.Work
 import net.gazeapp.databinding.ContactDetailViewPagerLayoutBinding
 import net.gazeapp.dialog.AddEditEncounterDialog
 import net.gazeapp.dialog.AddEditWorkDialog
+import net.gazeapp.dialog.FreeVersionDialogs
 import net.gazeapp.helpers.Const
 import net.gazeapp.helpers.Preferences
 import net.gazeapp.helpers.SnackBarType
-import net.gazeapp.utilities.FreeVersionDialogs
 import net.gazeapp.utilities.GazeTools
 import net.gazeapp.utilities.MediaTools
 import net.gazeapp.utilities.SpecificValues
@@ -247,9 +245,10 @@ class ContactViewWithViewPagerTabActivity : AppCompatActivity() {
                 //            startActivityForResult(intent, Const.REQUEST_CODE);
             }
             else -> {
-                val intent = Intent(this, EditContactActivity::class.java)
-                intent.putExtra("contact", contact)
-                startActivityForResult(intent, Const.ACTIVITY_FOR_RESULT_EDIT_CONTACT_CODE)
+                // TODO FIXME hier wohl zum fragment gehen...
+//                val intent = Intent(this, EditContactActivity::class.java)
+//                intent.putExtra("contact", contact)
+//                startActivityForResult(intent, Const.ACTIVITY_FOR_RESULT_EDIT_CONTACT_CODE)
             }
         }
 
@@ -280,24 +279,24 @@ class ContactViewWithViewPagerTabActivity : AppCompatActivity() {
                 ignoreCase = true
             ) -> {
                 // ENCOUNTERS
-                floatingActionButton.setImageResource(R.drawable.ic_add_black_48dp)
+                floatingActionButton.setImageResource(R.drawable.ic_add)
             }
             pageTitle.equals(
                 applicationContext.resources.getString(R.string.tab_professional),
                 ignoreCase = true
             ) -> {
                 // WORK / PROFESSION
-                floatingActionButton.setImageResource(R.drawable.ic_add_black_48dp)
+                floatingActionButton.setImageResource(R.drawable.ic_add)
             }
             pageTitle.equals(
                 applicationContext.resources.getString(R.string.tab_gallery),
                 ignoreCase = true
             ) -> {
                 // GALLERY
-                floatingActionButton.setImageResource(R.drawable.add_image_to_gallery_128px)
+                floatingActionButton.setImageResource(R.drawable.ic_add_photo)
             }
             else -> {
-                floatingActionButton.setImageResource(R.drawable.ic_create_black_48dp)
+                floatingActionButton.setImageResource(R.drawable.ic_edit)
             }
         }
     }
@@ -726,13 +725,14 @@ class ContactViewWithViewPagerTabActivity : AppCompatActivity() {
             }
 
             override fun thenDoUiRelatedWork(result: Int) {
-                Glide.with(this@ContactViewWithViewPagerTabActivity).load(
+                contactMainPic.load(
                     mediaTools.getFileFromInternalStorage(
                         contact, Const.GALLERY_PUBLIC
                     )
-                ).placeholder(R.drawable.silhouette).into(
-                    contactMainPic
-                )
+                ) {
+                    crossfade(true)
+                    placeholder(R.drawable.silhouette)
+                }
             }
         })
     }

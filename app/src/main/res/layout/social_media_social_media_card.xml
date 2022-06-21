@@ -1,0 +1,561 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/socialmedia_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/social_networks_title"
+            style="@style/Title.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/social_networks"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:alpha="0.3"
+            android:background="@color/primary"
+            card_view:layout_constraintTop_toBottomOf="@+id/social_networks_title" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/divider_view">
+
+            <ImageView
+                android:id="@+id/apple_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_apple_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/facebook_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_facebook_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/apple_icon" />
+
+            <ImageView
+                android:id="@+id/flickr_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_flickr_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/facebook_icon" />
+
+            <ImageView
+                android:id="@+id/instagram_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_instagram_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/flickr_icon" />
+
+            <ImageView
+                android:id="@+id/linkedin_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_linkedin_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/instagram_icon" />
+
+            <ImageView
+                android:id="@+id/pinterest_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_pinterest_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/linkedin_icon" />
+
+            <ImageView
+                android:id="@+id/pornhub_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_pornhub_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/pinterest_icon" />
+
+            <ImageView
+                android:id="@+id/redtube_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_redtube_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/pornhub_icon" />
+
+            <ImageView
+                android:id="@+id/spotify_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_spotify_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/redtube_icon" />
+
+            <ImageView
+                android:id="@+id/tiktok_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_ic_tiktok2"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/spotify_icon" />
+
+            <ImageView
+                android:id="@+id/tumblr_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_tumblr_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/tiktok_icon" />
+
+            <ImageView
+                android:id="@+id/twitter_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_twitter_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/tumblr_icon" />
+
+            <ImageView
+                android:id="@+id/vimeo_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_vimeo_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/twitter_icon" />
+
+            <ImageView
+                android:id="@+id/xing_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_xing_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/vimeo_icon" />
+
+            <ImageView
+                android:id="@+id/xhamster_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_xhamster_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/xing_icon" />
+
+            <ImageView
+                android:id="@+id/xtube_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_xtube_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/xhamster_icon" />
+
+            <ImageView
+                android:id="@+id/youtube_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_youtube_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/xtube_icon" />
+
+
+            <TextView
+                android:id="@+id/appleid_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/appleid"
+                card_view:layout_constraintStart_toEndOf="@id/apple_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/apple_icon" />
+
+            <TextView
+                android:id="@+id/appleid"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/appleid"
+                card_view:layout_constraintStart_toStartOf="@id/appleid_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/appleid_hint" />
+
+
+            <TextView
+                android:id="@+id/facebook_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/facebook"
+                card_view:layout_constraintStart_toEndOf="@id/facebook_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/facebook_icon" />
+
+            <TextView
+                android:id="@+id/facebook"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/facebook"
+                card_view:layout_constraintStart_toStartOf="@id/facebook_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/facebook_hint" />
+
+
+            <TextView
+                android:id="@+id/flickr_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/flickr"
+                card_view:layout_constraintStart_toEndOf="@id/flickr_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/flickr_icon" />
+
+            <TextView
+                android:id="@+id/flickr"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/flickr"
+                card_view:layout_constraintStart_toStartOf="@id/flickr_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/flickr_hint" />
+
+            <TextView
+                android:id="@+id/instagram_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/instagram"
+                card_view:layout_constraintStart_toEndOf="@id/instagram_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/instagram_icon" />
+
+            <TextView
+                android:id="@+id/instagram"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/instagram"
+                card_view:layout_constraintStart_toStartOf="@id/instagram_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/instagram_hint" />
+
+            <TextView
+                android:id="@+id/linkedin_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/linkedin"
+                card_view:layout_constraintStart_toEndOf="@id/linkedin_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/linkedin_icon" />
+
+            <TextView
+                android:id="@+id/linkedin"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/linkedin"
+                card_view:layout_constraintStart_toStartOf="@id/linkedin_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/linkedin_hint" />
+
+            <TextView
+                android:id="@+id/pinterest_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/pinterest"
+                card_view:layout_constraintStart_toEndOf="@id/pinterest_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/pinterest_icon" />
+
+            <TextView
+                android:id="@+id/pinterest"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/pinterest"
+                card_view:layout_constraintStart_toStartOf="@id/pinterest_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/pinterest_hint" />
+
+            <TextView
+                android:id="@+id/pornhub_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/pornhub"
+                card_view:layout_constraintStart_toEndOf="@id/pornhub_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/pornhub_icon" />
+
+            <TextView
+                android:id="@+id/pornhub"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/pornhub"
+                card_view:layout_constraintStart_toStartOf="@id/pornhub_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/pornhub_hint" />
+
+            <TextView
+                android:id="@+id/redtube_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/redtube"
+                card_view:layout_constraintStart_toEndOf="@id/redtube_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/redtube_icon" />
+
+            <TextView
+                android:id="@+id/redtube"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/redtube"
+                card_view:layout_constraintStart_toStartOf="@id/redtube_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/redtube_hint" />
+
+            <TextView
+                android:id="@+id/spotify_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/spotify"
+                card_view:layout_constraintStart_toEndOf="@id/spotify_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/spotify_icon" />
+
+            <TextView
+                android:id="@+id/spotify"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/spotify"
+                card_view:layout_constraintStart_toStartOf="@id/spotify_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/spotify_hint" />
+
+            <TextView
+                android:id="@+id/tiktok_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/tumblr"
+                card_view:layout_constraintStart_toEndOf="@id/tiktok_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/tiktok_icon" />
+
+            <TextView
+                android:id="@+id/tiktok"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/tumblr"
+                card_view:layout_constraintStart_toStartOf="@id/tiktok_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/tiktok_hint" />
+
+            <TextView
+                android:id="@+id/tumblr_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/tumblr"
+                card_view:layout_constraintStart_toEndOf="@id/tumblr_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/tumblr_icon" />
+
+            <TextView
+                android:id="@+id/tumblr"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/tiktok"
+                card_view:layout_constraintStart_toStartOf="@id/tumblr_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/tumblr_hint" />
+
+            <TextView
+                android:id="@+id/twitter_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/twitter"
+                card_view:layout_constraintStart_toEndOf="@id/twitter_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/twitter_icon" />
+
+            <TextView
+                android:id="@+id/twitter"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/twitter"
+                card_view:layout_constraintStart_toStartOf="@id/twitter_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/twitter_hint" />
+
+            <TextView
+                android:id="@+id/vimeo_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/vimeo"
+                card_view:layout_constraintStart_toEndOf="@id/vimeo_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/vimeo_icon" />
+
+            <TextView
+                android:id="@+id/vimeo"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/vimeo"
+                card_view:layout_constraintStart_toStartOf="@id/vimeo_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/vimeo_hint" />
+
+            <TextView
+                android:id="@+id/xing_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/xing"
+                card_view:layout_constraintStart_toEndOf="@id/xing_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/xing_icon" />
+
+            <TextView
+                android:id="@+id/xing"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/xing"
+                card_view:layout_constraintStart_toStartOf="@id/xing_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/xing_hint" />
+
+
+            <TextView
+                android:id="@+id/xhamster_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/xhamster"
+                card_view:layout_constraintStart_toEndOf="@id/xhamster_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/xhamster_icon" />
+
+            <TextView
+                android:id="@+id/xhamster"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/xhamster"
+                card_view:layout_constraintStart_toStartOf="@id/xhamster_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/xhamster_hint" />
+
+
+            <TextView
+                android:id="@+id/xtube_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/xtube"
+                card_view:layout_constraintStart_toEndOf="@id/xtube_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/xtube_icon" />
+
+            <TextView
+                android:id="@+id/xtube"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/xtube"
+                card_view:layout_constraintStart_toStartOf="@id/xtube_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/xtube_hint" />
+
+            <TextView
+                android:id="@+id/youtube_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/youtube"
+                card_view:layout_constraintStart_toEndOf="@id/youtube_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/youtube_icon" />
+
+            <TextView
+                android:id="@+id/youtube"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/youtube"
+                card_view:layout_constraintStart_toStartOf="@id/youtube_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/youtube_hint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

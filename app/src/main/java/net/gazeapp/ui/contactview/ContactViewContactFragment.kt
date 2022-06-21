@@ -1,18 +1,3 @@
-/*
- * Copyright 2014 Soichiro Kashima
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package net.gazeapp.ui.contactview
 
 import android.Manifest
@@ -53,8 +38,6 @@ class ContactViewContactFragment : Fragment() {
     @Inject
     lateinit var tools: GazeTools
 
-    private val MY_PERMISSIONS_REQUEST_CALL_PHONE = 1
-
     private var mContact: Contact? = null
     private var mPhone: List<Phone>? = null
     private var mEmail: List<Email>? = null
@@ -85,6 +68,7 @@ class ContactViewContactFragment : Fragment() {
 
     companion object {
         private const val TAG = "ContactViewContactFragm"
+        private const val MY_PERMISSIONS_REQUEST_CALL_PHONE = 1
 
         fun newInstance(): ContactViewContactFragment {
             return ContactViewContactFragment()
@@ -166,13 +150,13 @@ class ContactViewContactFragment : Fragment() {
 
                     val hintText = TextView(activity)
                     hintText.layoutParams = etParams
-                    hintText.setTextAppearance(R.style.TextHint)
+                    hintText.setTextAppearance(R.style.Hint)
                     hintText.alpha = 0.5f
                     hintText.text = phone.phoneNumberType
 
                     val phoneText = TextView(activity)
                     phoneText.layoutParams = etParams
-                    phoneText.setTextAppearance(R.style.Text.Regular)
+                    phoneText.setTextAppearance(R.style.Regular)
                     phoneText.setPadding(0, 0, 0, tools.innerCardPaddingInPixels)
                     phoneText.text = phone.phoneNumber
                     phoneText.setOnClickListener { arg0: View? ->
@@ -219,12 +203,12 @@ class ContactViewContactFragment : Fragment() {
                     )
                     val hintText = TextView(activity)
                     hintText.layoutParams = etParams
-                    hintText.setTextAppearance(R.style.TextHint)
+                    hintText.setTextAppearance(R.style.Hint)
                     hintText.alpha = 0.5f
                     hintText.text = email.emailType
                     val emailText = TextView(activity)
                     emailText.layoutParams = etParams
-                    emailText.setTextAppearance(R.style.Text.Regular)
+                    emailText.setTextAppearance(R.style.Regular)
                     emailText.setPadding(0, 0, 0, tools.innerCardPaddingInPixels)
                     emailText.text = email.email
                     emailText.setOnClickListener {
@@ -270,12 +254,12 @@ class ContactViewContactFragment : Fragment() {
                     )
                     val hintText = TextView(activity)
                     hintText.layoutParams = etParams
-                    hintText.setTextAppearance(R.style.TextHint)
+                    hintText.setTextAppearance(R.style.Hint)
                     hintText.alpha = 0.5f
                     hintText.text = address.addressType
                     val addressText = TextView(activity)
                     addressText.layoutParams = etParams
-                    addressText.setTextAppearance(R.style.Text.Regular)
+                    addressText.setTextAppearance(R.style.Regular)
                     addressText.setPadding(0, 0, 0, tools.innerCardPaddingInPixels)
                     addressText.text = address.address
                     addressContentLayout!!.addView(hintText)
@@ -316,14 +300,14 @@ class ContactViewContactFragment : Fragment() {
                             .isNotEmpty())) {
                         val hintText = TextView(activity)
                         hintText.layoutParams = etParams
-                        hintText.setTextAppearance(R.style.TextHint)
+                        hintText.setTextAppearance(R.style.Hint)
                         hintText.alpha = 0.5f
                         hintText.text = website.websiteType
                         websiteContentLayout!!.addView(hintText)
                     }
                     val websiteUrl = TextView(activity)
                     websiteUrl.layoutParams = etParams
-                    websiteUrl.setTextAppearance(R.style.Text.Regular)
+                    websiteUrl.setTextAppearance(R.style.Regular)
                     websiteUrl.setPadding(0, 0, 0, tools.innerCardPaddingInPixels)
                     websiteUrl.text = website.website
                     websiteUrl.setOnClickListener(View.OnClickListener {
@@ -339,7 +323,7 @@ class ContactViewContactFragment : Fragment() {
                             .isNotEmpty())) {
                         val description = TextView(activity)
                         description.layoutParams = etParams
-                        description.setTextAppearance(R.style.TextHint)
+                        description.setTextAppearance(R.style.Hint)
                         description.isAllCaps = false
                         description.setPadding(
                             0,

@@ -22,15 +22,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-
-import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 
 import net.gazeapp.R;
 import net.gazeapp.data.GazeDatabase;
@@ -47,8 +44,6 @@ import org.greenrobot.eventbus.Subscribe;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import needle.Needle;
 
 @Deprecated
@@ -69,16 +64,16 @@ public class ContactViewEncountersFragment extends Fragment {
 
     SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
-    @BindView(R.id.fragment_root)
-    FrameLayout fragmentRoot;
-    @BindView(R.id.scroll)
-    ObservableScrollView scrollView;
-    @BindView(R.id.no_info_layout)
-    LinearLayout noInformationLayout;
-    @BindView(R.id.gray_layout)
-    LinearLayout grayLayout;
-    @BindView(R.id.no_info_card)
-    CardView noInfoCard;
+//    @BindView(R.id.fragment_root)
+//    FrameLayout fragmentRoot;
+//    @BindView(R.id.scroll)
+//    ObservableScrollView scrollView;
+//    @BindView(R.id.no_info_layout)
+//    LinearLayout noInformationLayout;
+//    @BindView(R.id.gray_layout)
+//    LinearLayout grayLayout;
+//    @BindView(R.id.no_info_card)
+//    CardView noInfoCard;
 
     public ContactViewEncountersFragment() {
     }
@@ -91,16 +86,16 @@ public class ContactViewEncountersFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.contactview_tab_encounters, container, false);
-        ButterKnife.bind(this, view);
-
-        this.container = container;
-
-        activity = (ContactViewWithViewPagerTabActivity) getActivity();
-        mContact = activity.getContact();
-
-        grayLayout.setMinimumHeight(activity.getDisplayHeight(false, true));
-
-        loadData();
+//        ButterKnife.bind(this, view);
+//
+//        this.container = container;
+//
+//        activity = (ContactViewWithViewPagerTabActivity) getActivity();
+//        mContact = activity.getContact();
+//
+//        grayLayout.setMinimumHeight(activity.getDisplayHeight(false, true));
+//
+//        loadData();
 
         return view;
     }
@@ -247,13 +242,13 @@ public class ContactViewEncountersFragment extends Fragment {
                         ratingBar.setRating(rating);
                     }
 
-                    addToGrayLayout(v);
+//                    addToGrayLayout(v);
                 }
 
                 LinearLayout.LayoutParams viewLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, Math.round(getResources().getDimension(R.dimen.lower_ad_banner_height)));
                 View lowerPaddingView = new View(activity);
                 lowerPaddingView.setLayoutParams(viewLayoutParams);
-                addToGrayLayout(lowerPaddingView);
+//                addToGrayLayout(lowerPaddingView);
             } else {
                 showNoInformationCard = true;
             }
@@ -264,29 +259,29 @@ public class ContactViewEncountersFragment extends Fragment {
 
     }
 
-    private void addToGrayLayout(View v) {
-        Needle.onMainThread().execute(() -> grayLayout.addView(v));
-    }
-
-    private void clearGrayLayout() {
-        Needle.onMainThread().execute(() -> grayLayout.removeAllViews());
-    }
+//    private void addToGrayLayout(View v) {
+//        Needle.onMainThread().execute(() -> grayLayout.addView(v));
+//    }
+//
+//    private void clearGrayLayout() {
+//        Needle.onMainThread().execute(() -> grayLayout.removeAllViews());
+//    }
 
     private void updateLayout() {
-        Needle.onMainThread().execute(() -> {
-            if (showNoInformationCard) {
-//                int noInformationLayoutCorrectHeight = Math.round(activity.getDisplayHeight(false, false) - GazeTools.convertPxToDp( Const.HEIGHT_TAB_BAR_AND_AD_BANNER));
-
-                noInfoCard.setVisibility(View.VISIBLE);
-                noInformationLayout.setVisibility(View.VISIBLE);
-//                noInformationLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, noInformationLayoutCorrectHeight));
-            } else {
-                noInfoCard.setVisibility(View.GONE);
-                noInformationLayout.setVisibility(View.GONE);
-            }
-
-//        updateScrollview();
-        });
+//        Needle.onMainThread().execute(() -> {
+//            if (showNoInformationCard) {
+////                int noInformationLayoutCorrectHeight = Math.round(activity.getDisplayHeight(false, false) - GazeTools.convertPxToDp( Const.HEIGHT_TAB_BAR_AND_AD_BANNER));
+//
+//                noInfoCard.setVisibility(View.VISIBLE);
+//                noInformationLayout.setVisibility(View.VISIBLE);
+////                noInformationLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, noInformationLayoutCorrectHeight));
+//            } else {
+//                noInfoCard.setVisibility(View.GONE);
+//                noInformationLayout.setVisibility(View.GONE);
+//            }
+//
+////        updateScrollview();
+//        });
     }
 
 //    @UiThread
@@ -354,9 +349,9 @@ public class ContactViewEncountersFragment extends Fragment {
                 encounterDao.insert(encounter);
 
                 mEncounter = encounterDao.getEncountersByContactId(mContact.getId());
-                clearGrayLayout();
-
-                grayLayout.setMinimumHeight(activity.getDisplayHeight(false, true));
+//                clearGrayLayout();
+//
+//                grayLayout.setMinimumHeight(activity.getDisplayHeight(false, true));
                 updateUI();
 
 //                GazeTools.showMaterialSnackBar(activity, fragmentRoot, getString(R.string.success_encounter_added, GazeTools.formatDateToPhoneLocale(encounter.getMeetDate(), getContext(), true)), SnackBarType.SUCCESS);

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen_pro_user_already"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+    <TextView
+        android:id="@+id/you_have_pro_monthly"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/you_are_pro_user"
+        android:textAppearance="@style/Title.Big"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/subtitle_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/upgrade_to_pro_already_have_pro"
+        android:textAppearance="@style/Title.Regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/you_have_pro_monthly" />
+
+    <TextView
+        android:id="@+id/pro_bullet_point_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/upgrade_to_pro_bulletpoint_1"
+        android:textAppearance="@style/Regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtitle_1" />
+
+    <TextView
+        android:id="@+id/pro_bullet_point_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/upgrade_to_pro_bulletpoint_2"
+        android:textAppearance="@style/Regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pro_bullet_point_1" />
+
+    <TextView
+        android:id="@+id/pro_bullet_point_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/upgrade_to_pro_bulletpoint_3"
+        android:textAppearance="@style/Regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pro_bullet_point_2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tick_mark_64px" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/change_subscription_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/primary_dark"
+        android:text="@string/change_subscription"
+        android:textAppearance="@style/CardView.PreviewTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pro_bullet_point_3"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,957 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/socialmedia_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:layout_margin="@dimen/contact_view_card_outer_margin"
+    card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Title.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:text="@string/social_networks" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.2"
+            android:background="@color/accent" />
+
+        <LinearLayout
+            android:id="@+id/appleid_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_apple_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/appleid_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appleid" />
+
+                <TextView
+                    android:id="@+id/appleid"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/appleid" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/appleid_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/facebook_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_facebook_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/facebook_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/facebook" />
+
+                <TextView
+                    android:id="@+id/facebook"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/facebook" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/facebook_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/flickr_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_flickr_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/flickr_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/flickr" />
+
+                <TextView
+                    android:id="@+id/flickr"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/flickr" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/flickr_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/instagram_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_instagram_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/instagram_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/instagram" />
+
+                <TextView
+                    android:id="@+id/instagram"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/instagram" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/instagram_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linkedin_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_linkedin_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/linkedin_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/linkedin" />
+
+                <TextView
+                    android:id="@+id/linkedin"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/linkedin" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/linkedin_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pinterest_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_pinterest_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pinterest_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pinterest" />
+
+                <TextView
+                    android:id="@+id/pinterest"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/pinterest" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/pinterest_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/pornhub_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_pornhub_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pornhub_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pornhub" />
+
+                <TextView
+                    android:id="@+id/pornhub"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/pornhub" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/pornhub_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/redtube_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_redtube_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/redtube_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/redtube" />
+
+                <TextView
+                    android:id="@+id/redtube"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/redtube" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/redtube_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/spotify_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_spotify_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/spotify_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/spotify" />
+
+                <TextView
+                    android:id="@+id/spotify"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/spotify" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/spotify_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/tumblr_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_tumblr_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tumblr_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tumblr" />
+
+                <TextView
+                    android:id="@+id/tumblr"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/tumblr" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/tumblr_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/twitter_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_twitter_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/twitter_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/twitter" />
+
+                <TextView
+                    android:id="@+id/twitter"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/twitter" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/twitter_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/vimeo_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_vimeo_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/vimeo_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vimeo" />
+
+                <TextView
+                    android:id="@+id/vimeo"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/vimeo" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vimeo_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/xing_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_xing_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/xing_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/xing" />
+
+                <TextView
+                    android:id="@+id/xing"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/xing" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/xing_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/xhamster_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_xhamster_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/xhamster_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/xhamster" />
+
+                <TextView
+                    android:id="@+id/xhamster"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/xhamster" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/xhamster_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/xtube_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_xtube_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/xtube_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/xtube" />
+
+                <TextView
+                    android:id="@+id/xtube"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/xtube" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/xtube_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/youtube_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_youtube_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_left_margin_after_icon_social_media_tab"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/youtube_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/youtube" />
+
+                <TextView
+                    android:id="@+id/youtube"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/youtube" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/youtube_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

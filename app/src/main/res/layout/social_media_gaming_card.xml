@@ -1,0 +1,171 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gaming_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/gaming_title"
+            style="@style/Title.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/gaming"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:alpha="0.3"
+            android:background="@color/primary"
+            card_view:layout_constraintTop_toBottomOf="@+id/gaming_title" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/divider_view">
+
+
+            <ImageView
+                android:id="@+id/miiverse_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_miiverse_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/nintendonetwork_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_nintendonetwork_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/miiverse_icon" />
+
+            <ImageView
+                android:id="@+id/playstation_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_playstation_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/nintendonetwork_icon" />
+
+            <ImageView
+                android:id="@+id/xbox_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+                android:src="@drawable/brand_xbox_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/playstation_icon" />
+
+            <TextView
+                android:id="@+id/miiverse_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/miiverse"
+                card_view:layout_constraintStart_toEndOf="@id/miiverse_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/miiverse_icon" />
+
+            <TextView
+                android:id="@+id/miiverse"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/miiverse"
+                card_view:layout_constraintStart_toStartOf="@id/miiverse_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/miiverse_hint" />
+
+
+            <TextView
+                android:id="@+id/nintendonetwork_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/nintendonetwork"
+                card_view:layout_constraintStart_toEndOf="@id/nintendonetwork_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/nintendonetwork_icon" />
+
+            <TextView
+                android:id="@+id/nintendonetwork"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/nintendonetwork"
+                card_view:layout_constraintStart_toStartOf="@id/nintendonetwork_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/nintendonetwork_hint" />
+
+
+            <TextView
+                android:id="@+id/playstationnetwork_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/playstationnetwork"
+                card_view:layout_constraintStart_toEndOf="@id/playstation_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/playstation_icon" />
+
+            <TextView
+                android:id="@+id/playstationnetwork"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/playstationnetwork"
+                card_view:layout_constraintStart_toStartOf="@id/playstationnetwork_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/playstationnetwork_hint" />
+
+
+            <TextView
+                android:id="@+id/xboxgamertag_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/xboxgamertag"
+                card_view:layout_constraintStart_toEndOf="@id/xbox_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/xbox_icon" />
+
+            <TextView
+                android:id="@+id/xboxgamertag"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/xboxgamertag"
+                card_view:layout_constraintStart_toStartOf="@id/xboxgamertag_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/xboxgamertag_hint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -177,13 +177,13 @@ class TabContactFragmentKt : Fragment(R.layout.contactview_tab_contact) {
 
                     val hintText = TextView(activity)
                     hintText.layoutParams = etParams
-                    hintText.setTextAppearance(R.style.TextHint)
+                    hintText.setTextAppearance(R.style.Hint)
                     hintText.alpha = 0.5f
                     hintText.text = phone.phoneNumberType
 
                     val phoneText = TextView(activity)
                     phoneText.layoutParams = etParams
-                    phoneText.setTextAppearance(R.style.Text.Regular)
+                    phoneText.setTextAppearance(R.style.Regular)
                     phoneText.setPadding(0, 0, 0, 48)
                     phoneText.text = phone.phoneNumber
 
@@ -238,13 +238,13 @@ class TabContactFragmentKt : Fragment(R.layout.contactview_tab_contact) {
 
                     val hintText = TextView(activity)
                     hintText.layoutParams = etParams
-                    hintText.setTextAppearance(R.style.TextHint)
+                    hintText.setTextAppearance(R.style.Hint)
                     hintText.alpha = 0.5f
                     hintText.text = email.emailType
 
                     val emailText = TextView(activity)
                     emailText.layoutParams = etParams
-                    emailText.setTextAppearance(R.style.Text.Regular)
+                    emailText.setTextAppearance(R.style.Regular)
                     emailText.setPadding(0, 0, 0, 48)
                     emailText.text = email.email
 
@@ -290,13 +290,13 @@ class TabContactFragmentKt : Fragment(R.layout.contactview_tab_contact) {
                     )
                     val hintText = TextView(activity)
                     hintText.layoutParams = etParams
-                    hintText.setTextAppearance(R.style.TextHint)
+                    hintText.setTextAppearance(R.style.Hint)
                     hintText.alpha = 0.5f
                     hintText.text = address.addressType
 
                     val addressText = TextView(activity)
                     addressText.layoutParams = etParams
-                    addressText.setTextAppearance(R.style.Text.Regular)
+                    addressText.setTextAppearance(R.style.Regular)
                     addressText.setPadding(0, 0, 0, 48)
                     addressText.text = address.address
 
@@ -342,7 +342,7 @@ class TabContactFragmentKt : Fragment(R.layout.contactview_tab_contact) {
                             .isNotEmpty())) {
                         val hintText = TextView(activity)
                         hintText.layoutParams = etParams
-                        hintText.setTextAppearance(R.style.TextHint)
+                        hintText.setTextAppearance(R.style.Hint)
                         hintText.alpha = 0.5f
                         hintText.text = website.websiteType
                         websiteContentLayout.addView(hintText)
@@ -351,7 +351,7 @@ class TabContactFragmentKt : Fragment(R.layout.contactview_tab_contact) {
                     val websiteUrl = TextView(activity)
                     val description = TextView(activity)
                     websiteUrl.layoutParams = etParams
-                    websiteUrl.setTextAppearance(R.style.Text.Regular)
+                    websiteUrl.setTextAppearance(R.style.Regular)
                     websiteUrl.setPadding(0, 0, 0, 48)
                     websiteUrl.text = website.website
                     websiteUrl.setOnClickListener {
@@ -366,7 +366,7 @@ class TabContactFragmentKt : Fragment(R.layout.contactview_tab_contact) {
                     if ((website.description != null) && (website.description!!.trim { it <= ' ' }
                             .isNotEmpty())) {
                         description.layoutParams = etParams
-                        description.setTextAppearance(R.style.TextHint)
+                        description.setTextAppearance(R.style.Hint)
                         description.isAllCaps = false
                         description.setPadding(0, 0, 0, 48)
                         websiteUrl.setPadding(0, 0, 0, 0)

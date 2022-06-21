@@ -1,0 +1,319 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/outer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/bottom_padding">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/no_info_card"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:cardCornerRadius="@dimen/cardview_card_radius"
+        tools:visibility="invisible">
+
+        <TextView
+            style="@style/Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_info_present" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/general_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:id="@+id/out_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/ic_man"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/out_hint"
+                    style="@style/Hint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/is_out"
+                    app:layout_constraintStart_toEndOf="@id/out_img"
+                    app:layout_constraintTop_toTopOf="@id/out_img" />
+
+                <TextView
+                    android:id="@+id/out"
+                    style="@style/Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/is_out"
+                    app:layout_constraintStart_toStartOf="@+id/out_hint"
+                    app:layout_constraintTop_toBottomOf="@id/out_hint" />
+
+
+                <TextView
+                    android:id="@+id/appearance_hint"
+                    style="@style/Hint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/appearance"
+                    app:layout_constraintStart_toStartOf="@+id/out_hint"
+                    app:layout_constraintTop_toBottomOf="@id/out" />
+
+
+                <LinearLayout
+                    android:id="@+id/appearance_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/out_hint"
+                    app:layout_constraintTop_toBottomOf="@id/appearance_hint">
+
+                    <View
+                        android:id="@+id/bar_masculine"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_weight="40"
+                        android:background="@color/accent" />
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:background="@color/black" />
+
+                    <View
+                        android:id="@+id/bar_feminine"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_weight="60"
+                        android:background="@color/primary_light" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/masculine"
+                    style="@style/StandardText.Dark.Extra.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/masculine"
+                    app:layout_constraintStart_toStartOf="@+id/appearance_bar"
+                    app:layout_constraintTop_toBottomOf="@id/appearance_bar" />
+
+                <TextView
+                    android:id="@+id/feminine"
+                    style="@style/StandardText.Dark.Extra.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/feminine"
+                    app:layout_constraintEnd_toEndOf="@id/appearance_bar"
+                    app:layout_constraintTop_toBottomOf="@id/appearance_bar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/relationship_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/general_card"
+            card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:id="@+id/relationship_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/ic_couple"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/relationship_hint"
+                    style="@style/Hint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/relationship_status"
+                    app:layout_constraintStart_toEndOf="@+id/relationship_img"
+                    app:layout_constraintTop_toTopOf="@id/relationship_img" />
+
+                <TextView
+                    android:id="@+id/relationship"
+                    style="@style/Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/relationship_status"
+                    app:layout_constraintStart_toStartOf="@+id/relationship_hint"
+                    app:layout_constraintTop_toBottomOf="@id/relationship_hint" />
+
+                <TextView
+                    android:id="@+id/children_hint"
+                    style="@style/Hint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/has_children"
+                    app:layout_constraintStart_toEndOf="@+id/relationship_img"
+                    app:layout_constraintTop_toBottomOf="@id/relationship" />
+
+                <TextView
+                    android:id="@+id/children"
+                    style="@style/Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/has_children"
+                    app:layout_constraintStart_toStartOf="@+id/children_hint"
+                    app:layout_constraintTop_toBottomOf="@id/children_hint" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/drugs_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relationship_card"
+            card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp">
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/drugs_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    tools:constraint_referenced_ids="smoking_img, smoking_hint, smoking, alcohol_hint, alcohol, drugs_hint, drugs" />
+
+                <ImageView
+                    android:id="@+id/smoking_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/ic_pill"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/smoking_hint"
+                    style="@style/Hint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/smoking"
+                    app:layout_constraintStart_toEndOf="@+id/smoking_img"
+                    app:layout_constraintTop_toTopOf="@id/smoking_img" />
+
+                <TextView
+                    android:id="@+id/smoking"
+                    style="@style/Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/smoking"
+                    app:layout_constraintStart_toStartOf="@+id/smoking_hint"
+                    app:layout_constraintTop_toBottomOf="@id/smoking_hint" />
+
+                <TextView
+                    android:id="@+id/alcohol_hint"
+                    style="@style/Hint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/alcohol"
+                    app:layout_constraintStart_toEndOf="@+id/smoking_img"
+                    app:layout_constraintTop_toBottomOf="@id/smoking" />
+
+                <TextView
+                    android:id="@+id/alcohol"
+                    style="@style/Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alcohol"
+                    app:layout_constraintStart_toStartOf="@+id/alcohol_hint"
+                    app:layout_constraintTop_toBottomOf="@id/alcohol_hint" />
+
+                <TextView
+                    android:id="@+id/drugs_hint"
+                    style="@style/Hint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/drugs"
+                    app:layout_constraintStart_toEndOf="@+id/smoking_img"
+                    app:layout_constraintTop_toBottomOf="@id/alcohol" />
+
+                <TextView
+                    android:id="@+id/drugs"
+                    style="@style/Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drugs"
+                    app:layout_constraintStart_toStartOf="@+id/drugs_hint"
+                    app:layout_constraintTop_toBottomOf="@id/drugs_hint" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

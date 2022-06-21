@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import coil.load
 import net.gazeapp.R
 import net.gazeapp.data.model.ContactWithDetails
 import net.gazeapp.helpers.Const
@@ -19,9 +19,11 @@ class AllContactsCardViewItemHolderKt(
     val activity: Activity,
     val view: View
 ) : RecyclerView.ViewHolder(view) {
-    private val TAG = javaClass.simpleName
+    companion object {
+        private const val TAG = "AllContactsCardViewItem"
+    }
 
-    lateinit var contact: ContactWithDetails
+    lateinit var contactWithDetails: ContactWithDetails
     lateinit var mediaTools: MediaTools
 
     var contactImage: ImageView = view.findViewById(R.id.contactImage)
@@ -29,42 +31,33 @@ class AllContactsCardViewItemHolderKt(
     var additionalInfo: TextView = view.findViewById(R.id.additionalInfo)
 
     fun updateUI() {
+        contactName.text = contactWithDetails.contact.contactName
 
-        contact.let { contactWithDetails ->
-            contactName.text = contactWithDetails.contact.contactName
-
-            if (contactWithDetails.contact.additionalInfo?.isNotEmpty() == true) {
-                additionalInfo.text = contactWithDetails.contact.additionalInfo
-            } else {
-                additionalInfo.visibility = View.GONE
-            }
-
-            // Change Contact Main Image
-            val fileFromInternalStorage =
-                mediaTools.getFileFromInternalStorage(
-                    contactWithDetails.contact,
-                    Const.GALLERY_PUBLIC
-                )
-
-            if (contactWithDetails.contact.contactName.equals(
-                    Const.FIRST_GAZE_CONTACT_NAME,
-                    ignoreCase = true
-                )
-            ) {
-                activity.let {
-                    Glide.with(it).load(R.drawable.josh)
-                        .placeholder(R.drawable.silhouette).into(
-                            contactImage
-                        )
-                }
-            } else {
-                activity.let {
-                    Glide.with(activity).load(fileFromInternalStorage)
-                        .placeholder(R.drawable.silhouette).into(contactImage)
-                }
-            }
+        if (contactWithDetails.contact.additionalInfo?.isNotEmpty() == true) {
+            additionalInfo.text = contactWithDetails.contact.additionalInfo
+        } else {
+            additionalInfo.visibility = View.GONE
         }
 
+        // Change Contact Main Image
+        val fileFromInternalStorage =
+            mediaTools.getFileFromInternalStorage(
+                contactWithDetails.contact,
+                Const.GALLERY_PUBLIC
+            )
 
+        if (contactWithDetails.contact.contactName.equals(
+                Const.FIRST_GAZE_CONTACT_NAME,
+                ignoreCase = true
+            )
+        ) {
+            contactImage.load(R.drawable.josh) {
+                placeholder(R.drawable.silhouette)
+            }
+        } else {
+            contactImage.load(fileFromInternalStorage) {
+                placeholder(R.drawable.silhouette)
+            }
+        }
     }
 }

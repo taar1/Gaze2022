@@ -1,0 +1,526 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dating_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/dating_title"
+            style="@style/Title.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/dating"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:alpha="0.3"
+            android:background="@color/primary"
+            card_view:layout_constraintTop_toBottomOf="@+id/dating_title" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/divider_view">
+
+
+            <ImageView
+                android:id="@+id/adam4adame_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_adam4adam_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/bbrt_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_bbrt_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/adam4adame_icon" />
+
+            <ImageView
+                android:id="@+id/boyahoy_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_boyahoy_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/bbrt_icon" />
+
+            <ImageView
+                android:id="@+id/dudesnude_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_dudesnude_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/boyahoy_icon" />
+
+            <ImageView
+                android:id="@+id/gaycom_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_gaycom_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/dudesnude_icon" />
+
+            <ImageView
+                android:id="@+id/gaydar_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_gaydar_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/gaycom_icon" />
+
+            <ImageView
+                android:id="@+id/grindr_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_grindr_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/gaydar_icon" />
+
+            <ImageView
+                android:id="@+id/growlr_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_growlr_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/grindr_icon" />
+
+            <ImageView
+                android:id="@+id/hornet_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_hornet_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/growlr_icon" />
+
+            <ImageView
+                android:id="@+id/jackd_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_jackd_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/hornet_icon" />
+
+            <ImageView
+                android:id="@+id/manhunt_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_manhunt_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/jackd_icon" />
+
+            <ImageView
+                android:id="@+id/planetromeo_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_planetromeo_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/manhunt_icon" />
+
+            <ImageView
+                android:id="@+id/recon_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_recon_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/planetromeo_icon" />
+
+            <ImageView
+                android:id="@+id/scruff_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_scruff_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/recon_icon" />
+
+            <ImageView
+                android:id="@+id/tinder_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_tinder_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/scruff_icon" />
+
+            <TextView
+                android:id="@+id/adam4adam_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/adam4adam"
+                card_view:layout_constraintStart_toEndOf="@id/adam4adame_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/adam4adame_icon" />
+
+            <TextView
+                android:id="@+id/adam4adam"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/adam4adam"
+                card_view:layout_constraintStart_toStartOf="@id/adam4adam_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/adam4adam_hint" />
+
+
+            <TextView
+                android:id="@+id/bbrt_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/bbrt"
+                card_view:layout_constraintStart_toEndOf="@id/bbrt_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/bbrt_icon" />
+
+            <TextView
+                android:id="@+id/bbrt"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/bbrt"
+                card_view:layout_constraintStart_toStartOf="@id/bbrt_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/bbrt_hint" />
+
+
+            <TextView
+                android:id="@+id/boyahoy_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/boyahoy"
+                card_view:layout_constraintStart_toEndOf="@id/boyahoy_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/boyahoy_icon" />
+
+            <TextView
+                android:id="@+id/boyahoy"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/boyahoy"
+                card_view:layout_constraintStart_toStartOf="@id/boyahoy_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/boyahoy_hint" />
+
+
+            <TextView
+                android:id="@+id/dudesnude_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/dudesnude"
+                card_view:layout_constraintStart_toEndOf="@id/dudesnude_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/dudesnude_icon" />
+
+            <TextView
+                android:id="@+id/dudesnude"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/dudesnude"
+                card_view:layout_constraintStart_toStartOf="@id/dudesnude_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/dudesnude_hint" />
+
+
+            <TextView
+                android:id="@+id/gaycom_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/gaycom"
+                card_view:layout_constraintStart_toEndOf="@id/gaycom_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/gaycom_icon" />
+
+            <TextView
+                android:id="@+id/gaycom"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/gaycom"
+                card_view:layout_constraintStart_toStartOf="@id/gaycom_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/gaycom_hint" />
+
+
+            <TextView
+                android:id="@+id/gaydar_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/gaydar"
+                card_view:layout_constraintStart_toEndOf="@id/gaydar_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/gaydar_icon" />
+
+            <TextView
+                android:id="@+id/gaydar"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/gaydar"
+                card_view:layout_constraintStart_toStartOf="@id/gaydar_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/gaydar_hint" />
+
+
+            <TextView
+                android:id="@+id/grindr_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/grindr"
+                card_view:layout_constraintStart_toEndOf="@id/grindr_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/grindr_icon" />
+
+            <TextView
+                android:id="@+id/grindr"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/grindr"
+                card_view:layout_constraintStart_toStartOf="@id/grindr_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/grindr_hint" />
+
+
+            <TextView
+                android:id="@+id/growlr_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/growlr"
+                card_view:layout_constraintStart_toEndOf="@id/growlr_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/growlr_icon" />
+
+            <TextView
+                android:id="@+id/growlr"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/growlr"
+                card_view:layout_constraintStart_toStartOf="@id/growlr_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/growlr_hint" />
+
+
+            <TextView
+                android:id="@+id/hornet_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/hornet"
+                card_view:layout_constraintStart_toEndOf="@id/hornet_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/hornet_icon" />
+
+            <TextView
+                android:id="@+id/hornet"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/hornet"
+                card_view:layout_constraintStart_toStartOf="@id/hornet_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/hornet_hint" />
+
+
+            <TextView
+                android:id="@+id/jackd_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/jackd"
+                card_view:layout_constraintStart_toEndOf="@id/jackd_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/jackd_icon" />
+
+            <TextView
+                android:id="@+id/jackd"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/jackd"
+                card_view:layout_constraintStart_toStartOf="@id/jackd_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/jackd_hint" />
+
+
+            <TextView
+                android:id="@+id/manhunt_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/manhunt"
+                card_view:layout_constraintStart_toEndOf="@id/manhunt_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/manhunt_icon" />
+
+            <TextView
+                android:id="@+id/manhunt"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/manhunt"
+                card_view:layout_constraintStart_toStartOf="@id/manhunt_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/manhunt_hint" />
+
+            <TextView
+                android:id="@+id/planetromeo_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/planetromeo"
+                card_view:layout_constraintStart_toEndOf="@id/planetromeo_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/planetromeo_icon" />
+
+            <TextView
+                android:id="@+id/planetromeo"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/planetromeo"
+                card_view:layout_constraintStart_toStartOf="@id/planetromeo_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/planetromeo_hint" />
+
+
+            <TextView
+                android:id="@+id/recon_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/recon"
+                card_view:layout_constraintStart_toEndOf="@id/recon_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/recon_icon" />
+
+            <TextView
+                android:id="@+id/recon"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/recon"
+                card_view:layout_constraintStart_toStartOf="@id/recon_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/recon_hint" />
+
+
+            <TextView
+                android:id="@+id/scruff_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/scruff"
+                card_view:layout_constraintStart_toEndOf="@id/scruff_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/scruff_icon" />
+
+            <TextView
+                android:id="@+id/scruff"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/scruff"
+                card_view:layout_constraintStart_toStartOf="@id/scruff_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/scruff_hint" />
+
+
+            <TextView
+                android:id="@+id/tinder_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/tinder"
+                card_view:layout_constraintStart_toEndOf="@id/tinder_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/tinder_icon" />
+
+            <TextView
+                android:id="@+id/tinder"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/tinder"
+                card_view:layout_constraintStart_toStartOf="@id/tinder_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/tinder_hint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

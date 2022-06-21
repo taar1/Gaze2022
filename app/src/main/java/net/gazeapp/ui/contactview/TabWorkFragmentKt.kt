@@ -35,7 +35,7 @@ class TabWorkFragmentKt : Fragment(R.layout.contactview_tab_work_kt) {
     @Inject
     lateinit var tools: GazeTools
 
-    private val MY_PERMISSIONS_REQUEST_CALL_PHONE = 1
+
 
     private lateinit var grayLayout: LinearLayout
     private lateinit var noInfoCard: CardView
@@ -50,6 +50,7 @@ class TabWorkFragmentKt : Fragment(R.layout.contactview_tab_work_kt) {
     companion object {
         private const val TAG = "TabWorkFragmentKt"
         private const val CONTACT_ID = "contactId"
+        private const val MY_PERMISSIONS_REQUEST_CALL_PHONE = 1
 
         fun newInstance(contactId: Int) = TabWorkFragmentKt().apply {
             arguments = bundleOf(CONTACT_ID to contactId)

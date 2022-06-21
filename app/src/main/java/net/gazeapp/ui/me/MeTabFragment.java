@@ -1,15 +1,12 @@
 package net.gazeapp.ui.me;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
@@ -18,54 +15,33 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Gallery;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.ScrollView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.ShareActionProvider;
-import androidx.cardview.widget.CardView;
 import androidx.core.app.ShareCompat;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
-import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
-import com.google.android.material.button.MaterialButton;
 
 import net.gazeapp.R;
-import net.gazeapp.callbacks.MyMediaListLoadCallback;
 import net.gazeapp.data.GazeImage;
 import net.gazeapp.data.model.Body;
 import net.gazeapp.data.model.Contact;
-import net.gazeapp.data.model.Media;
 import net.gazeapp.data.model.Personal;
 import net.gazeapp.event.MediaAddedEvent;
 import net.gazeapp.helpers.Const;
-import net.gazeapp.imageslider.ContactFullScreenViewerActivity;
-import net.gazeapp.mymediagridgallery.MyMediaGridGalleryActivity;
-import net.gazeapp.mymediagridgallery.MyMediaGridViewAdapter;
-import net.gazeapp.utilities.FileProvider;
-import net.gazeapp.utilities.FreeVersionDialogs;
 import net.gazeapp.utilities.GazeTools;
-import net.gazeapp.utilities.MediaTools;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
+@Deprecated
 public class MeTabFragment extends Fragment {
 
     private final String TAG = getClass().getSimpleName();
@@ -86,67 +62,67 @@ public class MeTabFragment extends Fragment {
     private ActionMode actionMode;
     private int countSelected;
 
-    private MyMediaGridViewAdapter gridAdapterOne;
-    private MyMediaGridViewAdapter gridAdapterTwo;
-
-    public ArrayList<Media> mediaListOne;
-    public ArrayList<Media> mediaListTwo;
-
-    MediaTools mediaTools;
-    FreeVersionDialogs freeVersionDialogs;
-
-    @BindView(R.id.button_view_profile)
-    MaterialButton buttonViewProfile;
-    @BindView(R.id.button_edit_profile)
-    MaterialButton buttonEditProfile;
-
-    @BindView(R.id.card_image)
-    ImageView cardImage;
-    @BindView(R.id.contact_name)
-    TextView contactName;
-    @BindView(R.id.additional_info)
-    TextView additionalInfo;
-    @BindView(R.id.basicInfo)
-    TextView basicInfo;
-    @BindView(R.id.note)
-    TextView note;
-    @BindView(R.id.scroll)
-    ScrollView scrollView;
-
-    @BindView(R.id.cardView)
-    CardView meCardView;
-    @BindView(R.id.my_media_title)
-    TextView myMediaTitle;
-    @BindView(R.id.card_view_gallery_one)
-    CardView cardViewGalleryOne;
-    @BindView(R.id.progress_bar_gallery_one)
-    ProgressBar progressBarOne;
-    @BindView(R.id.recycler_view_gallery_one)
-    GridView gridViewGalleryOne;
-    @BindView(R.id.vertical_layout_gallery_one)
-    LinearLayout verticalLayoutGalleryOne;
-    @BindView(R.id.no_photos_text_gallery_one)
-    TextView noPhotosGalleryOne;
-    @BindView(R.id.button_add_images_gallery_one)
-    MaterialButton addImagesGalleryOne;
-    @BindView(R.id.button_edit_images_gallery_one)
-    MaterialButton editImagesGalleryOne;
-    @BindView(R.id.gallery_two_show_button)
-    MaterialButton showGalleryTwoButton;
-    @BindView(R.id.card_view_gallery_two)
-    CardView cardViewGalleryTwo;
-    @BindView(R.id.progress_bar_gallery_two)
-    ProgressBar progressBarTwo;
-    @BindView(R.id.recycler_view_gallery_two)
-    GridView gridViewGalleryTwo;
-    @BindView(R.id.vertical_layout_gallery_two)
-    LinearLayout verticalLayoutGalleryTwo;
-    @BindView(R.id.no_photos_text_gallery_two)
-    TextView noPhotosGalleryTwo;
-    @BindView(R.id.button_add_images_gallery_two)
-    MaterialButton addImagesGalleryTwo;
-    @BindView(R.id.button_edit_images_gallery_two)
-    MaterialButton editImagesGalleryTwo;
+//    private MyMediaGridViewAdapter gridAdapterOne;
+//    private MyMediaGridViewAdapter gridAdapterTwo;
+//
+//    public ArrayList<Media> mediaListOne;
+//    public ArrayList<Media> mediaListTwo;
+//
+//    MediaTools mediaTools;
+//    FreeVersionDialogs freeVersionDialogs;
+//
+//    @BindView(R.id.button_view_profile)
+//    MaterialButton buttonViewProfile;
+//    @BindView(R.id.button_edit_profile)
+//    MaterialButton buttonEditProfile;
+//
+//    @BindView(R.id.card_image)
+//    ImageView cardImage;
+//    @BindView(R.id.contact_name)
+//    TextView contactName;
+//    @BindView(R.id.additional_info)
+//    TextView additionalInfo;
+//    @BindView(R.id.basicInfo)
+//    TextView basicInfo;
+//    @BindView(R.id.note)
+//    TextView note;
+//    @BindView(R.id.scroll)
+//    ScrollView scrollView;
+//
+//    @BindView(R.id.cardView)
+//    CardView meCardView;
+//    @BindView(R.id.my_media_title)
+//    TextView myMediaTitle;
+//    @BindView(R.id.card_view_gallery_one)
+//    CardView cardViewGalleryOne;
+//    @BindView(R.id.progress_bar_gallery_one)
+//    ProgressBar progressBarOne;
+//    @BindView(R.id.recycler_view_gallery_one)
+//    GridView gridViewGalleryOne;
+//    @BindView(R.id.vertical_layout_gallery_one)
+//    LinearLayout verticalLayoutGalleryOne;
+//    @BindView(R.id.no_photos_text_gallery_one)
+//    TextView noPhotosGalleryOne;
+//    @BindView(R.id.button_add_images_gallery_one)
+//    MaterialButton addImagesGalleryOne;
+//    @BindView(R.id.button_edit_images_gallery_one)
+//    MaterialButton editImagesGalleryOne;
+//    @BindView(R.id.gallery_two_show_button)
+//    MaterialButton showGalleryTwoButton;
+//    @BindView(R.id.card_view_gallery_two)
+//    CardView cardViewGalleryTwo;
+//    @BindView(R.id.progress_bar_gallery_two)
+//    ProgressBar progressBarTwo;
+//    @BindView(R.id.recycler_view_gallery_two)
+//    GridView gridViewGalleryTwo;
+//    @BindView(R.id.vertical_layout_gallery_two)
+//    LinearLayout verticalLayoutGalleryTwo;
+//    @BindView(R.id.no_photos_text_gallery_two)
+//    TextView noPhotosGalleryTwo;
+//    @BindView(R.id.button_add_images_gallery_two)
+//    MaterialButton addImagesGalleryTwo;
+//    @BindView(R.id.button_edit_images_gallery_two)
+//    MaterialButton editImagesGalleryTwo;
 
     private int activeGalleryNumber;
     private ArrayList<GazeImage> galleryOneImageList;
@@ -165,15 +141,15 @@ public class MeTabFragment extends Fragment {
 
     public MeTabFragment() {
         this.activity = getActivity();
-        mediaTools = new MediaTools();
+//        mediaTools = new MediaTools();
         tools = new GazeTools(activity);
     }
 
     public MeTabFragment(Activity activity) {
         this.activity = activity;
 
-        mediaTools = new MediaTools();
-        freeVersionDialogs = new FreeVersionDialogs(activity);
+//        mediaTools = new MediaTools();
+//        freeVersionDialogs = new FreeVersionDialogs(activity);
         tools = new GazeTools(activity);
     }
 
@@ -188,7 +164,7 @@ public class MeTabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout_me_tab, container, false);
-        ButterKnife.bind(this, view);
+//        ButterKnife.bind(this, view);
 
         updateUI();
         return view;
@@ -198,15 +174,15 @@ public class MeTabFragment extends Fragment {
         if (activity instanceof ObservableScrollViewCallbacks) {
             // Scroll to the specified offset after layout
             Bundle args = getArguments();
-            if (args != null && args.containsKey(ARG_SCROLL_Y)) {
-                final int scrollY = args.getInt(ARG_SCROLL_Y, 0);
-                ScrollUtils.addOnGlobalLayoutListener(scrollView, new Runnable() {
-                    @Override
-                    public void run() {
-                        scrollView.scrollTo(0, scrollY);
-                    }
-                });
-            }
+//            if (args != null && args.containsKey(ARG_SCROLL_Y)) {
+//                final int scrollY = args.getInt(ARG_SCROLL_Y, 0);
+//                ScrollUtils.addOnGlobalLayoutListener(scrollView, new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        scrollView.scrollTo(0, scrollY);
+//                    }
+//                });
+//            }
 
 //            // TouchInterceptionViewGroup should be a parent view other than ViewPager.
 //            // This is a workaround for the issue #117:
@@ -266,176 +242,176 @@ public class MeTabFragment extends Fragment {
 //    }
 
     void loadGalleryOne() {
-        noPhotosGalleryOne.setVisibility(View.GONE);
-        progressBarOne.setVisibility(View.VISIBLE);
-
-        mediaTools.getMyMediaFromInternalStorage(new MyMediaListLoadCallback() {
-
-            @Override
-            public void success(ArrayList<GazeImage> mediaList) {
-                galleryOneImageList = mediaList;
-
-                int mediaSize = mediaList.size();
-                int modulo = mediaSize % Const.GRID_GALLERY_COLUMNS;
-                if (modulo > 0) {
-                    mediaSize = mediaSize + (Const.GRID_GALLERY_COLUMNS - modulo);
-                }
-
-                int galleryRows = mediaSize / Const.GRID_GALLERY_COLUMNS;
-                int gridGalleryHeight = galleryRows * Const.GRID_GALLERY_ITEM_HEIGHT; // each row is 490px
-
-                // Adding 11dp to the grid height for some padding on the bottom side.
-                float gridGalleryHeightDp = tools.convertDpToPx(11);
-                int adjustedGalleryHeight = Math.round(gridGalleryHeight + gridGalleryHeightDp);
-
-                //gridGalleryOuterLayoutOne.setLayoutParams(new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, adjustedGalleryHeight));
-
-                if (gridAdapterOne == null) {
-                    gridAdapterOne = new MyMediaGridViewAdapter(activity, R.layout.gridgallery_grid_item_layout, mediaList);
-                    gridViewGalleryOne.setAdapter(gridAdapterOne);
-                    orientationBasedUI(gridAdapterOne, gridViewGalleryOne, getResources().getConfiguration().orientation);
-                } else {
-                    mediaTools.cleanMyMediaCacheDir();
-                    gridAdapterOne.notifyDataSetChanged();
-                    /*
-                    Some selected images may have been deleted
-                    hence update action mode title
-                     */
-                    if (actionMode != null) {
-                        actionMode.setTitle(countSelected + " " + getString(R.string.selected_media_counter));
-                    }
-                }
-
-                progressBarOne.setVisibility(View.GONE);
-                gridViewGalleryOne.setVisibility(View.VISIBLE);
-                addImagesGalleryOne.setVisibility(View.VISIBLE);
-                editImagesGalleryOne.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void fail(Exception e) {
-                Log.e(TAG, "Error loading the Grid Gallery One Content: " + e.getLocalizedMessage());
-                showEmptyGridGalleryOne();
-            }
-
-            @Override
-            public void empty() {
-                Log.w(TAG, "Empty Grid Gallery One. No items.");
-                showEmptyGridGalleryOne();
-            }
-        });
-
-        gridViewGalleryOne.setOnItemClickListener((parent, view, position, id) -> {
-            if (countSelected == 0) {
-                // Show image full size
-//                overlayView = new ImageOverlayView(activity, ImageOverlayView.MediaType.IMAGE);
-
-                // TODO create delete from IMAGE object (me tab galley) (in ImageOverlayView)
-                // TODO create delete from IMAGE object (me tab galley) (in ImageOverlayView)
-                // TODO create delete from IMAGE object (me tab galley) (in ImageOverlayView)
-
-//                ImageViewer iv = new ImageViewer.Builder(activity, galleryOneImageList)
-//                        .setStartPosition(position)
-//                        .setFormatter(new ImageViewer.Formatter<GazeImage>() {
-//                            @Override
-//                            public String format(GazeImage image) {
-//                                return Uri.fromFile(new File(image.getPath())).toString();
-//                            }
-//                        })
-//                        .allowSwipeToDismiss(true)
-//                        .hideStatusBar(true)
-//                        .setImageChangeListener(getImageChangeListener(galleryOneImageList))
-//                        .setOverlayView(overlayView)
-//                        .show();
-//                overlayView.setImageViewer(iv);
-
-//                    FullScreenViewActivity_.intent(activity).position(position).imageList(galleryOneImageList).start();
-            } else {
-                if (actionMode == null) {
-                    actionMode = activity.startActionMode(actionModeCallbackGalleryOne);
-                }
-
-                toggleSelectionGalleryOne(position);
-                actionMode.setTitle(countSelected + " " + getString(R.string.selected_media_counter));
-
-                Log.d(TAG, "SINGLE CLICK Selection Size: " + getSelectedGalleryOne().size());
-
-                if (countSelected == 0) {
-                    actionMode.finish();
-                }
-            }
-        });
-
-        gridViewGalleryOne.setOnItemLongClickListener((parent, view, position, id) -> {
-            if (actionMode != null) {
-                return false;
-            }
-
-            Log.d(TAG, "LONG CLICK Selection Size: " + getSelectedGalleryOne().size());
-
-            actionMode = activity.startActionMode(actionModeCallbackGalleryOne);
-
-            toggleSelectionGalleryOne(position);
-            actionMode.setTitle(countSelected + " " + getString(R.string.selected_media_counter));
-            view.setSelected(true);
-
-            return true;
-        });
-
-        gridViewGalleryTwo.setOnItemClickListener((parent, view, position, id) -> {
-            if (countSelected == 0) {
-                // Show image full size
-                Intent intent = new Intent(activity, ContactFullScreenViewerActivity.class);
-                intent.putExtra("position", position);
-                intent.putExtra("imageList", galleryTwoImageList);
-                startActivity(intent);
-            } else {
-                if (actionMode == null) {
-                    actionMode = activity.startActionMode(actionModeCallbackGalleryTwo);
-                }
-
-                toggleSelectionGalleryTwo(position);
-                actionMode.setTitle(countSelected + " " + getString(R.string.selected_media_counter));
-
-                Log.d(TAG, "SINGLE CLICK Selection Size: " + getSelectedGalleryTwo().size());
-
-                if (countSelected == 0) {
-                    actionMode.finish();
-                }
-            }
-        });
-
-        gridViewGalleryTwo.setOnItemLongClickListener((parent, view, position, id) -> {
-            if (actionMode != null) {
-                return false;
-            }
-
-            Log.d(TAG, "LONG CLICK Selection Size: " + getSelectedGalleryTwo().size());
-
-            actionMode = activity.startActionMode(actionModeCallbackGalleryTwo);
-
-            toggleSelectionGalleryTwo(position);
-            actionMode.setTitle(countSelected + " " + getString(R.string.selected_media_counter));
-            view.setSelected(true);
-
-            return true;
-        });
+//        noPhotosGalleryOne.setVisibility(View.GONE);
+//        progressBarOne.setVisibility(View.VISIBLE);
+//
+//        mediaTools.getMyMediaFromInternalStorage(new MyMediaListLoadCallback() {
+//
+//            @Override
+//            public void success(ArrayList<GazeImage> mediaList) {
+//                galleryOneImageList = mediaList;
+//
+//                int mediaSize = mediaList.size();
+//                int modulo = mediaSize % Const.GRID_GALLERY_COLUMNS;
+//                if (modulo > 0) {
+//                    mediaSize = mediaSize + (Const.GRID_GALLERY_COLUMNS - modulo);
+//                }
+//
+//                int galleryRows = mediaSize / Const.GRID_GALLERY_COLUMNS;
+//                int gridGalleryHeight = galleryRows * Const.GRID_GALLERY_ITEM_HEIGHT; // each row is 490px
+//
+//                // Adding 11dp to the grid height for some padding on the bottom side.
+//                float gridGalleryHeightDp = tools.convertDpToPx(11);
+//                int adjustedGalleryHeight = Math.round(gridGalleryHeight + gridGalleryHeightDp);
+//
+//                //gridGalleryOuterLayoutOne.setLayoutParams(new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, adjustedGalleryHeight));
+//
+//                if (gridAdapterOne == null) {
+//                    gridAdapterOne = new MyMediaGridViewAdapter(activity, R.layout.gridgallery_grid_item_layout, mediaList);
+//                    gridViewGalleryOne.setAdapter(gridAdapterOne);
+//                    orientationBasedUI(gridAdapterOne, gridViewGalleryOne, getResources().getConfiguration().orientation);
+//                } else {
+//                    mediaTools.cleanMyMediaCacheDir();
+//                    gridAdapterOne.notifyDataSetChanged();
+//                    /*
+//                    Some selected images may have been deleted
+//                    hence update action mode title
+//                     */
+//                    if (actionMode != null) {
+//                        actionMode.setTitle(countSelected + " " + getString(R.string.selected_media_counter));
+//                    }
+//                }
+//
+//                progressBarOne.setVisibility(View.GONE);
+//                gridViewGalleryOne.setVisibility(View.VISIBLE);
+//                addImagesGalleryOne.setVisibility(View.VISIBLE);
+//                editImagesGalleryOne.setVisibility(View.VISIBLE);
+//            }
+//
+//            @Override
+//            public void fail(Exception e) {
+//                Log.e(TAG, "Error loading the Grid Gallery One Content: " + e.getLocalizedMessage());
+//                showEmptyGridGalleryOne();
+//            }
+//
+//            @Override
+//            public void empty() {
+//                Log.w(TAG, "Empty Grid Gallery One. No items.");
+//                showEmptyGridGalleryOne();
+//            }
+//        });
+//
+//        gridViewGalleryOne.setOnItemClickListener((parent, view, position, id) -> {
+//            if (countSelected == 0) {
+//                // Show image full size
+////                overlayView = new ImageOverlayView(activity, ImageOverlayView.MediaType.IMAGE);
+//
+//                // TODO create delete from IMAGE object (me tab galley) (in ImageOverlayView)
+//                // TODO create delete from IMAGE object (me tab galley) (in ImageOverlayView)
+//                // TODO create delete from IMAGE object (me tab galley) (in ImageOverlayView)
+//
+////                ImageViewer iv = new ImageViewer.Builder(activity, galleryOneImageList)
+////                        .setStartPosition(position)
+////                        .setFormatter(new ImageViewer.Formatter<GazeImage>() {
+////                            @Override
+////                            public String format(GazeImage image) {
+////                                return Uri.fromFile(new File(image.getPath())).toString();
+////                            }
+////                        })
+////                        .allowSwipeToDismiss(true)
+////                        .hideStatusBar(true)
+////                        .setImageChangeListener(getImageChangeListener(galleryOneImageList))
+////                        .setOverlayView(overlayView)
+////                        .show();
+////                overlayView.setImageViewer(iv);
+//
+////                    FullScreenViewActivity_.intent(activity).position(position).imageList(galleryOneImageList).start();
+//            } else {
+//                if (actionMode == null) {
+//                    actionMode = activity.startActionMode(actionModeCallbackGalleryOne);
+//                }
+//
+//                toggleSelectionGalleryOne(position);
+//                actionMode.setTitle(countSelected + " " + getString(R.string.selected_media_counter));
+//
+//                Log.d(TAG, "SINGLE CLICK Selection Size: " + getSelectedGalleryOne().size());
+//
+//                if (countSelected == 0) {
+//                    actionMode.finish();
+//                }
+//            }
+//        });
+//
+//        gridViewGalleryOne.setOnItemLongClickListener((parent, view, position, id) -> {
+//            if (actionMode != null) {
+//                return false;
+//            }
+//
+//            Log.d(TAG, "LONG CLICK Selection Size: " + getSelectedGalleryOne().size());
+//
+//            actionMode = activity.startActionMode(actionModeCallbackGalleryOne);
+//
+//            toggleSelectionGalleryOne(position);
+//            actionMode.setTitle(countSelected + " " + getString(R.string.selected_media_counter));
+//            view.setSelected(true);
+//
+//            return true;
+//        });
+//
+//        gridViewGalleryTwo.setOnItemClickListener((parent, view, position, id) -> {
+//            if (countSelected == 0) {
+//                // Show image full size
+//                Intent intent = new Intent(activity, ContactFullScreenViewerActivity.class);
+//                intent.putExtra("position", position);
+//                intent.putExtra("imageList", galleryTwoImageList);
+//                startActivity(intent);
+//            } else {
+//                if (actionMode == null) {
+//                    actionMode = activity.startActionMode(actionModeCallbackGalleryTwo);
+//                }
+//
+//                toggleSelectionGalleryTwo(position);
+//                actionMode.setTitle(countSelected + " " + getString(R.string.selected_media_counter));
+//
+//                Log.d(TAG, "SINGLE CLICK Selection Size: " + getSelectedGalleryTwo().size());
+//
+//                if (countSelected == 0) {
+//                    actionMode.finish();
+//                }
+//            }
+//        });
+//
+//        gridViewGalleryTwo.setOnItemLongClickListener((parent, view, position, id) -> {
+//            if (actionMode != null) {
+//                return false;
+//            }
+//
+//            Log.d(TAG, "LONG CLICK Selection Size: " + getSelectedGalleryTwo().size());
+//
+//            actionMode = activity.startActionMode(actionModeCallbackGalleryTwo);
+//
+//            toggleSelectionGalleryTwo(position);
+//            actionMode.setTitle(countSelected + " " + getString(R.string.selected_media_counter));
+//            view.setSelected(true);
+//
+//            return true;
+//        });
     }
 
     private void showEmptyGridGalleryOne() {
         //gridGalleryOuterLayoutOne.setLayoutParams(new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0));
-        if (gridAdapterOne != null) {
-            gridAdapterOne.notifyDataSetChanged();
-        }
-
-        progressBarOne.setVisibility(View.GONE);
-        gridViewGalleryOne.setVisibility(View.GONE);
-        noPhotosGalleryOne.setVisibility(View.VISIBLE);
-        addImagesGalleryOne.setVisibility(View.VISIBLE);
-        editImagesGalleryOne.setVisibility(View.VISIBLE);
+//        if (gridAdapterOne != null) {
+//            gridAdapterOne.notifyDataSetChanged();
+//        }
+//
+//        progressBarOne.setVisibility(View.GONE);
+//        gridViewGalleryOne.setVisibility(View.GONE);
+//        noPhotosGalleryOne.setVisibility(View.VISIBLE);
+//        addImagesGalleryOne.setVisibility(View.VISIBLE);
+//        editImagesGalleryOne.setVisibility(View.VISIBLE);
     }
 
-    @OnClick(R.id.button_add_images_gallery_one)
+    //    @OnClick(R.id.button_add_images_gallery_one)
     void clickedAddImagesGalleryOne() {
         Log.d(TAG, "XXXXX clickedAddImagesGalleryOne()");
 
@@ -472,14 +448,14 @@ public class MeTabFragment extends Fragment {
         startActivityForResult(intent, OPEN_MEDIA_PICKER);
     }
 
-    @OnClick(R.id.button_edit_images_gallery_one)
-    void clîckedEditImagesGalleryOne() {
-        Intent intent = new Intent(activity, MyMediaGridGalleryActivity.class);
-        intent.putExtra("galleryNumber", GALLERY_ONE);
-        intent.putExtra("imageList", galleryOneImageList);
-        intent.putExtra("title", getString(R.string.gallery_one_edit_media));
-        startActivityForResult(intent, Const.REQUEST_CODE_EDIT_IMAGES_GALLERY);
-    }
+//    @OnClick(R.id.button_edit_images_gallery_one)
+//    void clîckedEditImagesGalleryOne() {
+//        Intent intent = new Intent(activity, MyMediaGridGalleryActivity.class);
+//        intent.putExtra("galleryNumber", GALLERY_ONE);
+//        intent.putExtra("imageList", galleryOneImageList);
+//        intent.putExtra("title", getString(R.string.gallery_one_edit_media));
+//        startActivityForResult(intent, Const.REQUEST_CODE_EDIT_IMAGES_GALLERY);
+//    }
 
     private ShareActionProvider mActionProvider;
 
@@ -488,7 +464,7 @@ public class MeTabFragment extends Fragment {
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
             Log.d(TAG, "onCreateActionMode");
             MenuInflater menuInflater = mode.getMenuInflater();
-            menuInflater.inflate(R.menu.gridgallery_menu_share_selection_contextual_action_bar, menu);
+//            menuInflater.inflate(R.menu.gridgallery_menu_share_selection_contextual_action_bar, menu);
 
             // WORKING CODE!!
             // WORKING CODE!!
@@ -544,10 +520,10 @@ public class MeTabFragment extends Fragment {
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.menu_item_share:
-                    shareFromBothGalleries();
-                    mode.finish();
-                    return true;
+//                case R.id.menu_item_share:
+//                    shareFromBothGalleries();
+//                    mode.finish();
+//                    return true;
                 default:
                     return false;
             }
@@ -568,7 +544,7 @@ public class MeTabFragment extends Fragment {
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
             Log.d(TAG, "onCreateActionMode");
             MenuInflater menuInflater = mode.getMenuInflater();
-            menuInflater.inflate(R.menu.gridgallery_menu_share_selection_contextual_action_bar, menu);
+//            menuInflater.inflate(R.menu.gridgallery_menu_share_selection_contextual_action_bar, menu);
 
             actionMode = mode;
             countSelected = 0;
@@ -583,10 +559,10 @@ public class MeTabFragment extends Fragment {
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.menu_item_share:
-                    shareFromBothGalleries();
-                    mode.finish();
-                    return true;
+//                case R.id.menu_item_share:
+//                    shareFromBothGalleries();
+//                    mode.finish();
+//                    return true;
                 default:
                     return false;
             }
@@ -762,8 +738,8 @@ public class MeTabFragment extends Fragment {
     }
 
     void loadGalleryTwo() {
-        noPhotosGalleryTwo.setVisibility(View.GONE);
-        progressBarTwo.setVisibility(View.VISIBLE);
+//        noPhotosGalleryTwo.setVisibility(View.GONE);
+//        progressBarTwo.setVisibility(View.VISIBLE);
 
         // TODO
 //        mediaTools.getMyMediaFromInternalStorage(GALLERY_TWO, new MyMediaListLoadCallback() {
@@ -815,22 +791,22 @@ public class MeTabFragment extends Fragment {
 //        });
     }
 
-    @OnClick(R.id.gallery_two_show_button)
-    void toggleGalleryTwoVisibility() {
-        int newVisibility;
-        if (cardViewGalleryTwo.getVisibility() == View.VISIBLE) {
-            newVisibility = View.GONE;
-            showGalleryTwoButton.setText(getString(R.string.show_second_gallery));
-            deselectAllGalleryTwo();
-        } else {
-            newVisibility = View.VISIBLE;
-            showGalleryTwoButton.setText(getString(R.string.hide_second_gallery));
-        }
+//    @OnClick(R.id.gallery_two_show_button)
+//    void toggleGalleryTwoVisibility() {
+//        int newVisibility;
+//        if (cardViewGalleryTwo.getVisibility() == View.VISIBLE) {
+//            newVisibility = View.GONE;
+//            showGalleryTwoButton.setText(getString(R.string.show_second_gallery));
+//            deselectAllGalleryTwo();
+//        } else {
+//            newVisibility = View.VISIBLE;
+//            showGalleryTwoButton.setText(getString(R.string.hide_second_gallery));
+//        }
+//
+//        cardViewGalleryTwo.setVisibility(newVisibility);
+//    }
 
-        cardViewGalleryTwo.setVisibility(newVisibility);
-    }
-
-    @OnClick(R.id.button_add_images_gallery_two)
+    //    @OnClick(R.id.button_add_images_gallery_two)
     void clickedAddImagesGalleryTwo() {
         Log.d(TAG, "TODO: clickedAddImagesGalleryTwo()");
 
@@ -845,15 +821,15 @@ public class MeTabFragment extends Fragment {
 
     private void showEmptyGridGalleryTwo() {
         //gridGalleryOuterLayoutTwo.setLayoutParams(new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0));
-        if (gridAdapterTwo != null) {
-            gridAdapterTwo.notifyDataSetChanged();
-        }
-
-        progressBarTwo.setVisibility(View.GONE);
-        gridViewGalleryTwo.setVisibility(View.GONE);
-        noPhotosGalleryTwo.setVisibility(View.VISIBLE);
-        addImagesGalleryTwo.setVisibility(View.VISIBLE);
-        editImagesGalleryTwo.setVisibility(View.VISIBLE);
+//        if (gridAdapterTwo != null) {
+//            gridAdapterTwo.notifyDataSetChanged();
+//        }
+//
+//        progressBarTwo.setVisibility(View.GONE);
+//        gridViewGalleryTwo.setVisibility(View.GONE);
+//        noPhotosGalleryTwo.setVisibility(View.VISIBLE);
+//        addImagesGalleryTwo.setVisibility(View.VISIBLE);
+//        editImagesGalleryTwo.setVisibility(View.VISIBLE);
     }
 
     @Subscribe
@@ -922,14 +898,14 @@ public class MeTabFragment extends Fragment {
 //        updateUI();
     }
 
-    @OnClick(R.id.button_edit_images_gallery_two)
-    void clîckedEditImagesGalleryTwo() {
-        Intent intent = new Intent(activity, MyMediaGridGalleryActivity.class);
-        intent.putExtra("galleryNumber", GALLERY_TWO);
-        intent.putExtra("imageList", galleryTwoImageList);
-        intent.putExtra("title", getString(R.string.gallery_two_edit_media));
-        startActivityForResult(intent, Const.REQUEST_CODE_EDIT_IMAGES_GALLERY);
-    }
+//    @OnClick(R.id.button_edit_images_gallery_two)
+//    void clîckedEditImagesGalleryTwo() {
+//        Intent intent = new Intent(activity, MyMediaGridGalleryActivity.class);
+//        intent.putExtra("galleryNumber", GALLERY_TWO);
+//        intent.putExtra("imageList", galleryTwoImageList);
+//        intent.putExtra("title", getString(R.string.gallery_two_edit_media));
+//        startActivityForResult(intent, Const.REQUEST_CODE_EDIT_IMAGES_GALLERY);
+//    }
 
 //    private ImageViewer.OnImageChangeListener getImageChangeListener(final ArrayList<GazeImage> mediaList) {
 //        return new ImageViewer.OnImageChangeListener() {
@@ -959,7 +935,7 @@ public class MeTabFragment extends Fragment {
     private void showExplanationDialog() {
         try {
             if (!tools.hasSeenMeTabExplanationDialog()) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.GazeAppTheme);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.GazeTheme);
                 builder.setTitle(R.string.me_tab_explanation_dialog_title);
                 builder.setMessage(getActivity().getString(R.string.me_tab_explanation_dialog_text_pre));
                 builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
@@ -980,43 +956,43 @@ public class MeTabFragment extends Fragment {
         }
     }
 
-    private void orientationBasedUI(MyMediaGridViewAdapter gridAdapter, GridView gridViewGallery, int orientation) {
-        final WindowManager windowManager = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);
-        final DisplayMetrics metrics = new DisplayMetrics();
-        windowManager.getDefaultDisplay().getMetrics(metrics);
-
-        if (gridAdapter != null) {
-            int size = orientation == Configuration.ORIENTATION_PORTRAIT ? metrics.widthPixels / 3 : metrics.widthPixels / 5;
-            gridAdapter.setLayoutParams(size);
-        }
-        gridViewGallery.setNumColumns(orientation == Configuration.ORIENTATION_PORTRAIT ? 3 : 5);
-    }
-
-    @OnClick(R.id.button_view_profile)
-    void clickedButtonViewProfile() {
-        // TODO
-        //ContactViewWithViewPagerTabActivity_.intent(activity).contactId(contact.getId()).start();
-    }
-
-    @OnClick(R.id.button_edit_profile)
-    void clickedButtonEdit() {
-        getMe();
-        Log.d(TAG, "Creating a new ME Contact");
-        if (contact == null) {
-            contact = new Contact(getString(R.string.me));
-            contact.setMe(true);
-            contact.setLastMod(new Date());
-            contact.setCreated(new Date());
-
-            // TODO
-            //AddContactActivity_.intent(activity).contact(contact).startForResult(Const.REQUEST_CODE);
-        } else {
-            Log.d(TAG, "Editing the Me Contact");
-
-            // TODO
-            //EditContactActivity_.intent(activity).contact(contact).startForResult(Const.REQUEST_CODE);
-        }
-    }
+//    private void orientationBasedUI(MyMediaGridViewAdapter gridAdapter, GridView gridViewGallery, int orientation) {
+//        final WindowManager windowManager = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);
+//        final DisplayMetrics metrics = new DisplayMetrics();
+//        windowManager.getDefaultDisplay().getMetrics(metrics);
+//
+//        if (gridAdapter != null) {
+//            int size = orientation == Configuration.ORIENTATION_PORTRAIT ? metrics.widthPixels / 3 : metrics.widthPixels / 5;
+//            gridAdapter.setLayoutParams(size);
+//        }
+//        gridViewGallery.setNumColumns(orientation == Configuration.ORIENTATION_PORTRAIT ? 3 : 5);
+//    }
+//
+//    @OnClick(R.id.button_view_profile)
+//    void clickedButtonViewProfile() {
+//        // TODO
+//        //ContactViewWithViewPagerTabActivity_.intent(activity).contactId(contact.getId()).start();
+//    }
+//
+//    @OnClick(R.id.button_edit_profile)
+//    void clickedButtonEdit() {
+//        getMe();
+//        Log.d(TAG, "Creating a new ME Contact");
+//        if (contact == null) {
+//            contact = new Contact(getString(R.string.me));
+//            contact.setMe(true);
+//            contact.setLastMod(new Date());
+//            contact.setCreated(new Date());
+//
+//            // TODO
+//            //AddContactActivity_.intent(activity).contact(contact).startForResult(Const.REQUEST_CODE);
+//        } else {
+//            Log.d(TAG, "Editing the Me Contact");
+//
+//            // TODO
+//            //EditContactActivity_.intent(activity).contact(contact).startForResult(Const.REQUEST_CODE);
+//        }
+//    }
 
     private void updateMeCardLayout() {
         String age = null;
@@ -1068,7 +1044,7 @@ public class MeTabFragment extends Fragment {
         if (basicInfoImploded.trim().length() < 1) {
             basicInfoImploded = activity.getResources().getString(R.string.not_available);
         }
-        basicInfo.setText(basicInfoImploded);
+//        basicInfo.setText(basicInfoImploded);
 
         /*
          * ENDOWMENT / ROLE

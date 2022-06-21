@@ -1,0 +1,184 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/work_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:layout_margin="@dimen/contact_view_card_outer_margin"
+    card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/employer"
+                style="@style/Title.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/employer"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/duration"
+                style="@style/Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/duration" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.2"
+            android:background="@color/accent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:gravity="top"
+            android:orientation="horizontal"
+            android:padding="@dimen/contact_view_card_inner_padding">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|top"
+                android:gravity="top">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.3"
+                    android:contentDescription="Business Icon"
+                    android:src="@drawable/ic_business" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/contact_view_card_inner_padding"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/profession_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profession"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/profession"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_standard"
+                    android:text="@string/profession"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/office_address_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/address"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/office_address"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_standard"
+                    android:text="@string/address" />
+
+                <TextView
+                    android:id="@+id/phone_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phone"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_standard"
+                    android:text="@string/phone" />
+
+                <TextView
+                    android:id="@+id/email_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/email"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_standard"
+                    android:text="@string/email" />
+
+                <TextView
+                    android:id="@+id/salary_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/salary" />
+
+                <TextView
+                    android:id="@+id/salary"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/salary" />
+
+                <TextView
+                    android:id="@+id/frequency"
+                    style="@style/Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_standard"
+                    android:text="@string/frequency" />
+
+                <TextView
+                    android:id="@+id/notes_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notes"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/notes"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_standard"
+                    android:text="@string/notes" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

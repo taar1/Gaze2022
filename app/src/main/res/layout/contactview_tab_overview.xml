@@ -1,0 +1,396 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/outer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/light_gray">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/no_info_card"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:cardCornerRadius="@dimen/cardview_card_radius"
+        tools:visibility="visible">
+
+        <TextView
+            style="@style/Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_info_present" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/info_cards_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        tools:constraint_referenced_ids="info_card, note_card" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/cardview_card_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/contact_name"
+                style="@style/Title.Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/undefined"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nicknames"
+                style="@style/Italic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/undefined"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/contact_name"
+                app:layout_constraintTop_toBottomOf="@+id/contact_name" />
+
+            <ImageView
+                android:id="@+id/met_in_person_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:alpha="0.3"
+                android:src="@drawable/ic_met_in_person"
+                app:layout_constraintBottom_toBottomOf="@+id/nicknames"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/contact_name" />
+
+            <View
+                android:id="@+id/divider_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:alpha="0.2"
+                android:background="@color/primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nicknames" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/additional_info_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:constraint_referenced_ids="additional_info_icon, additional_info_hint, additional_info, view_padding_1" />
+
+            <ImageView
+                android:id="@+id/additional_info_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:alpha="0.3"
+                android:src="@drawable/ic_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_1" />
+
+            <TextView
+                android:id="@+id/additional_info_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/additional_info"
+                app:layout_constraintStart_toEndOf="@+id/additional_info_icon"
+                app:layout_constraintTop_toTopOf="@id/additional_info_icon" />
+
+            <TextView
+                android:id="@+id/additional_info"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="@string/additional_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/additional_info_hint"
+                app:layout_constraintTop_toBottomOf="@id/additional_info_hint" />
+
+            <View
+                android:id="@+id/view_padding_1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:alpha="0.2"
+                android:background="@color/primary"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/additional_info_icon"
+                app:layout_constraintTop_toBottomOf="@id/additional_info" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/age_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:constraint_referenced_ids="age_icon, age_hint, age, birthdate, view_padding_2" />
+
+            <ImageView
+                android:id="@+id/age_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:alpha="0.3"
+                android:src="@drawable/ic_cake"
+                app:layout_constraintStart_toStartOf="@+id/additional_info_icon"
+                app:layout_constraintTop_toBottomOf="@id/view_padding_1" />
+
+            <TextView
+                android:id="@+id/age_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/age"
+                app:layout_constraintStart_toEndOf="@+id/age_icon"
+                app:layout_constraintTop_toTopOf="@id/age_icon" />
+
+            <TextView
+                android:id="@+id/age"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                app:layout_constraintStart_toStartOf="@+id/age_hint"
+                app:layout_constraintTop_toBottomOf="@id/age_hint" />
+
+            <TextView
+                android:id="@+id/birthdate"
+                style="@style/Small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/birthdate"
+                app:layout_constraintStart_toStartOf="@+id/age_hint"
+                app:layout_constraintTop_toBottomOf="@id/age" />
+
+            <View
+                android:id="@+id/view_padding_2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:alpha="0.2"
+                android:background="@color/primary"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/age_icon"
+                app:layout_constraintTop_toBottomOf="@id/birthdate" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/body_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:constraint_referenced_ids="body_icon, height_hint, height, weight_hint, weight, view_padding_3" />
+
+            <ImageView
+                android:id="@+id/body_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:alpha="0.3"
+                android:src="@drawable/ic_man"
+                app:layout_constraintStart_toStartOf="@+id/additional_info_icon"
+                app:layout_constraintTop_toBottomOf="@id/view_padding_2" />
+
+
+            <TextView
+                android:id="@+id/height_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/height"
+                app:layout_constraintStart_toEndOf="@+id/body_icon"
+                app:layout_constraintTop_toTopOf="@id/body_icon" />
+
+            <TextView
+                android:id="@+id/height"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/height"
+                app:layout_constraintStart_toStartOf="@+id/height_hint"
+                app:layout_constraintTop_toBottomOf="@id/height_hint" />
+
+            <TextView
+                android:id="@+id/weight_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/weight"
+                app:layout_constraintStart_toStartOf="@+id/height_hint"
+                app:layout_constraintTop_toBottomOf="@id/height" />
+
+            <TextView
+                android:id="@+id/weight"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/weight"
+                app:layout_constraintStart_toStartOf="@+id/height_hint"
+                app:layout_constraintTop_toBottomOf="@id/weight_hint" />
+
+            <View
+                android:id="@+id/view_padding_3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:alpha="0.2"
+                android:background="@color/primary"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/body_icon"
+                app:layout_constraintTop_toBottomOf="@id/weight" />
+
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/endowment_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:constraint_referenced_ids="endowment_icon, endowment_hint, endowment" />
+
+            <ImageView
+                android:id="@+id/endowment_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:alpha="0.3"
+                android:src="@drawable/ic_eggplant"
+                app:layout_constraintStart_toStartOf="@+id/additional_info_icon"
+                app:layout_constraintTop_toBottomOf="@id/view_padding_3" />
+
+            <TextView
+                android:id="@+id/endowment_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/xxx_info"
+                app:layout_constraintStart_toEndOf="@+id/endowment_icon"
+                app:layout_constraintTop_toTopOf="@+id/endowment_icon" />
+
+            <TextView
+                android:id="@+id/endowment"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="@string/endowment"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/endowment_hint"
+                app:layout_constraintTop_toBottomOf="@id/endowment_hint" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--NOTES CARD-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/note_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="@dimen/cardview_card_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/notesTitle"
+                style="@style/Title.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/notes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:alpha="0.2"
+                android:background="@color/primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/notesTitle" />
+
+            <TextView
+                android:id="@+id/notes"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/my_notes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/notesTitle"
+                app:layout_constraintTop_toBottomOf="@id/view3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--CONTACT LABELS-->
+    <LinearLayout
+        android:id="@+id/labels_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/note_card" />
+
+    <View
+        android:id="@+id/bottom_padding"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_padding"
+        android:background="@color/light_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labels_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,27 +3,23 @@ package net.gazeapp.ui.settings;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import net.gazeapp.R;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private final static String TAG = SettingsActivity.class.getSimpleName();
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
+//    @BindView(R.id.toolbar)
+//    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
-        ButterKnife.bind(this);
+//        setContentView(R.layout.activity_settings);
+//        ButterKnife.bind(this);
 
-        setSupportActionBar(toolbar);
+//        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.action_settings);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);

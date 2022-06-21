@@ -12,7 +12,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide
+import coil.load
 import com.facebook.ads.AdSize
 import com.facebook.ads.AdView
 import com.google.android.material.appbar.CollapsingToolbarLayout
@@ -23,9 +23,9 @@ import net.gazeapp.R
 import net.gazeapp.data.model.Contact
 import net.gazeapp.data.model.ContactWithDetails
 import net.gazeapp.databinding.ContactDetailViewPagerLayoutBinding
+import net.gazeapp.dialog.FreeVersionDialogs
 import net.gazeapp.helpers.Const
 import net.gazeapp.helpers.Preferences
-import net.gazeapp.utilities.FreeVersionDialogs
 import net.gazeapp.utilities.GazeTools
 import net.gazeapp.utilities.MediaTools
 import net.gazeapp.utilities.SpecificValues
@@ -135,10 +135,9 @@ class ViewPagerFragment : Fragment(R.layout.contact_detail_view_pager_layout) {
         contactWithDetails.media?.let { mList ->
             for (media in mList) {
                 if (contactWithDetails.contact.mainPicId == media.id) {
-                    Glide.with(requireActivity())
-                        .load(media.fullPath)
-                        .placeholder(R.drawable.silhouette)
-                        .into(contactMainPic)
+                    contactMainPic.load(media.fullPath) {
+                        placeholder(R.drawable.silhouette)
+                    }
                     break
                 }
             }

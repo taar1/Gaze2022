@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/screen_free_user"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/free_user_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/upgrade_to_pro_text_first"
+        android:textAppearance="@style/Title.Regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/free_bullet_point_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/upgrade_to_pro_bulletpoint_1"
+        android:textAppearance="@style/Regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/free_user_title" />
+
+    <TextView
+        android:id="@+id/free_bullet_point_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/upgrade_to_pro_bulletpoint_2"
+        android:textAppearance="@style/Regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/free_bullet_point_1" />
+
+    <TextView
+        android:id="@+id/free_bullet_point_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/upgrade_to_pro_bulletpoint_3"
+        android:textAppearance="@style/Regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/free_bullet_point_2" />
+
+    <TextView
+        android:id="@+id/free_bullet_point_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/upgrade_to_pro_text_last"
+        android:textAppearance="@style/Regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/free_bullet_point_3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/upgrade_to_pro_button"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/primary_dark"
+        android:text="@string/upgrade_to_pro"
+        android:textAppearance="@style/CardView.PreviewTitle"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/free_bullet_point_4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

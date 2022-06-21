@@ -28,7 +28,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,8 +37,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
-
 import net.gazeapp.R;
 import net.gazeapp.data.GazeDatabase;
 import net.gazeapp.data.dao.WorkDao;
@@ -47,7 +44,6 @@ import net.gazeapp.data.model.Contact;
 import net.gazeapp.data.model.Work;
 import net.gazeapp.event.WorkAddedEditedEvent;
 import net.gazeapp.helpers.Const;
-import net.gazeapp.helpers.SnackBarType;
 import net.gazeapp.utilities.GazeTools;
 
 import org.greenrobot.eventbus.EventBus;
@@ -57,10 +53,9 @@ import java.text.NumberFormat;
 import java.util.Date;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import needle.Needle;
 
+@Deprecated
 public class ContactViewWorkFragment extends Fragment {
 
     private final String TAG = getClass().getSimpleName();
@@ -72,16 +67,16 @@ public class ContactViewWorkFragment extends Fragment {
 
     private View view;
 
-    @BindView(R.id.fragment_root)
-    FrameLayout fragmentRoot;
-    @BindView(R.id.scroll)
-    ObservableScrollView scrollView;
-    @BindView(R.id.no_info_layout)
-    LinearLayout noInformationLayout;
-    @BindView(R.id.gray_layout)
-    LinearLayout grayLayout;
-    @BindView(R.id.no_info_card)
-    CardView noInfoCard;
+//    @BindView(R.id.fragment_root)
+//    FrameLayout fragmentRoot;
+//    @BindView(R.id.scroll)
+//    ObservableScrollView scrollView;
+//    @BindView(R.id.no_info_layout)
+//    LinearLayout noInformationLayout;
+//    @BindView(R.id.gray_layout)
+//    LinearLayout grayLayout;
+//    @BindView(R.id.no_info_card)
+//    CardView noInfoCard;
 
     private boolean showNoInformationCard;
     private String mEmployer;
@@ -105,7 +100,7 @@ public class ContactViewWorkFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.contactview_tab_work, container, false);
-        ButterKnife.bind(this, view);
+//        ButterKnife.bind(this, view);
 
         activity = (ContactViewWithViewPagerTabActivity) getActivity();
         mContact = activity.getContact();
@@ -284,13 +279,13 @@ public class ContactViewWorkFragment extends Fragment {
                         notesHint.setVisibility(View.GONE);
                     }
 
-                    addToGrayLayout(v);
+//                    addToGrayLayout(v);
                 }
 
                 LinearLayout.LayoutParams viewLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, Math.round(getResources().getDimension(R.dimen.lower_ad_banner_height)));
                 View lowerPaddingView = new View(activity);
                 lowerPaddingView.setLayoutParams(viewLayoutParams);
-                addToGrayLayout(lowerPaddingView);
+//                addToGrayLayout(lowerPaddingView);
 
             } else {
                 showNoInformationCard = true;
@@ -298,13 +293,13 @@ public class ContactViewWorkFragment extends Fragment {
 
             int noInformationLayoutCorrectHeight = Math.round(activity.getDisplayHeight(false, false) - tools.convertPxToDp(Const.HEIGHT_TAB_BAR_AND_AD_BANNER));
 
-            if (showNoInformationCard) {
-                noInfoCard.setVisibility(View.VISIBLE);
-                noInformationLayout.setVisibility(View.VISIBLE);
-                noInformationLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.round(noInformationLayoutCorrectHeight)));
-            } else {
-                noInfoCard.setVisibility(View.GONE);
-            }
+//            if (showNoInformationCard) {
+//                noInfoCard.setVisibility(View.VISIBLE);
+//                noInformationLayout.setVisibility(View.VISIBLE);
+//                noInformationLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.round(noInformationLayoutCorrectHeight)));
+//            } else {
+//                noInfoCard.setVisibility(View.GONE);
+//            }
 
             //        updateScrollview();
 
@@ -313,13 +308,13 @@ public class ContactViewWorkFragment extends Fragment {
 
     }
 
-    private void addToGrayLayout(View v) {
-        Needle.onMainThread().execute(() -> grayLayout.addView(v));
-    }
-
-    private void clearGrayLayout() {
-        Needle.onMainThread().execute(() -> grayLayout.removeAllViews());
-    }
+//    private void addToGrayLayout(View v) {
+//        Needle.onMainThread().execute(() -> grayLayout.addView(v));
+//    }
+//
+//    private void clearGrayLayout() {
+//        Needle.onMainThread().execute(() -> grayLayout.removeAllViews());
+//    }
 
     private void makePhoneCall(String phoneNumber) {
         String phone_no = phoneNumber.replaceAll("-", "");
@@ -407,19 +402,19 @@ public class ContactViewWorkFragment extends Fragment {
 
         Work work = event.getWork();
         if (event.getAction() == WorkAddedEditedEvent.Action.ADD) {
-            if ((work.getEmployer() != null) || (work.getProfession() != null)) {
-                Needle.onBackgroundThread().execute(() -> {
-                    workDao.update(work);
-                    mWork = workDao.getWorksByContactId(mContact.getId());
-
-                    clearGrayLayout();
-                    updateUI();
-                });
-
-                tools.showMaterialSnackBar(fragmentRoot, getString(R.string.success_work_added, work.getProfession()), SnackBarType.SUCCESS);
-            } else {
-                tools.showMaterialSnackBar(fragmentRoot, getString(R.string.error_work_added_updated), SnackBarType.ERROR);
-            }
+//            if ((work.getEmployer() != null) || (work.getProfession() != null)) {
+//                Needle.onBackgroundThread().execute(() -> {
+//                    workDao.update(work);
+//                    mWork = workDao.getWorksByContactId(mContact.getId());
+//
+//                    clearGrayLayout();
+//                    updateUI();
+//                });
+//
+//                tools.showMaterialSnackBar(fragmentRoot, getString(R.string.success_work_added, work.getProfession()), SnackBarType.SUCCESS);
+//            } else {
+//                tools.showMaterialSnackBar(fragmentRoot, getString(R.string.error_work_added_updated), SnackBarType.ERROR);
+//            }
         }
     }
 

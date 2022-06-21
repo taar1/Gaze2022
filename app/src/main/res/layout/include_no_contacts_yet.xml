@@ -27,7 +27,7 @@
 
     <TextView
         android:id="@+id/noContactsText"
-        style="@style/Text.Regular"
+        style="@style/Regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/noContactsTitle"

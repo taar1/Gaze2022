@@ -17,7 +17,6 @@
 package net.gazeapp.ui.fileimport;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,7 +27,6 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import net.gazeapp.EditContactActivity;
 import net.gazeapp.R;
 import net.gazeapp.data.model.Contact;
 import net.gazeapp.utilities.MediaTools;
@@ -62,19 +60,19 @@ public class AllContactsForFileImportListAdapter extends RecyclerView.Adapter<Re
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        RecyclerBodyObjectViewHolder rh = new RecyclerBodyObjectViewHolder(mInflater.inflate(R.layout.search_results_contacts_listview_row, parent, false), new MyClickListener() {
-            @Override
-            public void onItemClick(int position, View v) {
-                Log.d(TAG, "Clicked Position: " + position);
 
-                Contact contact = mDataset.get(position);
 
-                // Display EDIT CONTACT Activity
-                Intent intent = new Intent(activity, EditContactActivity.class);
-                intent.putExtra("filesToImport", filesToImport);
-                intent.putExtra("contact", contact);
-                activity.startActivity(intent);
-            }
+        //RecyclerBodyObjectViewHolder rh = new RecyclerBodyObjectViewHolder(mInflater.inflate(R.layout.search_results_contacts_listview_row, parent, false), (position, v) -> {
+        RecyclerBodyObjectViewHolder rh = new RecyclerBodyObjectViewHolder(mInflater.inflate(R.layout.fragment_add_or_edit_contact, parent, false), (position, v) -> {
+            Log.d(TAG, "Clicked Position: " + position);
+
+            Contact contact = mDataset.get(position);
+
+            // Display EDIT CONTACT Activity
+//            Intent intent = new Intent(activity, EditContactActivity.class);
+//            intent.putExtra("filesToImport", filesToImport);
+//            intent.putExtra("contact", contact);
+//            activity.startActivity(intent);
         });
 
         return rh;
@@ -120,7 +118,7 @@ public class AllContactsForFileImportListAdapter extends RecyclerView.Adapter<Re
             super(itemView);
             myClickListener = clickListener;
 
-            contactImage = itemView.findViewById(R.id.profile_image);
+//            contactImage = itemView.findViewById(R.id.profile_image);
             contactName = itemView.findViewById(R.id.contactName);
             additionalInfo = itemView.findViewById(R.id.additionalInfo);
 

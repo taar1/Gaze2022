@@ -17,7 +17,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.bumptech.glide.Glide
+import coil.load
 import net.gazeapp.R
 import net.gazeapp.data.model.SocialMedia
 import net.gazeapp.databinding.ContactviewTabSocialmediaContainerKtBinding
@@ -319,8 +319,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
                     ) as LayoutInflater
                 )
 
-            Glide.with(requireContext()).load(elementIcon)
-                .into(itemBinding.smIcon)
+            itemBinding.smIcon.load(elementIcon)
 
             itemBinding.smHint.text = hintText
             itemBinding.smValue.text = tools.removeHttpPrefix(elementText)
@@ -387,7 +386,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mFacebookText,
-            elementIcon = R.drawable.facebook_24dp,
+            elementIcon = R.drawable.brand_facebook_24dp,
             hintText = getString(R.string.facebook),
             urlReplacement = "https://www.facebook.com/$mFacebookText"
         )
@@ -399,7 +398,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                    ) as LayoutInflater
 //                )
 //
-//            Glide.with(requireContext()).load(R.drawable.facebook_24dp)
+//            Glide.with(requireContext()).load(R.drawable.brand_facebook_24dp)
 //                .into(itemBinding.smIcon)
 //
 //            itemBinding.smHint.text = R.string.facebook.toString()
@@ -430,7 +429,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //            socialMediaInnerLayout.addView(itemBinding.root)
 //
 ////            val facebookIcon = facebookView.findViewById<ImageView>(R.id.sm_icon)
-////            Glide.with(context!!).load(R.drawable.facebook_24dp).into(facebookIcon)
+////            Glide.with(context!!).load(R.drawable.brand_facebook_24dp).into(facebookIcon)
 ////            val facebookHint = facebookView.findViewById<TextView>(R.id.sm_hint)
 ////            facebookHint.setText(R.string.facebook)
 ////            val facebookValue = facebookView.findViewById<TextView>(R.id.sm_value)
@@ -453,7 +452,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mFlickrText,
-            elementIcon = R.drawable.flickr_24dp,
+            elementIcon = R.drawable.brand_flickr_24dp,
             hintText = getString(R.string.flickr),
             urlReplacement = "https://www.flickr.com/photos/$mFlickrText"
         )
@@ -470,7 +469,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val flickrIcon = flickrView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.flickr_24dp).into(flickrIcon)
+//            Glide.with(context!!).load(R.drawable.brand_flickr_24dp).into(flickrIcon)
 //            val flickrHint = flickrView.findViewById<TextView>(R.id.sm_hint)
 //            flickrHint.setText(R.string.flickr)
 //            val flickrValue = flickrView.findViewById<TextView>(R.id.sm_value)
@@ -492,7 +491,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mInstagramText,
-            elementIcon = R.drawable.instagram_24dp,
+            elementIcon = R.drawable.brand_instagram_24dp,
             hintText = getString(R.string.instagram),
             urlReplacement = "https://www.instagram.com/$mInstagramText"
         )
@@ -509,7 +508,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val instagramIcon = instagramView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.instagram_24dp).into(instagramIcon)
+//            Glide.with(context!!).load(R.drawable.brand_instagram_24dp).into(instagramIcon)
 //            val instagramHint = instagramView.findViewById<TextView>(R.id.sm_hint)
 //            instagramHint.setText(R.string.instagram)
 //            val instagramValue = instagramView.findViewById<TextView>(R.id.sm_value)
@@ -531,7 +530,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mLinkedinText,
-            elementIcon = R.drawable.linkedin_24dp,
+            elementIcon = R.drawable.brand_linkedin_24dp,
             hintText = getString(R.string.linkedin),
             urlReplacement = "https://www.linkedin.com/in/$mLinkedinText"
         )
@@ -548,7 +547,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val linkedInIcon = linkedInView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.linkedin_24dp).into(linkedInIcon)
+//            Glide.with(context!!).load(R.drawable.brand_linkedin_24dp).into(linkedInIcon)
 //            val linkedInHint = linkedInView.findViewById<TextView>(R.id.sm_hint)
 //            linkedInHint.setText(R.string.linkedin)
 //            val linkedInValue = linkedInView.findViewById<TextView>(R.id.sm_value)
@@ -571,7 +570,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mPinterestText,
-            elementIcon = R.drawable.pinterest_24dp,
+            elementIcon = R.drawable.brand_pinterest_24dp,
             hintText = getString(R.string.pinterest),
             urlReplacement = "https://www.pinterest.com/$mPinterestText"
         )
@@ -588,7 +587,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val pinterestIcon = pinterestView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.pinterest_24dp).into(pinterestIcon)
+//            Glide.with(context!!).load(R.drawable.brand_pinterest_24dp).into(pinterestIcon)
 //            val pinterestHint = pinterestView.findViewById<TextView>(R.id.sm_hint)
 //            pinterestHint.setText(R.string.pinterest)
 //            val pinterestValue = pinterestView.findViewById<TextView>(R.id.sm_value)
@@ -610,7 +609,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mPornhubText,
-            elementIcon = R.drawable.pornhub_24dp,
+            elementIcon = R.drawable.brand_pornhub_24dp,
             hintText = getString(R.string.pornhub),
             urlReplacement = "http://www.pornhub.com/users/$mPornhubText"
         )
@@ -628,7 +627,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val pornhubIcon = pornhubView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.pornhub_24dp).into(pornhubIcon)
+//            Glide.with(context!!).load(R.drawable.brand_pornhub_24dp).into(pornhubIcon)
 //            val pornhubHint = pornhubView.findViewById<TextView>(R.id.sm_hint)
 //            pornhubHint.setText(R.string.pornhub)
 //            val pornhubValue = pornhubView.findViewById<TextView>(R.id.sm_value)
@@ -651,7 +650,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mRedtubeText,
-            elementIcon = R.drawable.redtube_24dp,
+            elementIcon = R.drawable.brand_redtube_24dp,
             hintText = getString(R.string.redtube),
             urlReplacement = "http://www.redtube.com/$mRedtubeText"
         )
@@ -668,7 +667,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val redtubeIcon = redtubeView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.redtube_24dp).into(redtubeIcon)
+//            Glide.with(context!!).load(R.drawable.brand_redtube_24dp).into(redtubeIcon)
 //            val redtubeHint = redtubeView.findViewById<TextView>(R.id.sm_hint)
 //            redtubeHint.setText(R.string.redtube)
 //            val redtubeValue = redtubeView.findViewById<TextView>(R.id.sm_value)
@@ -691,7 +690,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mSpotifyText,
-            elementIcon = R.drawable.spotify_24dp,
+            elementIcon = R.drawable.brand_spotify_24dp,
             hintText = getString(R.string.spotify),
             urlReplacement = "https://www.spotify.com/$mSpotifyText"
         )
@@ -708,7 +707,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val spotifyIcon = spotifyView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.spotify_24dp).into(spotifyIcon)
+//            Glide.with(context!!).load(R.drawable.brand_spotify_24dp).into(spotifyIcon)
 //            val spotifyHint = spotifyView.findViewById<TextView>(R.id.sm_hint)
 //            spotifyHint.setText(R.string.spotify)
 //            val spotifyValue = spotifyView.findViewById<TextView>(R.id.sm_value)
@@ -731,7 +730,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mTumblrText,
-            elementIcon = R.drawable.tumblr_24dp,
+            elementIcon = R.drawable.brand_tumblr_24dp,
             hintText = getString(R.string.tumblr),
             urlReplacement = "https://$mTumblrText.tumblr.com/"
         )
@@ -748,7 +747,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val tumblrIcon = tumblrView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.tumblr_24dp).into(tumblrIcon)
+//            Glide.with(context!!).load(R.drawable.brand_tumblr_24dp).into(tumblrIcon)
 //            val tumblrHint = tumblrView.findViewById<TextView>(R.id.sm_hint)
 //            tumblrHint.setText(R.string.tumblr)
 //            val tumblrValue = tumblrView.findViewById<TextView>(R.id.sm_value)
@@ -771,7 +770,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mTwitterText,
-            elementIcon = R.drawable.twitter_24dp,
+            elementIcon = R.drawable.brand_twitter_24dp,
             hintText = getString(R.string.twitter),
             urlReplacement = "https://twitter.com/$mTwitterText"
         )
@@ -788,7 +787,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val twitterIcon = twitterView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.twitter_24dp).into(twitterIcon)
+//            Glide.with(context!!).load(R.drawable.brand_twitter_24dp).into(twitterIcon)
 //            val twitterHint = twitterView.findViewById<TextView>(R.id.sm_hint)
 //            twitterHint.setText(R.string.twitter)
 //            val twitterValue = twitterView.findViewById<TextView>(R.id.sm_value)
@@ -811,7 +810,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mVimeoText,
-            elementIcon = R.drawable.vimeo_24dp,
+            elementIcon = R.drawable.brand_vimeo_24dp,
             hintText = getString(R.string.vimeo),
             urlReplacement = "https://vimeo.com/$mVimeoText"
         )
@@ -827,7 +826,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val vimeoIcon = vimeoView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.vimeo_24dp).into(vimeoIcon)
+//            Glide.with(context!!).load(R.drawable.brand_vimeo_24dp).into(vimeoIcon)
 //            val vimeoHint = vimeoView.findViewById<TextView>(R.id.sm_hint)
 //            vimeoHint.setText(R.string.vimeo)
 //            val vimeoValue = vimeoView.findViewById<TextView>(R.id.sm_value)
@@ -849,7 +848,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mXingText,
-            elementIcon = R.drawable.xing_24dp,
+            elementIcon = R.drawable.brand_xing_24dp,
             hintText = getString(R.string.xing),
             urlReplacement = "https://www.xing.com/profile/$mXingText"
         )
@@ -865,7 +864,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val xingIcon = xingView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.xing_24dp).into(xingIcon)
+//            Glide.with(context!!).load(R.drawable.brand_xing_24dp).into(xingIcon)
 //            val xingHint = xingView.findViewById<TextView>(R.id.sm_hint)
 //            xingHint.setText(R.string.xing)
 //            val xingValue = xingView.findViewById<TextView>(R.id.sm_value)
@@ -895,7 +894,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mXhamsterText,
-            elementIcon = R.drawable.xhamster_24dp,
+            elementIcon = R.drawable.brand_xhamster_24dp,
             hintText = getString(R.string.xhamster),
             urlReplacement = "https://xhamster.com/user/$mXhamsterText"
         )
@@ -912,7 +911,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val xhamsterIcon = xhamsterView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.xhamster_24dp).into(xhamsterIcon)
+//            Glide.with(context!!).load(R.drawable.brand_xhamster_24dp).into(xhamsterIcon)
 //            val xhamsterHint = xhamsterView.findViewById<TextView>(R.id.sm_hint)
 //            xhamsterHint.setText(R.string.xhamster)
 //            val xhamsterValue = xhamsterView.findViewById<TextView>(R.id.sm_value)
@@ -933,7 +932,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mXtubeText,
-            elementIcon = R.drawable.xtube_24dp,
+            elementIcon = R.drawable.brand_xtube_24dp,
             hintText = getString(R.string.xtube),
             urlReplacement = "http://www.xtube.com/profile/$mXtubeText"
         )
@@ -949,7 +948,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val xtubeIcon = xtubeView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.xtube_24dp).into(xtubeIcon)
+//            Glide.with(context!!).load(R.drawable.brand_xtube_24dp).into(xtubeIcon)
 //            val xtubeHint = xtubeView.findViewById<TextView>(R.id.sm_hint)
 //            xtubeHint.setText(R.string.xtube)
 //            val xtubeValue = xtubeView.findViewById<TextView>(R.id.sm_value)
@@ -969,7 +968,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.SOCIAL_NETWORK,
             elementText = mYoutubeText,
-            elementIcon = R.drawable.youtube_24dp,
+            elementIcon = R.drawable.brand_youtube_24dp,
             hintText = getString(R.string.youtube),
             urlReplacement = "https://www.youtube.com/user/$mYoutubeText"
         )
@@ -986,7 +985,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val youtubeIcon = youtubeView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.youtube_24dp).into(youtubeIcon)
+//            Glide.with(context!!).load(R.drawable.brand_youtube_24dp).into(youtubeIcon)
 //            val youtubeHint = youtubeView.findViewById<TextView>(R.id.sm_hint)
 //            youtubeHint.setText(R.string.youtube)
 //            val youtubeValue = youtubeView.findViewById<TextView>(R.id.sm_value)
@@ -1009,7 +1008,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.MESSENGER,
             elementText = tools.removeHttpPrefix(mLineText),
-            elementIcon = R.drawable.line_24dp,
+            elementIcon = R.drawable.brand_line_24dp,
             hintText = getString(R.string.line_messenger),
             urlReplacement = mLineText
         )
@@ -1025,7 +1024,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val lineIcon = lineView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.line_24dp).into(lineIcon)
+//            Glide.with(context!!).load(R.drawable.brand_line_24dp).into(lineIcon)
 //            val lineHint = lineView.findViewById<TextView>(R.id.sm_hint)
 //            lineHint.setText(R.string.line_messenger)
 //            val lineValue = lineView.findViewById<TextView>(R.id.sm_value)
@@ -1037,7 +1036,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.MESSENGER,
             elementText = tools.removeHttpPrefix(skypeText),
-            elementIcon = R.drawable.skype_24dp,
+            elementIcon = R.drawable.brand_skype_24dp,
             hintText = getString(R.string.skype),
             urlReplacement = skypeText
         )
@@ -1053,7 +1052,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val skypeIcon = skypeView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.skype_24dp).into(skypeIcon)
+//            Glide.with(context!!).load(R.drawable.brand_skype_24dp).into(skypeIcon)
 //            val skypeHint = skypeView.findViewById<TextView>(R.id.sm_hint)
 //            skypeHint.setText(R.string.skype)
 //            val skypeValue = skypeView.findViewById<TextView>(R.id.sm_value)
@@ -1065,7 +1064,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.MESSENGER,
             elementText = tools.removeHttpPrefix(snapchatText),
-            elementIcon = R.drawable.snapchat_24dp,
+            elementIcon = R.drawable.brand_snapchat_24dp,
             hintText = getString(R.string.snapchat),
             urlReplacement = snapchatText
         )
@@ -1082,7 +1081,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val snapchatIcon = snapchatView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.snapchat_24dp).into(snapchatIcon)
+//            Glide.with(context!!).load(R.drawable.brand_snapchat_24dp).into(snapchatIcon)
 //            val snapchatHint = snapchatView.findViewById<TextView>(R.id.sm_hint)
 //            snapchatHint.setText(R.string.snapchat)
 //            val snapchatValue = snapchatView.findViewById<TextView>(R.id.sm_value)
@@ -1094,7 +1093,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.MESSENGER,
             elementText = tools.removeHttpPrefix(viberText),
-            elementIcon = R.drawable.viber_24dp,
+            elementIcon = R.drawable.brand_viber_24dp,
             hintText = getString(R.string.viber),
             urlReplacement = viberText
         )
@@ -1110,7 +1109,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val viberIcon = viberView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.viber_24dp).into(viberIcon)
+//            Glide.with(context!!).load(R.drawable.brand_viber_24dp).into(viberIcon)
 //            val viberHint = viberView.findViewById<TextView>(R.id.sm_hint)
 //            viberHint.setText(R.string.viber)
 //            val viberValue = viberView.findViewById<TextView>(R.id.sm_value)
@@ -1122,7 +1121,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.MESSENGER,
             elementText = tools.removeHttpPrefix(wechatText),
-            elementIcon = R.drawable.wechat_24dp,
+            elementIcon = R.drawable.brand_wechat_24dp,
             hintText = getString(R.string.wechat),
             urlReplacement = wechatText
         )
@@ -1139,7 +1138,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val wechatIcon = wechatView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.wechat_24dp).into(wechatIcon)
+//            Glide.with(context!!).load(R.drawable.brand_wechat_24dp).into(wechatIcon)
 //            val wechatHint = wechatView.findViewById<TextView>(R.id.sm_hint)
 //            wechatHint.setText(R.string.wechat)
 //            val wechatValue = wechatView.findViewById<TextView>(R.id.sm_value)
@@ -1151,7 +1150,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.MESSENGER,
             elementText = tools.removeHttpPrefix(whatsappText),
-            elementIcon = R.drawable.whatsapp_24dp,
+            elementIcon = R.drawable.brand_whatsapp_24dp,
             hintText = getString(R.string.whatsapp),
             urlReplacement = whatsappText
         )
@@ -1168,7 +1167,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val whatsappIcon = whatsappView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.whatsapp_24dp).into(whatsappIcon)
+//            Glide.with(context!!).load(R.drawable.brand_whatsapp_24dp).into(whatsappIcon)
 //            val whatsappHint = whatsappView.findViewById<TextView>(R.id.sm_hint)
 //            whatsappHint.setText(R.string.whatsapp)
 //            val whatsappValue = whatsappView.findViewById<TextView>(R.id.sm_value)
@@ -1184,7 +1183,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(adam4adamText),
-            elementIcon = R.drawable.adam4adam_24dp,
+            elementIcon = R.drawable.brand_adam4adam_24dp,
             hintText = getString(R.string.adam4adam),
             urlReplacement = adam4adamText
         )
@@ -1201,7 +1200,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val adam4adamIcon = adam4adamView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.adam4adam_24dp).into(adam4adamIcon)
+//            Glide.with(context!!).load(R.drawable.brand_adam4adam_24dp).into(adam4adamIcon)
 //            val adam4adamHint = adam4adamView.findViewById<TextView>(R.id.sm_hint)
 //            adam4adamHint.setText(R.string.adam4adam)
 //            val adam4adamValue = adam4adamView.findViewById<TextView>(R.id.sm_value)
@@ -1220,7 +1219,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(bbrtText),
-            elementIcon = R.drawable.bbrt_24dp,
+            elementIcon = R.drawable.brand_bbrt_24dp,
             hintText = getString(R.string.bbrt),
             urlReplacement = bbrtText
         )
@@ -1236,7 +1235,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val bbrtIcon = bbrtView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.bbrt_24dp).into(bbrtIcon)
+//            Glide.with(context!!).load(R.drawable.brand_bbrt_24dp).into(bbrtIcon)
 //            val bbrtHint = bbrtView.findViewById<TextView>(R.id.sm_hint)
 //            bbrtHint.setText(R.string.bbrt)
 //            val bbrtValue = bbrtView.findViewById<TextView>(R.id.sm_value)
@@ -1248,7 +1247,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(boyahoyText),
-            elementIcon = R.drawable.boyahoy_24dp,
+            elementIcon = R.drawable.brand_boyahoy_24dp,
             hintText = getString(R.string.boyahoy),
             urlReplacement = boyahoyText
         )
@@ -1265,7 +1264,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val boyahoyIcon = boyahoyView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.boyahoy_24dp).into(boyahoyIcon)
+//            Glide.with(context!!).load(R.drawable.brand_boyahoy_24dp).into(boyahoyIcon)
 //            val boyahoyHint = boyahoyView.findViewById<TextView>(R.id.sm_hint)
 //            boyahoyHint.setText(R.string.boyahoy)
 //            val boyahoyValue = boyahoyView.findViewById<TextView>(R.id.sm_value)
@@ -1277,7 +1276,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(dudesnudeText),
-            elementIcon = R.drawable.dudesnude_24dp,
+            elementIcon = R.drawable.brand_dudesnude_24dp,
             hintText = getString(R.string.dudesnude),
             urlReplacement = dudesnudeText
         )
@@ -1294,7 +1293,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val dudesnudeIcon = dudesnudeView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.dudesnude_24dp).into(dudesnudeIcon)
+//            Glide.with(context!!).load(R.drawable.brand_dudesnude_24dp).into(dudesnudeIcon)
 //            val dudesnudeHint = dudesnudeView.findViewById<TextView>(R.id.sm_hint)
 //            dudesnudeHint.setText(R.string.dudesnude)
 //            val dudesnudeValue = dudesnudeView.findViewById<TextView>(R.id.sm_value)
@@ -1312,7 +1311,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(gaycomText),
-            elementIcon = R.drawable.gaycom_24dp,
+            elementIcon = R.drawable.brand_gaycom_24dp,
             hintText = getString(R.string.gaycom),
             urlReplacement = gaycomText
         )
@@ -1329,7 +1328,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val gayComIcon = gayComView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.gaycom_24dp).into(gayComIcon)
+//            Glide.with(context!!).load(R.drawable.brand_gaycom_24dp).into(gayComIcon)
 //            val gayComHint = gayComView.findViewById<TextView>(R.id.sm_hint)
 //            gayComHint.setText(R.string.gaycom)
 //            val gayComValue = gayComView.findViewById<TextView>(R.id.sm_value)
@@ -1350,7 +1349,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(gaydarText),
-            elementIcon = R.drawable.gaydar_24dp,
+            elementIcon = R.drawable.brand_gaydar_24dp,
             hintText = getString(R.string.gaydar),
             urlReplacement = gaydarText
         )
@@ -1367,7 +1366,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val gaydarIcon = gaydarView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.gaydar_24dp).into(gaydarIcon)
+//            Glide.with(context!!).load(R.drawable.brand_gaydar_24dp).into(gaydarIcon)
 //            val gaydarHint = gaydarView.findViewById<TextView>(R.id.sm_hint)
 //            gaydarHint.setText(R.string.gaydar)
 //            val gaydarValue = gaydarView.findViewById<TextView>(R.id.sm_value)
@@ -1388,7 +1387,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(grindrText),
-            elementIcon = R.drawable.grindr_24dp,
+            elementIcon = R.drawable.brand_grindr_24dp,
             hintText = getString(R.string.grindr),
             urlReplacement = grindrText
         )
@@ -1405,7 +1404,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val grindrIcon = grindrView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.grindr_24dp).into(grindrIcon)
+//            Glide.with(context!!).load(R.drawable.brand_grindr_24dp).into(grindrIcon)
 //            val grindrHint = grindrView.findViewById<TextView>(R.id.sm_hint)
 //            grindrHint.setText(R.string.grindr)
 //            val grindrValue = grindrView.findViewById<TextView>(R.id.sm_value)
@@ -1417,7 +1416,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(growlrText),
-            elementIcon = R.drawable.growlr_24dp,
+            elementIcon = R.drawable.brand_growlr_24dp,
             hintText = getString(R.string.growlr),
             urlReplacement = growlrText
         )
@@ -1434,7 +1433,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val growlrIcon = growlrView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.growlr_24dp).into(growlrIcon)
+//            Glide.with(context!!).load(R.drawable.brand_growlr_24dp).into(growlrIcon)
 //            val growlrHint = growlrView.findViewById<TextView>(R.id.sm_hint)
 //            growlrHint.setText(R.string.growlr)
 //            val growlrValue = growlrView.findViewById<TextView>(R.id.sm_value)
@@ -1446,7 +1445,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(hornetText),
-            elementIcon = R.drawable.hornet_24dp,
+            elementIcon = R.drawable.brand_hornet_24dp,
             hintText = getString(R.string.hornet),
             urlReplacement = hornetText
         )
@@ -1463,7 +1462,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val hornetIcon = hornetView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.hornet_24dp).into(hornetIcon)
+//            Glide.with(context!!).load(R.drawable.brand_hornet_24dp).into(hornetIcon)
 //            val hornetHint = hornetView.findViewById<TextView>(R.id.sm_hint)
 //            hornetHint.setText(R.string.hornet)
 //            val hornetValue = hornetView.findViewById<TextView>(R.id.sm_value)
@@ -1475,7 +1474,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(jackdText),
-            elementIcon = R.drawable.jackd_24dp,
+            elementIcon = R.drawable.brand_jackd_24dp,
             hintText = getString(R.string.jackd),
             urlReplacement = jackdText
         )
@@ -1491,7 +1490,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val jackdIcon = jackdView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.jackd_24dp).into(jackdIcon)
+//            Glide.with(context!!).load(R.drawable.brand_jackd_24dp).into(jackdIcon)
 //            val jackdHint = jackdView.findViewById<TextView>(R.id.sm_hint)
 //            jackdHint.setText(R.string.jackd)
 //            val jackdValue = jackdView.findViewById<TextView>(R.id.sm_value)
@@ -1503,7 +1502,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(manhuntText),
-            elementIcon = R.drawable.manhunt_24dp,
+            elementIcon = R.drawable.brand_manhunt_24dp,
             hintText = getString(R.string.manhunt),
             urlReplacement = manhuntText
         )
@@ -1520,7 +1519,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val manhuntIcon = manhuntView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.manhunt_24dp).into(manhuntIcon)
+//            Glide.with(context!!).load(R.drawable.brand_manhunt_24dp).into(manhuntIcon)
 //            val manhuntHint = manhuntView.findViewById<TextView>(R.id.sm_hint)
 //            manhuntHint.setText(R.string.manhunt)
 //            val manhuntValue = manhuntView.findViewById<TextView>(R.id.sm_value)
@@ -1541,7 +1540,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(planetromeoText),
-            elementIcon = R.drawable.planetromeo_24dp,
+            elementIcon = R.drawable.brand_planetromeo_24dp,
             hintText = getString(R.string.planetromeo),
             urlReplacement = planetromeoText
         )
@@ -1558,7 +1557,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val planetRomeoIcon = planetRomeoView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.planetromeo_24dp).into(planetRomeoIcon)
+//            Glide.with(context!!).load(R.drawable.brand_planetromeo_24dp).into(planetRomeoIcon)
 //            val planetRomeoHint = planetRomeoView.findViewById<TextView>(R.id.sm_hint)
 //            planetRomeoHint.setText(R.string.planetromeo)
 //            val planetRomeoValue = planetRomeoView.findViewById<TextView>(R.id.sm_value)
@@ -1570,7 +1569,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(reconText),
-            elementIcon = R.drawable.recon_24dp,
+            elementIcon = R.drawable.brand_recon_24dp,
             hintText = getString(R.string.recon),
             urlReplacement = reconText
         )
@@ -1586,7 +1585,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val reconIcon = reconView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.recon_24dp).into(reconIcon)
+//            Glide.with(context!!).load(R.drawable.brand_recon_24dp).into(reconIcon)
 //            val reconHint = reconView.findViewById<TextView>(R.id.sm_hint)
 //            reconHint.setText(R.string.recon)
 //            val reconValue = reconView.findViewById<TextView>(R.id.sm_value)
@@ -1598,7 +1597,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(scruffText),
-            elementIcon = R.drawable.scruff_24dp,
+            elementIcon = R.drawable.brand_scruff_24dp,
             hintText = getString(R.string.scruff),
             urlReplacement = scruffText
         )
@@ -1616,7 +1615,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val scruffIcon = scruffView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.scruff_24dp).into(scruffIcon)
+//            Glide.with(context!!).load(R.drawable.brand_scruff_24dp).into(scruffIcon)
 //            val scruffHint = scruffView.findViewById<TextView>(R.id.sm_hint)
 //            scruffHint.setText(R.string.scruff)
 //            val scruffValue = scruffView.findViewById<TextView>(R.id.sm_value)
@@ -1628,7 +1627,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.DATING,
             elementText = tools.removeHttpPrefix(tinderText),
-            elementIcon = R.drawable.tinder_24dp,
+            elementIcon = R.drawable.brand_tinder_24dp,
             hintText = getString(R.string.tinder),
             urlReplacement = tinderText
         )
@@ -1645,7 +1644,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val tinderIcon = tinderView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.tinder_24dp).into(tinderIcon)
+//            Glide.with(context!!).load(R.drawable.brand_tinder_24dp).into(tinderIcon)
 //            val tinderHint = tinderView.findViewById<TextView>(R.id.sm_hint)
 //            tinderHint.setText(R.string.tinder)
 //            val tinderValue = tinderView.findViewById<TextView>(R.id.sm_value)
@@ -1661,7 +1660,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.GAMING,
             elementText = tools.removeHttpPrefix(miiverseText),
-            elementIcon = R.drawable.miiverse_24dp,
+            elementIcon = R.drawable.brand_miiverse_24dp,
             hintText = getString(R.string.miiverse),
             urlReplacement = miiverseText
         )
@@ -1678,7 +1677,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val miiverseIcon = miiverseView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.miiverse_24dp).into(miiverseIcon)
+//            Glide.with(context!!).load(R.drawable.brand_miiverse_24dp).into(miiverseIcon)
 //            val miiverseHint = miiverseView.findViewById<TextView>(R.id.sm_hint)
 //            miiverseHint.setText(R.string.miiverse)
 //            val miiverseValue = miiverseView.findViewById<TextView>(R.id.sm_value)
@@ -1690,7 +1689,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.GAMING,
             elementText = tools.removeHttpPrefix(nintendonetworkText),
-            elementIcon = R.drawable.nintendonetwork_24dp,
+            elementIcon = R.drawable.brand_nintendonetwork_24dp,
             hintText = getString(R.string.nintendonetwork),
             urlReplacement = nintendonetworkText
         )
@@ -1708,7 +1707,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //            }
 //            val nintendoNetworkIdIcon =
 //                nintendoNetworkIdView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.nintendonetwork_24dp)
+//            Glide.with(context!!).load(R.drawable.brand_nintendonetwork_24dp)
 //                .into(nintendoNetworkIdIcon)
 //            val nintendoNetworkIdHint =
 //                nintendoNetworkIdView.findViewById<TextView>(R.id.sm_hint)
@@ -1723,7 +1722,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.GAMING,
             elementText = tools.removeHttpPrefix(playstationnetworkText),
-            elementIcon = R.drawable.playstation_24dp,
+            elementIcon = R.drawable.brand_playstation_24dp,
             hintText = getString(R.string.playstationnetwork),
             urlReplacement = playstationnetworkText
         )
@@ -1741,7 +1740,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //            }
 //            val playstationNetworkIdIcon =
 //                playstationNetworkIdView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.playstation_24dp)
+//            Glide.with(context!!).load(R.drawable.brand_playstation_24dp)
 //                .into(playstationNetworkIdIcon)
 //            val playstationNetworkIdHint =
 //                playstationNetworkIdView.findViewById<TextView>(R.id.sm_hint)
@@ -1756,7 +1755,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
         generateItem(
             cardCategory = CardCategory.GAMING,
             elementText = tools.removeHttpPrefix(xboxgamertagText),
-            elementIcon = R.drawable.xbox_24dp,
+            elementIcon = R.drawable.brand_xbox_24dp,
             hintText = getString(R.string.xboxgamertag),
             urlReplacement = xboxgamertagText
         )
@@ -1773,7 +1772,7 @@ class TabSocialMediaFragmentKt : Fragment(R.layout.contactview_tab_socialmedia_c
 //                false
 //            }
 //            val xboxGamertagIcon = xboxGamertagView.findViewById<ImageView>(R.id.sm_icon)
-//            Glide.with(context!!).load(R.drawable.xbox_24dp).into(xboxGamertagIcon)
+//            Glide.with(context!!).load(R.drawable.brand_xbox_24dp).into(xboxGamertagIcon)
 //            val xboxGamertagHint = xboxGamertagView.findViewById<TextView>(R.id.sm_hint)
 //            xboxGamertagHint.setText(R.string.xboxgamertag)
 //            val xboxGamertagValue = xboxGamertagView.findViewById<TextView>(R.id.sm_value)

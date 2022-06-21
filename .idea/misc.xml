@@ -3,20 +3,56 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/button_background.xml" value="0.36" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_business.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_contacts.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_couple.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_expand_more.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_gender.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_me.xml" value="0.132" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_signal.xml" value="0.36" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_www.xml" value="0.1845" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/launch_screen.xml" value="0.132" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/text_on_black_rounded_corners.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/activity_main.xml" value="0.3676222596964587" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/activity_upgrading_incl_free_user.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/activity_upgrading_incl_pro_user.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/add_edit_encounter_layout_c.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/card_include_encounter.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/card_include_encounter_kt.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/card_include_work.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/card_include_work_kt.xml" value="0.11614583333333334" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/card_social_media_dating.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/card_social_media_gaming.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/card_social_media_messenger.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/card_social_media_social_media.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contact_detail_view_pager_layout.xml" value="0.1" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contacts_recyclerlist_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contactview_tab_body.xml" value="0.7943548387096774" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contactview_tab_contact.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contactview_tab_gallery.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contactview_tab_gallery_kt.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contactview_tab_more.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contactview_tab_overview.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contactview_tab_personal.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contactview_tab_personal_kt.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contactview_tab_xxx.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/contactview_tab_xxx_kt.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/dialog_recyclerview.xml" value="0.35833333333333334" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/edit_contact_bodyfeatures_body.xml" value="0.32083333333333336" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/edit_contact_notes_body.xml" value="0.32083333333333336" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/edit_contact_personal_body.xml" value="0.32083333333333336" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/edit_contact_socialmedia_body.xml" value="0.15602836879432624" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/edit_contact_xxx_body.xml" value="0.32083333333333336" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/fragment_add_or_edit_contact.xml" value="0.15602836879432624" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/fragment_add_or_edit_contactt.xml" value="0.3067708333333333" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/grid_view_gallery_image_item.xml" value="0.1" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/gridgallery_activity_main.xml" value="0.26773049645390073" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/gridview_activity.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/image_viewer_overlay.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/imageslider_fullscreen_image.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/imageslider_fullscreen_view.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/inc_no_info_layout.xml" value="0.11614583333333334" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_child_snippet.xml" value="0.4015625" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_club_snippet.xml" value="0.4015625" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_add_email_snippet.xml" value="0.39479166666666665" />
@@ -25,6 +61,21 @@
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_encounter_snippet_item.xml" value="0.26135310472659873" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_no_contacts_yet.xml" value="0.4015625" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/include_work_snippet_item.xml" value="0.39479166666666665" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/itemlist_label_edit_mode.xml" value="0.35833333333333334" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/itemlist_multiselect.xml" value="0.35833333333333334" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/itemlist_multiselect_small.xml" value="0.35833333333333334" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/layout_me_tab.xml" value="0.36041666666666666" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/list_item_all_contacts.xml" value="0.1" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/list_item_recent_contacts_card.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/media_gallery_viewer_activity_kt.xml" value="0.36041666666666666" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/media_gallery_viewer_item.xml" value="0.5583333333333333" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/month_year_date_picker.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/social_media_dating_card.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/social_media_gaming_card.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/social_media_item_constraint_layout.xml" value="0.6" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/social_media_messenger_card.xml" value="0.6" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/social_media_social_media_card.xml" value="1.2" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/toolbar.xml" value="0.5505208333333333" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/menu/bottom_nav_menu.xml" value="0.30833333333333335" />
       </map>
     </option>

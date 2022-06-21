@@ -72,16 +72,16 @@ class MediaGalleryViewerActivityKtFragment : Fragment() {
             mediaGalleryNavi.visibility = View.GONE
         }
 
-        viewModel.mediaList.observe(viewLifecycleOwner, { mediaList ->
+        viewModel.mediaList.observe(viewLifecycleOwner) { mediaList ->
             mediaGalleryViewerAdapterKt.mediaList = mediaList
             mediaGalleryViewerAdapterKt.notifyDataSetChanged()
 
             mediaListSize = mediaList.size
 
             initPaging()
-        })
+        }
 
-        viewModel.hasMediaFiles.observe(viewLifecycleOwner, { hasMediaFiles ->
+        viewModel.hasMediaFiles.observe(viewLifecycleOwner) { hasMediaFiles ->
             if (hasMediaFiles) {
                 viewBinding.nothing.visibility = View.GONE
                 viewBinding.btnClose.visibility = View.GONE
@@ -91,7 +91,7 @@ class MediaGalleryViewerActivityKtFragment : Fragment() {
                 viewBinding.btnClose.visibility = View.VISIBLE
                 viewPager.visibility = View.GONE
             }
-        })
+        }
 
         viewBinding.btnClose.setOnClickListener {
             activity?.finish()

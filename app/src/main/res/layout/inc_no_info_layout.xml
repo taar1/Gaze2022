@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/no_info_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+    android:layout_marginEnd="@dimen/contact_view_card_inner_padding"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="@dimen/contact_view_card_inner_padding"
+    android:visibility="visible">
+
+    <TextView
+        style="@style/Regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_info_present" />
+</LinearLayout>

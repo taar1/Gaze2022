@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="10dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardViewLayout"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/cardImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:contentDescription="@string/photo_of_the_person"
+            android:scaleType="centerCrop"
+            android:src="@drawable/josh"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/overlayLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_below_image_background_color"
+            android:minHeight="72dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/cardImage"
+            app:layout_constraintEnd_toEndOf="@+id/cardImage"
+            app:layout_constraintStart_toStartOf="@+id/cardImage" />
+
+        <TextView
+            android:id="@+id/contactName"
+            style="@style/RecentContacts.CardNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contact"
+            app:layout_constraintBottom_toTopOf="@+id/additionalInfo"
+            app:layout_constraintStart_toStartOf="@+id/basicInfo" />
+
+        <TextView
+            android:id="@+id/additionalInfo"
+            style="@style/RecentContacts.CardAdditionalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/first_gaze_contact"
+            app:layout_constraintBottom_toBottomOf="@+id/cardImage"
+            app:layout_constraintStart_toStartOf="@+id/contactName" />
+
+
+        <TextView
+            android:id="@+id/basicInfo"
+            style="@style/CardView.PreviewText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/not_available"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cardImage"
+            app:layout_constraintTop_toBottomOf="@+id/cardImage" />
+
+        <Button
+            android:id="@+id/buttonGallery"
+            style="@style/RecentContactButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/gallery"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonProfile"
+            app:layout_constraintTop_toTopOf="@+id/buttonProfile" />
+
+        <Button
+            android:id="@+id/buttonProfile"
+            style="@style/RecentContactButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTintMode="multiply"
+            android:text="@string/details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/basicInfo" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

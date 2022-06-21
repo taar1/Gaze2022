@@ -18,6 +18,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ShareCompat.IntentBuilder
+import androidx.core.content.FileProvider
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -30,7 +31,6 @@ import net.gazeapp.data.model.Media
 import net.gazeapp.databinding.ContactviewTabGalleryKtBinding
 import net.gazeapp.helpers.SnackBarType
 import net.gazeapp.listeners.OnMediaClickListener
-import net.gazeapp.utilities.FileProvider
 import net.gazeapp.utilities.GazeTools
 import net.gazeapp.utilities.MediaTools
 import java.io.File
@@ -327,7 +327,7 @@ class TabGalleryFragmentKt : Fragment(R.layout.contactview_tab_gallery_kt), OnMe
             fileOrFiles = getString(string.file)
         }
 
-        val builder = AlertDialog.Builder(activity, R.style.GazeAppTheme)
+        val builder = AlertDialog.Builder(activity, R.style.GazeTheme)
         builder.setTitle(string.are_you_sure)
         builder.setMessage(getString(string.delete_selected_files, fileOrFiles))
         builder.setPositiveButton(string.delete) { dialog: DialogInterface?, which: Int ->
@@ -456,7 +456,7 @@ class TabGalleryFragmentKt : Fragment(R.layout.contactview_tab_gallery_kt), OnMe
         }
 
     private val selectedImages: List<Uri>
-        private get() {
+        get() {
             Log.d(TAG, "getSelectedImages()")
             val uriList: MutableList<Uri> = ArrayList()
             for ((_, _, isSelected, _, originalFileName, _, fullPath) in mediaList!!) {

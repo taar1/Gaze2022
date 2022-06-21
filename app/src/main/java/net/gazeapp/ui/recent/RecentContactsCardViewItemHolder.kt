@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import coil.load
 import com.google.android.material.button.MaterialButton
 import net.gazeapp.R
 import net.gazeapp.data.model.*
@@ -164,10 +164,9 @@ class RecentContactsCardViewItemHolder(
             mediaList?.let { mList ->
                 for (media in mList) {
                     if (contactWithDetails.contact.mainPicId == media.id) {
-                        Glide.with(activity)
-                            .load(media.fullPath)
-                            .placeholder(R.drawable.silhouette)
-                            .into(cardImage)
+                        cardImage.load(media.fullPath) {
+                            placeholder(R.drawable.silhouette)
+                        }
                         break
                     }
                 }

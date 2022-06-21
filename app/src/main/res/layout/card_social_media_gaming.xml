@@ -1,0 +1,263 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gaming_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:layout_margin="@dimen/contact_view_card_outer_margin"
+    card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Title.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/gaming" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.2"
+            android:background="@color/accent" />
+
+        <LinearLayout
+            android:id="@+id/miiverse_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_miiverse_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/miiverse_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/miiverse" />
+
+                <TextView
+                    android:id="@+id/miiverse"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/miiverse" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/miiverse_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/nintendonetwork_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_nintendonetwork_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nintendonetwork_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nintendonetwork" />
+
+                <TextView
+                    android:id="@+id/nintendonetwork"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/nintendonetwork" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/nintendonetwork_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/playstationnetwork_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_playstation_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/playstationnetwork_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/playstationnetwork" />
+
+                <TextView
+                    android:id="@+id/playstationnetwork"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/playstationnetwork" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/playstationnetwork_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/xboxgamertag_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_xbox_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/xboxgamertag_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/xboxgamertag" />
+
+                <TextView
+                    android:id="@+id/xboxgamertag"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/xboxgamertag" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/xboxgamertag_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

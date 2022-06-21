@@ -29,7 +29,7 @@
                 android:id="@+id/note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_mode_comment_black_24dp"
+                android:drawableStart="@drawable/ic_comment"
                 android:ems="10"
                 android:hint="@string/notes"
                 android:inputType="textMultiLine"

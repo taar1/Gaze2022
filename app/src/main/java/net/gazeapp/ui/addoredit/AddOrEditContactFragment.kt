@@ -10,11 +10,10 @@ import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.widget.SwitchCompat
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import coil.load
 import com.andexert.expandablelayout.library.ExpandableLayout
-import com.bumptech.glide.Glide
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 import net.gazeapp.R
@@ -441,163 +440,163 @@ class AddOrEditContactFragment : Fragment(R.layout.fragment_add_or_edit_contact)
         labelsHeader = viewBinding.socialmediaLayout.findViewById(R.id.labelsHeader)
         labelsRightIcon = viewBinding.socialmediaLayout.findViewById(R.id.labelsRightIcon)
 
-        metInPersonSwitch = viewBinding.personalInfoLayout[R.id.metInPerson]
+        metInPersonSwitch = viewBinding.personalInfoLayout.findViewById(R.id.metInPerson)
 
-        addressLayout = viewBinding.contactLayout[R.id.addressLayout]
-        addAddress = viewBinding.contactLayout[R.id.addAddress]
+        addressLayout = viewBinding.contactLayout.findViewById(R.id.addressLayout)
+        addAddress = viewBinding.contactLayout.findViewById(R.id.addAddress)
 
-        childrenLayout = viewBinding.contactLayout[R.id.childrenLayout]
-        addChildren = viewBinding.contactLayout[R.id.addChildren]
+        childrenLayout = viewBinding.contactLayout.findViewById(R.id.childrenLayout)
+        addChildren = viewBinding.contactLayout.findViewById(R.id.addChildren)
 
-        clubsLayout = viewBinding.contactLayout[R.id.clubsLayout]
-        addClubs = viewBinding.contactLayout[R.id.addClubs]
+        clubsLayout = viewBinding.contactLayout.findViewById(R.id.clubsLayout)
+        addClubs = viewBinding.contactLayout.findViewById(R.id.addClubs)
 
-        emailLayout = viewBinding.contactLayout[R.id.emailLayout]
-        workLayout = viewBinding.contactLayout[R.id.work_layout]
-        encounterLayout = viewBinding.contactLayout[R.id.encounters_layout]
-        websitesLayout = viewBinding.contactLayout[R.id.websitesLayout]
+        emailLayout = viewBinding.contactLayout.findViewById(R.id.emailLayout)
+        workLayout = viewBinding.contactLayout.findViewById(R.id.work_layout)
+        encounterLayout = viewBinding.contactLayout.findViewById(R.id.encounters_layout)
+        websitesLayout = viewBinding.contactLayout.findViewById(R.id.websitesLayout)
 
-        phoneLayout = viewBinding.contactLayout[R.id.phoneLayout]
-        addPhone = viewBinding.contactLayout[R.id.addPhone]
+        phoneLayout = viewBinding.contactLayout.findViewById(R.id.phoneLayout)
+        addPhone = viewBinding.contactLayout.findViewById(R.id.addPhone)
 
-        eyeColor = viewBinding.bodyFeaturesLayout[R.id.eyeColor]
-        hairColor = viewBinding.bodyFeaturesLayout[R.id.hairColor]
-        hairStyle = viewBinding.bodyFeaturesLayout[R.id.hairStyle]
-        weight = viewBinding.bodyFeaturesLayout[R.id.weight]
-        height = viewBinding.bodyFeaturesLayout[R.id.height]
-        bodyType = viewBinding.bodyFeaturesLayout[R.id.bodytype]
-        bodyHair = viewBinding.bodyFeaturesLayout[R.id.bodyHair]
-        ethnicity = viewBinding.bodyFeaturesLayout[R.id.ethnicity]
-        fetishes = viewBinding.bodyFeaturesLayout[R.id.fetishes]
+        eyeColor = viewBinding.bodyFeaturesLayout.findViewById(R.id.eyeColor)
+        hairColor = viewBinding.bodyFeaturesLayout.findViewById(R.id.hairColor)
+        hairStyle = viewBinding.bodyFeaturesLayout.findViewById(R.id.hairStyle)
+        weight = viewBinding.bodyFeaturesLayout.findViewById(R.id.weight)
+        height = viewBinding.bodyFeaturesLayout.findViewById(R.id.height)
+        bodyType = viewBinding.bodyFeaturesLayout.findViewById(R.id.bodytype)
+        bodyHair = viewBinding.bodyFeaturesLayout.findViewById(R.id.bodyHair)
+        ethnicity = viewBinding.bodyFeaturesLayout.findViewById(R.id.ethnicity)
+        fetishes = viewBinding.bodyFeaturesLayout.findViewById(R.id.fetishes)
 
-        birthdate = viewBinding.personalInfoLayout[R.id.birthdate]
-        age = viewBinding.personalInfoLayout[R.id.age]
+        birthdate = viewBinding.personalInfoLayout.findViewById(R.id.birthdate)
+        age = viewBinding.personalInfoLayout.findViewById(R.id.age)
         relationshipStatus =
-            viewBinding.personalInfoLayout[R.id.relationshipStatus]
+            viewBinding.personalInfoLayout.findViewById(R.id.relationshipStatus)
 
-        effeminateSlider = viewBinding.personalInfoLayout[R.id.effeminateSlider]
-        effeminateUnknown = viewBinding.personalInfoLayout[R.id.effeminateUnknown]
-        hiv = viewBinding.healthLayout[R.id.hiv]
-        hcv = viewBinding.healthLayout[R.id.hcv]
+        effeminateSlider = viewBinding.personalInfoLayout.findViewById(R.id.effeminateSlider)
+        effeminateUnknown = viewBinding.personalInfoLayout.findViewById(R.id.effeminateUnknown)
+        hiv = viewBinding.healthLayout.findViewById(R.id.hiv)
+        hcv = viewBinding.healthLayout.findViewById(R.id.hcv)
 
-        length = viewBinding.endowmentLayout[R.id.length]
-        girth = viewBinding.endowmentLayout[R.id.girth]
-        diameter = viewBinding.endowmentLayout[R.id.diameter]
-        feelsLike = viewBinding.endowmentLayout[R.id.feelsLike]
-        cutOrUncut = viewBinding.endowmentLayout[R.id.cutOrUncut]
+        length = viewBinding.endowmentLayout.findViewById(R.id.length)
+        girth = viewBinding.endowmentLayout.findViewById(R.id.girth)
+        diameter = viewBinding.endowmentLayout.findViewById(R.id.diameter)
+        feelsLike = viewBinding.endowmentLayout.findViewById(R.id.feelsLike)
+        cutOrUncut = viewBinding.endowmentLayout.findViewById(R.id.cutOrUncut)
         cutOrUncutUnknownCheckbox =
-            viewBinding.endowmentLayout[R.id.cutOrUncutUnknownCheckbox]
+            viewBinding.endowmentLayout.findViewById(R.id.cutOrUncutUnknownCheckbox)
 
-        sexualOrientation = viewBinding.xxxLayout[R.id.sexualOrientation]
-        sexRole = viewBinding.xxxLayout[R.id.sexRole]
-        safeSex = viewBinding.xxxLayout[R.id.safeSex]
-        swallowsLoads = viewBinding.xxxLayout[R.id.swallowsLoads]
-        loadsUpTheBum = viewBinding.xxxLayout[R.id.takesLoadsUpTheBum]
+        sexualOrientation = viewBinding.xxxLayout.findViewById(R.id.sexualOrientation)
+        sexRole = viewBinding.xxxLayout.findViewById(R.id.sexRole)
+        safeSex = viewBinding.xxxLayout.findViewById(R.id.safeSex)
+        swallowsLoads = viewBinding.xxxLayout.findViewById(R.id.swallowsLoads)
+        loadsUpTheBum = viewBinding.xxxLayout.findViewById(R.id.takesLoadsUpTheBum)
 
-        note = viewBinding.notesLayout[R.id.note]
+        note = viewBinding.notesLayout.findViewById(R.id.note)
 
-        facebook = viewBinding.socialmediaLayout[R.id.facebook]
-        flickr = viewBinding.socialmediaLayout[R.id.flickr]
-        instagram = viewBinding.socialmediaLayout[R.id.instagram]
-        linkedin = viewBinding.socialmediaLayout[R.id.linkedin]
-        pinterest = viewBinding.socialmediaLayout[R.id.pinterest]
-        pornhub = viewBinding.socialmediaLayout[R.id.pornhub]
-        redtube = viewBinding.socialmediaLayout[R.id.redtube]
-        spotify = viewBinding.socialmediaLayout[R.id.spotify]
-        tumblr = viewBinding.socialmediaLayout[R.id.tumblr]
-        twitter = viewBinding.socialmediaLayout[R.id.twitter]
-        vimeo = viewBinding.socialmediaLayout[R.id.vimeo]
-        xing = viewBinding.socialmediaLayout[R.id.xing]
-        xtube = viewBinding.socialmediaLayout[R.id.xtube]
-        youtube = viewBinding.socialmediaLayout[R.id.youtube]
-        lineMessenger = viewBinding.socialmediaLayout[R.id.lineMessenger]
-        skype = viewBinding.socialmediaLayout[R.id.skype]
-        snapchat = viewBinding.socialmediaLayout[R.id.snapchat]
-        viber = viewBinding.socialmediaLayout[R.id.viber]
-        weChat = viewBinding.socialmediaLayout[R.id.weChat]
-        whatsapp = viewBinding.socialmediaLayout[R.id.whatsapp]
-        adam4adam = viewBinding.socialmediaLayout[R.id.adam4adam]
-        bbrt = viewBinding.socialmediaLayout[R.id.bbrt]
-        dudesnude = viewBinding.socialmediaLayout[R.id.dudesnude]
-        gaycom = viewBinding.socialmediaLayout[R.id.gaycom]
-        gaydar = viewBinding.socialmediaLayout[R.id.gaydar]
-        grindr = viewBinding.socialmediaLayout[R.id.grindr]
-        growlr = viewBinding.socialmediaLayout[R.id.growlr]
-        hornet = viewBinding.socialmediaLayout[R.id.hornet]
-        jackd = viewBinding.socialmediaLayout[R.id.jackd]
-        manhunt = viewBinding.socialmediaLayout[R.id.manhunt]
-        planetRomeo = viewBinding.socialmediaLayout[R.id.planetRomeo]
-        recon = viewBinding.socialmediaLayout[R.id.recon]
-        scruff = viewBinding.socialmediaLayout[R.id.scruff]
-        tinder = viewBinding.socialmediaLayout[R.id.tinder]
-        miiverse = viewBinding.socialmediaLayout[R.id.miiverse]
-        nintendonetwork = viewBinding.socialmediaLayout[R.id.nintendonetwork]
+        facebook = viewBinding.socialmediaLayout.findViewById(R.id.facebook)
+        flickr = viewBinding.socialmediaLayout.findViewById(R.id.flickr)
+        instagram = viewBinding.socialmediaLayout.findViewById(R.id.instagram)
+        linkedin = viewBinding.socialmediaLayout.findViewById(R.id.linkedin)
+        pinterest = viewBinding.socialmediaLayout.findViewById(R.id.pinterest)
+        pornhub = viewBinding.socialmediaLayout.findViewById(R.id.pornhub)
+        redtube = viewBinding.socialmediaLayout.findViewById(R.id.redtube)
+        spotify = viewBinding.socialmediaLayout.findViewById(R.id.spotify)
+        tumblr = viewBinding.socialmediaLayout.findViewById(R.id.tumblr)
+        twitter = viewBinding.socialmediaLayout.findViewById(R.id.twitter)
+        vimeo = viewBinding.socialmediaLayout.findViewById(R.id.vimeo)
+        xing = viewBinding.socialmediaLayout.findViewById(R.id.xing)
+        xtube = viewBinding.socialmediaLayout.findViewById(R.id.xtube)
+        youtube = viewBinding.socialmediaLayout.findViewById(R.id.youtube)
+        lineMessenger = viewBinding.socialmediaLayout.findViewById(R.id.lineMessenger)
+        skype = viewBinding.socialmediaLayout.findViewById(R.id.skype)
+        snapchat = viewBinding.socialmediaLayout.findViewById(R.id.snapchat)
+        viber = viewBinding.socialmediaLayout.findViewById(R.id.viber)
+        weChat = viewBinding.socialmediaLayout.findViewById(R.id.weChat)
+        whatsapp = viewBinding.socialmediaLayout.findViewById(R.id.whatsapp)
+        adam4adam = viewBinding.socialmediaLayout.findViewById(R.id.adam4adam)
+        bbrt = viewBinding.socialmediaLayout.findViewById(R.id.bbrt)
+        dudesnude = viewBinding.socialmediaLayout.findViewById(R.id.dudesnude)
+        gaycom = viewBinding.socialmediaLayout.findViewById(R.id.gaycom)
+        gaydar = viewBinding.socialmediaLayout.findViewById(R.id.gaydar)
+        grindr = viewBinding.socialmediaLayout.findViewById(R.id.grindr)
+        growlr = viewBinding.socialmediaLayout.findViewById(R.id.growlr)
+        hornet = viewBinding.socialmediaLayout.findViewById(R.id.hornet)
+        jackd = viewBinding.socialmediaLayout.findViewById(R.id.jackd)
+        manhunt = viewBinding.socialmediaLayout.findViewById(R.id.manhunt)
+        planetRomeo = viewBinding.socialmediaLayout.findViewById(R.id.planetRomeo)
+        recon = viewBinding.socialmediaLayout.findViewById(R.id.recon)
+        scruff = viewBinding.socialmediaLayout.findViewById(R.id.scruff)
+        tinder = viewBinding.socialmediaLayout.findViewById(R.id.tinder)
+        miiverse = viewBinding.socialmediaLayout.findViewById(R.id.miiverse)
+        nintendonetwork = viewBinding.socialmediaLayout.findViewById(R.id.nintendonetwork)
         playstationnetwork =
-            viewBinding.socialmediaLayout[R.id.playstationnetwork]
-        xboxgamertag = viewBinding.socialmediaLayout[R.id.xboxgamertag]
+            viewBinding.socialmediaLayout.findViewById(R.id.playstationnetwork)
+        xboxgamertag = viewBinding.socialmediaLayout.findViewById(R.id.xboxgamertag)
 
 
-        deleteBodyType = viewBinding.bodyFeaturesLayout[R.id.deleteBodytype]
-        deleteEthnicity = viewBinding.bodyFeaturesLayout[R.id.deleteEthnicity]
-        deleteFetishes = viewBinding.xxxLayout[R.id.deleteFetishes]
-        deleteBirthdate = viewBinding.personalInfoLayout[R.id.deleteBirthdate]
-        deleteAge = viewBinding.personalInfoLayout[R.id.deleteAge]
+        deleteBodyType = viewBinding.bodyFeaturesLayout.findViewById(R.id.deleteBodytype)
+        deleteEthnicity = viewBinding.bodyFeaturesLayout.findViewById(R.id.deleteEthnicity)
+        deleteFetishes = viewBinding.xxxLayout.findViewById(R.id.deleteFetishes)
+        deleteBirthdate = viewBinding.personalInfoLayout.findViewById(R.id.deleteBirthdate)
+        deleteAge = viewBinding.personalInfoLayout.findViewById(R.id.deleteAge)
         deleteRelationshipStatus =
-            viewBinding.personalInfoLayout[R.id.deleteRelationshipStatus]
-        deleteHiv = viewBinding.healthLayout[R.id.deleteHiv]
-        deleteHcv = viewBinding.healthLayout[R.id.deleteHcv]
-        deleteSexualOrientation = viewBinding.xxxLayout[R.id.deleteSexualOrientation]
-        deleteSexRole = viewBinding.xxxLayout[R.id.deleteSexRole]
-        deleteSafeSex = viewBinding.xxxLayout[R.id.deleteSafeSex]
-        deleteSwallowsLoads = viewBinding.xxxLayout[R.id.deleteSwallowsLoads]
-        deleteUpTheBum = viewBinding.xxxLayout[R.id.deleteUpTheBum]
-        deleteLength = viewBinding.endowmentLayout[R.id.deleteLength]
-        deleteGirth = viewBinding.endowmentLayout[R.id.deleteGirth]
-        deleteDiameter = viewBinding.endowmentLayout[R.id.deleteDiameter]
-        deleteFeelsLike = viewBinding.endowmentLayout[R.id.deleteFeelsLike]
-        deleteNote = viewBinding.notesLayout[R.id.deleteNote]
-        deleteLabels = viewBinding.labelsLayout[R.id.delete_labels]
+            viewBinding.personalInfoLayout.findViewById(R.id.deleteRelationshipStatus)
+        deleteHiv = viewBinding.healthLayout.findViewById(R.id.deleteHiv)
+        deleteHcv = viewBinding.healthLayout.findViewById(R.id.deleteHcv)
+        deleteSexualOrientation = viewBinding.xxxLayout.findViewById(R.id.deleteSexualOrientation)
+        deleteSexRole = viewBinding.xxxLayout.findViewById(R.id.deleteSexRole)
+        deleteSafeSex = viewBinding.xxxLayout.findViewById(R.id.deleteSafeSex)
+        deleteSwallowsLoads = viewBinding.xxxLayout.findViewById(R.id.deleteSwallowsLoads)
+        deleteUpTheBum = viewBinding.xxxLayout.findViewById(R.id.deleteUpTheBum)
+        deleteLength = viewBinding.endowmentLayout.findViewById(R.id.deleteLength)
+        deleteGirth = viewBinding.endowmentLayout.findViewById(R.id.deleteGirth)
+        deleteDiameter = viewBinding.endowmentLayout.findViewById(R.id.deleteDiameter)
+        deleteFeelsLike = viewBinding.endowmentLayout.findViewById(R.id.deleteFeelsLike)
+        deleteNote = viewBinding.notesLayout.findViewById(R.id.deleteNote)
+        deleteLabels = viewBinding.labelsLayout.findViewById(R.id.delete_labels)
 
-        deleteFacebook = viewBinding.socialmediaLayout[R.id.deleteFacebook]
-        deleteFlickr = viewBinding.socialmediaLayout[R.id.deleteFlickr]
-        deleteInstagram = viewBinding.socialmediaLayout[R.id.deleteInstagram]
-        deleteLinkedin = viewBinding.socialmediaLayout[R.id.deleteLinkedin]
-        deletePinterest = viewBinding.socialmediaLayout[R.id.deletePinterest]
-        deletePornhub = viewBinding.socialmediaLayout[R.id.deletePornhub]
-        deleteRedtube = viewBinding.socialmediaLayout[R.id.deleteRedtube]
-        deleteSpotify = viewBinding.socialmediaLayout[R.id.deleteSpotify]
-        deleteTumblr = viewBinding.socialmediaLayout[R.id.deleteTumblr]
-        deleteTwitter = viewBinding.socialmediaLayout[R.id.deleteTwitter]
-        deleteVimeo = viewBinding.socialmediaLayout[R.id.deleteVimeo]
-        deleteXing = viewBinding.socialmediaLayout[R.id.deleteXing]
-        deleteXtube = viewBinding.socialmediaLayout[R.id.deleteXtube]
-        deleteYoutube = viewBinding.socialmediaLayout[R.id.deleteYoutube]
-        deleteLineMessenger = viewBinding.socialmediaLayout[R.id.deleteLineMessenger]
-        deleteSkype = viewBinding.socialmediaLayout[R.id.deleteSkype]
-        deleteSnapchat = viewBinding.socialmediaLayout[R.id.deleteSnapchat]
-        deleteViber = viewBinding.socialmediaLayout[R.id.deleteViber]
-        deleteWeChat = viewBinding.socialmediaLayout[R.id.deleteWeChat]
-        deleteWhatsapp = viewBinding.socialmediaLayout[R.id.deleteWhatsapp]
-        deleteAdam4adam = viewBinding.socialmediaLayout[R.id.deleteAdam4adam]
-        deleteBbrt = viewBinding.socialmediaLayout[R.id.deleteBbrt]
-        deleteDudesnude = viewBinding.socialmediaLayout[R.id.deleteDudesnude]
-        deleteGaycom = viewBinding.socialmediaLayout[R.id.deleteGaycom]
-        deleteGaydar = viewBinding.socialmediaLayout[R.id.deleteGaydar]
-        deleteGrindr = viewBinding.socialmediaLayout[R.id.deleteGrindr]
-        deleteGrowlr = viewBinding.socialmediaLayout[R.id.deleteGrowlr]
-        deleteHornet = viewBinding.socialmediaLayout[R.id.deleteHornet]
-        deleteJackd = viewBinding.socialmediaLayout[R.id.deleteJackd]
-        deleteManhunt = viewBinding.socialmediaLayout[R.id.deleteManhunt]
-        deletePlanetRomeo = viewBinding.socialmediaLayout[R.id.deletePlanetRomeo]
-        deleteRecon = viewBinding.socialmediaLayout[R.id.deleteRecon]
-        deleteScruff = viewBinding.socialmediaLayout[R.id.deleteScruff]
-        deleteTinder = viewBinding.socialmediaLayout[R.id.deleteTinder]
-        deleteMiiverse = viewBinding.socialmediaLayout[R.id.deleteMiiverse]
+        deleteFacebook = viewBinding.socialmediaLayout.findViewById(R.id.deleteFacebook)
+        deleteFlickr = viewBinding.socialmediaLayout.findViewById(R.id.deleteFlickr)
+        deleteInstagram = viewBinding.socialmediaLayout.findViewById(R.id.deleteInstagram)
+        deleteLinkedin = viewBinding.socialmediaLayout.findViewById(R.id.deleteLinkedin)
+        deletePinterest = viewBinding.socialmediaLayout.findViewById(R.id.deletePinterest)
+        deletePornhub = viewBinding.socialmediaLayout.findViewById(R.id.deletePornhub)
+        deleteRedtube = viewBinding.socialmediaLayout.findViewById(R.id.deleteRedtube)
+        deleteSpotify = viewBinding.socialmediaLayout.findViewById(R.id.deleteSpotify)
+        deleteTumblr = viewBinding.socialmediaLayout.findViewById(R.id.deleteTumblr)
+        deleteTwitter = viewBinding.socialmediaLayout.findViewById(R.id.deleteTwitter)
+        deleteVimeo = viewBinding.socialmediaLayout.findViewById(R.id.deleteVimeo)
+        deleteXing = viewBinding.socialmediaLayout.findViewById(R.id.deleteXing)
+        deleteXtube = viewBinding.socialmediaLayout.findViewById(R.id.deleteXtube)
+        deleteYoutube = viewBinding.socialmediaLayout.findViewById(R.id.deleteYoutube)
+        deleteLineMessenger = viewBinding.socialmediaLayout.findViewById(R.id.deleteLineMessenger)
+        deleteSkype = viewBinding.socialmediaLayout.findViewById(R.id.deleteSkype)
+        deleteSnapchat = viewBinding.socialmediaLayout.findViewById(R.id.deleteSnapchat)
+        deleteViber = viewBinding.socialmediaLayout.findViewById(R.id.deleteViber)
+        deleteWeChat = viewBinding.socialmediaLayout.findViewById(R.id.deleteWeChat)
+        deleteWhatsapp = viewBinding.socialmediaLayout.findViewById(R.id.deleteWhatsapp)
+        deleteAdam4adam = viewBinding.socialmediaLayout.findViewById(R.id.deleteAdam4adam)
+        deleteBbrt = viewBinding.socialmediaLayout.findViewById(R.id.deleteBbrt)
+        deleteDudesnude = viewBinding.socialmediaLayout.findViewById(R.id.deleteDudesnude)
+        deleteGaycom = viewBinding.socialmediaLayout.findViewById(R.id.deleteGaycom)
+        deleteGaydar = viewBinding.socialmediaLayout.findViewById(R.id.deleteGaydar)
+        deleteGrindr = viewBinding.socialmediaLayout.findViewById(R.id.deleteGrindr)
+        deleteGrowlr = viewBinding.socialmediaLayout.findViewById(R.id.deleteGrowlr)
+        deleteHornet = viewBinding.socialmediaLayout.findViewById(R.id.deleteHornet)
+        deleteJackd = viewBinding.socialmediaLayout.findViewById(R.id.deleteJackd)
+        deleteManhunt = viewBinding.socialmediaLayout.findViewById(R.id.deleteManhunt)
+        deletePlanetRomeo = viewBinding.socialmediaLayout.findViewById(R.id.deletePlanetRomeo)
+        deleteRecon = viewBinding.socialmediaLayout.findViewById(R.id.deleteRecon)
+        deleteScruff = viewBinding.socialmediaLayout.findViewById(R.id.deleteScruff)
+        deleteTinder = viewBinding.socialmediaLayout.findViewById(R.id.deleteTinder)
+        deleteMiiverse = viewBinding.socialmediaLayout.findViewById(R.id.deleteMiiverse)
         deleteNintendonetwork =
-            viewBinding.socialmediaLayout[R.id.deleteNintendonetwork]
+            viewBinding.socialmediaLayout.findViewById(R.id.deleteNintendonetwork)
         deletePlaystationnetwork =
-            viewBinding.socialmediaLayout[R.id.deletePlaystationnetwork]
-        deleteXboxgamertag = viewBinding.socialmediaLayout[R.id.deleteXboxgamertag]
+            viewBinding.socialmediaLayout.findViewById(R.id.deletePlaystationnetwork)
+        deleteXboxgamertag = viewBinding.socialmediaLayout.findViewById(R.id.deleteXboxgamertag)
     }
 
     private fun setExandableLayoutBehaviour() {
@@ -715,20 +714,19 @@ class AddOrEditContactFragment : Fragment(R.layout.fragment_add_or_edit_contact)
     }
 
     private fun refreshContactCardMainPic() {
-        Glide.with(requireContext())
-            .load(
-                mediaTools.getFileFromInternalStorage(
-                    contactWithDetails.contact,
-                    Const.GALLERY_PUBLIC
-                )
+        contactPicture.load(
+            mediaTools.getFileFromInternalStorage(
+                contactWithDetails.contact,
+                Const.GALLERY_PUBLIC
             )
-            .placeholder(R.drawable.silhouette).into(contactPicture)
-
+        ) {
+            placeholder(R.drawable.silhouette)
+        }
         editImages.visibility = View.VISIBLE
     }
 
     fun revertToSilhouetteImage() {
-        Glide.with(requireContext()).load(R.drawable.silhouette).into(contactPicture)
+        contactPicture.load(R.drawable.silhouette)
         editImages.visibility = View.INVISIBLE
     }
 

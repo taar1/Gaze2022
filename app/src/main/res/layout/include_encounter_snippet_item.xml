@@ -31,7 +31,7 @@
 
             <TextView
                 android:id="@+id/encounter_meet_date"
-                style="@style/Text.Hint"
+                style="@style/Hint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="50dp"
@@ -39,7 +39,7 @@
 
             <TextView
                 android:id="@+id/encounter_meet_location"
-                style="@style/Text.Regular"
+                style="@style/Regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Meet Location" />

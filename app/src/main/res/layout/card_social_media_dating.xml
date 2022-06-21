@@ -1,0 +1,900 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dating_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:layout_margin="@dimen/contact_view_card_outer_margin"
+    card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Title.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/dating" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.2"
+            android:background="@color/accent" />
+
+        <LinearLayout
+            android:id="@+id/adam4adam_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_adam4adam_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/adam4adam_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/adam4adam" />
+
+                <TextView
+                    android:id="@+id/adam4adam"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/adam4adam" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/adam4adam_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bbrt_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_bbrt_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bbrt_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bbrt" />
+
+                <TextView
+                    android:id="@+id/bbrt"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/bbrt" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/bbrt_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/boyahoy_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_boyahoy_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/boyahoy_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/boyahoy" />
+
+                <TextView
+                    android:id="@+id/boyahoy"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/boyahoy" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/boyahoy_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/dudesnude_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_dudesnude_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dudesnude_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dudesnude" />
+
+                <TextView
+                    android:id="@+id/dudesnude"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/dudesnude" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/dudesnude_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/gaycom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_gaycom_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/gaycom_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gaycom" />
+
+                <TextView
+                    android:id="@+id/gaycom"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/gaycom" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/gaycom_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/gaydar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_gaydar_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/gaydar_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gaydar" />
+
+                <TextView
+                    android:id="@+id/gaydar"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/gaydar" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/gaydar_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/grindr_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_grindr_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/grindr_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/grindr" />
+
+                <TextView
+                    android:id="@+id/grindr"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/grindr" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/grindr_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/growlr_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_growlr_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/growlr_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/growlr" />
+
+                <TextView
+                    android:id="@+id/growlr"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/growlr" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/growlr_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/hornet_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_hornet_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hornet_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hornet" />
+
+                <TextView
+                    android:id="@+id/hornet"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/hornet" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/hornet_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/jackd_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_jackd_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/jackd_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jackd" />
+
+                <TextView
+                    android:id="@+id/jackd"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/jackd" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/jackd_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/manhunt_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_manhunt_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/manhunt_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/manhunt" />
+
+                <TextView
+                    android:id="@+id/manhunt"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/manhunt" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/manhunt_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/planetromeo_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_planetromeo_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/planetromeo_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/planetromeo" />
+
+                <TextView
+                    android:id="@+id/planetromeo"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/planetromeo" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/planetromeo_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/recon_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_recon_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/recon_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recon" />
+
+                <TextView
+                    android:id="@+id/recon"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/recon" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/recon_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/scruff_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_scruff_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/scruff_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scruff" />
+
+                <TextView
+                    android:id="@+id/scruff"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/scruff" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/scruff_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/tinder_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="top"
+            android:minHeight="@dimen/contact_view_horizontal_item_minimum_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/contact_view_card_left_icon_layout"
+                android:layout_height="@dimen/contact_view_card_left_icon_layout"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.3"
+                    android:src="@drawable/brand_tinder_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/contact_view_card_inner_padding"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tinder_hint"
+                    style="@style/Hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tinder" />
+
+                <TextView
+                    android:id="@+id/tinder"
+                    style="@style/Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/tinder" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/tinder_padding"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="72dp"
+                android:alpha="0.2"
+                android:background="@color/accent"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

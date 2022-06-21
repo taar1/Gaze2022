@@ -16,7 +16,6 @@
 
 package net.gazeapp.ui.contactview;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,15 +23,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-
-import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 
 import net.gazeapp.R;
 import net.gazeapp.data.GazeDatabase;
@@ -51,16 +43,10 @@ import net.gazeapp.data.model.Nickname;
 import net.gazeapp.data.model.Note;
 import net.gazeapp.data.model.Personal;
 import net.gazeapp.data.model.Xxx;
-import net.gazeapp.search.ListLabelledContactsActivity;
-import net.gazeapp.ui.widget.FlowLayout;
-import net.gazeapp.ui.widget.StylizedLabel;
-import net.gazeapp.utilities.SpecificValues;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import needle.Needle;
 
 @Deprecated
@@ -79,65 +65,65 @@ public class ContactViewOverviewFragment extends Fragment {
     private Xxx mXxx;
     private Note mNotes;
 
-    @BindView(R.id.fragment_root)
-    FrameLayout fragmentRoot;
-    @BindView(R.id.view_padding_1)
-    View viewPadding1;
-    @BindView(R.id.view_padding_2)
-    View viewPadding2;
-    @BindView(R.id.view_padding_3)
-    View viewPadding3;
-    @BindView(R.id.scroll)
-    ObservableScrollView scrollView;
-
-    //    @BindView(R.id.additional_info_layout)
-//    LinearLayout additionalInfoLayout;
-    @BindView(R.id.info_card)
-    CardView infoCard;
-    @BindView(R.id.contact_name)
-    TextView contactName;
-    @BindView(R.id.nicknames)
-    TextView nicknames;
-    @BindView(R.id.met_in_person_icon)
-    ImageView metInPersonIcon;
-    @BindView(R.id.additional_info)
-    TextView additionalInfo;
-    @BindView(R.id.additional_info_hint)
-    TextView additionalInfoHint;
-    //    @BindView(R.id.age_info_layout)
-//    LinearLayout ageInfoLayout;
-    @BindView(R.id.age)
-    TextView age;
-    @BindView(R.id.age_hint)
-    TextView ageHint;
-    @BindView(R.id.birthdate)
-    TextView birthdate;
-    //    @BindView(R.id.body_info_layout)
-//    LinearLayout bodyInfoLayout;
-    @BindView(R.id.height)
-    TextView height;
-    @BindView(R.id.height_hint)
-    TextView heightHint;
-    @BindView(R.id.weight)
-    TextView weight;
-    @BindView(R.id.weight_hint)
-    TextView weightHint;
-    //    @BindView(R.id.endowment_info_layout)
-//    LinearLayout endowmentlInfoLayout;
-    @BindView(R.id.endowment)
-    TextView endowment;
-    @BindView(R.id.endowment_hint)
-    TextView endowmentHint;
-    @BindView(R.id.note_card)
-    CardView noteCard;
-    @BindView(R.id.notes)
-    TextView notes;
-    //    @BindView(R.id.no_information)
-    TextView noInformationLayout;
-    @BindView(R.id.labels_layout)
-    LinearLayout labelsLayout;
-    @BindView(R.id.flow_layout)
-    FlowLayout flowLayout;
+//    @BindView(R.id.fragment_root)
+//    FrameLayout fragmentRoot;
+//    @BindView(R.id.view_padding_1)
+//    View viewPadding1;
+//    @BindView(R.id.view_padding_2)
+//    View viewPadding2;
+//    @BindView(R.id.view_padding_3)
+//    View viewPadding3;
+//    @BindView(R.id.scroll)
+//    ObservableScrollView scrollView;
+//
+//    //    @BindView(R.id.additional_info_layout)
+////    LinearLayout additionalInfoLayout;
+//    @BindView(R.id.info_card)
+//    CardView infoCard;
+//    @BindView(R.id.contact_name)
+//    TextView contactName;
+//    @BindView(R.id.nicknames)
+//    TextView nicknames;
+//    @BindView(R.id.met_in_person_icon)
+//    ImageView metInPersonIcon;
+//    @BindView(R.id.additional_info)
+//    TextView additionalInfo;
+//    @BindView(R.id.additional_info_hint)
+//    TextView additionalInfoHint;
+//    //    @BindView(R.id.age_info_layout)
+////    LinearLayout ageInfoLayout;
+//    @BindView(R.id.age)
+//    TextView age;
+//    @BindView(R.id.age_hint)
+//    TextView ageHint;
+//    @BindView(R.id.birthdate)
+//    TextView birthdate;
+//    //    @BindView(R.id.body_info_layout)
+////    LinearLayout bodyInfoLayout;
+//    @BindView(R.id.height)
+//    TextView height;
+//    @BindView(R.id.height_hint)
+//    TextView heightHint;
+//    @BindView(R.id.weight)
+//    TextView weight;
+//    @BindView(R.id.weight_hint)
+//    TextView weightHint;
+//    //    @BindView(R.id.endowment_info_layout)
+////    LinearLayout endowmentlInfoLayout;
+//    @BindView(R.id.endowment)
+//    TextView endowment;
+//    @BindView(R.id.endowment_hint)
+//    TextView endowmentHint;
+//    @BindView(R.id.note_card)
+//    CardView noteCard;
+//    @BindView(R.id.notes)
+//    TextView notes;
+//    //    @BindView(R.id.no_information)
+//    TextView noInformationLayout;
+//    @BindView(R.id.labels_layout)
+//    LinearLayout labelsLayout;
+//    @BindView(R.id.flow_layout)
+//    FlowLayout flowLayout;
 
     private String mNicknamesJoined;
     private String mAdditionalInfo;
@@ -167,7 +153,7 @@ public class ContactViewOverviewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.contactview_tab_overview, container, false);
-        ButterKnife.bind(this, view);
+//        ButterKnife.bind(this, view);
 
         activity = (ContactViewWithViewPagerTabActivity) getActivity();
         mContact = activity.getContact();
@@ -317,110 +303,110 @@ public class ContactViewOverviewFragment extends Fragment {
 //            }
 
             // LABELS
-            for (final Label contactLabel : mContactLabels) {
-                StylizedLabel stylizedLabel = new StylizedLabel(activity);
-                stylizedLabel.setTitle(contactLabel.getLabel());
-                stylizedLabel.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                stylizedLabel.setOnClickListener(v -> {
-                    ArrayList<Integer> labelList = new ArrayList<>();
-                    labelList.add(contactLabel.getId());
-
-                    Intent intent = new Intent(activity, ListLabelledContactsActivity.class);
-                    intent.putExtra("labelIds", labelList);
-                    startActivity(intent);
-                });
-
-                flowLayout.addView(stylizedLabel);
-            }
-
-            String contactNameStr = mContact.getContactName();
-            if (contactNameStr != null) {
-                contactName.setText(contactNameStr.toUpperCase());
-            } else {
-                contactName.setText("???");
-            }
-
-            // NICKNAMES
-            if ((mNicknamesJoined != null) && (mNicknamesJoined.length() > 0)) {
-                nicknames.setText(mNicknamesJoined);
-
-//                additionalInfoLayout.setPadding((int) getResources().getDimension(R.dimen.contact_view_card_inner_padding), 140, 0, (int) getResources().getDimension(R.dimen.contact_view_card_inner_padding));
-            } else {
-//            contactName.setPadding((int) getResources().getDimension(R.dimen.activity_vertical_margin), (int) getResources().getDimension(R.dimen.activity_horizontal_margin), (int) getResources().getDimension(R.dimen.activity_vertical_margin), (int) getResources().getDimension(R.dimen.activity_horizontal_margin));
-                nicknames.setVisibility(View.GONE);
-            }
-
-            // ADDITIONAL INFO
-            if ((mAdditionalInfo != null) && (mAdditionalInfo.length() > 0)) {
-                additionalInfo.setText(mAdditionalInfo);
-            } else {
-//                additionalInfoLayout.setVisibility(View.GONE);
-            }
-
-            // AGE
-            if ((mAge != null) && (mAge.length() > 0)) {
-                age.setText(mAge);
-            } else {
-                age.setVisibility(View.GONE);
-            }
-
-            // BRITHDATE
-            if ((mBirthdate != null) && (mBirthdate.length() > 0)) {
-                birthdate.setText(mBirthdate);
-            } else {
-                birthdate.setVisibility(View.GONE);
-            }
-
-            if (age.getVisibility() == View.GONE && birthdate.getVisibility() == View.GONE) {
-//                ageInfoLayout.setVisibility(View.GONE);
-                ageHint.setVisibility(View.GONE);
-            }
-
-            // HEIGHT
-            if ((mHeight != null) && (mHeight.length() > 0)) {
-                height.setText(mHeight);
-            } else {
-                height.setVisibility(View.GONE);
-                heightHint.setVisibility(View.GONE);
-            }
-
-            // WEIGHT
-            if ((mWeight != null) && (mWeight.length() > 0)) {
-                weight.setText(mWeight);
-            } else {
-                weight.setVisibility(View.GONE);
-                weightHint.setVisibility(View.GONE);
-            }
-
-            if (height.getVisibility() != View.GONE && weight.getVisibility() == View.GONE) {
-                height.setPadding(0, 0, 0, 0);
-            }
-
-            if (height.getVisibility() == View.GONE && weight.getVisibility() != View.GONE) {
-                weight.setPadding(0, 0, 0, 0);
-            }
-
-            if (height.getVisibility() == View.GONE && weight.getVisibility() == View.GONE) {
-//                bodyInfoLayout.setVisibility(View.GONE);
-            }
-
-            // ENDOWMENT
-            if ((mSexyInfo != null) && (mSexyInfo.length() > 0)) {
-                endowment.setText(mSexyInfo);
-            } else {
-//                endowmentlInfoLayout.setVisibility(View.GONE);
-                endowmentHint.setVisibility(View.GONE);
-            }
-            if (!SpecificValues.SHOW_XRATED) {
-//                endowmentlInfoLayout.setVisibility(View.GONE);
-            }
-
-            // NOTES
-            if ((mNote != null) && (mNote.length() > 0)) {
-                notes.setText(mNote);
-            } else {
-                noteCard.setVisibility(View.GONE);
-            }
+//            for (final Label contactLabel : mContactLabels) {
+//                StylizedLabel stylizedLabel = new StylizedLabel(activity);
+//                stylizedLabel.setTitle(contactLabel.getLabel());
+//                stylizedLabel.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//                stylizedLabel.setOnClickListener(v -> {
+//                    ArrayList<Integer> labelList = new ArrayList<>();
+//                    labelList.add(contactLabel.getId());
+//
+//                    Intent intent = new Intent(activity, ListLabelledContactsActivity.class);
+//                    intent.putExtra("labelIds", labelList);
+//                    startActivity(intent);
+//                });
+//
+//                flowLayout.addView(stylizedLabel);
+//            }
+//
+//            String contactNameStr = mContact.getContactName();
+//            if (contactNameStr != null) {
+//                contactName.setText(contactNameStr.toUpperCase());
+//            } else {
+//                contactName.setText("???");
+//            }
+//
+//            // NICKNAMES
+//            if ((mNicknamesJoined != null) && (mNicknamesJoined.length() > 0)) {
+//                nicknames.setText(mNicknamesJoined);
+//
+////                additionalInfoLayout.setPadding((int) getResources().getDimension(R.dimen.contact_view_card_inner_padding), 140, 0, (int) getResources().getDimension(R.dimen.contact_view_card_inner_padding));
+//            } else {
+////            contactName.setPadding((int) getResources().getDimension(R.dimen.activity_vertical_margin), (int) getResources().getDimension(R.dimen.activity_horizontal_margin), (int) getResources().getDimension(R.dimen.activity_vertical_margin), (int) getResources().getDimension(R.dimen.activity_horizontal_margin));
+//                nicknames.setVisibility(View.GONE);
+//            }
+//
+//            // ADDITIONAL INFO
+//            if ((mAdditionalInfo != null) && (mAdditionalInfo.length() > 0)) {
+//                additionalInfo.setText(mAdditionalInfo);
+//            } else {
+////                additionalInfoLayout.setVisibility(View.GONE);
+//            }
+//
+//            // AGE
+//            if ((mAge != null) && (mAge.length() > 0)) {
+//                age.setText(mAge);
+//            } else {
+//                age.setVisibility(View.GONE);
+//            }
+//
+//            // BRITHDATE
+//            if ((mBirthdate != null) && (mBirthdate.length() > 0)) {
+//                birthdate.setText(mBirthdate);
+//            } else {
+//                birthdate.setVisibility(View.GONE);
+//            }
+//
+//            if (age.getVisibility() == View.GONE && birthdate.getVisibility() == View.GONE) {
+////                ageInfoLayout.setVisibility(View.GONE);
+//                ageHint.setVisibility(View.GONE);
+//            }
+//
+//            // HEIGHT
+//            if ((mHeight != null) && (mHeight.length() > 0)) {
+//                height.setText(mHeight);
+//            } else {
+//                height.setVisibility(View.GONE);
+//                heightHint.setVisibility(View.GONE);
+//            }
+//
+//            // WEIGHT
+//            if ((mWeight != null) && (mWeight.length() > 0)) {
+//                weight.setText(mWeight);
+//            } else {
+//                weight.setVisibility(View.GONE);
+//                weightHint.setVisibility(View.GONE);
+//            }
+//
+//            if (height.getVisibility() != View.GONE && weight.getVisibility() == View.GONE) {
+//                height.setPadding(0, 0, 0, 0);
+//            }
+//
+//            if (height.getVisibility() == View.GONE && weight.getVisibility() != View.GONE) {
+//                weight.setPadding(0, 0, 0, 0);
+//            }
+//
+//            if (height.getVisibility() == View.GONE && weight.getVisibility() == View.GONE) {
+////                bodyInfoLayout.setVisibility(View.GONE);
+//            }
+//
+//            // ENDOWMENT
+//            if ((mSexyInfo != null) && (mSexyInfo.length() > 0)) {
+//                endowment.setText(mSexyInfo);
+//            } else {
+////                endowmentlInfoLayout.setVisibility(View.GONE);
+//                endowmentHint.setVisibility(View.GONE);
+//            }
+//            if (!SpecificValues.SHOW_XRATED) {
+////                endowmentlInfoLayout.setVisibility(View.GONE);
+//            }
+//
+//            // NOTES
+//            if ((mNote != null) && (mNote.length() > 0)) {
+//                notes.setText(mNote);
+//            } else {
+//                noteCard.setVisibility(View.GONE);
+//            }
 
             /*
               DIVIDERS

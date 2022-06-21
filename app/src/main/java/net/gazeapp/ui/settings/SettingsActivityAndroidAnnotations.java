@@ -1,13 +1,12 @@
 package net.gazeapp.ui.settings;
 
-import net.gazeapp.AppCompatPreferenceActivity;
-
 /**
  * Created by taar1 on 29.10.2016.
  */
 //@PreferenceScreen(R.xml.pref_general)
 //@EActivity
-public class SettingsActivityAndroidAnnotations extends AppCompatPreferenceActivity {
+//public class SettingsActivityAndroidAnnotations extends AppCompatPreferenceActivity {
+public class SettingsActivityAndroidAnnotations {
 
     private final String TAG = getClass().getSimpleName();
 

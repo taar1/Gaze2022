@@ -1,0 +1,331 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/messenger_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="@dimen/cardview_card_radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/messengers_title"
+            style="@style/Title.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/messengers"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:alpha="0.3"
+            android:background="@color/primary"
+            card_view:layout_constraintTop_toBottomOf="@+id/messengers_title" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/divider_view">
+
+            <ImageView
+                android:id="@+id/line_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_line_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/signal_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_ic_signal"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/line_icon" />
+
+            <ImageView
+                android:id="@+id/skype_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_skype_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/signal_icon" />
+
+            <ImageView
+                android:id="@+id/snapchat_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_snapchat_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/skype_icon" />
+
+            <ImageView
+                android:id="@+id/telegram_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_ic_telegram"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/snapchat_icon" />
+
+            <ImageView
+                android:id="@+id/threema_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_ic_threema"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/telegram_icon" />
+
+            <ImageView
+                android:id="@+id/viber_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_viber_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/threema_icon" />
+
+            <ImageView
+                android:id="@+id/whatsapp_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_whatsapp_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/viber_icon" />
+
+            <ImageView
+                android:id="@+id/wechat_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0.3"
+
+                android:src="@drawable/brand_wechat_24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/whatsapp_icon" />
+
+
+            <TextView
+                android:id="@+id/lineMessenger_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/line_messenger"
+                card_view:layout_constraintStart_toEndOf="@id/line_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/line_icon" />
+
+            <TextView
+                android:id="@+id/lineMessenger"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/line_messenger"
+                card_view:layout_constraintStart_toStartOf="@id/lineMessenger_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/lineMessenger_hint" />
+
+
+            <TextView
+                android:id="@+id/signal_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/signal"
+                card_view:layout_constraintStart_toEndOf="@id/signal_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/signal_icon" />
+
+            <TextView
+                android:id="@+id/signal"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/signal"
+                card_view:layout_constraintStart_toStartOf="@id/signal_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/signal_hint" />
+
+
+            <TextView
+                android:id="@+id/skype_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/skype"
+                card_view:layout_constraintStart_toEndOf="@id/skype_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/skype_icon" />
+
+            <TextView
+                android:id="@+id/skype"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/skype"
+                card_view:layout_constraintStart_toStartOf="@id/skype_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/skype_hint" />
+
+
+            <TextView
+                android:id="@+id/snapchat_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/snapchat"
+                card_view:layout_constraintStart_toEndOf="@id/snapchat_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/snapchat_icon" />
+
+            <TextView
+                android:id="@+id/snapchat"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/snapchat"
+                card_view:layout_constraintStart_toStartOf="@id/snapchat_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/snapchat_hint" />
+
+            <TextView
+                android:id="@+id/telegram_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/telegram"
+                card_view:layout_constraintStart_toEndOf="@id/telegram_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/telegram_icon" />
+
+            <TextView
+                android:id="@+id/telegram"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/telegram"
+                card_view:layout_constraintStart_toStartOf="@id/telegram_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/telegram_hint" />
+
+            <TextView
+                android:id="@+id/threema_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/threema"
+                card_view:layout_constraintStart_toEndOf="@id/threema_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/threema_icon" />
+
+            <TextView
+                android:id="@+id/threema"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/threema"
+                card_view:layout_constraintStart_toStartOf="@id/threema_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/threema_hint" />
+
+            <TextView
+                android:id="@+id/viber_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/viber"
+                card_view:layout_constraintStart_toEndOf="@id/viber_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/viber_icon" />
+
+            <TextView
+                android:id="@+id/viber"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/viber"
+                card_view:layout_constraintStart_toStartOf="@id/viber_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/viber_hint" />
+
+
+            <TextView
+                android:id="@+id/wechat_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/wechat"
+                card_view:layout_constraintStart_toEndOf="@id/wechat_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/wechat_icon" />
+
+            <TextView
+                android:id="@+id/wechat"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/wechat"
+                card_view:layout_constraintStart_toStartOf="@id/wechat_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/wechat_hint" />
+
+
+            <TextView
+                android:id="@+id/whatsapp_hint"
+                style="@style/Hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/whatsapp"
+                card_view:layout_constraintStart_toEndOf="@id/whatsapp_icon"
+                card_view:layout_constraintTop_toTopOf="@+id/whatsapp_icon" />
+
+            <TextView
+                android:id="@+id/whatsapp"
+                style="@style/Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/whatsapp"
+                card_view:layout_constraintStart_toStartOf="@id/whatsapp_hint"
+                card_view:layout_constraintTop_toBottomOf="@id/whatsapp_hint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

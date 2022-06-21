@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import coil.load
 import com.google.android.material.button.MaterialButton
 import net.gazeapp.R
 import net.gazeapp.data.model.*
@@ -167,16 +167,12 @@ class MyMediaItemViewHolder(
                     ignoreCase = true
                 )
             ) {
-                activity.let {
-                    Glide.with(it).load(R.drawable.josh)
-                        .placeholder(R.drawable.silhouette).into(
-                            cardImage
-                        )
+                cardImage.load(R.drawable.josh) {
+                    placeholder(R.drawable.silhouette)
                 }
             } else {
-                activity.let {
-                    Glide.with(it).load(fileFromInternalStorage)
-                        .placeholder(R.drawable.silhouette).into(cardImage)
+                cardImage.load(fileFromInternalStorage) {
+                    placeholder(R.drawable.silhouette)
                 }
             }
         }
