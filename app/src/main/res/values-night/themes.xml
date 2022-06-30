@@ -1,16 +1,87 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Theme.Gaze" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="GazeTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue</item>
-        <item name="colorPrimaryVariant">@color/blue</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_light</item>
+        <item name="colorOnPrimary">@color/accent</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/green</item>
-        <item name="colorSecondaryVariant">@color/green</item>
+        <item name="colorSecondary">@color/primary_dark</item>
+        <item name="colorSecondaryVariant">@color/primary_light</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/primary_dark</item>
+        <item name="android:textColorSecondary">@color/gold</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!--TOOLBAR TITLE TEXT-->
+        <item name="android:textColorPrimary">@color/white</item>
+
+        <!--GENERAL TEXT-->
+        <item name="android:textColor">#000</item>
+
+        <!--INACTIVE TABS FONT-->
+        <item name="android:colorPrimary">@color/light_gray_light</item>
+
+        <!-- STATUS BAR (GANZ OBEN)-->
+        <!--        <item name="android:colorPrimaryDark">@color/accent</item>-->
+
+        <!-- Bottom Navigation Bar -->
+        <item name="android:navigationBarColor">@color/primary_dark</item>
+
+        <!--FONT SELECTION: SERIF, SANS, NORMAL, MONOSPACE-->
+        <item name="android:typeface">normal</item>
+
+        <item name="android:spinnerItemStyle">@style/AppTheme.SpinnerItemStyle</item>
+        <item name="android:spinnerDropDownItemStyle">@style/AppTheme.SpinnerDropDownItemStyle
+        </item>
+
+        <!--ACTION MODE (WHEN LONG CLICK IMAGE IN GRID GALLERY)-->
+        <item name="actionModeStyle">@style/Styled.ActionMode</item>
+
+        <!--this attribute is to change the theme of the normal FAB-->
+        <item name="floatingActionButtonStyle">@style/Widget.App.FloatingActionButton</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <!-- Spinner Style Start -->
+    <style name="AppTheme.SpinnerItemStyle" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.SpinnerDropDownItemStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:textColor">@color/reg_light</item>
+    </style>
+    <!-- Spinner Style End -->
+
+    <!-- FAB Style Start -->
+    <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="materialThemeOverlay">@style/myCustomThemeForNormalFab</item>
+        <item name="shapeAppearanceOverlay">@style/customNormalFAB</item>
+    </style>
+
+    <style name="customNormalFAB">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="myCustomThemeForNormalFab" parent="">
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+    </style>
+    <!-- FAB Style End -->
+
+    <style name="Styled.ActionMode" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="android:windowActionModeOverlay">false</item>
+        <item name="background">@color/primary_dark</item>
     </style>
 </resources>

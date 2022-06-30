@@ -1,4 +1,4 @@
-package net.gazeapp.ui.me;
+package net.gazeapp.ui.contacts.me;
 
 import android.app.Activity;
 import android.content.DialogInterface;

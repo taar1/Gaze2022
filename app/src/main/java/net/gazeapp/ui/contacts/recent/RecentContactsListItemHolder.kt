@@ -1,4 +1,4 @@
-package net.gazeapp.ui.recent
+package net.gazeapp.ui.contacts.recent
 
 import android.app.Activity
 import android.text.TextUtils
@@ -20,7 +20,7 @@ import javax.inject.Inject
  * Holder for the CARD VIEW BODY
  * Main Profile Pic, overlaying Profile Name, overlaying City and other info
  */
-class RecentContactsCardViewItemHolder(
+class RecentContactsListItemHolder(
     val activity: Activity,
     val view: View
 ) : RecyclerView.ViewHolder(view) {

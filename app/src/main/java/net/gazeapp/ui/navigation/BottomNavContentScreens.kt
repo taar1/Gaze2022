@@ -17,25 +17,6 @@ import net.gazeapp.R
 
 
 @Composable
-fun RecentScreen() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(colorResource(id = R.color.background_color))
-            .wrapContentSize(Alignment.Center)
-    ) {
-        Text(
-            text = "Recent Screen",
-            fontWeight = FontWeight.Bold,
-            color = Color.Green,
-            modifier = Modifier.align(Alignment.CenterHorizontally),
-            textAlign = TextAlign.Center,
-            fontSize = 20.sp
-        )
-    }
-}
-
-@Composable
 fun AllScreen() {
     Column(
         modifier = Modifier

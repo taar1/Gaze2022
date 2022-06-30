@@ -1,4 +1,4 @@
-package net.gazeapp.ui.all
+package net.gazeapp.ui.contacts.all
 
 import android.app.Activity
 import android.view.View
@@ -15,7 +15,7 @@ import net.gazeapp.utilities.MediaTools
  * Holder for the CARD VIEW BODY
  * Main Profile Pic, overlaying Profile Name, overlaying City and other info
  */
-class AllContactsCardViewItemHolderKt(
+class AllContactsListItemHolder(
     val activity: Activity,
     val view: View
 ) : RecyclerView.ViewHolder(view) {

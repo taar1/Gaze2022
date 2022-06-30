@@ -1,4 +1,4 @@
-package net.gazeapp.ui.me
+package net.gazeapp.ui.contacts.all
 
 import android.app.Activity
 import android.view.LayoutInflater
@@ -8,31 +8,32 @@ import androidx.recyclerview.widget.RecyclerView
 import net.gazeapp.R
 import net.gazeapp.data.model.ContactWithDetails
 import net.gazeapp.listeners.OnContactWithDetailsClickListener
-import net.gazeapp.utilities.GazeTools
 import net.gazeapp.utilities.MediaTools
 
-class MyMediaRecyclerGridViewAdapter(
+class AllContactsRecyclerListAdapterKt(
     private val onContactClickListener: OnContactWithDetailsClickListener,
     private val activity: Activity
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val TAG = "MediaRecyclerListGridViewAdapter"
+    companion object {
+        private const val TAG = "AllContactsRecyclerList"
+    }
 
     var contactList: List<ContactWithDetails> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val itemView: View = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_recent_contacts_card, parent, false)
-        return MyMediaItemViewHolder(activity, itemView)
+            .inflate(R.layout.list_item_all_contacts, parent, false)
+
+        return AllContactsListItemHolder(activity, itemView)
     }
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
         val contact = contactList[position]
-        val contactCardObjectViewHolder = viewHolder as MyMediaItemViewHolder
+        val contactCardObjectViewHolder = viewHolder as AllContactsListItemHolder
 
-        contactCardObjectViewHolder.contact = contact
+        contactCardObjectViewHolder.contactWithDetails = contact
         contactCardObjectViewHolder.mediaTools = MediaTools()
-        contactCardObjectViewHolder.gazeTools = GazeTools(activity)
 
         contactCardObjectViewHolder.itemView.setOnClickListener {
             onContactClickListener.onContactWithDetailsClicked(

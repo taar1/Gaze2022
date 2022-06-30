@@ -1,4 +1,4 @@
-package net.gazeapp.ui.all
+package net.gazeapp.ui.contacts.all
 
 import android.content.Context
 import android.os.Bundle

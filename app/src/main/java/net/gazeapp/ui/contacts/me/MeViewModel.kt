@@ -1,4 +1,4 @@
-package net.gazeapp.ui.recent
+package net.gazeapp.ui.contacts.me
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -13,12 +13,12 @@ import net.gazeapp.data.repository.ContactsRepository
 import net.gazeapp.data.repository.LabelRepository
 import net.gazeapp.helpers.Const
 
-class RecentContactsViewModel constructor(app: Application) : AndroidViewModel(app) {
+class MeViewModel constructor(app: Application) : AndroidViewModel(app) {
 
     private val TAG = "RecentContactsViewModel"
 
     private val repository: ContactsRepository = ContactsRepository(GazeDatabase.getDatabase(app))
-    private val labelRepo: LabelRepository = LabelRepository(GazeDatabase.getDatabase(app))
+    private val myMediaRepo: LabelRepository = LabelRepository(GazeDatabase.getDatabase(app))
 
     /**
      * A list of recent contacts that can be shown on the screen. This is private to avoid exposing a
@@ -64,13 +64,11 @@ class RecentContactsViewModel constructor(app: Application) : AndroidViewModel(a
             repository.getRecentFullContacts(Const.RECENT_CONTACTS_LIMIT)
             _recentContactsWithDetails.postValue(repository.recentContactWithDetailsList)
 
+
             // If there are no recent contacts inform the UI accordingly
             _hasNoEntries.value = repository.recentContactsList.isNullOrEmpty()
         }
 
-    }
-
-    fun copyFirstContactImageToInternalStorage() {
     }
 
 //    fun insertLabel() {

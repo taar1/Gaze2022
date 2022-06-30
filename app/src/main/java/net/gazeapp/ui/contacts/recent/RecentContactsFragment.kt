@@ -1,4 +1,4 @@
-package net.gazeapp.ui.recent
+package net.gazeapp.ui.contacts.recent
 
 import android.content.Context
 import android.os.Bundle

@@ -63,6 +63,29 @@ data class Contact(
         Date()
     )
 
+    constructor(
+        id: Int,
+        isMe: Boolean,
+        contactName: String,
+        additionalInfo: String?,
+        showMainPic: Boolean,
+        isMetInPerson: Boolean,
+        metInPersonDate: Date?,
+        created: Date?
+    ) : this(
+        id,
+        isMe,
+        contactName,
+        additionalInfo,
+        0,
+        showMainPic,
+        isMetInPerson,
+        metInPersonDate,
+        created,
+        Date(),
+        Date()
+    )
+
     companion object {
         const val CONTACT_NAME = "contactName"
         const val ADDITIONAL_INFO = "additionalInfo"

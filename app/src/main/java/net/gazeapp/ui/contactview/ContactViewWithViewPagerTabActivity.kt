@@ -416,11 +416,15 @@ class ContactViewWithViewPagerTabActivity : AppCompatActivity() {
             }
 
             // Skip destroyed or not created item
+            // TODO FIXME: FlexibleSpaceWithImageBaseFragment.java rausgelöscht da Deprecated Error...
+            // TODO FIXME: FlexibleSpaceWithImageBaseFragment.java rausgelöscht da Deprecated Error...
             val contactDetailsFragment =
-                contactViewNavigationAdapter!!.createFragment(i) as FlexibleSpaceWithImageBaseFragment<*>
-            val view = contactDetailsFragment.view ?: continue
-            contactDetailsFragment.setScrollY(scrollY, mFlexibleSpaceHeight)
-            contactDetailsFragment.updateFlexibleSpace(scrollY)
+                contactViewNavigationAdapter!!.createFragment(i)
+//            val contactDetailsFragment =
+//                contactViewNavigationAdapter!!.createFragment(i) as FlexibleSpaceWithImageBaseFragment<*>
+//            val view = contactDetailsFragment.view ?: continue
+//            contactDetailsFragment.setScrollY(scrollY, mFlexibleSpaceHeight)
+//            contactDetailsFragment.updateFlexibleSpace(scrollY)
         }
     }
 
