@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -9,10 +11,10 @@ android {
 
     defaultConfig {
         applicationId = "net.gazeapp"
-        minSdk = 28
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = Versions.Apps.minSdk
+        targetSdk = Versions.Apps.targetSdk
+        versionCode = Versions.Apps.versionCode
+        versionName = Versions.Apps.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -97,8 +99,11 @@ dependencies {
         implementation(androidxAppCompat)
         implementation(material)
         implementation(constraintLayout)
+        implementation(fragment)
+        implementation(fragmentKtx)
         implementation(lifecycleLivedata)
         implementation(lifecycleViewModel)
+        implementation(lifecycleExtensions)
         implementation(okHttp)
         implementation(androidxAppCompat)
         implementation(recyclerView)
@@ -150,7 +155,8 @@ dependencies {
     }
 
     with(Dependencies.Libs) {
-//        implementation(glide)
+        implementation(facebook)
+        implementation(coil)
     }
 
     with(Dependencies.TestLibs) {
@@ -160,9 +166,6 @@ dependencies {
     }
 
     // TODO properly implement
-    implementation("com.facebook.android:audience-network-sdk:6.11.0")
-    implementation("io.coil-kt:coil:2.1.0")
-
     // TODO properly implement
 
     // TODO Libraries to get rid of eventually:

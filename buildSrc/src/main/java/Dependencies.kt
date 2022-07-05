@@ -37,6 +37,8 @@ object Dependencies {
             "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.Android.lifecycleLivedata}"
         const val lifecycleViewModel =
             "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Android.lifecycleViewModel}"
+        const val lifecycleExtensions =
+            "androidx.lifecycle:lifecycle-extensions:${Versions.Android.lifecycleExtensions}"
         const val okHttp = "com.squareup.okhttp3:logging-interceptor:${Versions.Android.okHttp}"
         const val material = "com.google.android.material:material:${Versions.Android.material}"
         const val recyclerView =
@@ -69,7 +71,8 @@ object Dependencies {
             "androidx.compose.material:material:${Versions.Android.composeMaterial}"
         const val billing =
             "com.android.billingclient:billing-ktx:${Versions.Android.billing_version}"
-
+        const val composeLivedata =
+            "androidx.compose.runtime:runtime-livedata:${Versions.Android.compose}"
     }
 
     object Firebase {
@@ -93,6 +96,8 @@ object Dependencies {
     object Libs {
         const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.Android.kotlin}"
         const val glide = "com.github.bumptech.glide:glide:${Versions.Android.glide}"
+        const val facebook = "com.facebook.android:audience-network-sdk:${Versions.Libs.facebook}"
+        const val coil = "io.coil-kt:coil:${Versions.Libs.coil}"
     }
 
     object TestLibs {

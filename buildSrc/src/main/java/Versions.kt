@@ -3,7 +3,7 @@ object Versions {
     object Apps {
         const val compileSdk = 32
         const val targetSdk = 32
-        const val minSdk = 28
+        const val minSdk = 29
 
         const val versionCode = 1
         const val versionName = "0.0.1"
@@ -26,12 +26,13 @@ object Versions {
         const val androidxLifecycle = "2.3.1"
         const val lifecycleLivedata = "2.4.1"
         const val lifecycleViewModel = "2.4.1"
+        const val lifecycleExtensions = "2.2.0-alpha03"
         const val androidxCore = "1.8.0"
         const val constraintLayout = "2.1.4"
         const val fragment = "1.3.6"
         const val okHttp = "4.9.1"
         const val swipeRefreshLayout = "1.1.0"
-        const val firebaseBom = "30.1.0"
+        const val firebaseBom = "30.2.0"
         const val material = "1.6.1"
         const val preference = "1.2.0"
         const val vectordrawable = "1.1.0"
@@ -54,6 +55,11 @@ object Versions {
         const val junit = "4.13.2"
         const val junitExt = "1.1.3"
         const val espressoCore = "3.4.0"
+    }
+
+    object Libs {
+        const val facebook = "6.11.0"
+        const val coil = "2.1.0"
     }
 
 

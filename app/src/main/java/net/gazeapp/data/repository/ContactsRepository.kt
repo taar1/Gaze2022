@@ -8,7 +8,9 @@ import net.gazeapp.data.model.ContactWithDetails
 
 class ContactsRepository(val database: GazeDatabase) {
 
-    private val TAG = "ContactsRepository"
+    companion object {
+        private const val TAG = "ContactsRepository"
+    }
 
     lateinit var contactWithDetails: ContactWithDetails
     var allContactsList: List<Contact> = listOf()

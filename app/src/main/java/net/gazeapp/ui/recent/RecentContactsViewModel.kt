@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import net.gazeapp.data.GazeDatabase
 import net.gazeapp.data.model.Contact
@@ -12,10 +13,14 @@ import net.gazeapp.data.model.ContactWithDetails
 import net.gazeapp.data.repository.ContactsRepository
 import net.gazeapp.data.repository.LabelRepository
 import net.gazeapp.helpers.Const
+import javax.inject.Inject
 
-class RecentContactsViewModel constructor(app: Application) : AndroidViewModel(app) {
+@HiltViewModel
+class RecentContactsViewModel @Inject constructor(app: Application) : AndroidViewModel(app) {
 
-    private val TAG = "RecentContactsViewModel"
+    companion object {
+        private const val TAG = "RecentContactsViewModel"
+    }
 
     private val repository: ContactsRepository = ContactsRepository(GazeDatabase.getDatabase(app))
     private val labelRepo: LabelRepository = LabelRepository(GazeDatabase.getDatabase(app))
@@ -65,7 +70,7 @@ class RecentContactsViewModel constructor(app: Application) : AndroidViewModel(a
             _recentContactsWithDetails.postValue(repository.recentContactWithDetailsList)
 
             // If there are no recent contacts inform the UI accordingly
-            _hasNoEntries.value = repository.recentContactsList.isNullOrEmpty()
+            _hasNoEntries.value = repository.recentContactsList.isEmpty()
         }
 
     }

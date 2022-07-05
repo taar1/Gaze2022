@@ -136,7 +136,7 @@ class TrackingUtils(context: Context) {
         // TODO FIXME google analytics wieder einbauen...
         // TODO FIXME google analytics wieder einbauen...
         // Log the content view
-//        Tracker tracker = GazeApplication.getGoogleAnalyticsTracker();
+//        val tracker : Tracker = GazeApplication.getGoogleAnalyticsTracker();
 //        tracker.setScreenName(pageID);
 //        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }

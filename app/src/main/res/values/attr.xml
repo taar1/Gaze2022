@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StylizedLabelView">
+        <attr name="titleText" format="string" />
+        <!--<attr name="valueColor" format="color" />-->
+    </declare-styleable>
+
+
+    <!--    TODO FIXME: remove everything in here!!-->
+    <!--    TODO FIXME: remove everything in here!!-->
+    <!--    TODO FIXME: remove everything in here!!-->
+    <!--    TODO FIXME: remove everything in here!!-->
+    <!--https://github.com/blazsolar/FlowLayout/blob/develop/FlowLayout/src/main/res/values/attr.xml-->
+    <declare-styleable name="FlowLayout">
+        <attr name="android:gravity" />
+    </declare-styleable>
+    <declare-styleable name="FlowLayout_Layout">
+        <attr name="android:layout_gravity" />
+    </declare-styleable>
+</resources>

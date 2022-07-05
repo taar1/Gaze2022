@@ -91,14 +91,10 @@ abstract class GazeDatabase : RoomDatabase() {
     abstract val tagDao: TagDao
 
     companion object {
-        private val TAG: String = "GazeDatabase"
+        private const val TAG = "GazeDatabase"
 
         @Volatile
         private var INSTANCE: GazeDatabase? = null
-
-        // Gaze.db was used until 2020. Since we changed the database structure completely we are using
-        // a completely different database now to avoid problems when updating the app from the old to the new
-        // version (Gaze.db)
 
         fun getDatabase(context: Context): GazeDatabase {
             return INSTANCE ?: synchronized(this) {
