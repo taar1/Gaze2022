@@ -128,6 +128,7 @@ dependencies {
         // maybe the other navigation components can be removed because of compose
         // Compose Stuff
         implementation(navCompose)
+        implementation(composeLivedata)
         implementation(coordinatorlayout)
         implementation(viewpager2)
 
@@ -150,7 +151,8 @@ dependencies {
     }
 
     with(Dependencies.Libs) {
-//        implementation(glide)
+        implementation(facebook)
+        implementation(coil)
     }
 
     with(Dependencies.TestLibs) {
@@ -160,9 +162,6 @@ dependencies {
     }
 
     // TODO properly implement
-    implementation("com.facebook.android:audience-network-sdk:6.11.0")
-    implementation("io.coil-kt:coil:2.1.0")
-
     // TODO properly implement
 
     // TODO Libraries to get rid of eventually:

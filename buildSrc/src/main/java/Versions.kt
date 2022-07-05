@@ -56,6 +56,11 @@ object Versions {
         const val espressoCore = "3.4.0"
     }
 
+    object Libs {
+        const val facebook = "6.11.0"
+        const val coil = "2.1.0"
+    }
+
 
 }
 
