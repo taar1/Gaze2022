@@ -40,7 +40,7 @@ import androidx.fragment.app.Fragment;
 
 import net.gazeapp.R;
 import net.gazeapp.data.GazeDatabase;
-import net.gazeapp.data.dao.ContactDao;
+import net.gazeapp.data.dao.ContactKtDao;
 import net.gazeapp.data.dao.MediaDao;
 import net.gazeapp.data.model.Contact;
 import net.gazeapp.data.model.Media;
@@ -94,7 +94,7 @@ public class ContactViewGalleryFragment extends Fragment {
 //    LinearLayout gridGalleryLayout;
 
     //    ImageOverlayView overlayView;
-    private ContactDao contactDao;
+    private ContactKtDao contactDao;
     private MediaDao mediaDao;
 
 
@@ -120,7 +120,7 @@ public class ContactViewGalleryFragment extends Fragment {
 
     private void loadData() {
         Needle.onBackgroundThread().execute(() -> {
-            contactDao = GazeDatabase.Companion.getDatabase(getActivity()).getContactDao();
+            contactDao = GazeDatabase.Companion.getDatabase(getActivity()).getContactKtDao();
             mediaDao = GazeDatabase.Companion.getDatabase(getActivity()).getMediaDao();
 
             updateUI();
@@ -439,7 +439,8 @@ public class ContactViewGalleryFragment extends Fragment {
 //            }
 //        }
 
-        contactDao.update(mContact);
+        // TODO wieder reinbringen?
+//        contactDao.update(mContact);
 
 //        gridAdapter.notifyDataSetChanged();
 
@@ -479,7 +480,7 @@ public class ContactViewGalleryFragment extends Fragment {
 //                }
 //            }
 
-            contactDao.update(mContact);
+//            contactDao.update(mContact);
 
 //            mediaTools.cleanCacheDir();
 //            gridAdapter.notifyDataSetChanged();

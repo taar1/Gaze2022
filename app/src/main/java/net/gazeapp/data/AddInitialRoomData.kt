@@ -28,11 +28,11 @@ class AddInitialRoomData(db: GazeDatabase) {
         private const val TAG = "AddInitialRoomData"
     }
 
-    val ctx = GazeApplication.appContext
+    private val ctx = GazeApplication.appContext
 
     var sdf = SimpleDateFormat("dd-M-yyyy", Locale.getDefault())
 
-    private val repository: ContactsRepository = ContactsRepository(db)
+    private val repository: ContactsRepository = ContactsRepository(db.contactKtDao)
 
     lateinit var contact: Contact
 

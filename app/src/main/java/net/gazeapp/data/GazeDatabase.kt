@@ -61,7 +61,6 @@ abstract class GazeDatabase : RoomDatabase() {
     abstract val bodyTypeDao: BodyTypeDao
     abstract val childDao: ChildDao
     abstract val clubDao: ClubDao
-    abstract val contactDao: ContactDao
     abstract val contactKtDao: ContactKtDao
     abstract val drugDao: DrugDao
     abstract val emailDao: EmailDao

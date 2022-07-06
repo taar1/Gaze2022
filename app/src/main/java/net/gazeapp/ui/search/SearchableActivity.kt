@@ -13,15 +13,17 @@ import android.widget.RelativeLayout
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.ads.AdSize
 import com.facebook.ads.AdView
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import needle.Needle
 import net.gazeapp.R
 import net.gazeapp.data.GazeDatabase.Companion.getDatabase
-import net.gazeapp.data.dao.ContactDao
+import net.gazeapp.data.dao.ContactKtDao
 import net.gazeapp.data.model.Contact
 import net.gazeapp.databinding.ActivitySearchableBinding
 import net.gazeapp.helpers.Const
@@ -48,7 +50,7 @@ class SearchableActivity : AppCompatActivity() {
 
     var searchResultsRecyclerListAdapter: SearchResultsRecyclerListAdapter? = null
     var contactList: List<Contact>? = null
-    private var contactDao: ContactDao? = null
+    private var contactDao: ContactKtDao? = null
 
     lateinit var binding: ActivitySearchableBinding
 
@@ -64,7 +66,7 @@ class SearchableActivity : AppCompatActivity() {
 
         bindViews()
 
-        contactDao = getDatabase(this).contactDao
+        contactDao = getDatabase(this).contactKtDao
 
         setSupportActionBar(toolbar)
         actionBar = supportActionBar
@@ -114,7 +116,8 @@ class SearchableActivity : AppCompatActivity() {
         }
     }
 
-    fun fillView() {
+    private fun fillView() {
+        // TODO FIXME remove needle....
         Needle.onMainThread().execute {
             progressBar.visibility = View.GONE
 
@@ -151,16 +154,20 @@ class SearchableActivity : AppCompatActivity() {
         }
     }
 
-    private fun doMySearch(query: String?) {
+    private fun doMySearch(query: String) {
         Log.d(TAG, "SEARCH QUERY: $query")
-        contactList = contactDao?.searchContacts(query)
+        lifecycleScope.launch {
+            contactList = contactDao?.searchContacts(query)
 
-        contactList?.let {
-            for (contact in it) {
-                Log.d(TAG, "FOUND CONTACT: $contact")
+            contactList?.let {
+                for (contact in it) {
+                    Log.d(TAG, "FOUND CONTACT: $contact")
+                }
             }
+
+            fillView()
         }
-        fillView()
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -27,7 +27,8 @@ class AddOrEditContactViewModel constructor(val contactId: Int, val app: Applica
     @Inject
     lateinit var tools: GazeTools
 
-    private val contactRepo: ContactsRepository = ContactsRepository(GazeDatabase.getDatabase(app))
+    private val contactRepo: ContactsRepository =
+        ContactsRepository(GazeDatabase.getDatabase(app).contactKtDao)
     private val mediaRepo: MediaRepository = MediaRepository(GazeDatabase.getDatabase(app))
     private val addressRepo: AddressRepository = AddressRepository(GazeDatabase.getDatabase(app))
     private val childrenRepo: ChildrenRepository = ChildrenRepository(GazeDatabase.getDatabase(app))

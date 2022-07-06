@@ -5,12 +5,11 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
-import needle.Needle
 import net.gazeapp.R
 import net.gazeapp.billing.UpgradingActivity
 import net.gazeapp.callbacks.FreeVersionDialogsCallback
 import net.gazeapp.data.GazeDatabase.Companion.getDatabase
-import net.gazeapp.data.dao.ContactDao
+import net.gazeapp.data.dao.ContactKtDao
 import net.gazeapp.helpers.Const
 import net.gazeapp.helpers.Preferences
 import net.gazeapp.utilities.GazeTools
@@ -22,13 +21,13 @@ class FreeVersionDialogs(val context: Context) {
     @Inject
     lateinit var tools: GazeTools
 
-    private val contactDao: ContactDao = getDatabase(context).contactDao
+    private val contactDao: ContactKtDao = getDatabase(context).contactKtDao
 
     companion object {
         private const val TAG = "FreeVersionDialogs"
     }
 
-    fun decideWhichMessageToShow(callback: FreeVersionDialogsCallback) {
+    suspend fun decideWhichMessageToShow(callback: FreeVersionDialogsCallback) {
         val hasSeenOverTwentyContactsAddedDialog = tools.preferences.getBoolean(
             Preferences.HAS_SEEN_OVER_TWENTY_CONTACTS_ADDED_DIALOG,
             Preferences.HAS_SEEN_OVER_TWENTY_CONTACTS_ADDED_DIALOG_DEFAULT_VALUE
@@ -36,25 +35,23 @@ class FreeVersionDialogs(val context: Context) {
 
         // Only show this for FREE Users...
         if (tools.isFreeUser()) {
-            // TODO coroutines....
-            Needle.onBackgroundThread().execute {
-                var stopProceeding = false
-                val contactsCount = contactDao.countContacts()
-                if (!hasSeenOverTwentyContactsAddedDialog) {
-                    for (cCount in Const.TWENTY_CONTACTS_HOOKS) {
-                        if (contactsCount == cCount) {
-                            showOver20ContactsAddedDialog(callback)
-                            stopProceeding = true
-                            break
-                        }
+            var stopProceeding = false
+
+            val contactsCount = contactDao.countContacts()
+            if (!hasSeenOverTwentyContactsAddedDialog) {
+                for (cCount in Const.TWENTY_CONTACTS_HOOKS) {
+                    if (contactsCount == cCount) {
+                        showOver20ContactsAddedDialog(callback)
+                        stopProceeding = true
+                        break
                     }
                 }
-                if (!stopProceeding) {
-                    if (contactsCount >= tools.maxContactSavesFreeVersion) {
-                        showFreeVersionLimitsReached(callback)
-                    } else {
-                        callback.doNothingJustContinue()
-                    }
+            }
+            if (!stopProceeding) {
+                if (contactsCount >= tools.maxContactSavesFreeVersion) {
+                    showFreeVersionLimitsReached(callback)
+                } else {
+                    callback.doNothingJustContinue()
                 }
             }
         } else {

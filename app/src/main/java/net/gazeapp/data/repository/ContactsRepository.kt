@@ -2,11 +2,11 @@ package net.gazeapp.data.repository
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import net.gazeapp.data.GazeDatabase
+import net.gazeapp.data.dao.ContactKtDao
 import net.gazeapp.data.model.Contact
 import net.gazeapp.data.model.ContactWithDetails
 
-class ContactsRepository(val database: GazeDatabase) {
+class ContactsRepository(private val contactKtDao: ContactKtDao) {
 
     companion object {
         private const val TAG = "ContactsRepository"
@@ -21,47 +21,44 @@ class ContactsRepository(val database: GazeDatabase) {
     // TODO FIXME wie macht man das am besten?
     var insertedContactId: Long = 0
 
-    // TODO FIXME create contactKtDao -> getContactWithDetails....
-    // TODO FIXME create contactKtDao -> getContactWithDetails....
-    // TODO FIXME create contactKtDao -> getContactWithDetails....
     suspend fun getContactWithDetails(contactId: Int) {
         withContext(Dispatchers.IO) {
             contactWithDetails =
-                database.contactKtDao.getContactWithDetails(contactId)
+                contactKtDao.getContactWithDetails(contactId)
         }
     }
 
     suspend fun getRecentContacts(limit: Long) {
         withContext(Dispatchers.IO) {
             recentContactsList =
-                database.contactKtDao.getRecentContacts(limit)
+                contactKtDao.getRecentContacts(limit)
         }
     }
 
     suspend fun getRecentFullContacts(limit: Long) {
         withContext(Dispatchers.IO) {
             recentContactWithDetailsList =
-                database.contactKtDao.getRecentContactsWithDetails(limit)
+                contactKtDao.getRecentContactsWithDetails(limit)
         }
     }
 
     suspend fun getAllContacts() {
         withContext(Dispatchers.IO) {
             allContactsList =
-                database.contactKtDao.getAll()
+                contactKtDao.getAll()
         }
     }
 
     suspend fun getAllFullContacts() {
         withContext(Dispatchers.IO) {
             allContactWithDetailsList =
-                database.contactKtDao.getAllContactsWithDetails()
+                contactKtDao.getAllContactsWithDetails()
         }
     }
 
     suspend fun insertContact(contact: Contact): Long {
         withContext(Dispatchers.IO) {
-            insertedContactId = database.contactKtDao.insert(contact)
+            insertedContactId = contactKtDao.insert(contact)
         }
         return insertedContactId
     }
@@ -69,7 +66,7 @@ class ContactsRepository(val database: GazeDatabase) {
 
     suspend fun updateContact(contact: Contact) {
         withContext(Dispatchers.IO) {
-            database.contactKtDao.update(contact)
+            contactKtDao.update(contact)
         }
     }
 }

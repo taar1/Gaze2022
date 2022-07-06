@@ -39,7 +39,7 @@ import net.gazeapp.R
 import net.gazeapp.callbacks.MediaListLoadCallback
 import net.gazeapp.data.GazeDatabase.Companion.getDatabase
 import net.gazeapp.data.GazeImage
-import net.gazeapp.data.dao.ContactDao
+import net.gazeapp.data.dao.ContactKtDao
 import net.gazeapp.data.dao.ContactLabelDao
 import net.gazeapp.data.dao.LabelDao
 import net.gazeapp.data.model.Contact
@@ -101,7 +101,7 @@ class ContactViewWithViewPagerTabActivity : AppCompatActivity() {
     private var mTabTitles: List<String>? = null
     lateinit var contact: Contact
     var visibleFragmentPosition = 0
-    private var contactDao: ContactDao? = null
+    private var contactDao: ContactKtDao? = null
     private var labelDao: LabelDao? = null
     private var contactLabelDao: ContactLabelDao? = null
 
@@ -138,7 +138,7 @@ class ContactViewWithViewPagerTabActivity : AppCompatActivity() {
 
     private fun loadData() {
         Needle.onBackgroundThread().execute {
-            contactDao = getDatabase(this).contactDao
+            contactDao = getDatabase(this).contactKtDao
             labelDao = getDatabase(this).labelDao
             contactLabelDao = getDatabase(this).contactLabelDao
             contact = contactDao!!.getContact(contactId)

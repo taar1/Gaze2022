@@ -31,7 +31,7 @@ import androidx.fragment.app.Fragment;
 
 import net.gazeapp.R;
 import net.gazeapp.data.GazeDatabase;
-import net.gazeapp.data.dao.ContactDao;
+import net.gazeapp.data.dao.ContactKtDao;
 import net.gazeapp.data.dao.EncounterDao;
 import net.gazeapp.data.model.Contact;
 import net.gazeapp.data.model.Encounter;
@@ -58,7 +58,7 @@ public class ContactViewEncountersFragment extends Fragment {
     private boolean showNoInformationCard;
 
     private ViewGroup container;
-    private ContactDao contactDao;
+    private ContactKtDao contactDao;
     private EncounterDao encounterDao;
     private List<Encounter> mEncounter;
 
@@ -102,7 +102,7 @@ public class ContactViewEncountersFragment extends Fragment {
 
     private void loadData() {
         Needle.onBackgroundThread().execute(() -> {
-            contactDao = GazeDatabase.Companion.getDatabase(getActivity()).getContactDao();
+            contactDao = GazeDatabase.Companion.getDatabase(getActivity()).getContactKtDao();
             encounterDao = GazeDatabase.Companion.getDatabase(getActivity()).getEncounterDao();
 
             mEncounter = encounterDao.getEncountersByContactId(mContact.getId());

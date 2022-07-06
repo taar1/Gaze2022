@@ -11,7 +11,6 @@ import net.gazeapp.data.GazeDatabase
 import net.gazeapp.data.model.Contact
 import net.gazeapp.data.model.ContactWithDetails
 import net.gazeapp.data.repository.ContactsRepository
-import net.gazeapp.data.repository.LabelRepository
 import net.gazeapp.helpers.Const
 import javax.inject.Inject
 
@@ -22,8 +21,16 @@ class RecentContactsViewModel @Inject constructor(app: Application) : AndroidVie
         private const val TAG = "RecentContactsViewModel"
     }
 
-    private val repository: ContactsRepository = ContactsRepository(GazeDatabase.getDatabase(app))
-    private val labelRepo: LabelRepository = LabelRepository(GazeDatabase.getDatabase(app))
+    private val repository: ContactsRepository
+
+    init {
+        val dao = GazeDatabase.getDatabase(app).contactKtDao
+        repository = ContactsRepository(dao)
+
+    }
+
+//    private val repository: ContactsRepository = ContactsRepository(GazeDatabase.getDatabase(app))
+//    private val labelRepo: LabelRepository = LabelRepository(GazeDatabase.getDatabase(app))
 
     /**
      * A list of recent contacts that can be shown on the screen. This is private to avoid exposing a

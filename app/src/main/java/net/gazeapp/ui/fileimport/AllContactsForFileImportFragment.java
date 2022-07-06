@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import net.gazeapp.R;
 import net.gazeapp.data.GazeDatabase;
-import net.gazeapp.data.dao.ContactDao;
+import net.gazeapp.data.dao.ContactKtDao;
 import net.gazeapp.data.model.Contact;
 import net.gazeapp.utilities.MediaTools;
 
@@ -102,8 +102,11 @@ public class AllContactsForFileImportFragment extends Fragment {
      * @return List<Contact>
      */
     private List<Contact> getContactsDataSet() {
-        ContactDao contactDao = GazeDatabase.Companion.getDatabase(getActivity()).getContactDao();
-        return contactDao.getAll();
+        ContactKtDao contactDao = GazeDatabase.Companion.getDatabase(getActivity()).getContactKtDao();
+        // TODO FIXME
+//        return contactDao.getAll();
+
+        return new ArrayList<>();
     }
 
 }

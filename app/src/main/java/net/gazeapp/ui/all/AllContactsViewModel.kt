@@ -14,9 +14,12 @@ import net.gazeapp.helpers.Const
 
 class AllContactsViewModel constructor(app: Application) : AndroidViewModel(app) {
 
-    private val TAG = "AllContactsViewModel"
+    companion object {
+        private const val TAG = "AllContactsViewModel"
+    }
 
-    private val repository: ContactsRepository = ContactsRepository(GazeDatabase.getDatabase(app))
+    private val repository: ContactsRepository =
+        ContactsRepository(GazeDatabase.getDatabase(app).contactKtDao)
     //private val labelRepo: LabelRepository = LabelRepository(GazeDatabase.getDatabase(app))
 
     /**

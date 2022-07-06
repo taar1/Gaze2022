@@ -2,7 +2,7 @@ package net.gazeapp.helpers
 
 object Const {
     const val DB_NAME = "Gaze.db"
-    const val DATABASE_VERSION = 1 // from 26.01.2022
+    const val DATABASE_VERSION = 1
 
     const val MIN_AGE = 16
     const val MAX_AGE = 100

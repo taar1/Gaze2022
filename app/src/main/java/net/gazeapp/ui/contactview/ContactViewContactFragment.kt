@@ -43,7 +43,7 @@ class ContactViewContactFragment : Fragment() {
     private var mEmail: List<Email>? = null
     private var mAddress: List<Address>? = null
     private var mWebsite: List<Website>? = null
-    private var contactDao: ContactDao? = null
+    private var contactDao: ContactKtDao? = null
     private var phoneDao: PhoneDao? = null
     private var emailDao: EmailDao? = null
     private var addressDao: AddressDao? = null
@@ -115,7 +115,7 @@ class ContactViewContactFragment : Fragment() {
 
     private suspend fun loadData() {
         withContext(Dispatchers.IO) {
-            contactDao = getDatabase(requireActivity()).contactDao
+            contactDao = getDatabase(requireActivity()).contactKtDao
             phoneDao = getDatabase(requireActivity()).phoneDao
             emailDao = getDatabase(requireActivity()).emailDao
             addressDao = getDatabase(requireActivity()).addressDao

@@ -23,9 +23,12 @@ class ContactViewModelFactory(val contactId: Int, val app: Application) :
 class ContactViewModel constructor(val contactId: Int, val app: Application) :
     AndroidViewModel(app) {
 
-    private val TAG = "ContactViewModel"
+    companion object {
+        private const val TAG = "ContactViewModel"
+    }
 
-    private val repository: ContactsRepository = ContactsRepository(GazeDatabase.getDatabase(app))
+    private val repository: ContactsRepository =
+        ContactsRepository(GazeDatabase.getDatabase(app).contactKtDao)
     private val mediaRepo: MediaRepository = MediaRepository(GazeDatabase.getDatabase(app))
 
     private val _contactWithDetails = MutableLiveData<ContactWithDetails>()
