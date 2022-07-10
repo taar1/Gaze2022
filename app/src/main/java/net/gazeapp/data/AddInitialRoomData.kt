@@ -1,16 +1,16 @@
 package net.gazeapp.data
 
+import android.content.res.Resources
+import android.os.Environment
 import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import net.gazeapp.GazeApplication
 import net.gazeapp.R
 import net.gazeapp.data.dao.*
 import net.gazeapp.data.model.*
 import net.gazeapp.data.repository.ContactsRepository
 import net.gazeapp.helpers.Const
-
 import net.gazeapp.utilities.MediaTools
 import net.gazeapp.utilities.SpecificValues
 import java.text.ParseException
@@ -28,7 +28,8 @@ class AddInitialRoomData(db: GazeDatabase) {
         private const val TAG = "AddInitialRoomData"
     }
 
-    private val ctx = GazeApplication.appContext
+//    val context: Context = GazeApplication.applicationContext()
+//    val Resources.getSystem() = Resources.getSystem()
 
     var sdf = SimpleDateFormat("dd-M-yyyy", Locale.getDefault())
 
@@ -68,7 +69,7 @@ class AddInitialRoomData(db: GazeDatabase) {
         Log.d(TAG, "XXXXX addFirstContactToDatabase()")
 
         contact = Contact(Const.FIRST_GAZE_CONTACT_NAME)
-        contact.additionalInfo = ctx.getString(R.string.first_gaze_contact)
+        contact.additionalInfo = Resources.getSystem().getString(R.string.first_gaze_contact)
 
         CoroutineScope(Dispatchers.IO).launch {
             repository.insertContact(contact).also {
@@ -137,11 +138,11 @@ class AddInitialRoomData(db: GazeDatabase) {
         CoroutineScope(Dispatchers.IO).launch {
             labelDao.insertAll(
                 listOf(
-                    Label(0, ctx.getString(R.string.holidays), Date(), Date()),
-                    Label(0, ctx.getString(R.string.mykonos), Date(), Date()),
-                    Label(0, ctx.getString(R.string.from_grindr), Date(), Date()),
-                    Label(0, ctx.getString(R.string.athlete), Date(), Date()),
-                    Label(0, ctx.getString(R.string.hunky), Date(), Date())
+                    Label(0, Resources.getSystem().getString(R.string.holidays), Date(), Date()),
+                    Label(0, Resources.getSystem().getString(R.string.mykonos), Date(), Date()),
+                    Label(0, Resources.getSystem().getString(R.string.from_grindr), Date(), Date()),
+                    Label(0, Resources.getSystem().getString(R.string.athlete), Date(), Date()),
+                    Label(0, Resources.getSystem().getString(R.string.hunky), Date(), Date())
                 )
             )
         }
@@ -151,10 +152,10 @@ class AddInitialRoomData(db: GazeDatabase) {
         CoroutineScope(Dispatchers.IO).launch {
             tagDao.insertAll(
                 listOf(
-                    Tag(0, ctx.getString(R.string.face), Date(), Date(), false),
-                    Tag(0, ctx.getString(R.string.body), Date(), Date(), false),
-                    Tag(0, ctx.getString(R.string.xxx), Date(), Date(), false),
-                    Tag(0, ctx.getString(R.string.dick), Date(), Date(), false)
+                    Tag(0, Resources.getSystem().getString(R.string.face), Date(), Date(), false),
+                    Tag(0, Resources.getSystem().getString(R.string.body), Date(), Date(), false),
+                    Tag(0, Resources.getSystem().getString(R.string.xxx), Date(), Date(), false),
+                    Tag(0, Resources.getSystem().getString(R.string.dick), Date(), Date(), false)
                 )
             )
         }
@@ -186,11 +187,11 @@ class AddInitialRoomData(db: GazeDatabase) {
             val al = mutableListOf<BodyType>()
 
             val bodytype1 = BodyType(contact.id)
-            bodytype1.bodyType = ctx.getString(R.string.average)
+            bodytype1.bodyType = Resources.getSystem().getString(R.string.average)
             al.add(bodytype1)
 
             val bodytype2 = BodyType(contact.id)
-            bodytype2.bodyType = ctx.getString(R.string.sporty)
+            bodytype2.bodyType = Resources.getSystem().getString(R.string.sporty)
             al.add(bodytype2)
             return al
         }
@@ -200,11 +201,11 @@ class AddInitialRoomData(db: GazeDatabase) {
             val al = mutableListOf<Drug>()
 
             val drug1 = Drug(contact.id)
-            drug1.drug = ctx.getString(R.string.alcohol)
+            drug1.drug = Resources.getSystem().getString(R.string.alcohol)
             al.add(drug1)
 
             val drug2 = Drug(contact.id)
-            drug2.drug = ctx.getString(R.string.cannabis)
+            drug2.drug = Resources.getSystem().getString(R.string.cannabis)
             al.add(drug2)
             return al
         }
@@ -232,35 +233,35 @@ class AddInitialRoomData(db: GazeDatabase) {
             if (SpecificValues.SHOW_XRATED) {
                 val enc = Encounter(contact.id)
                 enc.googleMapsLink = "https://goo.gl/maps/8QQNZ3zJj2q"
-                enc.hisRole = ctx.getString(R.string.top)
+                enc.hisRole = Resources.getSystem().getString(R.string.top)
                 try {
                     val date = sdf.parse("10-04-2015")
                     enc.meetDate = date
                 } catch (e: ParseException) {
                     e.printStackTrace()
                 }
-                enc.myRole = ctx.getString(R.string.bottom)
+                enc.myRole = Resources.getSystem().getString(R.string.bottom)
                 enc.remarks = "Had a great time."
                 enc.isSafeSex = true
                 enc.sureAboutSafeSex = false
                 al.add(enc)
 
                 val enc2 = Encounter(contact.id)
-                enc2.hisRole = ctx.getString(R.string.top)
+                enc2.hisRole = Resources.getSystem().getString(R.string.top)
                 try {
                     val date = sdf.parse("17-12-2020")
                     enc2.meetDate = date
                 } catch (e: ParseException) {
                     e.printStackTrace()
                 }
-                enc2.meetLocation = ctx.getString(R.string.my_place)
-                enc2.myRole = ctx.getString(R.string.top)
+                enc2.meetLocation = Resources.getSystem().getString(R.string.my_place)
+                enc2.myRole = Resources.getSystem().getString(R.string.top)
                 enc2.remarks = "Great Netflix and chill! :)"
                 enc2.rating = 7
                 al.add(enc2)
 
                 val enc3 = Encounter(contact.id)
-                enc3.hisRole = ctx.getString(R.string.top_and_bottom)
+                enc3.hisRole = Resources.getSystem().getString(R.string.top_and_bottom)
                 enc3.meetLocation = "His apartment"
                 try {
                     val date = sdf.parse("22-3-2019")
@@ -268,7 +269,7 @@ class AddInitialRoomData(db: GazeDatabase) {
                 } catch (e: ParseException) {
                     e.printStackTrace()
                 }
-                enc3.myRole = ctx.getString(R.string.top_and_bottom)
+                enc3.myRole = Resources.getSystem().getString(R.string.top_and_bottom)
                 enc3.remarks = "That was really good fun!"
                 enc3.isSafeSex = false
                 enc3.rating = 8
@@ -284,7 +285,7 @@ class AddInitialRoomData(db: GazeDatabase) {
                 } catch (e: ParseException) {
                     e.printStackTrace()
                 }
-                enc.myRole = ctx.getString(R.string.bottom)
+                enc.myRole = Resources.getSystem().getString(R.string.bottom)
                 enc.remarks = "Had a great time."
                 enc.isSafeSex = true
                 enc.sureAboutSafeSex = false
@@ -307,7 +308,7 @@ class AddInitialRoomData(db: GazeDatabase) {
     val ethnicity: Ethnicity
         get() {
             val ethnicity = Ethnicity(contact.id)
-            ethnicity.ethnicity = ctx.getString(R.string.caucasian)
+            ethnicity.ethnicity = Resources.getSystem().getString(R.string.caucasian)
             return ethnicity
         }
 
@@ -316,12 +317,12 @@ class AddInitialRoomData(db: GazeDatabase) {
             val al = mutableListOf<Fetish>()
 
             val fetish = Fetish(contact.id)
-            fetish.fetish = ctx.getString(R.string.watersports)
+            fetish.fetish = Resources.getSystem().getString(R.string.watersports)
             fetish.fetishId = 47
             al.add(fetish)
 
             val fetish2 = Fetish(contact.id)
-            fetish2.fetish = ctx.getString(R.string.uniform)
+            fetish2.fetish = Resources.getSystem().getString(R.string.uniform)
             fetish2.fetishId = 10
             al.add(fetish2)
             return al
@@ -345,9 +346,9 @@ class AddInitialRoomData(db: GazeDatabase) {
     val health: Health
         get() {
             val health = Health(contact.id)
-            health.hcv = ctx.getString(R.string.negative)
-            health.hiv = ctx.getString(R.string.poz_undetectable)
-            health.hpv = ctx.getString(R.string.negative)
+            health.hcv = Resources.getSystem().getString(R.string.negative)
+            health.hiv = Resources.getSystem().getString(R.string.poz_undetectable)
+            health.hpv = Resources.getSystem().getString(R.string.negative)
             health.hadCovid19 = 0
             health.isCovid19Vaccinated = 1
             health.covid19VaccinationDate = Date()
@@ -378,7 +379,7 @@ class AddInitialRoomData(db: GazeDatabase) {
             media.fileType = "image"
             media.originalFileName = "josh.jpg"
             media.usedFileName = "josh.jpg"
-            media.path = GazeApplication.appContext.filesDir.absolutePath
+            media.path = Environment.getDataDirectory().absolutePath
             media.fullPath = mediaTools.getFullPath(media)
             media.isInPrivateGallery = false
             media.created = Date()
@@ -421,7 +422,7 @@ class AddInitialRoomData(db: GazeDatabase) {
     val note: Note
         get() {
             val note = Note(contact.id)
-            note.note = ctx.getString(R.string.first_gaze_contact_note)
+            note.note = Resources.getSystem().getString(R.string.first_gaze_contact_note)
             return note
         }
 
@@ -434,12 +435,12 @@ class AddInitialRoomData(db: GazeDatabase) {
             } catch (e: ParseException) {
                 e.printStackTrace()
             }
-            personal.drinking = ctx.getString(R.string.socially)
+            personal.drinking = Resources.getSystem().getString(R.string.socially)
             personal.effeminate = 15
             personal.politicalView = "Liberal"
-            personal.relationshipStatus = ctx.getString(R.string.in_relationship)
-            personal.religion = ctx.getString(R.string.atheist)
-            personal.smoking = ctx.getString(R.string.no)
+            personal.relationshipStatus = Resources.getSystem().getString(R.string.in_relationship)
+            personal.religion = Resources.getSystem().getString(R.string.atheist)
+            personal.smoking = Resources.getSystem().getString(R.string.no)
             personal.isOut = 1
             return personal
         }
@@ -469,7 +470,7 @@ class AddInitialRoomData(db: GazeDatabase) {
             p1.phone = "+44 345 740 4404"
             p1.email = "info@hsbc.com"
             p1.salary = 110000
-            p1.frequency = ctx.getString(R.string.per_year)
+            p1.frequency = Resources.getSystem().getString(R.string.per_year)
             p1.currency = "GBP"
             try {
                 val startDate = sdf.parse("01-01-2001")
@@ -499,10 +500,10 @@ class AddInitialRoomData(db: GazeDatabase) {
     val xxx: Xxx
         get() {
             val xxx = Xxx(contact.id)
-            xxx.safeSex = ctx.getString(R.string.safe_only)
+            xxx.safeSex = Resources.getSystem().getString(R.string.safe_only)
             xxx.sexperience = 8
-            xxx.sexRole = ctx.getString(R.string.versatile)
-            xxx.sexualOrientation = ctx.getString(R.string.gay)
+            xxx.sexRole = Resources.getSystem().getString(R.string.versatile)
+            xxx.sexualOrientation = Resources.getSystem().getString(R.string.gay)
             xxx.swallowsLoads = 1
             xxx.takesLoadsUpTheBum = 2
             return xxx

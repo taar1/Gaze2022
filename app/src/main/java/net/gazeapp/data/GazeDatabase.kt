@@ -111,7 +111,7 @@ abstract class GazeDatabase : RoomDatabase() {
             }
         }
 
-        private class GazeDatabaseCallback : RoomDatabase.Callback() {
+        class GazeDatabaseCallback : RoomDatabase.Callback() {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)
 

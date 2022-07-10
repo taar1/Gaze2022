@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +23,7 @@ import net.gazeapp.utilities.GazeTools
 import net.gazeapp.utilities.MediaTools
 import javax.inject.Inject
 
+
 @AndroidEntryPoint
 class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment),
     OnContactWithDetailsClickListener {
@@ -33,7 +34,10 @@ class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment)
     @Inject
     lateinit var mediaTools: MediaTools
 
-    private val viewModel: RecentContactsViewModel by viewModels()
+    //    private val viewModel: RecentContactsViewModel by viewModels()
+//    var viewModel: RecentContactsViewModel =
+//        ViewModelProvider(this)[RecentContactsViewModel::class.java]
+    lateinit var viewModel: RecentContactsViewModel
 
     private lateinit var viewBinding: ContactsRecyclerlistFragmentBinding
 
@@ -55,6 +59,9 @@ class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment)
         savedInstanceState: Bundle?
     ): View {
         viewBinding = ContactsRecyclerlistFragmentBinding.inflate(inflater)
+
+        viewModel = ViewModelProvider(this)[RecentContactsViewModel::class.java]
+
         return viewBinding.root
     }
 

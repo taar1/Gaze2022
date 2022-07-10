@@ -1,9 +1,9 @@
 package net.gazeapp.data.repository
 
+import android.content.res.Resources
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import net.gazeapp.GazeApplication
 import net.gazeapp.R
 import net.gazeapp.data.GazeDatabase
 import net.gazeapp.data.model.Label
@@ -39,21 +39,21 @@ class LabelRepository(val database: GazeDatabase) {
                 mutableListOf(
                     Label(
                         0,
-                        GazeApplication.appContext.getString(R.string.holidays),
+                        Resources.getSystem().getString(R.string.holidays),
                         Date(),
                         Date(),
                         false
                     ),
                     Label(
                         0,
-                        GazeApplication.appContext.getString(R.string.mykonos),
+                        Resources.getSystem().getString(R.string.mykonos),
                         Date(),
                         Date(),
                         false
                     ),
                     Label(
                         0,
-                        GazeApplication.appContext.getString(R.string.from_grindr),
+                        Resources.getSystem().getString(R.string.from_grindr),
                         Date(),
                         Date(),
                         false

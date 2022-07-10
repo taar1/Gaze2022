@@ -43,8 +43,12 @@ object Dependencies {
         const val material = "com.google.android.material:material:${Versions.Android.material}"
         const val recyclerView =
             "androidx.recyclerview:recyclerview:${Versions.Android.recyclerView}"
+
         const val room = "androidx.room:room-ktx:${Versions.Android.room}"
         const val roomRuntime = "androidx.room:room-runtime:${Versions.Android.room}"
+        const val roomCompiler = "androidx.room:room-compiler:${Versions.Android.room}"
+        const val roomCoroutines = "androidx.room:room-ktx:${Versions.Android.room}"
+
         const val preference = "androidx.preference:preference-ktx:${Versions.Android.preference}"
         const val vectordrawable =
             "androidx.vectordrawable:vectordrawable:${Versions.Android.vectordrawable}"

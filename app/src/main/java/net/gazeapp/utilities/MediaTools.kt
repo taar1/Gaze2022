@@ -5,9 +5,9 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
+import android.os.Environment
 import android.util.Log
 import androidx.core.content.ContextCompat
-import net.gazeapp.GazeApplication
 import net.gazeapp.callbacks.MyMediaListLoadCallback
 import net.gazeapp.data.GazeImage
 import net.gazeapp.data.model.Contact
@@ -23,6 +23,11 @@ class MediaTools @Inject constructor() {
     companion object {
         private const val TAG = "MediaTools"
     }
+
+    // TODO FIXME ist das der korrekte: absolutePath?
+    val absolutePath = Environment.getDataDirectory().absolutePath
+
+    // TODO FIXME an den Application Context rankommen (in GazeApplication)
 
     /**
      * Copies a file to the private storage using the next unique file name.
@@ -78,7 +83,7 @@ class MediaTools @Inject constructor() {
     fun copyFileToPrivateStorageFromUri(uri: Uri, media: Media): String? {
         val dstFile = createDestinationFile(media)
         return try {
-            val inputStream = GazeApplication.appContext.contentResolver.openInputStream(uri)
+            val inputStream = context.contentResolver.openInputStream(uri)
             saveFileToInternalStorage(inputStream!!, dstFile!!)
         } catch (e: IOException) {
             // IOException, could not write file to private storage.
@@ -92,7 +97,7 @@ class MediaTools @Inject constructor() {
     }
 
     fun copyFileToPrivateStorage(file: ByteArray?, media: Media): String? {
-        val internalStoragePath = GazeApplication.appContext.filesDir.absolutePath
+        val internalStoragePath = absolutePath
         val storeInternal = File(internalStoragePath, getGalleryPath(media)) // i.e. /20/
         if (!storeInternal.exists()) {
             storeInternal.mkdirs()
@@ -133,7 +138,7 @@ class MediaTools @Inject constructor() {
         }
 
         val nextGeneratedPath = getGalleryPath(media)
-        val internalStoragePath = GazeApplication.appContext.filesDir.absolutePath
+        val internalStoragePath = absolutePath
         val storeInternal = File(internalStoragePath, nextGeneratedPath) // i.e. /20/
         if (!storeInternal.exists()) {
             storeInternal.mkdirs()
@@ -170,7 +175,7 @@ class MediaTools @Inject constructor() {
      * Returns the full path (with uses file name) of a Media file
      */
     fun getFullPath(media: Media): String {
-        return GazeApplication.appContext.filesDir.absolutePath + getGalleryPath(media) + media.usedFileName
+        return absolutePath + getGalleryPath(media) + media.usedFileName
     }
 
     /**
@@ -187,7 +192,7 @@ class MediaTools @Inject constructor() {
         }
 
         // DESTINATION FILE (INTERNAL STORAGE)
-        val internalStoragePath = GazeApplication.appContext.filesDir.absolutePath
+        val internalStoragePath = absolutePath
         val storeInternal = File(internalStoragePath, nextGeneratedPath) // i.e. /temp_sharing/
         if (!storeInternal.exists()) {
             storeInternal.mkdirs()
@@ -212,13 +217,13 @@ class MediaTools @Inject constructor() {
     }
 
     fun deleteFileFromPrivateStorage(media: Media): Boolean {
-        val internalStoragePath = GazeApplication.appContext.filesDir.absolutePath
+        val internalStoragePath = absolutePath
         val generatedPath = getGalleryPath(media)
         val storeInternalPath = File(internalStoragePath, generatedPath) // i.e. /20/
         val internalFile = File(storeInternalPath, media.usedFileName) // i.e. image: /20/1 or /13/4
         val isDeleted = internalFile.delete()
         val isThere = internalFile.exists()
-        val internalStorageCacheDir = GazeApplication.appContext.cacheDir.absolutePath
+        val internalStorageCacheDir = context.cacheDir.absolutePath
         val storeInternalCachedPath =
             File(internalStorageCacheDir, generatedPath) // i.e. /20/
         val internalCachedFile = File(
@@ -240,7 +245,7 @@ class MediaTools @Inject constructor() {
             Log.d(TAG, "IS DELETED (int): $isDeleted")
             Log.d(TAG, "IS THERE (int): $isThere")
             val generatedPath = getGalleryPath(media)
-            val internalStorageCacheDir = GazeApplication.appContext.cacheDir.absolutePath
+            val internalStorageCacheDir = context.cacheDir.absolutePath
             val storeInternalCachedPath = File(internalStorageCacheDir, generatedPath) // i.e. /20/
             val internalCachedFile = File(
                 storeInternalCachedPath,
@@ -258,7 +263,7 @@ class MediaTools @Inject constructor() {
     // Probably not used anymore since caching can be
     // deactivated right in GLIDE itself (diskCacheStrategy())
     fun cleanCacheDir() {
-        val cacheDir = GazeApplication.appContext.cacheDir
+        val cacheDir = context.cacheDir
         val files = cacheDir.listFiles()
         for (file in files) {
             Log.d(TAG, "bytesDeleted: " + file.length())
@@ -267,7 +272,7 @@ class MediaTools @Inject constructor() {
     }
 
     fun cleanMyMediaCacheDir() {
-        val cacheDir = GazeApplication.appContext.cacheDir
+        val cacheDir = context.cacheDir
         val myMediaPath = "/" + Const.GALLERY_MY_MEDIA_PATH + "/" // i.e. /myMedia/
         val cacheDirContact = File(cacheDir, myMediaPath)
         val files = cacheDirContact.listFiles()
@@ -300,7 +305,7 @@ class MediaTools @Inject constructor() {
 
     fun countMediaFromLocalStorage(contact: Contact): Int {
         var mediaCount = 0
-        val imagePath = GazeApplication.appContext.filesDir.absolutePath + "/" + contact.id
+        val imagePath = absolutePath + "/" + contact.id
         val pathToFiles = File(imagePath)
         val allFiles = pathToFiles.listFiles()
         if (allFiles != null) {
@@ -429,7 +434,7 @@ class MediaTools @Inject constructor() {
         val myMediaPath = "/" + Const.GALLERY_MY_MEDIA_PATH + "/" // i.e. /myMedia/
 
         // DESTINATION FILE (INTERNAL STORAGE)
-        val internalStoragePath = GazeApplication.appContext.filesDir.absolutePath
+        val internalStoragePath = absolutePath
         val storeInternal = File(internalStoragePath, myMediaPath) // i.e. /myMedia/
         if (!storeInternal.exists()) {
             storeInternal.mkdirs()
@@ -660,7 +665,7 @@ class MediaTools @Inject constructor() {
         val myMediaPath = "/" + Const.GALLERY_MY_MEDIA_PATH + "/" // i.e. /myMedia/
 
         // DESTINATION FILE (INTERNAL STORAGE)
-        val internalStoragePath = GazeApplication.appContext.filesDir.absolutePath
+        val internalStoragePath = absolutePath
         val storeInternal = File(internalStoragePath, myMediaPath) // i.e. /myMedia/
         if (!storeInternal.exists()) {
             callback.empty()
@@ -688,7 +693,7 @@ class MediaTools @Inject constructor() {
         val imageArrayList: MutableList<GazeImage> = ArrayList()
 
         // DESTINATION FILE (INTERNAL STORAGE)
-        val internalStoragePath = GazeApplication.appContext.filesDir.absolutePath
+        val internalStoragePath = absolutePath
         val storeInternal = File(internalStoragePath, mediaPath) // i.e. /public/20/
         return if (!storeInternal.exists()) {
             imageArrayList
@@ -740,12 +745,12 @@ class MediaTools @Inject constructor() {
      */
     fun saveImageFromResourceToInternalStorage(media: Media, drawableId: Int): Uri? {
         // Get the image from drawable resource as drawable object
-        val drawable = ContextCompat.getDrawable(GazeApplication.appContext, drawableId)
+        val drawable = ContextCompat.getDrawable(context, drawableId)
 
         // Get the bitmap from drawable object
         val bitmap = (drawable as BitmapDrawable).bitmap
 
-        val internalStoragePath = GazeApplication.appContext.filesDir.absolutePath
+        val internalStoragePath = absolutePath
         val storeInternal = File(
             internalStoragePath,
             getGalleryPath(media)
@@ -783,7 +788,7 @@ class MediaTools @Inject constructor() {
         val myMediaPath = "/" + Const.GALLERY_MY_MEDIA_PATH + "/" // i.e. /myMedia/
 
         // DESTINATION FILE (INTERNAL STORAGE)
-        val internalStoragePath = GazeApplication.appContext.filesDir.absolutePath
+        val internalStoragePath = absolutePath
         val storeInternal = File(internalStoragePath, myMediaPath) // i.e. /myMedia/
         if (!storeInternal.exists()) {
             storeInternal.mkdirs()

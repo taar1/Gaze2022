@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import net.gazeapp.data.GazeDatabase
+import net.gazeapp.data.dao.ContactKtDao
 import net.gazeapp.data.model.Contact
 import net.gazeapp.data.model.ContactWithDetails
 import net.gazeapp.data.repository.ContactsRepository
@@ -15,18 +16,17 @@ import net.gazeapp.helpers.Const
 import javax.inject.Inject
 
 @HiltViewModel
-class RecentContactsViewModel @Inject constructor(app: Application) : AndroidViewModel(app) {
+class RecentContactsViewModel @Inject constructor(val app: Application) : AndroidViewModel(app) {
 
     companion object {
         private const val TAG = "RecentContactsViewModel"
     }
 
-    private val repository: ContactsRepository
+    val repository: ContactsRepository
 
     init {
-        val dao = GazeDatabase.getDatabase(app).contactKtDao
+        val dao: ContactKtDao = GazeDatabase.getDatabase(app).contactKtDao
         repository = ContactsRepository(dao)
-
     }
 
 //    private val repository: ContactsRepository = ContactsRepository(GazeDatabase.getDatabase(app))
