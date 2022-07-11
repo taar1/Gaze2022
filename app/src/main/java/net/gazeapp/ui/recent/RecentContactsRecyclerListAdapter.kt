@@ -13,17 +13,20 @@ import net.gazeapp.utilities.MediaTools
 
 class RecentContactsRecyclerListAdapter(
     private val onContactClickListener: OnContactWithDetailsClickListener,
-    private val activity: Activity
+    private val activity: Activity,
+    val tools: GazeTools
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val TAG = "RecentContactsRecyclerL"
+    companion object {
+        private const val TAG = "RecentContactsRecyclerL"
+    }
 
     var contactList: List<ContactWithDetails> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val itemView: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_recent_contacts_card, parent, false)
-        return RecentContactsCardViewItemHolder(activity, itemView)
+        return RecentContactsCardViewItemHolder(activity, itemView, tools)
     }
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {

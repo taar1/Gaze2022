@@ -4,17 +4,16 @@ import android.app.Activity
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.google.android.material.button.MaterialButton
 import net.gazeapp.R
 import net.gazeapp.data.model.*
 import net.gazeapp.utilities.GazeTools
 import net.gazeapp.utilities.MediaTools
-import javax.inject.Inject
 
 /**
  * Holder for the CARD VIEW BODY
@@ -22,11 +21,19 @@ import javax.inject.Inject
  */
 class RecentContactsCardViewItemHolder(
     val activity: Activity,
-    val view: View
+    val view: View,
+    val tools: GazeTools
 ) : RecyclerView.ViewHolder(view) {
 
-    @Inject
-    lateinit var tools: GazeTools
+    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
+    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
+    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
+    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
+    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
+    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
+
+//    @Inject
+//    lateinit var tools: GazeTools
 
     private val GRID_GALLERY_TAB = 1
 
@@ -48,8 +55,8 @@ class RecentContactsCardViewItemHolder(
 
     //    var otherInfo: TextView = view.findViewById(R.id.otherInfo)
 //    var notesTextView: TextView = view.findViewById(R.id.note)
-    var profileButton: MaterialButton = view.findViewById(R.id.buttonProfile)
-    var galleryButton: MaterialButton = view.findViewById(R.id.buttonGallery)
+    var profileButton: Button = view.findViewById(R.id.buttonProfile)
+    var galleryButton: Button = view.findViewById(R.id.buttonGallery)
 
     var age: String = ""
     var height: String = ""

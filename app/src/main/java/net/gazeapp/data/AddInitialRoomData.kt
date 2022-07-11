@@ -6,6 +6,7 @@ import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import net.gazeapp.GazeApplication
 import net.gazeapp.R
 import net.gazeapp.data.dao.*
 import net.gazeapp.data.model.*
@@ -69,7 +70,9 @@ class AddInitialRoomData(db: GazeDatabase) {
         Log.d(TAG, "XXXXX addFirstContactToDatabase()")
 
         contact = Contact(Const.FIRST_GAZE_CONTACT_NAME)
-        contact.additionalInfo = Resources.getSystem().getString(R.string.first_gaze_contact)
+//        contact.additionalInfo = Resources.getSystem().getString(R.string.first_gaze_contact)
+        contact.additionalInfo =
+            GazeApplication.getAppContext()?.resources?.getString(R.string.first_gaze_contact)
 
         CoroutineScope(Dispatchers.IO).launch {
             repository.insertContact(contact).also {

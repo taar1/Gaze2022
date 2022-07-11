@@ -28,6 +28,13 @@ import javax.inject.Inject
 class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment),
     OnContactWithDetailsClickListener {
 
+
+    // TODO FIXME: lateinit property gazeTools has not been initialized
+    // TODO FIXME: lateinit property gazeTools has not been initialized
+    // TODO FIXME: lateinit property gazeTools has not been initialized
+    // TODO FIXME: lateinit property gazeTools has not been initialized
+    // TODO FIXME: lateinit property gazeTools has not been initialized
+
     @Inject
     lateinit var gazeTools: GazeTools
 
@@ -105,7 +112,7 @@ class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment)
         inputMethodManager.hideSoftInputFromWindow(view?.windowToken, 0)
 
         recentContactsCardViewRecyclerAdapter =
-            RecentContactsRecyclerListAdapter(this, requireActivity())
+            RecentContactsRecyclerListAdapter(this, requireActivity(), gazeTools)
 
         viewBinding.contactsRecyclerView.apply {
             adapter = recentContactsCardViewRecyclerAdapter
