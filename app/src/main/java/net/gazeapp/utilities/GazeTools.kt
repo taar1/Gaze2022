@@ -30,7 +30,6 @@ class GazeTools @Inject constructor(@param:ActivityContext private val context: 
         context.getSharedPreferences(Const.SHARED_PREFERENCES_FILE, Context.MODE_PRIVATE)
     private val editor: SharedPreferences.Editor = preferences.edit()
 
-
     companion object {
         private const val TAG = "GazeTools"
     }

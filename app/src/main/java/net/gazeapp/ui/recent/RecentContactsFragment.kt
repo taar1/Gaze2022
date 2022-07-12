@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,23 +28,14 @@ import javax.inject.Inject
 class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment),
     OnContactWithDetailsClickListener {
 
-
-    // TODO FIXME: lateinit property gazeTools has not been initialized
-    // TODO FIXME: lateinit property gazeTools has not been initialized
-    // TODO FIXME: lateinit property gazeTools has not been initialized
-    // TODO FIXME: lateinit property gazeTools has not been initialized
-    // TODO FIXME: lateinit property gazeTools has not been initialized
-
     @Inject
     lateinit var gazeTools: GazeTools
 
     @Inject
     lateinit var mediaTools: MediaTools
 
-    //    private val viewModel: RecentContactsViewModel by viewModels()
-//    var viewModel: RecentContactsViewModel =
-//        ViewModelProvider(this)[RecentContactsViewModel::class.java]
-    lateinit var viewModel: RecentContactsViewModel
+    private val viewModel: RecentContactsViewModel by viewModels()
+//    lateinit var viewModel: RecentContactsViewModel
 
     private lateinit var viewBinding: ContactsRecyclerlistFragmentBinding
 
@@ -67,7 +58,8 @@ class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment)
     ): View {
         viewBinding = ContactsRecyclerlistFragmentBinding.inflate(inflater)
 
-        viewModel = ViewModelProvider(this)[RecentContactsViewModel::class.java]
+        // fallback
+//        viewModel = ViewModelProvider(this)[RecentContactsViewModel::class.java]
 
         return viewBinding.root
     }
@@ -146,7 +138,7 @@ class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment)
 //        navController.navigate(action)
     }
 
-    fun onAddNewContactButtonClicked() {
+    private fun onAddNewContactButtonClicked() {
         // TODO FIXME
 
 //        val action =

@@ -9,7 +9,6 @@ import net.gazeapp.R
 import net.gazeapp.data.model.ContactWithDetails
 import net.gazeapp.listeners.OnContactWithDetailsClickListener
 import net.gazeapp.utilities.GazeTools
-import net.gazeapp.utilities.MediaTools
 
 class RecentContactsRecyclerListAdapter(
     private val onContactClickListener: OnContactWithDetailsClickListener,
@@ -34,8 +33,8 @@ class RecentContactsRecyclerListAdapter(
         val contactCardObjectViewHolder = viewHolder as RecentContactsCardViewItemHolder
 
         contactCardObjectViewHolder.contact = contact
-        contactCardObjectViewHolder.mediaTools = MediaTools()
-        contactCardObjectViewHolder.gazeTools = GazeTools(activity)
+//        contactCardObjectViewHolder.mediaTools = MediaTools()
+//        contactCardObjectViewHolder.gazeTools = GazeTools(activity)
 
         contactCardObjectViewHolder.itemView.setOnClickListener {
             onContactClickListener.onContactWithDetailsClicked(

@@ -25,17 +25,13 @@ class RecentContactsCardViewItemHolder(
     val tools: GazeTools
 ) : RecyclerView.ViewHolder(view) {
 
-    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
-    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
-    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
-    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
-    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
-    // TODO FIXME "tools" als parameter wieder enfternen und direkt injecten...
+    // TODO per Hilt injecten....
+    //@Inject lateinit var tools: GazeTools
 
-//    @Inject
-//    lateinit var tools: GazeTools
-
-    private val GRID_GALLERY_TAB = 1
+    companion object {
+        private const val TAG = "RecentContactsCardViewI"
+        private const val GRID_GALLERY_TAB = 1
+    }
 
     var contact: ContactWithDetails? = null
     var personal: Personal? = null
@@ -44,8 +40,7 @@ class RecentContactsCardViewItemHolder(
     var mediaList: List<Media>? = null
     var note: Note? = null
 
-    var mediaTools: MediaTools = MediaTools()
-    var gazeTools: GazeTools? = null
+    val mediaTools: MediaTools = MediaTools()
 
     var cardImage: ImageView = view.findViewById(R.id.cardImage)
     var overlayLayout: LinearLayout = view.findViewById(R.id.overlayLayout)
@@ -61,10 +56,6 @@ class RecentContactsCardViewItemHolder(
     var age: String = ""
     var height: String = ""
     var weight: String = ""
-
-    companion object {
-        private const val TAG = "RecentContactsCardViewI"
-    }
 
     fun updateUI() {
         contact?.let { contactWithDetails ->
