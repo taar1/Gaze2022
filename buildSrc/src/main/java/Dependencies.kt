@@ -8,6 +8,7 @@ object Dependencies {
         const val kotlinGradlePlugin =
             "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Android.kotlin}"
         const val hilt = "com.google.dagger:hilt-android-gradle-plugin:${Versions.Android.hilt}"
+        const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.Android.hilt}"
         const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.Android.hilt}"
         const val crashlyticsGradle =
             "com.google.firebase:firebase-crashlytics-gradle:${Versions.Android.crashlyticsGradle}"

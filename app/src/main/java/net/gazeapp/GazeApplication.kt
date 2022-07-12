@@ -66,9 +66,6 @@ class GazeApplication : Application(), ActivityLifecycleCallbacks {
         }
     }
 
-    /**
-     * [Application.ActivityLifecycleCallbacks.onActivityStarted]
-     */
     override fun onActivityStarted(activity: Activity) {
         if (activity.javaClass == MainActivity::class.java) {
             firebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.APP_OPEN, null)

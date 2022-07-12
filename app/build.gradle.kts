@@ -5,6 +5,8 @@ plugins {
     id("kotlin-parcelize")
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -48,7 +50,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.1"
+        kotlinCompilerExtensionVersion = "1.2.0"
     }
 
     packagingOptions {
@@ -123,7 +125,8 @@ dependencies {
         implementation(room)
 
         // HILT
-        implementation(hilt)
+//        implementation(hilt)
+        kapt(hiltCompiler)
         implementation(hiltAndroid)
 
         // Navigation component
@@ -183,4 +186,8 @@ dependencies {
     implementation("com.github.ksoichiro:android-observablescrollview:1.6.0")
     implementation("com.wdullaer:materialdatetimepicker:4.2.3")
     implementation("com.github.MikeOrtiz:TouchImageView:3.1.1")
+}
+
+kapt {
+    correctErrorTypes = true
 }
