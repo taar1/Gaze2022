@@ -7,11 +7,11 @@ import net.gazeapp.data.converter.RoomDateConverter
 import java.util.*
 
 /**
- * Tags are used to tag media files, i.e. nudes, xxx, facepic etc.
+ * MediaTags are used to tag media files, i.e. nudes, xxx, facepic etc.
  */
 @Parcelize
 @Entity
-data class Tag(
+data class MediaTag(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = PersistentObject.ID)
     var id: Int = 0,

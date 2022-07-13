@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.util.Log
 import com.google.firebase.analytics.FirebaseAnalytics
 import dagger.hilt.android.HiltAndroidApp
-import net.gazeapp.utilities.TrackingUtils
 
 
 @HiltAndroidApp
@@ -81,7 +80,7 @@ class GazeApplication : Application(), ActivityLifecycleCallbacks {
     override fun onActivityPaused(activity: Activity) {
         if (activity.javaClass == MainActivity::class.java) {
             isActivityVisible = false
-            TrackingUtils.getInstance(applicationContext).reset()
+//            TrackingUtils.getInstance(applicationContext).reset()
         }
     }
 

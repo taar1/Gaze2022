@@ -1,8 +1,6 @@
 package net.gazeapp.data
 
-import android.content.res.Resources
 import android.os.Environment
-import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,7 +12,6 @@ import net.gazeapp.data.repository.ContactsRepository
 import net.gazeapp.helpers.Const
 import net.gazeapp.utilities.MediaTools
 import net.gazeapp.utilities.SpecificValues
-import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -24,13 +21,10 @@ import java.util.*
  * - A set of (contact) labels
  * - A set of (media) tags
  */
-class AddInitialRoomData(db: GazeDatabase) {
+class AddInitialContactData(db: GazeDatabase) {
     companion object {
         private const val TAG = "AddInitialRoomData"
     }
-
-//    val context: Context = GazeApplication.applicationContext()
-//    val Resources.getSystem() = Resources.getSystem()
 
     var sdf = SimpleDateFormat("dd-M-yyyy", Locale.getDefault())
 
@@ -41,6 +35,7 @@ class AddInitialRoomData(db: GazeDatabase) {
     private val addressDao: AddressDao = db.addressDao
     private val bodyDao: BodyDao = db.bodyDao
     private val bodyTypeDao: BodyTypeDao = db.bodyTypeDao
+    private val contactLabelDao: ContactLabelDao = db.contactLabelDao
     private val sportDao: SportDao = db.sportDao
     private val drugDao: DrugDao = db.drugDao
     private val emailDao: EmailDao = db.emailDao
@@ -61,23 +56,19 @@ class AddInitialRoomData(db: GazeDatabase) {
     private val socialMediaDao: SocialMediaDao = db.socialMediaDao
     private val phoneDao: PhoneDao = db.phoneDao
     private val workDao: WorkDao = db.workDao
-    private val tagDao: TagDao = db.tagDao
+    private val mediaTagDao: MediaTagDao = db.mediaTagDao
     private val websiteDao: WebsiteDao = db.websiteDao
 
     val mediaTools: MediaTools = MediaTools()
+    val appContext = GazeApplication.getAppContext()
 
     fun addFirstContactToDatabase() {
-        Log.d(TAG, "XXXXX addFirstContactToDatabase()")
-
         contact = Contact(Const.FIRST_GAZE_CONTACT_NAME)
-//        contact.additionalInfo = Resources.getSystem().getString(R.string.first_gaze_contact)
-        contact.additionalInfo =
-            GazeApplication.getAppContext()?.resources?.getString(R.string.first_gaze_contact)
+        contact.additionalInfo = appContext?.resources?.getString(R.string.first_gaze_contact)
 
         CoroutineScope(Dispatchers.IO).launch {
             repository.insertContact(contact).also {
                 contact.id = it.toInt()
-                Log.d(TAG, "XXXXX FIRST CONTACT ID: $it")
 
                 addressDao.insert(address)
                 bodyDao.insert(body)
@@ -132,34 +123,50 @@ class AddInitialRoomData(db: GazeDatabase) {
                     websiteDao.insert(websiteEntity)
                 }
 
+                // TODO FIXME speichern vom bild fixen...
                 mediaTools.saveImageFromResourceToInternalStorage(media, R.drawable.josh)
             }
+
+            addContactLabelsToDatabase()
         }
     }
 
     fun addLabelsToDatabase() {
         CoroutineScope(Dispatchers.IO).launch {
             labelDao.insertAll(
-                listOf(
-                    Label(0, Resources.getSystem().getString(R.string.holidays), Date(), Date()),
-                    Label(0, Resources.getSystem().getString(R.string.mykonos), Date(), Date()),
-                    Label(0, Resources.getSystem().getString(R.string.from_grindr), Date(), Date()),
-                    Label(0, Resources.getSystem().getString(R.string.athlete), Date(), Date()),
-                    Label(0, Resources.getSystem().getString(R.string.hunky), Date(), Date())
-                )
+                appContext?.let {
+                    listOf(
+                        Label(0, it.getString(R.string.holidays), Date(), Date()),
+                        Label(0, it.getString(R.string.mykonos), Date(), Date()),
+                        Label(0, it.getString(R.string.from_grindr), Date(), Date()),
+                        Label(0, it.getString(R.string.athlete), Date(), Date()),
+                        Label(0, it.getString(R.string.hunky), Date(), Date())
+                    )
+                } ?: listOf()
             )
         }
     }
 
+    private fun addContactLabelsToDatabase() {
+        CoroutineScope(Dispatchers.IO).launch {
+            contactLabelDao.insert(ContactLabelCrossRef(contact.id, 1))
+            contactLabelDao.insert(ContactLabelCrossRef(contact.id, 3))
+        }
+    }
+
+
     fun addTagsToDatabase() {
         CoroutineScope(Dispatchers.IO).launch {
-            tagDao.insertAll(
-                listOf(
-                    Tag(0, Resources.getSystem().getString(R.string.face), Date(), Date(), false),
-                    Tag(0, Resources.getSystem().getString(R.string.body), Date(), Date(), false),
-                    Tag(0, Resources.getSystem().getString(R.string.xxx), Date(), Date(), false),
-                    Tag(0, Resources.getSystem().getString(R.string.dick), Date(), Date(), false)
-                )
+            mediaTagDao.insertAll(
+                appContext?.let {
+                    listOf(
+                        MediaTag(0, it.getString(R.string.face), Date(), Date(), false),
+                        MediaTag(0, it.getString(R.string.body), Date(), Date(), false),
+                        MediaTag(0, it.getString(R.string.xxx), Date(), Date(), false),
+                        MediaTag(0, it.getString(R.string.dick), Date(), Date(), false)
+                    )
+                } ?: listOf()
+
             )
         }
     }
@@ -190,11 +197,11 @@ class AddInitialRoomData(db: GazeDatabase) {
             val al = mutableListOf<BodyType>()
 
             val bodytype1 = BodyType(contact.id)
-            bodytype1.bodyType = Resources.getSystem().getString(R.string.average)
+            bodytype1.bodyType = appContext?.getString(R.string.average)
             al.add(bodytype1)
 
             val bodytype2 = BodyType(contact.id)
-            bodytype2.bodyType = Resources.getSystem().getString(R.string.sporty)
+            bodytype2.bodyType = appContext?.getString(R.string.sporty)
             al.add(bodytype2)
             return al
         }
@@ -204,11 +211,11 @@ class AddInitialRoomData(db: GazeDatabase) {
             val al = mutableListOf<Drug>()
 
             val drug1 = Drug(contact.id)
-            drug1.drug = Resources.getSystem().getString(R.string.alcohol)
+            drug1.drug = appContext?.getString(R.string.alcohol) ?: "Alcohol"
             al.add(drug1)
 
             val drug2 = Drug(contact.id)
-            drug2.drug = Resources.getSystem().getString(R.string.cannabis)
+            drug2.drug = appContext?.getString(R.string.cannabis) ?: "Cannabis"
             al.add(drug2)
             return al
         }
@@ -236,59 +243,41 @@ class AddInitialRoomData(db: GazeDatabase) {
             if (SpecificValues.SHOW_XRATED) {
                 val enc = Encounter(contact.id)
                 enc.googleMapsLink = "https://goo.gl/maps/8QQNZ3zJj2q"
-                enc.hisRole = Resources.getSystem().getString(R.string.top)
-                try {
-                    val date = sdf.parse("10-04-2015")
-                    enc.meetDate = date
-                } catch (e: ParseException) {
-                    e.printStackTrace()
-                }
-                enc.myRole = Resources.getSystem().getString(R.string.bottom)
+                enc.hisRole = appContext?.getString(R.string.top)
+                val date = sdf.parse("10-04-2015")
+                enc.meetDate = date
+                enc.myRole = appContext?.getString(R.string.bottom)
                 enc.remarks = "Had a great time."
                 enc.isSafeSex = true
                 enc.sureAboutSafeSex = false
                 al.add(enc)
 
                 val enc2 = Encounter(contact.id)
-                enc2.hisRole = Resources.getSystem().getString(R.string.top)
-                try {
-                    val date = sdf.parse("17-12-2020")
-                    enc2.meetDate = date
-                } catch (e: ParseException) {
-                    e.printStackTrace()
-                }
-                enc2.meetLocation = Resources.getSystem().getString(R.string.my_place)
-                enc2.myRole = Resources.getSystem().getString(R.string.top)
+                enc2.hisRole = appContext?.getString(R.string.top)
+                val date2 = sdf.parse("17-12-2020")
+                enc2.meetDate = date2
+                enc2.meetLocation = appContext?.getString(R.string.my_place)
+                enc2.myRole = appContext?.getString(R.string.top)
                 enc2.remarks = "Great Netflix and chill! :)"
                 enc2.rating = 7
                 al.add(enc2)
 
                 val enc3 = Encounter(contact.id)
-                enc3.hisRole = Resources.getSystem().getString(R.string.top_and_bottom)
+                enc3.hisRole = appContext?.getString(R.string.top_and_bottom)
                 enc3.meetLocation = "His apartment"
-                try {
-                    val date = sdf.parse("22-3-2019")
-                    enc3.meetDate = date
-                } catch (e: ParseException) {
-                    e.printStackTrace()
-                }
-                enc3.myRole = Resources.getSystem().getString(R.string.top_and_bottom)
+                val date3 = sdf.parse("22-3-2019")
+                enc3.meetDate = date3
+                enc3.myRole = appContext?.getString(R.string.top_and_bottom)
                 enc3.remarks = "That was really good fun!"
                 enc3.isSafeSex = false
                 enc3.rating = 8
-                enc3.myLoadWentTo = "His face"
-                enc3.hisLoadWentTo = "Booty"
                 al.add(enc3)
             } else {
                 val enc = Encounter(contact.id)
                 enc.googleMapsLink = "https://goo.gl/maps/8yS3n8irQ5t"
-                try {
-                    val date = sdf.parse("20-05-2020")
-                    enc.meetDate = date
-                } catch (e: ParseException) {
-                    e.printStackTrace()
-                }
-                enc.myRole = Resources.getSystem().getString(R.string.bottom)
+                val date4 = sdf.parse("20-05-2020")
+                enc.meetDate = date4
+                enc.myRole = appContext?.getString(R.string.bottom)
                 enc.remarks = "Had a great time."
                 enc.isSafeSex = true
                 enc.sureAboutSafeSex = false
@@ -311,7 +300,7 @@ class AddInitialRoomData(db: GazeDatabase) {
     val ethnicity: Ethnicity
         get() {
             val ethnicity = Ethnicity(contact.id)
-            ethnicity.ethnicity = Resources.getSystem().getString(R.string.caucasian)
+            ethnicity.ethnicity = appContext?.getString(R.string.caucasian) ?: "Caucasian"
             return ethnicity
         }
 
@@ -320,18 +309,18 @@ class AddInitialRoomData(db: GazeDatabase) {
             val al = mutableListOf<Fetish>()
 
             val fetish = Fetish(contact.id)
-            fetish.fetish = Resources.getSystem().getString(R.string.watersports)
+            fetish.fetish = appContext?.getString(R.string.watersports) ?: "WS"
             fetish.fetishId = 47
             al.add(fetish)
 
             val fetish2 = Fetish(contact.id)
-            fetish2.fetish = Resources.getSystem().getString(R.string.uniform)
+            fetish2.fetish = appContext?.getString(R.string.uniform) ?: "Uniform"
             fetish2.fetishId = 10
             al.add(fetish2)
             return al
         }
 
-    val foods: List<Food>
+    private val foods: List<Food>
         get() {
             val al = mutableListOf<Food>()
             val food1 = Food(contact.id)
@@ -349,9 +338,9 @@ class AddInitialRoomData(db: GazeDatabase) {
     val health: Health
         get() {
             val health = Health(contact.id)
-            health.hcv = Resources.getSystem().getString(R.string.negative)
-            health.hiv = Resources.getSystem().getString(R.string.poz_undetectable)
-            health.hpv = Resources.getSystem().getString(R.string.negative)
+            health.hcv = appContext?.getString(R.string.negative)
+            health.hiv = appContext?.getString(R.string.poz_undetectable)
+            health.hpv = appContext?.getString(R.string.negative)
             health.hadCovid19 = 0
             health.isCovid19Vaccinated = 1
             health.covid19VaccinationDate = Date()
@@ -392,7 +381,7 @@ class AddInitialRoomData(db: GazeDatabase) {
             return media
         }
 
-    val movies: List<Movie>
+    private val movies: List<Movie>
         get() {
             val al = mutableListOf<Movie>()
             val movie1 = Movie(contact.id)
@@ -425,25 +414,21 @@ class AddInitialRoomData(db: GazeDatabase) {
     val note: Note
         get() {
             val note = Note(contact.id)
-            note.note = Resources.getSystem().getString(R.string.first_gaze_contact_note)
+            note.note = appContext?.getString(R.string.first_gaze_contact_note)
             return note
         }
 
     val personal: Personal
         get() {
             val personal = Personal(contact.id)
-            try {
-                val date = sdf.parse("02-11-1978")
-                personal.birthdate = date
-            } catch (e: ParseException) {
-                e.printStackTrace()
-            }
-            personal.drinking = Resources.getSystem().getString(R.string.socially)
+            val date = sdf.parse("02-11-1990")
+            personal.birthdate = date
+            personal.drinking = appContext?.getString(R.string.socially)
             personal.effeminate = 15
             personal.politicalView = "Liberal"
-            personal.relationshipStatus = Resources.getSystem().getString(R.string.in_relationship)
-            personal.religion = Resources.getSystem().getString(R.string.atheist)
-            personal.smoking = Resources.getSystem().getString(R.string.no)
+            personal.relationshipStatus = appContext?.getString(R.string.in_relationship)
+            personal.religion = appContext?.getString(R.string.atheist)
+            personal.smoking = appContext?.getString(R.string.no)
             personal.isOut = 1
             return personal
         }
@@ -473,16 +458,12 @@ class AddInitialRoomData(db: GazeDatabase) {
             p1.phone = "+44 345 740 4404"
             p1.email = "info@hsbc.com"
             p1.salary = 110000
-            p1.frequency = Resources.getSystem().getString(R.string.per_year)
+            p1.frequency = appContext?.getString(R.string.per_year)
             p1.currency = "GBP"
-            try {
-                val startDate = sdf.parse("01-01-2001")
-                p1.started = startDate
-                val endDate = sdf.parse("31-10-2008")
-                p1.ended = endDate
-            } catch (e: ParseException) {
-                e.printStackTrace()
-            }
+            val startDate = sdf.parse("01-01-2001")
+            p1.started = startDate
+            val endDate = sdf.parse("31-10-2008")
+            p1.ended = endDate
             al.add(p1)
 
             val p2 = Work(contact.id)
@@ -490,12 +471,8 @@ class AddInitialRoomData(db: GazeDatabase) {
             p2.employerAddress = "Broadcasting House\nPortland Place\nLondon\nW1A 1AA".trimIndent()
             p2.profession = "Project Manager"
             p2.email = "info@bbc.co.uk"
-            try {
-                val startDate = sdf.parse("01-11-2008")
-                p2.started = startDate
-            } catch (e: ParseException) {
-                e.printStackTrace()
-            }
+            val startDate2 = sdf.parse("01-11-2008")
+            p2.started = startDate2
             al.add(p2)
             return al
         }
@@ -503,10 +480,10 @@ class AddInitialRoomData(db: GazeDatabase) {
     val xxx: Xxx
         get() {
             val xxx = Xxx(contact.id)
-            xxx.safeSex = Resources.getSystem().getString(R.string.safe_only)
+            xxx.safeSex = appContext?.getString(R.string.safe_only)
             xxx.sexperience = 8
-            xxx.sexRole = Resources.getSystem().getString(R.string.versatile)
-            xxx.sexualOrientation = Resources.getSystem().getString(R.string.gay)
+            xxx.sexRole = appContext?.getString(R.string.versatile)
+            xxx.sexualOrientation = appContext?.getString(R.string.gay)
             xxx.swallowsLoads = 1
             xxx.takesLoadsUpTheBum = 2
             return xxx
@@ -540,7 +517,7 @@ class AddInitialRoomData(db: GazeDatabase) {
             return sm
         }
 
-    val sports: List<Sport>
+    private val sports: List<Sport>
         get() {
             val al = mutableListOf<Sport>()
             val p1 = Sport(contact.id)
@@ -562,7 +539,7 @@ class AddInitialRoomData(db: GazeDatabase) {
         }
 
 
-    val websites: List<Website>
+    private val websites: List<Website>
         get() {
             val al = mutableListOf<Website>()
             val website1 = Website(contact.id)

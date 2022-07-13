@@ -2,7 +2,7 @@ package net.gazeapp.data.dto
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-import net.gazeapp.data.model.Tag
+import net.gazeapp.data.model.MediaTag
 
 /**
  * Tags are used to tag media files, i.e. nudes, xxx, facepic etc.
@@ -14,7 +14,7 @@ data class TagDto(
     var added: String?,
     var lastMod: String?,
     var isSelected: Boolean = false,
-    var tag: Tag
+    var mediaTag: MediaTag
 ) : Parcelable {
     constructor(id: Int) : this(
         id,
@@ -22,6 +22,6 @@ data class TagDto(
         "",
         "",
         false,
-        Tag(0)
+        MediaTag(0)
     )
 }

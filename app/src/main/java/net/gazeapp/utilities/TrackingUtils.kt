@@ -3,6 +3,8 @@ package net.gazeapp.utilities
 import android.content.Context
 import android.os.Bundle
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import java.util.concurrent.atomic.AtomicBoolean
 
 /**
@@ -10,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean
  */
 class TrackingUtils(context: Context) {
 
-    private var firebaseAnalytics: FirebaseAnalytics? = null
+    private var firebaseAnalytics: FirebaseAnalytics = Firebase.analytics
     private var lastPageID: String? = null
 
     companion object {
@@ -24,11 +26,6 @@ class TrackingUtils(context: Context) {
             return INSTANCE
         }
     }
-
-    init {
-        firebaseAnalytics = FirebaseAnalytics.getInstance(context)
-    }
-
 
     /**
      * Helper function to reset the tracking controller when the app goes into background
@@ -119,7 +116,7 @@ class TrackingUtils(context: Context) {
             bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, entityName)
         }
         if (pageID != null && pageType != null && entityName != null) {
-            firebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
+            firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
         }
     }
 

@@ -26,8 +26,7 @@ class MediaTools @Inject constructor() {
 
     // TODO FIXME ist das der korrekte: absolutePath?
     val absolutePath = Environment.getDataDirectory().absolutePath
-
-    // TODO FIXME an den Application  GazeApplication.instance.applicationContext rankommen (in GazeApplication)
+    //filesDir.absolutePath
 
     /**
      * Copies a file to the private storage using the next unique file name.
@@ -55,6 +54,13 @@ class MediaTools @Inject constructor() {
             null
         }
     }
+
+    // TODO mit dem tutorial für file storage weitermachen: https://www.youtube.com/watch?v=EeLz1DPMsW8
+    // TODO mit dem tutorial für file storage weitermachen: https://www.youtube.com/watch?v=EeLz1DPMsW8
+    // TODO mit dem tutorial für file storage weitermachen: https://www.youtube.com/watch?v=EeLz1DPMsW8
+    // TODO mit dem tutorial für file storage weitermachen: https://www.youtube.com/watch?v=EeLz1DPMsW8
+    // TODO mit dem tutorial für file storage weitermachen: https://www.youtube.com/watch?v=EeLz1DPMsW8
+    // TODO mit dem tutorial für file storage weitermachen: https://www.youtube.com/watch?v=EeLz1DPMsW8
 
     fun copyFileToPrivateStorage(file: File): String? {
         if (!file.canRead()) {
@@ -84,7 +90,7 @@ class MediaTools @Inject constructor() {
         val dstFile = createDestinationFile(media)
         return try {
             val inputStream =
-                GazeApplication.instance.applicationContext.contentResolver?.openInputStream(uri)
+                GazeApplication.getAppContext()?.contentResolver?.openInputStream(uri)
             saveFileToInternalStorage(inputStream!!, dstFile!!)
         } catch (e: IOException) {
             // IOException, could not write file to private storage.
@@ -225,7 +231,7 @@ class MediaTools @Inject constructor() {
         val isDeleted = internalFile.delete()
         val isThere = internalFile.exists()
         val internalStorageCacheDir =
-            GazeApplication.instance.applicationContext.cacheDir.absolutePath
+            GazeApplication.getAppContext()?.cacheDir?.absolutePath
         val storeInternalCachedPath =
             File(internalStorageCacheDir, generatedPath) // i.e. /20/
         val internalCachedFile = File(
@@ -248,7 +254,7 @@ class MediaTools @Inject constructor() {
             Log.d(TAG, "IS THERE (int): $isThere")
             val generatedPath = getGalleryPath(media)
             val internalStorageCacheDir =
-                GazeApplication.instance.applicationContext.cacheDir.absolutePath
+                GazeApplication.getAppContext()?.cacheDir?.absolutePath
             val storeInternalCachedPath = File(internalStorageCacheDir, generatedPath) // i.e. /20/
             val internalCachedFile = File(
                 storeInternalCachedPath,
@@ -266,8 +272,8 @@ class MediaTools @Inject constructor() {
     // Probably not used anymore since caching can be
     // deactivated right in GLIDE itself (diskCacheStrategy())
     fun cleanCacheDir() {
-        val cacheDir = GazeApplication.instance.applicationContext.cacheDir
-        val files = cacheDir.listFiles()
+        val cacheDir = GazeApplication.getAppContext()?.cacheDir
+        val files = cacheDir?.listFiles()
         files?.forEach {
             Log.d(TAG, "bytesDeleted: " + it.length())
             it.delete()
@@ -275,7 +281,7 @@ class MediaTools @Inject constructor() {
     }
 
     fun cleanMyMediaCacheDir() {
-        val cacheDir = GazeApplication.instance.applicationContext.cacheDir
+        val cacheDir = GazeApplication.getAppContext()?.cacheDir
         val myMediaPath = "/" + Const.GALLERY_MY_MEDIA_PATH + "/" // i.e. /myMedia/
         val cacheDirContact = File(cacheDir, myMediaPath)
         val files = cacheDirContact.listFiles()
@@ -658,7 +664,7 @@ class MediaTools @Inject constructor() {
 //        return if (contact.mainPicId == 0) {
 //            null
 //        } else {
-//            GazeApplication.getApp GazeApplication.instance.applicationContext().filesDir.absolutePath + "/" + Const.GALLERY_PATH_PUBLIC + "/" + contact.id + "/" + contact.mainPicFileName
+//            GazeApplication.getApp GazeApplication.getAppContext()?.filesDir.absolutePath + "/" + Const.GALLERY_PATH_PUBLIC + "/" + contact.id + "/" + contact.mainPicFileName
 //        }
 //    }
 
@@ -672,7 +678,7 @@ class MediaTools @Inject constructor() {
             callback.empty()
         } else {
             val files = storeInternal.listFiles()
-            if (files != null && files.size > 0) {
+            if (files != null && files.isNotEmpty()) {
                 val imageArrayList = ArrayList<GazeImage>()
                 for (f in files) {
                     val i = GazeImage(0, f.name, f.absolutePath, false)
@@ -746,7 +752,7 @@ class MediaTools @Inject constructor() {
      */
     fun saveImageFromResourceToInternalStorage(media: Media, drawableId: Int): Uri? {
         // Get the image from drawable resource as drawable object
-        val drawable = GazeApplication.instance.applicationContext.getDrawable(drawableId)
+        val drawable = GazeApplication.getAppContext()?.getDrawable(drawableId)
 
         // Get the bitmap from drawable object
         val bitmap = (drawable as BitmapDrawable).bitmap
@@ -779,7 +785,6 @@ class MediaTools @Inject constructor() {
             null
         }
     }
-
 
     fun copyMyMediaFileToPrivateStorageNew(image: GazeImage): Uri? {
         val originalFileOnExternalStorage = File(image.path)

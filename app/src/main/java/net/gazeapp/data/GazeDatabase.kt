@@ -34,6 +34,7 @@ import net.gazeapp.helpers.Const
         Hobby::class,
         Label::class,
         Media::class,
+        MediaTag::class,
         MyMedia::class,
         MediaTagCrossRef::class,
         Movie::class,
@@ -45,7 +46,6 @@ import net.gazeapp.helpers.Const
         SecurityQuestion::class,
         SocialMedia::class,
         Sport::class,
-        Tag::class,
         Website::class,
         Work::class,
         Xxx::class],
@@ -72,6 +72,7 @@ abstract class GazeDatabase : RoomDatabase() {
     abstract val healthDao: HealthDao
     abstract val hobbyDao: HobbyDao
     abstract val mediaDao: MediaDao
+    abstract val mediaTagDao: MediaTagDao
     abstract val myMediaDao: MyMediaDao
     abstract val movieDao: MovieDao
     abstract val nicknameDao: NicknameDao
@@ -87,7 +88,6 @@ abstract class GazeDatabase : RoomDatabase() {
     abstract val contactLabelDao: ContactLabelDao
     abstract val myPreferencesDao: MyPreferencesDao
     abstract val securityQuestionDao: SecurityQuestionDao
-    abstract val tagDao: TagDao
 
     companion object {
         private const val TAG = "GazeDatabase"
@@ -116,10 +116,10 @@ abstract class GazeDatabase : RoomDatabase() {
                 super.onCreate(db)
 
                 Log.d(TAG, "onCreate: AddInitialRoomData")
-                val addInitialRoomData = AddInitialRoomData(INSTANCE!!)
-                addInitialRoomData.addFirstContactToDatabase()
-                addInitialRoomData.addLabelsToDatabase()
-                addInitialRoomData.addTagsToDatabase()
+                val addInitialContactData = AddInitialContactData(INSTANCE!!)
+                addInitialContactData.addLabelsToDatabase()
+                addInitialContactData.addTagsToDatabase()
+                addInitialContactData.addFirstContactToDatabase()
             }
 
         }
