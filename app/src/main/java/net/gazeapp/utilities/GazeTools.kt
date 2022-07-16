@@ -613,7 +613,7 @@ class GazeTools @Inject constructor(@param:ActivityContext private val context: 
     }
 
     fun replaceNewlinesWithBreaks(source: String): String {
-        return source.replace("(?:\n|\r\n)".toRegex(), "<br>")
+        return source.replace("\n|\r\n".toRegex(), "<br>")
     }
 
     fun sendEmail(email: String, subject: String) {
@@ -623,10 +623,10 @@ class GazeTools @Inject constructor(@param:ActivityContext private val context: 
     }
 
     @Throws(IOException::class)
-    fun convertStreamToString(`is`: InputStream?): String {
-        val reader = BufferedReader(InputStreamReader(`is`))
+    fun convertStreamToString(iStream: InputStream?): String {
+        val reader = BufferedReader(InputStreamReader(iStream))
         val sb = StringBuilder()
-        var line: String? = null
+        var line: String?
         while (reader.readLine().also { line = it } != null) {
             sb.append(line).append("\n")
         }

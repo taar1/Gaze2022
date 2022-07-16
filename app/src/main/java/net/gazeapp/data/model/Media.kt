@@ -52,9 +52,7 @@ data class Media(
     var isXRated: Boolean = false,
     var caption: String?,
 
-    // String of freestyle labels i.e. holidays, beach, nude. There is also a TAG table.
-    // TODO: the user can edit the TAG table with tags and then select them from a drop down list for each media file.
-    // TODO: replace the label string with the TAG list eventually...
+    // String of freestyle labels i.e. holidays, beach, nude.
     var labels: String?,
 
     @TypeConverters(RoomDateConverter::class)

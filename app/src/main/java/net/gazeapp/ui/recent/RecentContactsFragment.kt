@@ -35,7 +35,6 @@ class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment)
     lateinit var mediaTools: MediaTools
 
     private val viewModel: RecentContactsViewModel by viewModels()
-//    lateinit var viewModel: RecentContactsViewModel
 
     private lateinit var viewBinding: ContactsRecyclerlistFragmentBinding
 
@@ -57,10 +56,6 @@ class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment)
         savedInstanceState: Bundle?
     ): View {
         viewBinding = ContactsRecyclerlistFragmentBinding.inflate(inflater)
-
-        // fallback
-//        viewModel = ViewModelProvider(this)[RecentContactsViewModel::class.java]
-
         return viewBinding.root
     }
 
