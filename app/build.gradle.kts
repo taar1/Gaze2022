@@ -7,6 +7,8 @@ plugins {
     id("com.google.firebase.crashlytics")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -149,6 +151,7 @@ dependencies {
     with(Dependencies.NavController) {
         implementation(navigationFragment)
         implementation(navigationUi)
+        //implementation(navSafeArgs)
     }
 
     with(Dependencies.Firebase) {

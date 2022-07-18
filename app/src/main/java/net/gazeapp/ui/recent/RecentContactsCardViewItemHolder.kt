@@ -4,14 +4,15 @@ import android.app.Activity
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import net.gazeapp.R
 import net.gazeapp.data.model.*
+import net.gazeapp.databinding.ListItemRecentContactsCardBinding
 import net.gazeapp.utilities.GazeTools
 import net.gazeapp.utilities.MediaTools
 
@@ -21,12 +22,9 @@ import net.gazeapp.utilities.MediaTools
  */
 class RecentContactsCardViewItemHolder(
     val activity: Activity,
-    val view: View,
+    val binding: ListItemRecentContactsCardBinding,
     val tools: GazeTools
-) : RecyclerView.ViewHolder(view) {
-
-    // TODO per Hilt injecten....
-    //@Inject lateinit var tools: GazeTools
+) : RecyclerView.ViewHolder(binding.root) {
 
     companion object {
         private const val TAG = "RecentContactsCardViewI"
@@ -42,16 +40,17 @@ class RecentContactsCardViewItemHolder(
 
     val mediaTools: MediaTools = MediaTools()
 
-    var cardImage: ImageView = view.findViewById(R.id.cardImage)
-    var overlayLayout: LinearLayout = view.findViewById(R.id.overlayLayout)
-    var contactName: TextView = view.findViewById(R.id.contactName)
-    var additionalInfo: TextView = view.findViewById(R.id.additionalInfo)
-    var basicInfo: TextView = view.findViewById(R.id.basicInfo)
+
+    var cardImage: ImageView = binding.cardImage
+    var overlayLayout: LinearLayout = binding.overlayLayout
+    var contactName: TextView = binding.contactName
+    var additionalInfo: TextView = binding.additionalInfo
+    var basicInfo: TextView = binding.basicInfo
 
     //    var otherInfo: TextView = view.findViewById(R.id.otherInfo)
 //    var notesTextView: TextView = view.findViewById(R.id.note)
-    var profileButton: Button = view.findViewById(R.id.buttonProfile)
-    var galleryButton: Button = view.findViewById(R.id.buttonGallery)
+    var profileButton: com.google.android.material.button.MaterialButton = binding.buttonProfile
+    var galleryButton: com.google.android.material.button.MaterialButton = binding.buttonGallery
 
     var age: String = ""
     var height: String = ""
@@ -138,26 +137,24 @@ class RecentContactsCardViewItemHolder(
 //            }
 
             // Display CONTACT VIEW
-            // TODO FIXME
-//            profileButton.setOnClickListener {
-//                val action =
-//                    RecentContactsFragmentDirections.actionNavRecentToContactViewWithViewPagerTabActivity(
-//                        contactWithDetails.contact.id
-//                    )
-//                Navigation.findNavController(view).navigate(action)
-//            }
+            profileButton.setOnClickListener {
+                val action =
+                    RecentContactsFragmentDirections.actionNavRecentToContactViewWithViewPagerTabActivity(
+                        contactWithDetails.contact.id
+                    )
+                Navigation.findNavController(binding.root).navigate(action)
+            }
 
             // Display GRID GALLERY VIEW
-            // TODO FIXME
-//            galleryButton.setOnClickListener {
-//                val action =
-//                    RecentContactsFragmentDirections.actionNavRecentToContactViewWithViewPagerTabActivity(
-//                        contactWithDetails.contact.id
-//                    )
-//                action.position = GRID_GALLERY_TAB
-//
-//                Navigation.findNavController(view).navigate(action)
-//            }
+            galleryButton.setOnClickListener {
+                val action =
+                    RecentContactsFragmentDirections.actionNavRecentToContactViewWithViewPagerTabActivity(
+                        contactWithDetails.contact.id
+                    )
+                action.position = GRID_GALLERY_TAB
+
+                Navigation.findNavController(binding.root).navigate(action)
+            }
 
             mediaList?.let { mList ->
                 for (media in mList) {

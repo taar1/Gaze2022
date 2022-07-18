@@ -13,7 +13,6 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dagger.hilt.android.AndroidEntryPoint
 import net.gazeapp.R
 import net.gazeapp.data.model.ContactWithDetails
@@ -43,7 +42,6 @@ class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment)
     private lateinit var recentContactsCardViewRecyclerAdapter: RecentContactsRecyclerListAdapter
 
     private lateinit var navController: NavController
-    private lateinit var fab: FloatingActionButton
 
     companion object {
         private const val TAG = "RecentContactsFragment"
@@ -125,19 +123,16 @@ class RecentContactsFragment : Fragment(R.layout.contacts_recyclerlist_fragment)
     override fun onContactWithDetailsClicked(
         contact: ContactWithDetails, position: Int
     ) {
-        // TODO FIXME
-//        val action =
-//            RecentContactsFragmentDirections.actionNavRecentToContactViewWithViewPagerTabActivity(
-//                contact.contact.id
-//            )
-//        navController.navigate(action)
+        val action =
+            RecentContactsFragmentDirections.actionNavRecentToContactViewWithViewPagerTabActivity(
+                contact.contact.id
+            )
+        navController.navigate(action)
     }
 
     private fun onAddNewContactButtonClicked() {
-        // TODO FIXME
-
-//        val action =
-//            RecentContactsFragmentDirections.actionNavRecentToAddOrEditContactFragment(0)
-//        navController.navigate(action)
+        val action =
+            RecentContactsFragmentDirections.actionNavRecentToAddOrEditContactFragment(0)
+        navController.navigate(action)
     }
 }

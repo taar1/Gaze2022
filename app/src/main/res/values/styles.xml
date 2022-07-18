@@ -187,7 +187,7 @@
     </style>
 
 
-    <style name="RecentContactButton" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="RecentContactButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/secondary_text</item>
         <item name="rippleColor">@color/accent</item>

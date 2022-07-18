@@ -83,6 +83,14 @@
             android:name="net.gazeapp.ui.search.ListLabelledContactsActivity"
             android:launchMode="singleTop" />
 
+
+        <activity
+            android:name=".ui.contactview.ContactViewWithViewPagerTabActivity"
+            android:label="@string/contact_info" />
+        <activity
+            android:name=".billing.UpgradingActivity"
+            android:label="@string/upgrade_to_pro" />
+
     </application>
 
 </manifest>

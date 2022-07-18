@@ -2,11 +2,10 @@ package net.gazeapp.ui.recent
 
 import android.app.Activity
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import net.gazeapp.R
 import net.gazeapp.data.model.ContactWithDetails
+import net.gazeapp.databinding.ListItemRecentContactsCardBinding
 import net.gazeapp.listeners.OnContactWithDetailsClickListener
 import net.gazeapp.utilities.GazeTools
 
@@ -22,10 +21,23 @@ class RecentContactsRecyclerListAdapter(
 
     var contactList: List<ContactWithDetails> = mutableListOf()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val itemView: View = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_recent_contacts_card, parent, false)
-        return RecentContactsCardViewItemHolder(activity, itemView, tools)
+    private var _binding: ListItemRecentContactsCardBinding? = null
+    private val binding get() = _binding!!
+
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+//        val itemView: View = LayoutInflater.from(parent.context)
+//            .inflate(R.layout.list_item_recent_contacts_card, parent, false)
+//        return RecentContactsCardViewItemHolder(activity, itemView, tools)
+//    }
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecentContactsCardViewItemHolder {
+        _binding = ListItemRecentContactsCardBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false
+        )
+        return RecentContactsCardViewItemHolder(activity, binding, tools)
     }
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
@@ -33,9 +45,6 @@ class RecentContactsRecyclerListAdapter(
         val contactCardObjectViewHolder = viewHolder as RecentContactsCardViewItemHolder
 
         contactCardObjectViewHolder.contact = contact
-//        contactCardObjectViewHolder.mediaTools = MediaTools()
-//        contactCardObjectViewHolder.gazeTools = GazeTools(activity)
-
         contactCardObjectViewHolder.itemView.setOnClickListener {
             onContactClickListener.onContactWithDetailsClicked(
                 contact,

@@ -13,7 +13,7 @@ object Versions {
         const val recyclerView = "1.2.1"
         const val androidBuildTools = "7.2.1"
         const val kotlin = "1.6.10"
-        const val navController = "2.4.1"
+        const val navController = "2.5.0"
         const val hilt = "2.42"
         const val room = "2.4.2"
         const val compose = "1.1.1"
