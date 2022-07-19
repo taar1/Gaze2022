@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/actionbar_space_between_icon_and_title.xml" value="0.1855" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/button_background.xml" value="0.36" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_business.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_contacts.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_couple.xml" value="0.164" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_crop.xml" value="0.1855" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_expand_more.xml" value="0.164" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_gaze_white.xml" value="0.1855" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_gender.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_me.xml" value="0.132" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/ic_signal.xml" value="0.36" />
@@ -16,6 +19,7 @@
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/launch_screen.xml" value="0.132" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/drawable/text_on_black_rounded_corners.xml" value="0.164" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/activity_main.xml" value="0.3676222596964587" />
+        <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/activity_upgrading.xml" value="0.3145833333333333" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/activity_upgrading_incl_free_user.xml" value="0.35885416666666664" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/activity_upgrading_incl_pro_user.xml" value="0.35885416666666664" />
         <entry key="..\:/Users/taar1/Workspace/Android/my/Gaze_2022/app/src/main/res/layout/add_edit_encounter_layout_c.xml" value="0.34479166666666666" />
